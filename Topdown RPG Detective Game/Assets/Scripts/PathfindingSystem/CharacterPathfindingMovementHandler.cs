@@ -31,6 +31,8 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
 
     private BoxCollider2D collider;
 
+    [SerializeField]private DialogueSource dialogueSource; 
+
     private void Start() {
         Transform bodyTransform = transform.Find("Body");
         collider = GetComponent<BoxCollider2D>();
@@ -83,7 +85,7 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
     }
 
     private void UpdateStopCounters() {
-        if (blockedByPlayer) {
+        if (blockedByPlayer && !stopMove) {
             blockedByPlayerCounter--;
             if (blockedByPlayerCounter <= 0) {
                 blockedByPlayer = false;
@@ -99,7 +101,7 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
             }
         }
 
-        if (!blockedByPlayer && !stoppedForDialogue) {
+        if (!dialogueSource.inDialogue) {
             stopMove = false;
         }
         else {
@@ -118,5 +120,4 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
             blockedByPlayer = false;
         }
     }
-
 }

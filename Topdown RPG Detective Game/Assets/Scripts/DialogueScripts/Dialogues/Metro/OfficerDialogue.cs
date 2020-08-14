@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OfficerDialogue : GetDialogue
+public class OfficerDialogue : DialogueSource
 {
     public Dialogue defaultDialogue;
     public Dialogue keyDialogue;

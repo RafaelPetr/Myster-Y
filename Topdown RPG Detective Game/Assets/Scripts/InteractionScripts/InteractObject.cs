@@ -5,7 +5,7 @@ using UnityEngine.XR.WSA.Input;
 
 public class InteractObject : MonoBehaviour {
     private Dialogue dialogue;
-    public GetDialogue getDialogueScript;
+    public DialogueSource dialogueSource;
     private DialogueManager dialogueManager;
 
     void Awake() {
@@ -13,7 +13,6 @@ public class InteractObject : MonoBehaviour {
     }
 
     void ExecuteInteract() {
-        dialogue = getDialogueScript.DefineDialogue();
-        dialogueManager.ReceiveInteract(dialogue);
+        dialogueManager.ReceiveInteract(dialogueSource);
     }
 }

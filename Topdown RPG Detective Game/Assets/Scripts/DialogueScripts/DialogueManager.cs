@@ -26,11 +26,15 @@ public class DialogueManager : MonoBehaviour {
 	private List<DialogueChoice> choices;
 	private Queue<DialogueElement> elements;
 
+	private DialogueSource activeSource;
+
 	void Start() {
 		elements = new Queue<DialogueElement>();
 	}
 
-	public void ReceiveInteract(Dialogue dialogue) {
+	public void ReceiveInteract(DialogueSource dialogueSource) {
+		activeSource = dialogueSource;
+		Dialogue dialogue = activeSource.StartDialogue();
 		if (activeWriteElement != null) {
 			activeWriteElement.CompleteWrite();
 		}
@@ -123,5 +127,6 @@ public class DialogueManager : MonoBehaviour {
 		animator.SetBool("IsOpen", false);
 		inDialogue = false;
 		controller.inDialogue = false;
+		activeSource.EndDialogue();
 	}
 }

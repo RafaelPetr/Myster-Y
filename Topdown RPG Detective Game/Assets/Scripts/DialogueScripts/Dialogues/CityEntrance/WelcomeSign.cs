@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WelcomeSign : GetDialogue
+public class WelcomeSign : DialogueSource
 {
     public Dialogue defaultDialogue;
     public override Dialogue DefineDialogue()

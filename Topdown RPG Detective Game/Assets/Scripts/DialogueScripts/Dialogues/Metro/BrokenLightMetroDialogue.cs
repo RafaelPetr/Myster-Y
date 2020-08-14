@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrokenLightMetroDialogue : GetDialogue
+public class BrokenLightMetroDialogue : DialogueSource
 {
     public Dialogue defaultDialogue;
     public Dialogue keyDialogue;
