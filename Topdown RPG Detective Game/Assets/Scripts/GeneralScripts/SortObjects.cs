@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SortObjects : MonoBehaviour {
-    [SerializeField]
-    private bool objectMovement = false;
-    private SpriteRenderer spriteRenderer;
+    
+    [SerializeField]private bool objectMovement = false;
+    private Renderer objectRenderer;
 
     private void Awake() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        objectRenderer = GetComponent<Renderer>();
     }
 
     private void Start() {
@@ -22,8 +22,8 @@ public class SortObjects : MonoBehaviour {
     }
 
     void sortObject() {
-        var min = spriteRenderer.bounds.min.y;
-        spriteRenderer.sortingOrder = (int)(min*-100);
+        var min = objectRenderer.bounds.min.y;
+        objectRenderer.sortingOrder = (int)(min*-100);
     }
 
 }

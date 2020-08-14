@@ -21,14 +21,19 @@ public class Testing : MonoBehaviour {
     [SerializeField] private CharacterPathfindingMovementHandler characterPathfinding;
     [SerializeField] private CharacterRoutineManager routineManager;
     private Pathfinding pathfinding;
+    public Vector3[] unwalkableTiles;
     private GameTimeManager timeManager;
 
     private void Awake() {
-        timeManager = GameObject.Find("GameTimeManager").GetComponent<GameTimeManager>();
+        pathfinding = new Pathfinding(20, 10);
+        foreach(Vector3 tile in unwalkableTiles) {
+            pathfinding.GetGrid().GetXY(tile, out int x, out int y);
+            pathfinding.GetNode(x, y).SetIsWalkable(false);
+        }
     }
 
     private void Start() {
-        pathfinding = new Pathfinding(20, 10);
+        timeManager = GameObject.Find("GameTimeManager").GetComponent<GameTimeManager>();
         timeManager.OnChangeHour.AddListener(SetNextDestination);
     }
 
