@@ -8,7 +8,7 @@ public class GameTimeManager : MonoBehaviour {
     private static float day = 0.5f;
     private Transform clockHandHour;
     private Transform clockHandMin;
-    public float realSecondsPerDayInGame = 60f;
+    public float realSecondsPerDayInGame = 600f;
     public Light2D ambientLight;
     public Gradient dayCycleGradient;
     private bool invokedChangeHour;

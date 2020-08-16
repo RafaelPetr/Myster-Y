@@ -116,7 +116,6 @@ public class DialogueManager : MonoBehaviour {
 
 	public void ChoosePossibility(int choiceNumber) {
 		inChoice = false;
-		Debug.Log("Você escolheu: " + choiceNumber);
 		selectedChoice = null;
 		GameObject myEventSystem = GameObject.Find("EventSystem");
  		myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);

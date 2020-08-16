@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c213fb81449dca48ab70959969b33ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realSecondsPerDayInGame: 60
+  realSecondsPerDayInGame: 600
   ambientLight: {fileID: 0}
   dayCycleGradient:
     serializedVersion: 2
