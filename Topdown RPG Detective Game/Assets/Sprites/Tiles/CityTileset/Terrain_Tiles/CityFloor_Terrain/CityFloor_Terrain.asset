@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4e4fc705376343a3e65b25d94f0e2, type: 3}
+  m_Name: CityFloor_Terrain
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: 1835712203603852631, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: -1424704845148476565, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: -1360082645485237892, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 3498358508306332475, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 7374886461347939297, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 2724377887936111119, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 6213824637082949472, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 2511101088181618997, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 9026554238240162904, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 1343420324116351343, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: -6149323750201460825, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 2663636983224232903, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 5347243069558740455, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: -2978415005315853367, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
+  - {fileID: 2322621320125257663, guid: 7203b76d51ea9fa4496aa6090c6cf26f, type: 3}
