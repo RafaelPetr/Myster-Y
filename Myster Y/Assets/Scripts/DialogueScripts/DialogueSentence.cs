@@ -9,7 +9,7 @@ public class DialogueSentence : DialogueElement {
 	[TextArea(3, 10)]
     public string text;
 
-    public override void ExecuteElement() {
+    /*public override void ExecuteElement() {
         defineManager();
 
         dialogueManager.choiceBox.gameObject.SetActive(false);
@@ -22,6 +22,6 @@ public class DialogueSentence : DialogueElement {
 
     public override void CompleteWrite() {
         dialogueManager.FinishWrite(text,dialogueManager.sentenceText);
-    }
+    }*/
 
 }

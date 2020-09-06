@@ -12,7 +12,7 @@ public class DialogueChoice : DialogueElement {
     public string[] possibilities = new string[3];
     public Dialogue[] optionDialogues = new Dialogue[3];
 
-    public override void ExecuteElement() {
+    /*public override void ExecuteElement() {
         defineManager();
 
         dialogueManager.activeChoice = this;
@@ -32,6 +32,6 @@ public class DialogueChoice : DialogueElement {
 
     public override void CompleteWrite() {
         dialogueManager.FinishWrite(contextText,dialogueManager.choiceContext);
-    }
+    }*/
 
 }

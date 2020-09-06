@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour {
 		activeSource = dialogueSource;
 		Dialogue dialogue = activeSource.StartDialogue();
 		if (activeWriteElement != null) {
-			activeWriteElement.CompleteWrite();
+			//activeWriteElement.CompleteWrite();
 		}
 		else if (!inChoice) {
             if (!inDialogue) {
@@ -57,15 +57,15 @@ public class DialogueManager : MonoBehaviour {
 
 		animator.SetBool("IsOpen", true);
 
-		sentences = dialogue.dialogueSentences;
-		choices = dialogue.dialogueChoices;
+		//sentences = dialogue.dialogueSentences;
+		//choices = dialogue.dialogueChoices;
 
 		elements.Clear();
 
 		int sentenceIndex = 0;
 		int choiceIndex = 0;
 
-		foreach (DialogueSceneScript element in dialogue.dialogueSceneScript)
+		/*foreach (DialogueSceneScript element in dialogue.dialogueSceneScript)
 		{
 			switch(element) {
 				case DialogueSceneScript.DialogueSentence:
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour {
 					choiceIndex++;
 					break;
 			}
-		}	
+		}*/
 		ExecuteNextElement();
 	}
 
@@ -89,7 +89,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 		DialogueElement element = elements.Dequeue();
 		activeWriteElement = element;
-		element.ExecuteElement();
+		//element.ExecuteElement();
 	}
 
 	public void StartWriting(string text,Text box) {

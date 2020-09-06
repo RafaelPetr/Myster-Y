@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum DialogueSceneScript{DialogueSentence,DialogueChoice}
+[CreateAssetMenu]
+public class Dialogue : ScriptableObject{
+	public List<DialogueElement> dialogueElements = new List<DialogueElement>();
 
-[System.Serializable]
-public class Dialogue {
-	public DialogueSceneScript[] dialogueSceneScript;
-	public List<DialogueSentence> dialogueSentences;
-	public List<DialogueChoice> dialogueChoices;
+	public void NewSentence() {
+		dialogueElements.Add(new DialogueSentence());
+		Debug.Log(dialogueElements);
+	}
+
+	private void Awake() {
+		Debug.Log(dialogueElements[0]);
+	}
 
 }

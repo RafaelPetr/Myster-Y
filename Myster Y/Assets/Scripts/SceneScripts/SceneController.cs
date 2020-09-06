@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour {
     public Animator transition;
     public float transitionTime = 1;
     public PlayerController controller;
+
     public void Load(string scene, string spawn) {
         StartCoroutine(LoadLevel(scene, spawn));
     }
@@ -17,7 +18,15 @@ public class SceneController : MonoBehaviour {
         controller.inTransition = true;
         transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
+        if (LocalizationManager.instance.GetIsReady()) {
+            yield return new WaitForSeconds(transitionTime);
+        }
+
+        else {
+            while (!LocalizationManager.instance.GetIsReady()) {
+                yield return null;
+            }
+        }
 
         SceneManager.LoadScene(scene);
         spawner = spawn;

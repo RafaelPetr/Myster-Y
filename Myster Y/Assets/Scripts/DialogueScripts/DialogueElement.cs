@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class DialogueElement {
+[System.Serializable]
+public class DialogueElement {
     
     [System.NonSerialized]public DialogueManager dialogueManager;
     public Sprite icon;
@@ -12,6 +13,6 @@ public abstract class DialogueElement {
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
     }
 
-    public abstract void ExecuteElement();
-    public abstract void CompleteWrite();
+    //public void ExecuteElement();
+    //public void CompleteWrite();
 }
