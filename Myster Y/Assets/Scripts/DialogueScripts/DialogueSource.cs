@@ -5,18 +5,14 @@ using UnityEngine;
 public abstract class DialogueSource : MonoBehaviour {
     [System.NonSerialized]public PlayerInventory inventory;
     [System.NonSerialized]public bool inDialogue;
-    public void Awake()
-    {
+    
+    public void Awake() {
         inventory = GameObject.Find("Detective").GetComponent<PlayerInventory>();
     }
 
-    public Dialogue StartDialogue() {
-        inDialogue = true;
-        return DefineDialogue();
-    }
+    public void SetInDialogue(bool dialogueStatus) {
+        inDialogue = dialogueStatus;
 
-    public void EndDialogue() {
-        inDialogue = false;
     }
 
     public abstract Dialogue DefineDialogue();

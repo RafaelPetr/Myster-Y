@@ -10,7 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8844335e90655048b0020fbca893f53, type: 3}
-  m_Name: DialogueTest
+  m_Name: Default Broken Light
   m_EditorClassIdentifier: 
-  dialogueElements:
-  - icon: {fileID: 0}
+  key: Default Broken Light
+  sentences:
+  - a: 
+    character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
+    text: "T\xE1 quebrado"
+  choices: []
+  elementsOrder: 00000000
+  elementTypes:
+  - Sentence
+  - Choice

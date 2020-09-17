@@ -13,6 +13,6 @@ public class LocalizedText : MonoBehaviour
 
     void DefineText() {
         Text text = GetComponent<Text>();
-        text.text = LocalizationManager.instance.GetLocalizedValue(key);
+        text.text = LocalizationManager.instance.GetLocalizedValue(key,1);
     }
 }

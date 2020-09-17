@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ChoiceButtonHandler : MonoBehaviour, ISelectHandler {
-    private Button button;
+public class OptionButton : MonoBehaviour { //, ISelectHandler
+    /*private Button button;
     private DialogueManager dialogueManager;
     private EventSystem eventSystem;
     public int buttonChoiceNumber;
@@ -24,5 +24,5 @@ public class ChoiceButtonHandler : MonoBehaviour, ISelectHandler {
         if (dialogueManager.inChoice) {
             FindObjectOfType<DialogueManager>().ChoosePossibility(buttonChoiceNumber);
         }
-    }
+    }*/
 }

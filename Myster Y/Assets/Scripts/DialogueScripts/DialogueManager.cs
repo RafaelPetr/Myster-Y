@@ -4,24 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
+
+    public static DialogueManager instance;
+
+	[System.NonSerialized]public string localizationKey;
+	[System.NonSerialized]public int localizationIndex = -1;
+
 	public Animator animator;
-	public PlayerController controller;
-	public GameObject sentenceBox;
-	public GameObject choiceBox;
     public Text nameText;
 	public Text sentenceText;
-	public Text choiceContext;
-	public Button choicePossibility1;
-	public Button choicePossibility2;
-	public Button choicePossibility3;
+	public Button[] optionButtons = new Button[3];
 	public Image iconBox;
 
 	[System.NonSerialized]public bool inDialogue;
 	[System.NonSerialized]public bool inChoice;
-    [System.NonSerialized]public Button selectedChoice;
 
-	public DialogueElement activeWriteElement;
-	public DialogueChoice activeChoice;
+	public DialogueElement activeElement;
+	
 	private List<DialogueSentence> sentences;
 	private List<DialogueChoice> choices;
 	private Queue<DialogueElement> elements;
@@ -29,103 +28,113 @@ public class DialogueManager : MonoBehaviour {
 	private DialogueSource activeSource;
 
 	void Start() {
+
+		if (instance == null) {
+            instance = this;
+        }
+        else if (instance != this) {
+            Destroy(gameObject);
+        }
+
 		elements = new Queue<DialogueElement>();
 	}
 
 	public void ReceiveInteract(DialogueSource dialogueSource) {
 		activeSource = dialogueSource;
-		Dialogue dialogue = activeSource.StartDialogue();
-		if (activeWriteElement != null) {
-			//activeWriteElement.CompleteWrite();
+
+		if (activeElement != null) {
+			activeElement.Complete();
 		}
-		else if (!inChoice) {
-            if (!inDialogue) {
-                StartDialogue(dialogue);
-            }
-            else { 
-                ExecuteNextElement();
-            }
-        }
-        else {
-            selectedChoice.onClick.Invoke();
-        }
+
+		else {
+			if (!inDialogue) {
+				Dialogue dialogue = activeSource.DefineDialogue();
+				localizationKey = dialogue.key;
+				StartDialogue(dialogue);
+			}
+			else {
+				ExecuteNextElement();
+			}
+		}
 	}
 
 	public void StartDialogue(Dialogue dialogue) {
 		inDialogue = true;
-		controller.inDialogue = true;
+		activeSource.SetInDialogue(true);
 
-		animator.SetBool("IsOpen", true);
-
-		//sentences = dialogue.dialogueSentences;
-		//choices = dialogue.dialogueChoices;
+		sentences = dialogue.sentences;
+		choices = dialogue.choices;
 
 		elements.Clear();
 
 		int sentenceIndex = 0;
 		int choiceIndex = 0;
 
-		/*foreach (DialogueSceneScript element in dialogue.dialogueSceneScript)
-		{
-			switch(element) {
-				case DialogueSceneScript.DialogueSentence:
+		foreach (int element in dialogue.elementsOrder) {
+			switch(dialogue.elementTypes[element]) {
+				case "Sentence":
 					elements.Enqueue(sentences[sentenceIndex]);
 					sentenceIndex++;
 					break;
-				case DialogueSceneScript.DialogueChoice:
+				case "Choice":
 					elements.Enqueue(choices[choiceIndex]);
 					choiceIndex++;
 					break;
 			}
-		}*/
+		}
 		ExecuteNextElement();
 	}
 
 	public void ExecuteNextElement() {
-		if (elements.Count == 0)
-		{
+		Debug.Log(elements.Count);
+		if (elements.Count == 0) {
 			EndDialogue();
 			return;
 		}
-		DialogueElement element = elements.Dequeue();
-		activeWriteElement = element;
-		//element.ExecuteElement();
+		activeElement = elements.Dequeue();
+		activeElement.Execute();
 	}
 
-	public void StartWriting(string text,Text box) {
+	public void StartWriting(string text) {
 		StopAllCoroutines();
-		StartCoroutine(Write(text,box));
+		StartCoroutine(Write(text));
 	}
 
-
-	IEnumerator Write(string text,Text box) {
-		box.text = "";
-		foreach (char letter in text.ToCharArray())
-		{
-			box.text += letter;
+	IEnumerator Write(string text) {
+		sentenceText.text = "";
+		foreach (char letter in text.ToCharArray()) {
+			sentenceText.text += letter;
 			yield return new WaitForSeconds(0.02f);
 		}
-		activeWriteElement = null;
+		activeElement = null;
 	}
 
-	public void FinishWrite(string text,Text box) {
+	public void FinishWrite(string text) {
 		StopAllCoroutines();
-		box.text = text;
-		activeWriteElement = null;
+		sentenceText.text = text;
+		activeElement = null;
 	}
 
-	public void ChoosePossibility(int choiceNumber) {
-		inChoice = false;
-		selectedChoice = null;
-		GameObject myEventSystem = GameObject.Find("EventSystem");
- 		myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-		StartDialogue(activeChoice.optionDialogues[choiceNumber]);
+	public void InitDialogueBox(DialogueElement element) {
+		animator.SetBool("IsOpen", true);
+
+		nameText.text = element.character.name;
+		iconBox.sprite = element.character.icon;
+	}
+
+	public void DefineChoiceButtons(List<string> options) {
+
+		for (int i = 0; i < options.Count; i++) {
+			optionButtons[i].GetComponentInChildren<Text>().text = options[i];
+		}
+
 	}
 
 	void EndDialogue() {
 		animator.SetBool("IsOpen", false);
 		inDialogue = false;
-		controller.inDialogue = false;
-		activeSource.EndDialogue();
+		localizationKey = null;
+		localizationIndex = -1;
+		activeSource.SetInDialogue(false);
 	}
 }

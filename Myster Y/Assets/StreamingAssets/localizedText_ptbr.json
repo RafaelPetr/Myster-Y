@@ -1,14 +1,1 @@
-{"items":
-    [
-        {
-            "key": "Test1",
-            "value": "esse é o primeiro teste"
-        },
-
-        {
-            "key": "Test2",
-            "value": "esse é o segundo teste"
-        }
-
-    ]
-}
+{"items":[{"key":"Key Broken Light","value":["Consertado"]},{"key":"Default Broken Light","value":["Tá quebrado","Tá nada guri","Bah vdd","a","b","c"]}]}

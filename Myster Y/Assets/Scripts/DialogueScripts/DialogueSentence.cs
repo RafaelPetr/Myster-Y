@@ -5,23 +5,21 @@ using UnityEngine.UI;
 
 [System.Serializable]
 public class DialogueSentence : DialogueElement {
-    public string name;
-	[TextArea(3, 10)]
-    public string text;
 
-    /*public override void ExecuteElement() {
-        defineManager();
+    [TextArea(3,10)]public string text;
 
-        dialogueManager.choiceBox.gameObject.SetActive(false);
-        dialogueManager.sentenceBox.gameObject.SetActive(true);
+    public override void Execute() {
+        DialogueManager.instance.localizationIndex++;
 
-        dialogueManager.nameText.text = name;
-		dialogueManager.iconBox.sprite = icon;
-        dialogueManager.StartWriting(text,dialogueManager.sentenceText);
+        DialogueManager.instance.InitDialogueBox(this);
+
+        string localizedText = LocalizationManager.instance.GetLocalizedValue(DialogueManager.instance.localizationKey,DialogueManager.instance.localizationIndex);
+        DialogueManager.instance.StartWriting(localizedText);
     }
 
-    public override void CompleteWrite() {
-        dialogueManager.FinishWrite(text,dialogueManager.sentenceText);
-    }*/
+    public override void Complete() {
+        string text = LocalizationManager.instance.GetLocalizedValue(DialogueManager.instance.localizationKey,DialogueManager.instance.localizationIndex);
+        DialogueManager.instance.FinishWrite(text);
+    }
 
 }

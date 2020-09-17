@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
-public class DialogueElement {
-    
-    [System.NonSerialized]public DialogueManager dialogueManager;
-    public Sprite icon;
+public abstract class DialogueElement {
 
-    public void defineManager() {
-        dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-    }
+    public DialogueCharacter character;
 
-    //public void ExecuteElement();
-    //public void CompleteWrite();
+    public abstract void Execute();
+
+    public abstract void Complete();
+
 }

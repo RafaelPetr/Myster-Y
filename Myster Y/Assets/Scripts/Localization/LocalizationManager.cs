@@ -8,7 +8,7 @@ public class LocalizationManager : MonoBehaviour {
 
     public static LocalizationManager instance;
 
-    private Dictionary<string,string> localizedText;
+    private Dictionary<string,string[]> localizedText;
 
     private bool isReady = false;
 
@@ -26,6 +26,9 @@ public class LocalizationManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        LoadLocalizedText("localizedText_ptbr.json");
+        ChangeLocalization.Invoke();
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -42,14 +45,14 @@ public class LocalizationManager : MonoBehaviour {
     }
 
     public void LoadLocalizedText(string fileName) {
-        localizedText = new Dictionary<string, string>();
+        localizedText = new Dictionary<string, string[]>();
         string filePath = Path.Combine(Application.streamingAssetsPath,fileName);
 
         if (File.Exists(filePath)) {
             string dataAsJson = File.ReadAllText(filePath);
             LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
-            for (int i = 0; i < loadedData.items.Length; i++) {
+            for (int i = 0; i < loadedData.items.Count; i++) {
                 localizedText.Add(loadedData.items[i].key,loadedData.items[i].value);
             }
 
@@ -62,11 +65,11 @@ public class LocalizationManager : MonoBehaviour {
         isReady = true;
     }
 
-    public string GetLocalizedValue (string key) {
+    public string GetLocalizedValue (string key, int textIndex) {
         string result = missingTextString;
 
-        if (localizedText.ContainsKey(key)) {
-            result = localizedText[key];
+        if (localizedText.ContainsKey(key) && textIndex < localizedText[key].Length) {
+            result = localizedText[key][textIndex];
         }
 
         return result;

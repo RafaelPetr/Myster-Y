@@ -3,19 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrokenLightMetroDialogue : DialogueSource
-{
+public class BrokenLightMetroDialogue : DialogueSource {
     public Dialogue defaultDialogue;
     public Dialogue keyDialogue;
 
-    public override Dialogue DefineDialogue()
-    {
-        if (PlayerInventory.key)
-        {
+    public override Dialogue DefineDialogue() {
+        if (PlayerInventory.key) {
             return keyDialogue;
         }
-        else
-        {
+        else {
             PlayerInventory.key = true;
             return defaultDialogue;
         }
