@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class OptionButton : MonoBehaviour { //, ISelectHandler
-    /*private Button button;
+public class OptionButton : MonoBehaviour, ISelectHandler {
+    private Button button;
     private DialogueManager dialogueManager;
     private EventSystem eventSystem;
-    public int buttonChoiceNumber;
+    public int choiceNumber;
 
     void Awake() {
         button = GetComponent<Button>();
@@ -17,12 +17,12 @@ public class OptionButton : MonoBehaviour { //, ISelectHandler
     }
 
     public void OnSelect(BaseEventData eventData) {
-        dialogueManager.selectedChoice = button;
+        //dialogueManager.selectedChoice = button;
     }
 
     public void SendChoice() {
         if (dialogueManager.inChoice) {
-            FindObjectOfType<DialogueManager>().ChoosePossibility(buttonChoiceNumber);
+            FindObjectOfType<DialogueManager>().PickOption(choiceNumber);
         }
-    }*/
+    }
 }

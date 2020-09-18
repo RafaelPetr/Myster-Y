@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: Key Broken Light
   sentences:
-  - a: 
-    character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
+  - character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
     text: Consertado
   choices: []
   elementsOrder: 00000000

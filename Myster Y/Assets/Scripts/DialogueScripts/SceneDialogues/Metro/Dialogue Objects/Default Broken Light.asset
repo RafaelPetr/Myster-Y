@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Default Broken Light
   m_EditorClassIdentifier: 
   key: Default Broken Light
-  sentences:
-  - a: 
-    character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
-    text: "T\xE1 quebrado"
-  choices: []
-  elementsOrder: 00000000
+  sentences: []
+  choices:
+  - character: {fileID: 11400000, guid: a02f743815ccf8a409d6861a9dbd7657, type: 2}
+    options:
+    - text: a
+      linkedDialogue: {fileID: 11400000, guid: bc947898e1d90484e8c68ca4587669c7, type: 2}
+    - text: b
+      linkedDialogue: {fileID: 11400000, guid: bc947898e1d90484e8c68ca4587669c7, type: 2}
+    - text: c
+      linkedDialogue: {fileID: 11400000, guid: bc947898e1d90484e8c68ca4587669c7, type: 2}
+  elementsOrder: 01000000
   elementTypes:
   - Sentence
   - Choice

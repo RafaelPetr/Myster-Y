@@ -7,9 +7,6 @@ public class DialogueManager : MonoBehaviour {
 
     public static DialogueManager instance;
 
-	[System.NonSerialized]public string localizationKey;
-	[System.NonSerialized]public int localizationIndex = -1;
-
 	public Animator animator;
     public Text nameText;
 	public Text sentenceText;
@@ -19,7 +16,7 @@ public class DialogueManager : MonoBehaviour {
 	[System.NonSerialized]public bool inDialogue;
 	[System.NonSerialized]public bool inChoice;
 
-	public DialogueElement activeElement;
+	private string activeText;
 	
 	private List<DialogueSentence> sentences;
 	private List<DialogueChoice> choices;
@@ -42,14 +39,13 @@ public class DialogueManager : MonoBehaviour {
 	public void ReceiveInteract(DialogueSource dialogueSource) {
 		activeSource = dialogueSource;
 
-		if (activeElement != null) {
-			activeElement.Complete();
+		if (activeText != null) {
+			FinishWrite(activeText);
 		}
 
 		else {
 			if (!inDialogue) {
-				Dialogue dialogue = activeSource.DefineDialogue();
-				localizationKey = dialogue.key;
+				Dialogue dialogue = activeSource.BuildDialogue();
 				StartDialogue(dialogue);
 			}
 			else {
@@ -59,6 +55,8 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void StartDialogue(Dialogue dialogue) {
+		animator.SetBool("IsOpen", true);
+
 		inDialogue = true;
 		activeSource.SetInDialogue(true);
 
@@ -86,16 +84,16 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void ExecuteNextElement() {
-		Debug.Log(elements.Count);
 		if (elements.Count == 0) {
 			EndDialogue();
 			return;
 		}
-		activeElement = elements.Dequeue();
-		activeElement.Execute();
+		DialogueElement element = elements.Dequeue();
+		element.Execute();
 	}
 
 	public void StartWriting(string text) {
+		activeText = text;
 		StopAllCoroutines();
 		StartCoroutine(Write(text));
 	}
@@ -106,26 +104,33 @@ public class DialogueManager : MonoBehaviour {
 			sentenceText.text += letter;
 			yield return new WaitForSeconds(0.02f);
 		}
-		activeElement = null;
+		activeText = null;
 	}
 
 	public void FinishWrite(string text) {
 		StopAllCoroutines();
 		sentenceText.text = text;
-		activeElement = null;
+		activeText = null;
 	}
 
-	public void InitDialogueBox(DialogueElement element) {
-		animator.SetBool("IsOpen", true);
+	public void PickOption(int choiceIndex) {
+
+	}
+
+	public void UpdateDialogueBox(DialogueElement element) {
+		for (int i = 0; i < optionButtons.Length; i++) {
+			optionButtons[i].gameObject.active = false;
+		}
 
 		nameText.text = element.character.name;
 		iconBox.sprite = element.character.icon;
 	}
 
-	public void DefineChoiceButtons(List<string> options) {
+	public void DefineChoiceButtons(List<DialogueOption> options) {
 
 		for (int i = 0; i < options.Count; i++) {
-			optionButtons[i].GetComponentInChildren<Text>().text = options[i];
+			optionButtons[i].gameObject.active = true;
+			optionButtons[i].GetComponentInChildren<Text>().text = options[i].text;
 		}
 
 	}
@@ -133,8 +138,6 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue() {
 		animator.SetBool("IsOpen", false);
 		inDialogue = false;
-		localizationKey = null;
-		localizationIndex = -1;
 		activeSource.SetInDialogue(false);
 	}
 }

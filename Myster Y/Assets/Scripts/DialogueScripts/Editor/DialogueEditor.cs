@@ -16,6 +16,7 @@ public class DialogueEditor : Editor {
 
     public override void OnInspectorGUI() {
 
+
         Dialogue dialogue = (Dialogue)target;
 
         if (string.IsNullOrEmpty(keyString)) {
@@ -49,6 +50,8 @@ public class DialogueEditor : Editor {
                     break;
             }
         }
+        
+        EditorUtility.SetDirty(dialogue);
     } 
 
     private void SentencesTab(Dialogue dialogue) {
@@ -75,25 +78,34 @@ public class DialogueEditor : Editor {
 
     private void ChoicesTab(Dialogue dialogue) {
         for (int i = 0; i < dialogue.choices.Count; i++) {
-            for (int j = 0; j < dialogue.choices[i].options.Count; j++) {
+            dialogue.choices[i].character = (DialogueCharacter)EditorGUILayout.ObjectField("",dialogue.choices[i].character,typeof(DialogueCharacter));
+            if (dialogue.choices[i].character != null) {
                 GUILayout.BeginHorizontal();
-                    dialogue.choices[i].options[j] = GUILayout.TextArea(dialogue.choices[i].options[j],GUILayout.Width(170));
-                    if (GUILayout.Button("Remove Option")) {
-                        dialogue.choices[i].RemoveOption(j);
+                    if (GUILayout.Button("Add Option")) {
+                        dialogue.choices[i].AddOption();
+                    }
+                    
+                    if (GUILayout.Button("Delete Element")) {
+                        dialogue.RemoveChoice(i);
                     }
                 GUILayout.EndHorizontal();
             }
-            dialogue.choices[i].character = (DialogueCharacter)EditorGUILayout.ObjectField("",dialogue.choices[i].character,typeof(DialogueCharacter));
-            GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Add Option")) {
-                    dialogue.choices[i].AddOption();
-                }
-                
-                if (GUILayout.Button("Delete Element")) {
-                    dialogue.RemoveChoice(i);
-                }
-            GUILayout.EndHorizontal();
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+            if (dialogue.choices[i].character != null) {
+                for (int j = 0; j < dialogue.choices[i].options.Count; j++) {
+                    GUILayout.Label("Option " + (j+1).ToString());
+                    GUILayout.BeginHorizontal();
+                        GUILayout.Label("Text:");
+                        dialogue.choices[i].options[j].text = GUILayout.TextArea(dialogue.choices[i].options[j].text,GUILayout.Width(170));
+                    GUILayout.EndHorizontal();
+                    dialogue.choices[i].options[j].linkedDialogue = (Dialogue)EditorGUILayout.ObjectField("",dialogue.choices[i].options[j].linkedDialogue,typeof(Dialogue)); 
+                    if (GUILayout.Button("Remove Option")) {
+                        dialogue.choices[i].RemoveOption(j);
+                    }
+                    EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+                }
+            }
+            
         }
 
         GUILayout.Label("Choices: " + dialogue.choices.Count.ToString());
@@ -190,8 +202,8 @@ public class DialogueEditor : Editor {
                     break;
 
                 case "Choice":
-                    foreach (string option in dialogue.choices[choiceIndex].options) {
-                        valueList.Add(option);
+                    for (int i = 0; i < dialogue.choices[choiceIndex].options.Count; i++) {
+                        valueList.Add(dialogue.choices[choiceIndex].options[i].text);
                     }
                     break;
 
@@ -200,4 +212,5 @@ public class DialogueEditor : Editor {
 
         return new LocalizationItem(dialogue.key,valueList.ToArray());
     }
+
 }

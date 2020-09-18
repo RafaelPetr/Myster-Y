@@ -9,6 +9,4 @@ public abstract class DialogueElement {
 
     public abstract void Execute();
 
-    public abstract void Complete();
-
 }
