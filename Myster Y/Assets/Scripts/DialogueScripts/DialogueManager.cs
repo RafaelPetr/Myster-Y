@@ -17,9 +17,11 @@ public class DialogueManager : MonoBehaviour {
 	[System.NonSerialized]public bool inChoice;
 
 	private string activeText;
+	[System.NonSerialized]public Button selectedOption;
 	
 	private List<DialogueSentence> sentences;
 	private List<DialogueChoice> choices;
+	private List<DialogueOption> activeOptions;
 	private Queue<DialogueElement> elements;
 
 	private DialogueSource activeSource;
@@ -43,13 +45,17 @@ public class DialogueManager : MonoBehaviour {
 			FinishWrite(activeText);
 		}
 
+		else if (inChoice) {
+			selectedOption.onClick.Invoke();
+		}
+
 		else {
-			if (!inDialogue) {
-				Dialogue dialogue = activeSource.BuildDialogue();
-				StartDialogue(dialogue);
+			if (inDialogue) {
+				ExecuteNextElement();
 			}
 			else {
-				ExecuteNextElement();
+				Dialogue dialogue = activeSource.BuildDialogue();
+				StartDialogue(dialogue);
 			}
 		}
 	}
@@ -114,7 +120,13 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void PickOption(int choiceIndex) {
+		inChoice = false;
+		selectedOption = null;
 
+		GameObject myEventSystem = GameObject.Find("EventSystem");
+ 		myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+
+		StartDialogue(activeOptions[choiceIndex].linkedDialogue);
 	}
 
 	public void UpdateDialogueBox(DialogueElement element) {
@@ -127,12 +139,14 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void DefineChoiceButtons(List<DialogueOption> options) {
+		activeOptions = options;
 
 		for (int i = 0; i < options.Count; i++) {
 			optionButtons[i].gameObject.active = true;
 			optionButtons[i].GetComponentInChildren<Text>().text = options[i].text;
 		}
 
+		optionButtons[0].Select();
 	}
 
 	void EndDialogue() {

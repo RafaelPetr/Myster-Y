@@ -29,7 +29,6 @@ public class LocalizationManager : MonoBehaviour {
         LoadLocalizedText("localizedText_ptbr.json");
         ChangeLocalization.Invoke();
 
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update() {
