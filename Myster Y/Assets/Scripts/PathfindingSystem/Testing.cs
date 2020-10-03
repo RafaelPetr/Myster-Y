@@ -42,7 +42,7 @@ public class Testing : MonoBehaviour {
         List<PathNode> path = pathfinding.FindPath(0, 0, x, y);
         if (path != null) {
             for (int i=0; i<path.Count - 1; i++) {
-                Debug.DrawLine(new Vector3(path[i].x, path[i].y) * .32f + Vector3.one * .16f, new Vector3(path[i+1].x, path[i+1].y) * .32f + Vector3.one * .16f, Color.green, 16f);
+                Debug.DrawLine(new Vector3(path[i].x, path[i].y) * 1f + Vector3.one * .5f, new Vector3(path[i+1].x, path[i+1].y) * 1f + Vector3.one * .5f, Color.green, .5f);
             }
         }
         characterPathfinding.SetTargetPosition(routineManager.currentDestination);

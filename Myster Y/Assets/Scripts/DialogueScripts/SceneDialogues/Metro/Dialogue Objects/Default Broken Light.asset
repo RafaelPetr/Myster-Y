@@ -15,9 +15,9 @@ MonoBehaviour:
   key: Default Broken Light
   sentences:
   - character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
-    text: "T\xE1 quebrado garai"
+    text: "T\xE1 quebrado"
   - character: {fileID: 11400000, guid: a02f743815ccf8a409d6861a9dbd7657, type: 2}
-    text: "T\xE1 nada guri"
+    text: "T\xE1 nada"
   - character: {fileID: 11400000, guid: 1b8c431e7bcdbe44c8c1c7eed493baa2, type: 2}
     text: Bah vdd
   choices:

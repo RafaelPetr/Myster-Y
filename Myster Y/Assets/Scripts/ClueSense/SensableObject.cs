@@ -19,4 +19,6 @@ public class SensableObject : MonoBehaviour {
     private void HideClue() {
         particleSystem.enableEmission = false;
     }
+
+    
 }

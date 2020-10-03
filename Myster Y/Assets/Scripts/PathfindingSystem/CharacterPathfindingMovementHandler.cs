@@ -17,7 +17,7 @@ using CodeMonkey.Utils;
 
 public class CharacterPathfindingMovementHandler : MonoBehaviour {
 
-    private float speed = 1f;
+    private float speed = 3f;
 
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
@@ -51,12 +51,13 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour {
     private void HandleMovement() {
         if (pathVectorList != null) {
             Vector3 targetPosition = pathVectorList[currentPathIndex];
-            if (Vector3.Distance(transform.position, targetPosition) > .032f) {
+            if (Vector3.Distance(transform.position, targetPosition) > .05f) {
                 Vector3 moveDir = (targetPosition - transform.position).normalized;
 
                 float distanceBefore = Vector3.Distance(transform.position, targetPosition);
                 transform.position = transform.position + moveDir * speed * Time.deltaTime;
-            } else {
+            } 
+            else {
                 currentPathIndex++;
                 if (currentPathIndex >= pathVectorList.Count) {
                     StopMoving();

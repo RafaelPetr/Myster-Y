@@ -40,20 +40,20 @@ public class PlayerController : MonoBehaviour {
                     animator.SetFloat("SpeedY", 0);
                     animator.SetFloat("IdleDir", Input.GetAxisRaw("Horizontal"));
 
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.16f, 0f, 0f), .1f, stopMove)) {
-                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
+                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.5f, 0f, 0f), .1f, stopMove)) {
+                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                     }
-                    interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal") * 0.32f, movePoint.position.y, 0f);
+                    interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal"), movePoint.position.y, 0f);
                 }
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
                     animator.SetFloat("SpeedX", 0);
                     animator.SetFloat("SpeedY", Input.GetAxisRaw("Vertical") * runSpeed);
                     animator.SetFloat("IdleDir", Input.GetAxisRaw("Vertical") * 2);
 
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.16f, 0f), .1f, stopMove)) {
-                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.5f, 0f), .1f, stopMove)) {
+                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                     }
-                    interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+                    interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical"), 0f);
                 }
                 else {
                     animator.SetFloat("SpeedX", 0);
