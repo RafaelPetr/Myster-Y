@@ -6,13 +6,14 @@ using UnityEngine;
 public class BrokenLightMetroDialogue : DialogueSource {
     public Dialogue defaultDialogue;
     public Dialogue keyDialogue;
+    public Item keyItem;
 
     public override Dialogue DefineDialogue() {
-        if (PlayerInventory.key) {
+        if (PlayerInventory.instance.FindItem(keyItem)) {
             return keyDialogue;
         }
         else {
-            PlayerInventory.key = true;
+            keyItem.PickUp();
             return defaultDialogue;
         }
     }

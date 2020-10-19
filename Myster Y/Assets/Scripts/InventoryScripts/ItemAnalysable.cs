@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Inventory/ItemObject")]
-public class ItemObject : ScriptableObject {
+[CreateAssetMenu(menuName = "Inventory/ItemAnalysable")]
+public class ItemAnalysable : ScriptableObject {
 
     public void Analyse() {
 
