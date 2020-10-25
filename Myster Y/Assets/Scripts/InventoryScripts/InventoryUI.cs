@@ -3,25 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour {
-    public Transform itemsParent;
+    public Transform inventoryTopcoatRight;
     InventorySlot[] slots;
 
     private PlayerInventory inventory;
 
+    private Transform activePanel;
+
     void Start() {
         inventory = PlayerInventory.instance;
-        inventory.onInventoryChangedCallback += UpdateUI;
-
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        inventory.onInventoryUpdateCallback += UpdateUI;
     }
 
     void UpdateUI() {
-        for (int i = 0; i < slots.Length; i++) {
-            if (i < inventory.items.Count) {
-                slots[i].AddItem(inventory.items[i]);
+
+        if (inventory.UI_index != -1) {
+            
+            if (activePanel != null) {
+                activePanel.gameObject.SetActive(false);
             }
-            else {
-                slots[i].ClearSlot();
+
+            activePanel = GetComponent<Transform>().GetChild(inventory.UI_index);
+            activePanel.gameObject.SetActive(true);
+            Transform itemsParent = activePanel.GetChild(0);
+            slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+            for (int i = 0; i < slots.Length; i++) {
+                if (i < inventory.items.Count) {
+                    slots[i].AddItem(inventory.items[i]);
+                }
+                else {
+                    slots[i].ClearSlot();
+                }
+            }
+        }
+        
+        else {
+            if (activePanel != null) {
+                activePanel.gameObject.SetActive(false);
             }
         }
     }

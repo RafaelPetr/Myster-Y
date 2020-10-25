@@ -10,7 +10,8 @@ public class DialogueManager : MonoBehaviour {
 	public Animator animator;
     public Text nameText;
 	public Text sentenceText;
-	public Button[] optionButtons = new Button[3];
+	public GameObject options;
+	private Button[] optionButtons = new Button[3];
 	public Image iconBox;
 
 	[System.NonSerialized]public bool inDialogue;
@@ -35,10 +36,14 @@ public class DialogueManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
+		optionButtons = options.GetComponentsInChildren<Button>();
+
 		elements = new Queue<DialogueElement>();
 	}
 
 	public void ReceiveInteract(DialogueSource dialogueSource) {
+		options.SetActive(true);
+
 		activeSource = dialogueSource;
 
 		if (activeText != null) {
@@ -153,5 +158,6 @@ public class DialogueManager : MonoBehaviour {
 		animator.SetBool("IsOpen", false);
 		inDialogue = false;
 		activeSource.SetInDialogue(false);
+		options.SetActive(false);
 	}
 }

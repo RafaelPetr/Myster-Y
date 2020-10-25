@@ -320,8 +320,5 @@ MonoBehaviour:
   animator: {fileID: 0}
   nameText: {fileID: 0}
   sentenceText: {fileID: 0}
-  optionButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  options: {fileID: 0}
   iconBox: {fileID: 0}
