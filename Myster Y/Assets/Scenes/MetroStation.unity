@@ -38827,7 +38827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  animator: {fileID: 60413816582850722}
 --- !u!4 &1250290369
 Transform:
   m_ObjectHideFlags: 0
@@ -40908,6 +40907,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2689663539753123208, guid: 329ea23e84b8d6f4fa24b4f6566b988c,
+        type: 3}
+      propertyPath: m_Name
+      value: InventoryUI
+      objectReference: {fileID: 0}
     - target: {fileID: 2864557703636854974, guid: 329ea23e84b8d6f4fa24b4f6566b988c,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -40968,6 +40972,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3743671957181917785, guid: 329ea23e84b8d6f4fa24b4f6566b988c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 60413816582850722}
     - target: {fileID: 3817520603000999042, guid: 329ea23e84b8d6f4fa24b4f6566b988c,
         type: 3}
       propertyPath: m_IsActive
@@ -41758,7 +41767,7 @@ PrefabInstance:
     - target: {fileID: 6923990220691953217, guid: e73b65992d7fe3340a82202d1f231132,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -231
+      value: -945
       objectReference: {fileID: 0}
     - target: {fileID: 6923990220691953217, guid: e73b65992d7fe3340a82202d1f231132,
         type: 3}

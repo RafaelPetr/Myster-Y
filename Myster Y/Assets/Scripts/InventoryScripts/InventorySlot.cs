@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour {
+public class InventorySlot : MonoBehaviour, ISelectHandler {
     Item item;
 
     public Image icon;
+
+    public void OnSelect(BaseEventData eventData) {
+        InventoryUI.instance.selectedSlot = this;
+    }
 
     public void AddItem(Item newItem) {
         item = newItem;

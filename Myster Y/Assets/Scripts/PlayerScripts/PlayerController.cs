@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
         }
 
 
-        if (!DialogueManager.instance.inDialogue && !inTransition && !PlayerInventory.instance.open) {
+        if (!DialogueManager.instance.inDialogue && !inTransition && !InventoryUI.instance.open) {
             transform.position = Vector3.MoveTowards(transform.position,movePoint.position,moveSpeed*Time.deltaTime *runSpeed);
             if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
 
