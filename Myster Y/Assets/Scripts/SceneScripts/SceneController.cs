@@ -5,10 +5,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class SceneController : MonoBehaviour {
+    public static SceneController instance;
+
     public static string spawner;
     public Animator transition;
     public float transitionTime = 1;
     public PlayerController controller;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
 
     public void Load(string scene, string spawn) {
         StartCoroutine(LoadLevel(scene, spawn));

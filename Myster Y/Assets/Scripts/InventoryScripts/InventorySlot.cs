@@ -24,6 +24,6 @@ public class InventorySlot : MonoBehaviour, ISelectHandler {
     }
 
     public void AnalyseItem() {
-        Debug.Log("Analyse: " + item);
+        AnalyseManager.instance.StartAnalyse(item);
     }
 }

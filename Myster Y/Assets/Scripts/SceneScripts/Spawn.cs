@@ -9,13 +9,12 @@ public class Spawn : MonoBehaviour {
     [SerializeField]private int idleDirection = 0;
 
     void Awake() {
-        playerPos = GameObject.Find("Detective").GetComponent<Transform>();
-        movePoint = GameObject.Find("MovePoint").GetComponent<Transform>();
-        animator = GameObject.Find("Detective").GetComponent<Animator>();
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        movePoint = GameObject.FindGameObjectWithTag("movePoint").GetComponent<Transform>();
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
     void Start() {
-        if (name == SceneController.spawner)
-        {
+        if (name == SceneController.spawner) {
             playerPos.position = transform.position;
             movePoint.position = transform.position;
             animator.SetFloat("IdleDir",idleDirection);

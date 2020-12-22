@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public static PlayerController instance;
     public float moveSpeed = 5f;
     public bool inDialogue;
     public bool inTransition;
@@ -13,6 +14,15 @@ public class PlayerController : MonoBehaviour {
     public Transform interactPointer;
 
     private float runSpeed = 1;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start() {
@@ -31,7 +41,7 @@ public class PlayerController : MonoBehaviour {
         }
 
 
-        if (!DialogueManager.instance.inDialogue && !inTransition && !InventoryUI.instance.open) {
+        if (!DialogueManager.instance.inDialogue && !inTransition && !PlayerInventory.instance.open) {
             transform.position = Vector3.MoveTowards(transform.position,movePoint.position,moveSpeed*Time.deltaTime *runSpeed);
             if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
 

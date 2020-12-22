@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CityEntrance.unity
     guid: 85c8d5e864e806b4eab601e7b555ee37
+  - enabled: 1
+    path: Assets/Scenes/AnalyseItem.unity
+    guid: 2782ebc54fff9b44e9a906d175abe40a
   m_configObjects: {}
