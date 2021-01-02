@@ -17,28 +17,54 @@ public class AnalyseManager : MonoBehaviour {
 
     #endregion
 
-    public GameObject mainScene;
+    public GameObject detective;
     public GameObject analyseItemScene;
 
-    public Animator detectiveAnimator;
-    private float panelOpen;
+    public GameObject itemAnalyse;
+
+    private Animator detectiveAnimator;
+    private Animator handAnimator;
+
+    private int panelOpen;
 
     private bool analysing;
 
+    private void Start() {
+        detectiveAnimator = detective.GetComponent<Animator>();
+        handAnimator = analyseItemScene.GetComponentInChildren<Animator>();
+    }
+
     public void StartAnalyse(Item item) {
-        panelOpen = detectiveAnimator.GetFloat("InventoryPanel");
         analysing = true;
+        panelOpen = (int)detectiveAnimator.GetFloat("InventoryPanel");
+        analyseItemScene.transform.SetParent(null);
+
+        detective.SetActive(false);
         analyseItemScene.SetActive(true);
-        mainScene.SetActive(false);
+        InventoryUI.instance.UpdateUI(-1);
+
+        itemAnalyse.GetComponent<SpriteRenderer>().sprite = item.analyseSprite;
     }
 
     void Update() {
         if (Input.GetButtonDown("Back") && analysing) {
-            mainScene.SetActive(true);
-            analyseItemScene.SetActive(false);
-            detectiveAnimator.SetFloat("InventoryPanel",panelOpen);
-            detectiveAnimator.Play("OpenInventoryPanel", 0, 1);
-            analysing = false;
+            StartCoroutine(StopAnalysing());
         }
+    }
+
+    IEnumerator StopAnalysing() {
+        analysing = false;
+
+        handAnimator.SetTrigger("Exit");
+
+        yield return new WaitForSeconds(1);
+        analyseItemScene.SetActive(false);
+        detective.SetActive(true);
+
+        analyseItemScene.transform.SetParent(detective.transform);
+
+        detectiveAnimator.SetFloat("InventoryPanel",panelOpen);
+        PlayerInventory.instance.OpenPanel(panelOpen);
+
     }
 }

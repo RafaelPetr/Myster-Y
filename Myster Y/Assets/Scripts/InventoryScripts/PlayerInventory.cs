@@ -84,7 +84,7 @@ public class PlayerInventory : MonoBehaviour {
         }
     }
 
-    private void OpenPanel(int index) {
+    public void OpenPanel(int index) {
         if (index == animator.GetFloat("InventoryPanel")) {
             float animationTime = Mathf.Lerp(0, 1, 1 - animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             animator.SetFloat("InventoryPanel",index);

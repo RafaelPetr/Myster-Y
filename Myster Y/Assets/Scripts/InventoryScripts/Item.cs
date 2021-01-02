@@ -6,14 +6,10 @@ using UnityEngine;
 public class Item : ScriptableObject {
     public string name;
     public Sprite icon;
-    public ItemAnalysable itemAnalysable;
+    public Sprite analyseSprite;
 
     public void PickUp() {
         PlayerInventory.instance.AddItem(this);
-    }
-
-    public void AnalyseItem() {
-        itemAnalysable.Analyse();
     }
 
     public void UseItem() {
