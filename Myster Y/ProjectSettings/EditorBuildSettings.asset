@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainTitle.unity
+    guid: cbe58617ee9c164459ed6681e64731d2
   - enabled: 1
     path: Assets/Scenes/MetroStation.unity
     guid: 8170af4e25d616544aad976f3cc2087f
   - enabled: 1
     path: Assets/Scenes/CityEntrance.unity
     guid: 85c8d5e864e806b4eab601e7b555ee37
-  - enabled: 1
-    path: Assets/Scenes/AnalyseItem.unity
-    guid: 2782ebc54fff9b44e9a906d175abe40a
   m_configObjects: {}
