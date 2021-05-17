@@ -4,7 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class MainMenu : Menu {
+public class MainTitle : Menu {
+    MainTitleEventHandler eventHandler;
+
+    private void Start() {
+        eventHandler = MainTitleEventHandler.instance;
+    }
+
+    public void IntroMenu() {
+        eventHandler.getPen.Invoke();
+    }
+
     public void PlayGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
