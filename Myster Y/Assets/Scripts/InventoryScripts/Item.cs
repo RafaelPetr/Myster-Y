@@ -6,19 +6,13 @@ using UnityEngine;
 public class Item : ScriptableObject {
     public string name;
     public Sprite icon;
-    public Sprite analyseSprite;
+    public ItemAnalyzable analyzable;
 
     public void PickUp() {
         PlayerInventory.instance.AddItem(this);
     }
 
-    public void UseItem() {
-
+    public void Use() {
+        AnalyzeManager.instance.StartAnalyze(this);
     }
-
-    public void RemoveFromInventory() {
-        
-    }
-
-
 }

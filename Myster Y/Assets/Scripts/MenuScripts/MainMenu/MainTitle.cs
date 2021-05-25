@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class MainTitle : Menu {
+public class MainTitle : ButtonMenu {
     MainTitleEventHandler eventHandler;
 
     private void Start() {

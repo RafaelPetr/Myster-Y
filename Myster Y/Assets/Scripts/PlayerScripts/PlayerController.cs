@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public static PlayerController instance;
     public float moveSpeed = 5f;
-    public bool inDialogue;
-    public bool inTransition;
+    [System.NonSerialized]public bool inDialogue;
+    [System.NonSerialized]public bool inTransition;
     public Transform movePoint;
     public Animator animator;
 
     public LayerMask stopMove;
     public Transform interactPointer;
 
-    private float runSpeed = 1;
+    private float walkSpeed = 1;
 
     private void Awake() {
         if (instance == null) {
@@ -33,20 +33,19 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetButtonDown("Run")) {
-            runSpeed = 2;
+            walkSpeed = 2;
         }
 
         if (Input.GetButtonUp("Run")) {
-            runSpeed = 1;
+            walkSpeed = 1;
         }
 
-
         if (!DialogueManager.instance.inDialogue && !inTransition && !PlayerInventory.instance.open) {
-            transform.position = Vector3.MoveTowards(transform.position,movePoint.position,moveSpeed*Time.deltaTime *runSpeed);
+            transform.position = Vector3.MoveTowards(transform.position,movePoint.position,moveSpeed*Time.deltaTime *walkSpeed);
             if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
 
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
-                    animator.SetFloat("SpeedX", Input.GetAxisRaw("Horizontal") * runSpeed);
+                    animator.SetFloat("SpeedX", Input.GetAxisRaw("Horizontal") * walkSpeed);
                     animator.SetFloat("SpeedY", 0);
                     animator.SetFloat("IdleDir", Input.GetAxisRaw("Horizontal"));
 
@@ -57,7 +56,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
                     animator.SetFloat("SpeedX", 0);
-                    animator.SetFloat("SpeedY", Input.GetAxisRaw("Vertical") * runSpeed);
+                    animator.SetFloat("SpeedY", Input.GetAxisRaw("Vertical") * walkSpeed);
                     animator.SetFloat("IdleDir", Input.GetAxisRaw("Vertical") * 2);
 
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.5f, 0f), .1f, stopMove)) {
@@ -72,7 +71,7 @@ public class PlayerController : MonoBehaviour {
 
                 if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f) {
                     animator.SetBool("Walking", true);
-                    if (runSpeed == 2) {
+                    if (walkSpeed == 2) {
                         animator.SetBool("Running", true);
                     }
                     else {

@@ -18,7 +18,6 @@ public class DialogueManager : MonoBehaviour {
 	[System.NonSerialized]public bool inChoice;
 
 	private string activeText;
-	[System.NonSerialized]public Button selectedOption;
 	
 	private List<DialogueSentence> sentences;
 	private List<DialogueChoice> choices;
@@ -48,10 +47,6 @@ public class DialogueManager : MonoBehaviour {
 
 		if (activeText != null) {
 			FinishWrite(activeText);
-		}
-
-		else if (inChoice) {
-			selectedOption.onClick.Invoke();
 		}
 
 		else {
@@ -126,7 +121,6 @@ public class DialogueManager : MonoBehaviour {
 
 	public void PickOption(int choiceIndex) {
 		inChoice = false;
-		selectedOption = null;
 
 		GameObject myEventSystem = GameObject.Find("EventSystem");
  		myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
@@ -143,7 +137,7 @@ public class DialogueManager : MonoBehaviour {
 		iconBox.sprite = element.character.icon;
 	}
 
-	public void DefineChoiceButtons(List<DialogueOption> options) {
+	public void DefineOptionButtons(List<DialogueOption> options) {
 		activeOptions = options;
 
 		for (int i = 0; i < options.Count; i++) {

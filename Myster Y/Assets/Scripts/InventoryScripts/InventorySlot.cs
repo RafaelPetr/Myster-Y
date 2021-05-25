@@ -2,14 +2,9 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, ISelectHandler {
+public class InventorySlot : ButtonMenu {
     Item item;
-
     public Image icon;
-
-    public void OnSelect(BaseEventData eventData) {
-        InventoryUI.instance.selectedSlot = this;
-    }
 
     public void AddItem(Item newItem) {
         item = newItem;
@@ -23,9 +18,9 @@ public class InventorySlot : MonoBehaviour, ISelectHandler {
         icon.enabled = false;
     }
 
-    public void AnalyseItem() {
+    public void UseItem() {
         if (item != null) {
-            AnalyseManager.instance.StartAnalyse(item);
+            item.Use();
         }
     }
 }

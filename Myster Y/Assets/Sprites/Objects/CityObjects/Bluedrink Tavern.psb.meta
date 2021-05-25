@@ -1,0 +1,681 @@
+fileFormatVersion: 2
+guid: cdb0444788dbd3548b367e6ca67fe6b5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Logo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 172
+      width: 40
+      height: 64
+    spriteID: 0245d61396ce72f4eb53b1c84878f777
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 140, y: 61}
+  - name: Roof High
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 231
+      width: 217
+      height: 86
+    spriteID: 712c1eb0d175fd04aaed47085e05ae49
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 99}
+  - name: Roof Low
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 325
+      width: 216
+      height: 75
+    spriteID: 434805abfe2774e49a69504819e9a6fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3, y: 190}
+  - name: Banner
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 149
+      width: 213
+      height: 15
+    spriteID: 6d503bdf8c2b6a24c87255ce31ace6fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 227, y: 31}
+  - name: Windows
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 4
+      width: 159
+      height: 58
+    spriteID: 67109cd475528f844ab494bef9bd071f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 200, y: -27}
+  - name: Menus
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 408
+      width: 205
+      height: 58
+    spriteID: b5ba1f7fc9df52349bd0aec2240e9b36
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2, y: 377}
+  - name: Welcome
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 454
+      y: 122
+      width: 43
+      height: 14
+    spriteID: d710817aa15320c479fee92440c76671
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 367, y: 48}
+  - name: Wooden Part
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 217
+      height: 107
+    spriteID: 03a052dae37dbb14cb2892492cc11048
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: -21}
+  - name: Stone Part
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 474
+      width: 217
+      height: 25
+    spriteID: 97e9e2539e8ad2548ba574f5870274ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 474}
+  - name: Stairs
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 450
+      y: 149
+      width: 56
+      height: 9
+    spriteID: 34a010a36e357ff4d92b33f527c85c8c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 370, y: 149}
+  - name: Door
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 244
+      width: 35
+      height: 66
+    spriteID: ac4b9adad6e226c45895d055f5e0247a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 138, y: 235}
+  - name: Window
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 396
+      y: 4
+      width: 29
+      height: 45
+    spriteID: 1c400917434e6b34d88815836403f456
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 302, y: -23}
+  - name: Sign
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 472
+      y: 70
+      width: 23
+      height: 8
+    spriteID: 44e3aa6232d3042469c580cd248fb85e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 375, y: 7}
+  - name: Table Client
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 70
+      width: 64
+      height: 27
+    spriteID: 8001a502a8c8f484ea3172596a369973
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 391, y: 53}
+  - name: Table Tavern
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 70
+      width: 163
+      height: 44
+    spriteID: c1f26ca1fd2f66c49b4a808b9846f21c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 202, y: 45}
+  - name: Floor Inside
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 122
+      width: 217
+      height: 19
+    spriteID: b9d5dd5e493b61f48b681fb70feaf6cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 229, y: 113}
+  - name: Wall Inside
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 119
+      width: 217
+      height: 104
+    spriteID: d6a679cfe9d95c248b72c1863452ebe7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 91}
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 512
+  importedTextureHeight: 512
+  documentSize: {x: 217, y: 218}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 512
+  textureActualHeight: 512
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Logo
+    spriteName: Logo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0245d61396ce72f4eb53b1c84878f777
+    layerID: 11
+    mosaicPosition: {x: 229, y: 172}
+  - name: Roof High
+    spriteName: Roof High
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 712c1eb0d175fd04aaed47085e05ae49
+    layerID: 9
+    mosaicPosition: {x: 4, y: 231}
+  - name: Roof Low
+    spriteName: Roof Low
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 434805abfe2774e49a69504819e9a6fc
+    layerID: 8
+    mosaicPosition: {x: 4, y: 325}
+  - name: Banner
+    spriteName: Banner
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6d503bdf8c2b6a24c87255ce31ace6fd
+    layerID: 10
+    mosaicPosition: {x: 229, y: 149}
+  - name: Windows
+    spriteName: Windows
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 67109cd475528f844ab494bef9bd071f
+    layerID: 24
+    mosaicPosition: {x: 229, y: 4}
+  - name: Menus
+    spriteName: Menus
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b5ba1f7fc9df52349bd0aec2240e9b36
+    layerID: 23
+    mosaicPosition: {x: 4, y: 408}
+  - name: Welcome
+    spriteName: Welcome
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d710817aa15320c479fee92440c76671
+    layerID: 25
+    mosaicPosition: {x: 454, y: 122}
+  - name: Wooden Part
+    spriteName: Wooden Part
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 03a052dae37dbb14cb2892492cc11048
+    layerID: 12
+    mosaicPosition: {x: 4, y: 4}
+  - name: Stone Part
+    spriteName: Stone Part
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 97e9e2539e8ad2548ba574f5870274ae
+    layerID: 2
+    mosaicPosition: {x: 4, y: 474}
+  - name: Stairs
+    spriteName: Stairs
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 34a010a36e357ff4d92b33f527c85c8c
+    layerID: 16
+    mosaicPosition: {x: 450, y: 149}
+  - name: Door
+    spriteName: Door
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ac4b9adad6e226c45895d055f5e0247a
+    layerID: 21
+    mosaicPosition: {x: 229, y: 244}
+  - name: Window
+    spriteName: Window
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1c400917434e6b34d88815836403f456
+    layerID: 22
+    mosaicPosition: {x: 396, y: 4}
+  - name: Sign
+    spriteName: Sign
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 44e3aa6232d3042469c580cd248fb85e
+    layerID: 37
+    mosaicPosition: {x: 472, y: 70}
+  - name: Table Client
+    spriteName: Table Client
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8001a502a8c8f484ea3172596a369973
+    layerID: 29
+    mosaicPosition: {x: 400, y: 70}
+  - name: Table Tavern
+    spriteName: Table Tavern
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c1f26ca1fd2f66c49b4a808b9846f21c
+    layerID: 30
+    mosaicPosition: {x: 229, y: 70}
+  - name: Floor Inside
+    spriteName: Floor Inside
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b9d5dd5e493b61f48b681fb70feaf6cc
+    layerID: 28
+    mosaicPosition: {x: 229, y: 122}
+  - name: Wall Inside
+    spriteName: Wall Inside
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d6a679cfe9d95c248b72c1863452ebe7
+    layerID: 18
+    mosaicPosition: {x: 4, y: 119}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Bluedrink Tavern 1 Texture
+  prefabAssetName: Bluedrink Tavern 1 Prefab
+  spriteLibAssetName: Bluedrink Tavern 1 Sprite Lib
+  secondarySpriteTextures: []

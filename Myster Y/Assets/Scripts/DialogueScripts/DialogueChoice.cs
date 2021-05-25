@@ -22,7 +22,7 @@ public class DialogueChoice : DialogueElement {
     public override void Execute() {
         DialogueManager.instance.inChoice = true;
         DialogueManager.instance.UpdateDialogueBox(this);
-        DialogueManager.instance.DefineChoiceButtons(this.options);
+        DialogueManager.instance.DefineOptionButtons(this.options);
     }
 
 }

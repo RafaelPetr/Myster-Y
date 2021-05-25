@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryUI : MonoBehaviour {
+public class InventoryUI : MonoBehaviour { //Controlls what panel should be shown
     #region Singleton
     public static InventoryUI instance;
 
@@ -21,23 +21,15 @@ public class InventoryUI : MonoBehaviour {
     InventorySlot[] slots;
     private PlayerInventory inventory;
     private Transform activePanel;
-    [System.NonSerialized]public InventorySlot selectedSlot;
 
     void Start() {
         inventory = PlayerInventory.instance;
-    }
-
-    private void Update() {
-        if (Input.GetButtonDown("Interact") && selectedSlot != null) {
-            selectedSlot.AnalyseItem();
-        }
     }
 
     public void UpdateUI(int index) { //index = panel index on list
         if (index == -1) { //-1 closes the panel
             activePanel.gameObject.SetActive(false);
             activePanel = null;
-            selectedSlot = null;
         }
 
         else {

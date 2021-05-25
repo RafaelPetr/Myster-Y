@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour, ISelectHandler, IDeselectHandler {
+public class ButtonMenu : MonoBehaviour, ISelectHandler, IDeselectHandler {
     private Button button;
     public bool selected;
 
