@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Interactable
-  - movePoint
-  - interactPointer
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - StopMove
-  - Characters
+  - 
+  - 
   - 
   - 
   - 
@@ -41,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Tiles
-    uniqueID: 321940983
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BlockView
-    uniqueID: 3918268757
     locked: 0
