@@ -12,10 +12,10 @@ public class PlayerController : MonoBehaviour {
     [System.NonSerialized]public float directionX;
     [System.NonSerialized]public float directionY = -1;
 
-    private bool inDialogue;
+    private bool inInteraction;
     private bool inTransition;
 
-    public LayerMask stopMove;
+    public LayerMask collidable;
 
     public Transform movePoint;
     public Transform interactPointer;
@@ -60,9 +60,9 @@ public class PlayerController : MonoBehaviour {
                 directionX = Input.GetAxisRaw("Horizontal");
                 directionY = 0f;
 
-                if (!Physics2D.OverlapCircle(collisionPosition, .1f, stopMove)) {
+                if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
-                }  
+                } 
                 interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePoint.position.y, 0f);
             }
 
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour {
                 directionY = Input.GetAxisRaw("Vertical");
                 directionX = 0f;
 
-                if (!Physics2D.OverlapCircle(collisionPosition, .1f, stopMove)) {
+                if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
                     movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
                 }
                 interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
@@ -85,18 +85,19 @@ public class PlayerController : MonoBehaviour {
         else {
             walking = true;
         }
+
         animator.SetFloat("DirectionX",directionX);
         animator.SetFloat("DirectionY",directionY);
         animator.SetBool("Walking",walking);
         animator.SetBool("Running",running);
     }
 
-    public bool GetInDialogue() {
-        return inDialogue;
+    public bool GetInInteraction() {
+        return inInteraction;
     }
 
-    public void SetInDialogue(bool value) {
-        inDialogue = value;
+    public void SetInInteraction(bool value) {
+        inInteraction = value;
     }
 
     public bool GetInTransition() {
