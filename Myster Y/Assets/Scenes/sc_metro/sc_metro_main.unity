@@ -32232,7 +32232,7 @@ GameObject:
   - component: {fileID: 1394835326}
   - component: {fileID: 1394835325}
   m_Layer: 0
-  m_Name: Manager_PostProcessing_Global
+  m_Name: Manager_GlobalVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
