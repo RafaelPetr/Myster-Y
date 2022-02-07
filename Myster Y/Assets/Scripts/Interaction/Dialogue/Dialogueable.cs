@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogueable : Interactable {
-    public DialogueScript dialogueScript;
+public abstract class Dialogueable : Interactable {
+    public List<Dialogue> dialogues;
 
     public override void Interact() {
-        DialogueManager.instance.StartDialogue(dialogueScript.DefineDialogue());
+        if (PlayerController.instance.GetInInteraction()) {
+            DialogueManager.instance.ExecuteNextElement();
+        }
+        else {
+            DialogueManager.instance.StartDialogue(DefineDialogue());
+            PlayerController.instance.SetInInteraction(true);
+        }
     }
+
+    public abstract Dialogue DefineDialogue();
 }

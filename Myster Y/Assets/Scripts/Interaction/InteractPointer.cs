@@ -17,7 +17,6 @@ public class InteractPointer : MonoBehaviour {
         }
 
         if (enableInteract && Input.GetButtonDown("Interact")) {
-            PlayerController.instance.SetInInteraction(true);
             interactable.Interact();
         }
     }
