@@ -9,8 +9,6 @@ public class DialogueChoice : DialogueElement {
     public DialogueOption[] options = new DialogueOption[3];
     
     public override void Execute() {
-        foreach (DialogueOption option in options) {
-            Debug.Log(option.text);
-        }
+        DialogueManager.instance.UpdateChoiceUI(this);
     }
 }

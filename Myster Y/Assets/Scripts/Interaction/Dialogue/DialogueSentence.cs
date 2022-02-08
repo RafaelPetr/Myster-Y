@@ -4,9 +4,10 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueSentence : DialogueElement {
+    public DialogueCharacter character;
     [TextArea(3,10)]public string text;
     
     public override void Execute() {
-        Debug.Log(text);
+        DialogueManager.instance.UpdateSentenceUI(this);
     }
 }

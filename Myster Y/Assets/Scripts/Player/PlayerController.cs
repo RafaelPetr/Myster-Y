@@ -42,48 +42,62 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-
-        if (Input.GetButton("Run")) {
-            running = true;
-            moveSpeed = 2.5f;
-        }
-        if (Input.GetButtonUp("Run")) {
-            running = false;
-            moveSpeed = 1.5f;
-        }
-
-        if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
-            
-            if (Input.GetAxisRaw("Horizontal") != 0f) {
-                Vector3 collisionPosition = movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
-                
-                directionX = Input.GetAxisRaw("Horizontal");
-                directionY = 0f;
-
-                if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
-                } 
-                interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePoint.position.y, 0f);
+        if (!GetBlockMovement()) {
+            if (Input.GetButton("Run")) {
+                running = true;
+                moveSpeed = 2.5f;
+            }
+            if (Input.GetButtonUp("Run")) {
+                running = false;
+                moveSpeed = 1.5f;
             }
 
-            else if (Input.GetAxisRaw("Vertical") != 0f) {
-                Vector3 collisionPosition = movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+            if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
                 
-                directionY = Input.GetAxisRaw("Vertical");
-                directionX = 0f;
+                if (Input.GetAxisRaw("Horizontal") != 0f) {
+                    Vector3 collisionPosition = movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
+                    
+                    directionX = Input.GetAxisRaw("Horizontal");
+                    directionY = 0f;
 
-                if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                    if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
+                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
+                    }
+                    else {
+                        running = false;
+                        walking = false;
+                    }
+                    interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePoint.position.y, 0f);
                 }
-                interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
+
+                else if (Input.GetAxisRaw("Vertical") != 0f) {
+                    Vector3 collisionPosition = movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+                    
+                    directionY = Input.GetAxisRaw("Vertical");
+                    directionX = 0f;
+
+                    if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
+                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                    }
+                    else {
+                        running = false;
+                        walking = false;
+                    }
+                    interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                }
+
+                else {
+                    running = false;
+                    walking = false;
+                }
             }
             else {
-                running = false;
-                walking = false;
+                walking = true;
             }
         }
         else {
-            walking = true;
+            running = false;
+            walking = false;
         }
 
         animator.SetFloat("DirectionX",directionX);
@@ -106,5 +120,15 @@ public class PlayerController : MonoBehaviour {
 
     public void SetInTransition(bool value) {
         inTransition = value;
+    }
+
+    private bool GetBlockMovement() {
+        if (GetInInteraction()) {
+            return true;
+        }
+        else if (GetInTransition()) {
+            return true;
+        }
+        return false;
     }
 }
