@@ -26,8 +26,10 @@ public class DialogueManager : MonoBehaviour {
     private List<Button> choiceOptionsButtons = new List<Button>();
     private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
 
+    private bool executingDialogue;
     private string activeText;
     private TextMeshProUGUI activeWritingUI;
+    private DialogueChoice activeChoice;
 
     private void Awake() {
         instance = this;
@@ -44,12 +46,26 @@ public class DialogueManager : MonoBehaviour {
         dialogueBoxAnimator = dialogueBox.GetComponent<Animator>();
     }
 
-    public bool GetIsWriting() {
-        return activeText != null;
+    public bool GetIsChoosing() {
+        return activeChoice != null;
     }
 
-    public bool GetInChoice() {
-        return activeText != null;
+    public void ReceiveInteract(Dialogue dialogue, int optionIndex = -1) {
+        if (activeText != null) {
+            FinishWrite();
+            return;
+        }
+        else if (activeChoice != null) {
+            SelectOption(optionIndex);
+            return;
+        }
+        else if (executingDialogue) {
+            ExecuteNextElement();
+        }       
+        else {
+            StartDialogue(dialogue);
+            PlayerController.instance.SetInInteraction(true);
+        }
     }
 
     private void ResetUI() {
@@ -59,6 +75,9 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void StartDialogue(Dialogue dialogue) {
+        executingDialogue = true;
+        activeChoice = null;
+
         foreach (DialogueSentence sentence in dialogue.sentences) {
             elements.Enqueue(sentence);
         }
@@ -89,6 +108,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void UpdateChoiceUI(DialogueChoice choice) {
         ResetUI();
+        activeChoice = choice;
         choiceUI.SetActive(true);
 
  		eventSystem.SetSelectedGameObject(null);
@@ -133,7 +153,22 @@ public class DialogueManager : MonoBehaviour {
 		activeWritingUI = null;
 	}
 
+    private void SelectOption(int optionIndex) {
+        choiceUI.SetActive(false);
+
+        Debug.Log(activeChoice.options[optionIndex].text);
+        
+        if (activeChoice.options[optionIndex].linkedDialogue != null) {
+            StartDialogue(activeChoice.options[optionIndex].linkedDialogue);
+            return;
+        }
+
+        activeChoice = null;
+        ExecuteNextElement();
+    }
+
     public void EndDialogue() {
+        executingDialogue = false;
         dialogueBoxAnimator.SetBool("Active",false);
         PlayerController.instance.SetInInteraction(false);
     }

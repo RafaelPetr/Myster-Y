@@ -9,13 +9,6 @@ public class InteractPointer : MonoBehaviour {
     private Interactable interactable;
 
     void Update() {
-        if (Physics2D.OverlapCircle(transform.position, .1f, interactableLayer)) {
-            enableInteract = true;
-        } 
-        else {
-            enableInteract = false;
-        }
-
         if (enableInteract && Input.GetButtonDown("Interact")) {
             interactable.Interact();
         }
@@ -24,6 +17,14 @@ public class InteractPointer : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Interactable")) {
             interactable = collider.GetComponent<Interactable>();
+            enableInteract = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider) {
+        if (collider.CompareTag("Interactable")) {
+            interactable = null;
+            enableInteract = false;
         }
     }
 }
