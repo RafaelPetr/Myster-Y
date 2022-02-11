@@ -156,8 +156,6 @@ public class DialogueManager : MonoBehaviour {
     private void SelectOption(int optionIndex) {
         choiceUI.SetActive(false);
 
-        Debug.Log(activeChoice.options[optionIndex].text);
-        
         if (activeChoice.options[optionIndex].linkedDialogue != null) {
             StartDialogue(activeChoice.options[optionIndex].linkedDialogue);
             return;

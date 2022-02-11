@@ -70,6 +70,12 @@ public class DialogueEditor : Editor {
 
     private void ChoiceTab(Dialogue dialogue) {
         if (dialogue.choice.GetEnable()) {
+            GUILayout.BeginHorizontal();
+                GUILayout.Label("Conext:");
+                dialogue.choice.context = GUILayout.TextArea(dialogue.choice.context,GUILayout.Width(170));
+            GUILayout.EndHorizontal();
+            EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+            
             for (int i = 0; i < dialogue.choice.options.Length; i++) {
                 GUILayout.Label("Option " + (i+1).ToString());
 

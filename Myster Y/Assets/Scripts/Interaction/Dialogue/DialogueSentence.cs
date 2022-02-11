@@ -18,7 +18,6 @@ public class DialogueSentence : DialogueElement {
     }
 
     public void LocalizeText(string key) {
-        Debug.Log(localizationGroupIndex);
 		text = LocalizationManager.instance.GetLocalizedValue(key,localizationGroupIndex);
     }
 }

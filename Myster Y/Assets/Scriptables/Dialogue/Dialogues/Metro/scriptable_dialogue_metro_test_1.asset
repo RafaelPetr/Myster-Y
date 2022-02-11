@@ -15,14 +15,16 @@ MonoBehaviour:
   key: scriptable_dialogue_metro_test_1
   sentences:
   - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: lel
+    text: "VAMO BORA CARALHO T\xC1 FUNCIONANDO SAPORRAAAAAAAAAAAAAAAA"
+  - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
+    text: MAIS TESTE SEFODA
   choice:
-    context: 
+    context: aaaaaaa
     options:
-    - text: 
+    - text: a
       linkedDialogue: {fileID: 0}
-    - text: 
+    - text: b
       linkedDialogue: {fileID: 0}
-    - text: 
-      linkedDialogue: {fileID: 0}
-  elementsOrder: 00000000
+    - text: c
+      linkedDialogue: {fileID: 11400000}
+  elementsOrder: 0000000000000000
