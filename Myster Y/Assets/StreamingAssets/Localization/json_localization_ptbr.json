@@ -1,0 +1,35 @@
+{
+    "groups": [
+        {
+            "key": "dialogues",
+            "items": [
+                {
+                    "key": "scriptable_dialogue_metro_test_1",
+                    "value": [
+                        "VAMO BORA CARALHO TÁ FUNCIONANDO SAPORRAAAAAAAAAAAAAAAA"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_metro_test_2",
+                    "value": [
+                        "Test2",
+                        "a",
+                        "b",
+                        "c"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "kllllllllllll",
+            "items": [
+                {
+                    "key": "lllll",
+                    "value": [
+                        "aaaaa"
+                    ]
+                }
+            ]
+        }
+    ]
+}

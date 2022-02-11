@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_metro_test
+  m_Name: scriptable_dialogue_metro_test_2
   m_EditorClassIdentifier: 
-  key: 
+  key: scriptable_dialogue_metro_test_2
   sentences:
   - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: Teste111111111111111111111111111
-  - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: Teste22222222222222222222222
+    text: Test2
   choice:
-    enabled: 1
-    context: 'Escolha bem eeeeeeeeeeeeeeeeeeeeeeeein:'
+    context: 
     options:
-    - text: Test1
+    - text: a
       linkedDialogue: {fileID: 0}
-    - text: Test2
+    - text: b
       linkedDialogue: {fileID: 0}
-    - text: Test3
-      linkedDialogue: {fileID: 11400000}
+    - text: c
+      linkedDialogue: {fileID: 0}
+  elementsOrder: 00000000

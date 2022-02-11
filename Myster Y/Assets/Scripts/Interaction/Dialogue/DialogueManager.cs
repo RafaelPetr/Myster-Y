@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour {
         foreach (DialogueSentence sentence in dialogue.sentences) {
             elements.Enqueue(sentence);
         }
-        if (dialogue.choice.enabled) {
+        if (dialogue.choice.GetEnable()) {
             elements.Enqueue(dialogue.choice);
         }
 
