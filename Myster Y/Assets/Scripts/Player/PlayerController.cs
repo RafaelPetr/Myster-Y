@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public static PlayerController instance;
+    private PlayerAnimator animator;
 
     private float moveSpeed = 1.5f;
+
+    private float directionX;
+    private float directionY;
+
+    private float inventory;
+    private bool openInventory;
+    private bool closeInventory;
+
     private bool walking;
     private bool running;
-
-    [System.NonSerialized]public float directionX;
-    [System.NonSerialized]public float directionY = -1;
-
     private bool inInteraction;
     private bool inTransition;
+    private bool inInventory;
 
     public LayerMask collidable;
 
     public Transform movePoint;
     public Transform interactPointer;
-
-    private Animator animator;
 
     private void Awake() {
         if (instance == null) {
@@ -34,7 +38,7 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         movePoint.parent = null;
         interactPointer.parent = null;
-        animator = GetComponent<Animator>();
+        animator = gameObject.AddComponent<PlayerAnimator>();
     }
 
     private void FixedUpdate() {
@@ -42,7 +46,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-        if (!GetBlockMovement()) {
+        ControlMovement();
+        ControlInventory();
+    }
+
+    private void ControlMovement() {
+        if (!BlockMovement()) {
             if (Input.GetButton("Run")) {
                 running = true;
                 moveSpeed = 2.5f;
@@ -99,13 +108,46 @@ public class PlayerController : MonoBehaviour {
             running = false;
             walking = false;
         }
-
-        animator.SetFloat("DirectionX",directionX);
-        animator.SetFloat("DirectionY",directionY);
-        animator.SetBool("Walking",walking);
-        animator.SetBool("Running",running);
     }
 
+    private void ControlInventory() {
+        if (inInventory) {
+            if (inventory == 0) {
+                inventory = Input.GetAxisRaw("Horizontal");
+                if (Input.GetAxisRaw("Horizontal") != 0f) {
+                    openInventory = true;
+                }
+            }
+            else {
+                if (Input.GetButtonDown("Cancel")) {
+                    closeInventory = true;
+                    inventory = 0;
+                }
+            }
+        }
+        else {
+            if (Input.GetButtonDown("Inventory")) {
+                inInventory = true;
+                directionX = 0;
+                directionY = -1;
+            }
+        }
+    }
+
+    private bool BlockMovement() {
+        if (inInteraction) {
+            return true;
+        }
+        else if (inTransition) {
+            return true;
+        }
+        else if (inInventory) {
+            return true;
+        }
+        return false;
+    }
+
+    #region Get and Set Variables Functions
     public bool GetInInteraction() {
         return inInteraction;
     }
@@ -122,13 +164,48 @@ public class PlayerController : MonoBehaviour {
         inTransition = value;
     }
 
-    private bool GetBlockMovement() {
-        if (GetInInteraction()) {
-            return true;
-        }
-        else if (GetInTransition()) {
-            return true;
-        }
-        return false;
+    public bool GetWalking() {
+        return walking;
     }
+
+    public bool GetRunning() {
+        return running;
+    }
+
+    public void SetInInventory(bool value) {
+        inInventory = value;
+    }
+
+    public float GetInventory() {
+        return inventory;
+    }
+
+    public void SetInventory(float value) {
+        inventory = value;
+    }
+
+    public bool GetOpenInventory() {
+        return openInventory;
+    }
+    
+    public void SetOpenInventory(bool value) {
+        openInventory = value;
+    }
+
+    public bool GetCloseInventory() {
+        return closeInventory;
+    }
+    
+    public void SetCloseInventory(bool value) {
+        closeInventory = value;
+    }
+
+    public float GetDirectionX() {
+        return directionX;
+    }
+
+    public float GetDirectionY() {
+        return directionY;
+    }
+    #endregion
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
     text: "VAMO BORA CARALHO T\xC1 FUNCIONANDO SAPORRAAAAAAAAAAAAAAAA"
   - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: MAIS TESTE SEFODA
+    text: "VAMO BORA CARALHO T\xC1 FUNCIONANDO SAPORRAAAAAAAAAAAAAAAA"
   choice:
     context: aaaaaaa
     options:

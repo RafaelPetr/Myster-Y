@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour {
     private List<Button> choiceOptionsButtons = new List<Button>();
     private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
 
-    private bool executingDialogue;
+    private bool inDialogue;
     private string activeText;
     private TextMeshProUGUI activeWritingUI;
     private DialogueChoice activeChoice;
@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour {
             SelectOption(optionIndex);
             return;
         }
-        else if (executingDialogue) {
+        else if (inDialogue) {
             ExecuteNextElement();
         }       
         else {
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void StartDialogue(Dialogue dialogue) {
-        executingDialogue = true;
+        inDialogue = true;
         activeChoice = null;
 
         foreach (DialogueSentence sentence in dialogue.sentences) {
@@ -166,7 +166,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void EndDialogue() {
-        executingDialogue = false;
+        inDialogue = false;
         dialogueBoxAnimator.SetBool("Active",false);
         PlayerController.instance.SetInInteraction(false);
     }
