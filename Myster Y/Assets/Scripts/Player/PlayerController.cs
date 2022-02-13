@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     private float inventory;
     private bool openInventory;
     private bool closeInventory;
+    private bool exitInventory;
 
     private bool walking;
     private bool running;
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask collidable;
 
-    public Transform movePoint;
+    public Transform movePointer;
     public Transform interactPointer;
 
     private void Awake() {
@@ -36,13 +37,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Start() {
-        movePoint.parent = null;
+        movePointer.parent = null;
         interactPointer.parent = null;
         animator = gameObject.AddComponent<PlayerAnimator>();
     }
 
     private void FixedUpdate() {
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, Time.deltaTime * moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, movePointer.position, Time.deltaTime * moveSpeed);
     }
 
     void Update() {
@@ -61,38 +62,38 @@ public class PlayerController : MonoBehaviour {
                 moveSpeed = 1.5f;
             }
 
-            if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
+            if (Vector3.Distance(transform.position, movePointer.position) <= .05f) {
                 
                 if (Input.GetAxisRaw("Horizontal") != 0f) {
-                    Vector3 collisionPosition = movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
+                    Vector3 collisionPosition = movePointer.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
                     
                     directionX = Input.GetAxisRaw("Horizontal");
                     directionY = 0f;
 
                     if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
+                        movePointer.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
                     }
                     else {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.position = new Vector3(movePoint.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePoint.position.y, 0f);
+                    interactPointer.position = new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePointer.position.y, 0f);
                 }
 
                 else if (Input.GetAxisRaw("Vertical") != 0f) {
-                    Vector3 collisionPosition = movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+                    Vector3 collisionPosition = movePointer.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
                     
                     directionY = Input.GetAxisRaw("Vertical");
                     directionX = 0f;
 
                     if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                        movePointer.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
                     }
                     else {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.position = new Vector3(movePoint.position.x, movePoint.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                    interactPointer.position = new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
                 }
 
                 else {
@@ -111,25 +112,34 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void ControlInventory() {
-        if (inInventory) {
-            if (inventory == 0) {
-                inventory = Input.GetAxisRaw("Horizontal");
-                if (Input.GetAxisRaw("Horizontal") != 0f) {
-                    openInventory = true;
+        if (!exitInventory) {
+            if (inInventory) {
+                if (inventory == 0) {
+                    inventory = Input.GetAxisRaw("Horizontal");
+
+                    if (Input.GetAxisRaw("Horizontal") != 0f) {
+                        openInventory = true;
+                    }
+
+                    if (Input.GetButtonDown("Cancel")) {
+                        exitInventory = true;
+                    }
+                }
+                else {
+                    if (Input.GetButtonDown("Cancel")) {
+                        closeInventory = true;
+                    }
                 }
             }
             else {
-                if (Input.GetButtonDown("Cancel")) {
-                    closeInventory = true;
-                    inventory = 0;
+                if (Input.GetButtonDown("Inventory")) {
+                    directionX = 0;
+                    directionY = -1;
+                    
+                    interactPointer.transform.position = movePointer.transform.position;
+                    
+                    inInventory = true;
                 }
-            }
-        }
-        else {
-            if (Input.GetButtonDown("Inventory")) {
-                inInventory = true;
-                directionX = 0;
-                directionY = -1;
             }
         }
     }
@@ -172,8 +182,8 @@ public class PlayerController : MonoBehaviour {
         return running;
     }
 
-    public void SetInInventory(bool value) {
-        inInventory = value;
+    public bool GetInInventory() {
+        return inInventory;
     }
 
     public float GetInventory() {
@@ -198,6 +208,17 @@ public class PlayerController : MonoBehaviour {
     
     public void SetCloseInventory(bool value) {
         closeInventory = value;
+        inventory = 0f;
+    }
+
+    public bool GetExitInventory() {
+        return exitInventory;
+    }
+
+    public void SetExitInventory(bool value) {
+        exitInventory = value;
+        inInventory = false;
+        inventory = 0f;
     }
 
     public float GetDirectionX() {

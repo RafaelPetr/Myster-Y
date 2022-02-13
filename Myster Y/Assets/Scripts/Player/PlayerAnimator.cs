@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour {
-    private Animator animator;
     private PlayerController controller;
+    private Animator animator;
+    private AnimatorStateInfo currentAnimation;
+    private float animationTime;
+
+    //Inventory
+    private float toOpenInventory;
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -12,6 +17,9 @@ public class PlayerAnimator : MonoBehaviour {
     }
 
     void Update() {
+        currentAnimation = animator.GetCurrentAnimatorStateInfo(0);
+        animationTime = Mathf.Lerp(0, 1, 1 - currentAnimation.normalizedTime);
+
         AnimateMovement();
         AnimateInventory();
     }
@@ -24,26 +32,28 @@ public class PlayerAnimator : MonoBehaviour {
     }
 
     private void AnimateInventory() {
-        animator.SetFloat("Inventory",controller.GetInventory());
+        if (controller.GetInInventory()) {
+            if (!controller.GetExitInventory()) {
+                if (animationTime <= 0.01f) {
+                    toOpenInventory = 0;
+                }
 
-        if (controller.GetOpenInventory()) {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Close Inventory")) {
-                return;
+                if (controller.GetOpenInventory() && toOpenInventory == 0) {
+                    animator.SetFloat("Inventory",controller.GetInventory());
+                    animator.Play("Open Inventory", 0, animationTime);
+                    controller.SetOpenInventory(false);
+                }
+
+                if (controller.GetCloseInventory()) {
+                    animator.Play("Close Inventory", 0, animationTime);
+                    controller.SetCloseInventory(false);
+                }
+                
             }
-            controller.SetOpenInventory(false);
-            animator.SetTrigger("Open Inventory");
-        }
-
-        if (controller.GetCloseInventory()) {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Open Inventory")) {
-                return;
+            else if (animationTime <= 0.01f) {
+                animator.SetTrigger("Exit Inventory");
+                controller.SetExitInventory(false);
             }
-            controller.SetCloseInventory(false);
-            animator.SetTrigger("Close Inventory");
-            controller.SetInventory(0f);
         }
-
-        //float animationTime = Mathf.Lerp(0, 1, 1 - animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        
     }
 }

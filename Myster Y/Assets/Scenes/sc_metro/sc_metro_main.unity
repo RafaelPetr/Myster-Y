@@ -22431,7 +22431,7 @@ MonoBehaviour:
   collidable:
     serializedVersion: 2
     m_Bits: 64
-  movePoint: {fileID: 1517867241}
+  movePointer: {fileID: 1517867241}
   interactPointer: {fileID: 1125996647}
 --- !u!95 &1024500567
 Animator:
