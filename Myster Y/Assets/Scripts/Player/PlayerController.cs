@@ -12,9 +12,10 @@ public class PlayerController : MonoBehaviour {
     private float directionY;
 
     private float inventory;
-    private bool openInventory;
-    private bool closeInventory;
-    private bool exitInventory;
+    private bool enterInventoryTrigger;
+    private bool openInventoryTrigger;
+    private bool closeInventoryTrigger;
+    private bool exitInventoryTrigger;
 
     private bool walking;
     private bool running;
@@ -108,26 +109,27 @@ public class PlayerController : MonoBehaviour {
         else {
             running = false;
             walking = false;
+            moveSpeed = 1.5f;
         }
     }
 
     private void ControlInventory() {
-        if (!exitInventory) {
+        if (!exitInventoryTrigger) {
             if (inInventory) {
                 if (inventory == 0) {
                     inventory = Input.GetAxisRaw("Horizontal");
 
                     if (Input.GetAxisRaw("Horizontal") != 0f) {
-                        openInventory = true;
+                        openInventoryTrigger = true;
                     }
 
                     if (Input.GetButtonDown("Cancel")) {
-                        exitInventory = true;
+                        exitInventoryTrigger = true;
                     }
                 }
                 else {
-                    if (Input.GetButtonDown("Cancel")) {
-                        closeInventory = true;
+                    if (Input.GetButtonDown("Cancel") && !openInventoryTrigger) {
+                        closeInventoryTrigger = true;
                     }
                 }
             }
@@ -138,6 +140,7 @@ public class PlayerController : MonoBehaviour {
                     
                     interactPointer.transform.position = movePointer.transform.position;
                     
+                    enterInventoryTrigger = true;
                     inInventory = true;
                 }
             }
@@ -158,75 +161,88 @@ public class PlayerController : MonoBehaviour {
     }
 
     #region Get and Set Variables Functions
-    public bool GetInInteraction() {
-        return inInteraction;
-    }
+        public bool GetInInteraction() {
+            return inInteraction;
+        }
 
-    public void SetInInteraction(bool value) {
-        inInteraction = value;
-    }
+        public void SetInInteraction(bool value) {
+            inInteraction = value;
+        }
 
-    public bool GetInTransition() {
-        return inTransition;
-    }
+        public bool GetInTransition() {
+            return inTransition;
+        }
 
-    public void SetInTransition(bool value) {
-        inTransition = value;
-    }
+        public void SetInTransition(bool value) {
+            inTransition = value;
+        }
 
-    public bool GetWalking() {
-        return walking;
-    }
+        public float GetDirectionX() {
+            return directionX;
+        }
 
-    public bool GetRunning() {
-        return running;
-    }
+        public float GetDirectionY() {
+            return directionY;
+        }
 
-    public bool GetInInventory() {
-        return inInventory;
-    }
+        public bool GetWalking() {
+            return walking;
+        }
 
-    public float GetInventory() {
-        return inventory;
-    }
+        public bool GetRunning() {
+            return running;
+        }
 
-    public void SetInventory(float value) {
-        inventory = value;
-    }
+        #region Inventory Variables
 
-    public bool GetOpenInventory() {
-        return openInventory;
-    }
-    
-    public void SetOpenInventory(bool value) {
-        openInventory = value;
-    }
+            public bool GetInInventory() {
+                return inInventory;
+            }
 
-    public bool GetCloseInventory() {
-        return closeInventory;
-    }
-    
-    public void SetCloseInventory(bool value) {
-        closeInventory = value;
-        inventory = 0f;
-    }
+            public float GetInventory() {
+                return inventory;
+            }
 
-    public bool GetExitInventory() {
-        return exitInventory;
-    }
+            public void SetInventory(float value) {
+                inventory = value;
+            }
 
-    public void SetExitInventory(bool value) {
-        exitInventory = value;
-        inInventory = false;
-        inventory = 0f;
-    }
+            public bool GetEnterInventoryTrigger() {
+                return enterInventoryTrigger;
+            }
+            
+            public void SetEnterInventoryTrigger(bool value) {
+                enterInventoryTrigger = value;
+            }
 
-    public float GetDirectionX() {
-        return directionX;
-    }
+            public bool GetOpenInventoryTrigger() {
+                return openInventoryTrigger;
+            }
+            
+            public void SetOpenInventoryTrigger(bool value) {
+                openInventoryTrigger = value;
+            }
 
-    public float GetDirectionY() {
-        return directionY;
-    }
+            public bool GetCloseInventoryTrigger() {
+                return closeInventoryTrigger;
+            }
+            
+            public void SetCloseInventoryTrigger(bool value) {
+                closeInventoryTrigger = value;
+                inventory = 0f;
+            }
+
+            public bool GetExitInventoryTrigger() {
+                return exitInventoryTrigger;
+            }
+
+            public void SetExitInventoryTrigger(bool value) {
+                exitInventoryTrigger = value;
+                inInventory = false;
+                inventory = 0f;
+            }
+
+        #endregion
     #endregion
+
 }

@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour {
     private float animationTime;
 
     //Inventory
-    private float toOpenInventory;
+    private float currentAnimationOpenInventory;
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -33,27 +33,34 @@ public class PlayerAnimator : MonoBehaviour {
 
     private void AnimateInventory() {
         if (controller.GetInInventory()) {
-            if (!controller.GetExitInventory()) {
-                if (animationTime <= 0.01f) {
-                    toOpenInventory = 0;
+            if (!controller.GetExitInventoryTrigger()) {
+                if (controller.GetInventory() != currentAnimationOpenInventory) { //If controller's inventory panel is different from current animation open inventory
+                    if (animationTime <= 0.01f) {
+                        currentAnimationOpenInventory = controller.GetInventory();
+                    }
                 }
+                else {
+                    if (controller.GetOpenInventoryTrigger()) {
+                        if (controller.GetEnterInventoryTrigger()) {
+                            animationTime = 0f;
+                            controller.SetEnterInventoryTrigger(false);
+                        }
+                        animator.SetFloat("Inventory",currentAnimationOpenInventory);
+                        animator.Play("Open Inventory", 0, animationTime);
+                        controller.SetOpenInventoryTrigger(false);
+                    }
 
-                if (controller.GetOpenInventory() && toOpenInventory == 0) {
-                    animator.SetFloat("Inventory",controller.GetInventory());
-                    animator.Play("Open Inventory", 0, animationTime);
-                    controller.SetOpenInventory(false);
+                    if (controller.GetCloseInventoryTrigger()) {
+                        animator.Play("Close Inventory", 0, animationTime);
+                        controller.SetCloseInventoryTrigger(false);
+                    }
                 }
-
-                if (controller.GetCloseInventory()) {
-                    animator.Play("Close Inventory", 0, animationTime);
-                    controller.SetCloseInventory(false);
-                }
-                
             }
             else if (animationTime <= 0.01f) {
                 animator.SetTrigger("Exit Inventory");
-                controller.SetExitInventory(false);
+                controller.SetExitInventoryTrigger(false);
             }
         }
     }
+
 }
