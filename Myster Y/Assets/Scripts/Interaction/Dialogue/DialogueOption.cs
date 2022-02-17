@@ -7,13 +7,9 @@ public class DialogueOption {
     public string text;
     public Dialogue linkedDialogue;
 
-    private int localizationGroupIndex;
+    public int localizationGroupIndex;
 
-    public void SetLocalizationGroupIndex(int index) {
-        localizationGroupIndex = index;
-    }
-
-    public string LocalizeText(string key) {
-        return LocalizationManager.instance.GetLocalizedValue(key,localizationGroupIndex);
+    public void LocalizeText(string key) {
+        text = LocalizationManager.instance.GetLocalizedValue(key,localizationGroupIndex);
     }
 }

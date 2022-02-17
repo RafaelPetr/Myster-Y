@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Dialogueable : Interactable {
     public List<Dialogue> dialogues;
+    private Item presentedItem;
 
     public override void Awake() {
         base.Awake();
@@ -13,9 +14,7 @@ public abstract class Dialogueable : Interactable {
     }
 
     public override void Interact() {
-        if (!DialogueManager.instance.GetIsChoosing()) {
-            DialogueManager.instance.ReceiveInteract(DefineDialogue());
-        }
+        DialogueManager.instance.ReceiveInteract(DefineDialogue());
     }
 
     public abstract Dialogue DefineDialogue();

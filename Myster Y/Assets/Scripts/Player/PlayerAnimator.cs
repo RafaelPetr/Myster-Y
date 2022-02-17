@@ -34,6 +34,7 @@ public class PlayerAnimator : MonoBehaviour {
     private void AnimateInventory() {
         if (controller.GetInInventory()) {
             if (!controller.GetExitInventoryTrigger()) {
+
                 if (controller.GetInventory() != currentAnimationOpenInventory) { //If controller's inventory panel is different from current animation open inventory
                     if (animationTime <= 0.01f) {
                         currentAnimationOpenInventory = controller.GetInventory();
@@ -55,6 +56,7 @@ public class PlayerAnimator : MonoBehaviour {
                         controller.SetCloseInventoryTrigger(false);
                     }
                 }
+
             }
             else if (animationTime <= 0.01f) {
                 animator.SetTrigger("Exit Inventory");

@@ -18,11 +18,11 @@ public class KeyboardButtonUI : MonoBehaviour, ISelectHandler, IDeselectHandler 
         }
     }
 
-    public void OnSelect(BaseEventData eventData) {
+    public virtual void OnSelect(BaseEventData eventData) {
         selected = true;
     }
 
-    public void OnDeselect(BaseEventData eventData) {
+    public virtual void OnDeselect(BaseEventData eventData) {
         selected = false;
     }
 }

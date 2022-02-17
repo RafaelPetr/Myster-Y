@@ -4,11 +4,11 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueChoice : DialogueElement {
-    private bool enable;
+    [SerializeField]private bool enable;
     [TextArea(3,10)]public string context;
     public DialogueOption[] options = new DialogueOption[3];
 
-    private int contextLocalizationGroupIndex;
+    public int contextLocalizationGroupIndex;
 
     public bool GetEnable() {
         return enable;

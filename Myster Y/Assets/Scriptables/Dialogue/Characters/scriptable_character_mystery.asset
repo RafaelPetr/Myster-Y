@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 541c044393b07ad49bb794dcbd9eac50, type: 3}
-  m_Name: scriptable_dialogue_character_mystery
+  m_Name: scriptable_character_mystery
   m_EditorClassIdentifier: 
-  characterName: Mr.Y
+  name: Mr.Y
   icon: {fileID: 4990072452828752886, guid: 1bf7f1c8a6ce2c547a45485d68da0203, type: 3}

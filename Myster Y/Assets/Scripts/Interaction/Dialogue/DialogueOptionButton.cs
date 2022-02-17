@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DialogueOptionButton : KeyboardButtonUI {
-    public int optionIndex;
+    public int index;
 
-    public void SendOption() {
-        DialogueManager.instance.ReceiveInteract(null,optionIndex);
+    public override void OnSelect(BaseEventData eventData) {
+        DialogueManager.instance.SetOptionIndex(index);
     }
 }

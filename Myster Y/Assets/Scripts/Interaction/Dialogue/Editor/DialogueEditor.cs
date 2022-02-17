@@ -8,21 +8,21 @@ using System.IO;
 public class DialogueEditor : Editor {
     private int tabIndex;
     private string filePath;
-    private string keyString;
+    private string key;
 
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
         Dialogue dialogue = (Dialogue)target;
 
-        if (string.IsNullOrEmpty(keyString)) {
-            keyString = dialogue.name;
+        if (string.IsNullOrEmpty(key)) {
+            key = dialogue.name;
         }
 
         if (string.IsNullOrEmpty(dialogue.key)) {
-            keyString = EditorGUILayout.TextField("Key:",keyString);
+            key = EditorGUILayout.TextField("Key:",key);
             if (GUILayout.Button("Save Key")) {
-                dialogue.key = keyString;
+                dialogue.key = key;
             }
         }
         else {
@@ -141,23 +141,23 @@ public class DialogueEditor : Editor {
     }
 
     private void SaveData(Dialogue dialogue) {
-        LocalizationItem localizationItem = BuildLocalizationItem(dialogue);
+        LocalizationElement localizationElement = BuildLocalizationElement(dialogue);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
 
         if (fileGroup != null) {
-            LocalizationItem fileItem = fileGroup.items.Find(data => data.key == localizationItem.key);
+            LocalizationElement fileElement = fileGroup.elements.Find(data => data.key == localizationElement.key);
 
-            if (fileItem != null) {
-                fileItem.value = localizationItem.value;
+            if (fileElement != null) {
+                fileElement.values = localizationElement.values;
             }
             else {
-                fileGroup.items.Add(localizationItem);
+                fileGroup.elements.Add(localizationElement);
             }
         }
         else {
-            List<LocalizationItem> itemsList = new List<LocalizationItem>();
-            itemsList.Add(localizationItem);
-            fileGroup = new LocalizationGroup("dialogues", itemsList);
+            List<LocalizationElement> elementsList = new List<LocalizationElement>();
+            elementsList.Add(localizationElement);
+            fileGroup = new LocalizationGroup("dialogues", elementsList);
 
             localizationData.groups.Add(fileGroup);
         }
@@ -169,14 +169,14 @@ public class DialogueEditor : Editor {
     }
 
     private void RemoveData(Dialogue dialogue) {
-        LocalizationItem localizationItem = BuildLocalizationItem(dialogue);
+        LocalizationElement localizationItem = BuildLocalizationElement(dialogue);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
-        LocalizationItem fileItem = fileGroup.items.Find(data => data.key == localizationItem.key);;
+        LocalizationElement fileItem = fileGroup.elements.Find(data => data.key == localizationItem.key);;
 
         if (fileItem != null) {
-            fileGroup.items.Remove(fileItem);
+            fileGroup.elements.Remove(fileItem);
 
-            if (fileGroup.items.Count == 0) {
+            if (fileGroup.elements.Count == 0) {
                 localizationData.groups.Remove(fileGroup);
             }
         }
@@ -187,7 +187,7 @@ public class DialogueEditor : Editor {
         LoadData();
     }
 
-    private LocalizationItem BuildLocalizationItem(Dialogue dialogue) {
+    private LocalizationElement BuildLocalizationElement(Dialogue dialogue) {
         List<string> valueList = new List<string>();
         Queue<DialogueSentence> sentenceQueue = new Queue<DialogueSentence>(dialogue.sentences);
 
@@ -197,7 +197,7 @@ public class DialogueEditor : Editor {
             switch (dialogue.elementTypes[element]) {
                 case "Sentence":
                     DialogueSentence sentence = sentenceQueue.Dequeue();
-                    sentence.SetLocalizationGroupIndex(localizationGroupIndex);
+                    sentence.localizationGroupIndex = localizationGroupIndex;
                     valueList.Add(sentence.text);
                     break;
             }
@@ -205,17 +205,16 @@ public class DialogueEditor : Editor {
         }
 
         if (dialogue.choice.GetEnable()) {
-            dialogue.choice.SetContextLocalizationGroupIndex(localizationGroupIndex);
+            dialogue.choice.contextLocalizationGroupIndex = localizationGroupIndex;
             valueList.Add(dialogue.choice.context);
             localizationGroupIndex++;
 
             foreach (DialogueOption option in dialogue.choice.options) {
-                option.SetLocalizationGroupIndex(localizationGroupIndex);
+                option.localizationGroupIndex = localizationGroupIndex;
                 valueList.Add(option.text);
                 localizationGroupIndex++;
             }
         }
-
-        return new LocalizationItem(dialogue.key,valueList.ToArray());
+        return new LocalizationElement(dialogue.key,valueList.ToArray());
     }
 }

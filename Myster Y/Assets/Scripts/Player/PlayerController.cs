@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour {
 
                     if (Input.GetButtonDown("Cancel")) {
                         exitInventoryTrigger = true;
+                        CameraManager.instance.SetZoom(false);
                     }
                 }
                 else {
@@ -142,6 +143,8 @@ public class PlayerController : MonoBehaviour {
                     
                     enterInventoryTrigger = true;
                     inInventory = true;
+
+                    CameraManager.instance.SetZoom(true);
                 }
             }
         }

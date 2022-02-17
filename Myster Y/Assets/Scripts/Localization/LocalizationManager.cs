@@ -45,12 +45,10 @@ public class LocalizationManager : MonoBehaviour {
             LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
             foreach (LocalizationGroup group in loadedData.groups) {
-                foreach (LocalizationItem item in group.items) {
-                    localizedText.Add(item.key,item.value);
+                foreach (LocalizationElement element in group.elements) {
+                    localizedText.Add(element.key,element.values);
                 }
             }
-            
-
         }
         else {
             Debug.LogError("Cannot find file");

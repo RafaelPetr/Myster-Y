@@ -9,21 +9,21 @@ public class LocalizationData {
 [System.Serializable]
 public class LocalizationGroup {
     public string key;
-    public List<LocalizationItem> items;
+    public List<LocalizationElement> elements;
 
-    public LocalizationGroup(string key, List<LocalizationItem> items) {
+    public LocalizationGroup(string key, List<LocalizationElement> elements) {
         this.key = key;
-        this.items = items;
+        this.elements = elements;
     }
 }
 
 [System.Serializable]
-public class LocalizationItem {
+public class LocalizationElement {
     public string key;
-    public string[] value;
+    public string[] values;
 
-    public LocalizationItem(string key, string[] value) {
+    public LocalizationElement(string key, string[] values) {
         this.key = key;
-        this.value = value;
+        this.values = values;
     }
 }

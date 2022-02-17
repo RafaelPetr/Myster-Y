@@ -2,31 +2,28 @@
     "groups": [
         {
             "key": "dialogues",
-            "items": [
+            "elements": [
                 {
                     "key": "scriptable_dialogue_metro_test_1",
-                    "value": [
-                        "VAMO BORA CARALHO TÁ FUNCIONANDO SAPORRAAAAAAAAAAAAAAAA"
-                    ]
-                },
-                {
-                    "key": "scriptable_dialogue_metro_test_2",
-                    "value": [
-                        "Test2",
-                        "a",
-                        "b",
-                        "c"
+                    "values": [
+                        "Teste1",
+                        "Teste2",
+                        "Teste3",
+                        "Teste4",
+                        "Teste5",
+                        "Teste6"
                     ]
                 }
             ]
         },
         {
-            "key": "kllllllllllll",
-            "items": [
+            "key": "items",
+            "elements": [
                 {
-                    "key": "lllll",
-                    "value": [
-                        "aaaaa"
+                    "key": "scriptable_item_key",
+                    "values": [
+                        "Chave Dourada",
+                        "Essa chave tem um detalhe em dourado de uma parada bem maneira."
                     ]
                 }
             ]

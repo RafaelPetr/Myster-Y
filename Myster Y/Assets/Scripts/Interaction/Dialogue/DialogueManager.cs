@@ -10,6 +10,11 @@ public class DialogueManager : MonoBehaviour {
 
     private Queue<DialogueElement> elements = new Queue<DialogueElement>();
 
+    private bool inDialogue;
+    private string activeText;
+    private DialogueChoice activeChoice;
+    private int optionIndex;
+
     public GameObject dialogueBox;
     private Animator dialogueBoxAnimator;
 
@@ -26,10 +31,7 @@ public class DialogueManager : MonoBehaviour {
     private List<Button> choiceOptionsButtons = new List<Button>();
     private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
 
-    private bool inDialogue;
-    private string activeText;
     private TextMeshProUGUI activeWritingUI;
-    private DialogueChoice activeChoice;
 
     private void Awake() {
         instance = this;
@@ -46,17 +48,17 @@ public class DialogueManager : MonoBehaviour {
         dialogueBoxAnimator = dialogueBox.GetComponent<Animator>();
     }
 
-    public bool GetIsChoosing() {
-        return activeChoice != null;
+    public void SetOptionIndex(int index) {
+        optionIndex = index;
     }
 
-    public void ReceiveInteract(Dialogue dialogue, int optionIndex = -1) {
+    public void ReceiveInteract(Dialogue dialogue) {
         if (activeText != null) {
             FinishWrite();
             return;
         }
         else if (activeChoice != null) {
-            SelectOption(optionIndex);
+            SelectOption();
             return;
         }
         else if (inDialogue) {
@@ -100,7 +102,7 @@ public class DialogueManager : MonoBehaviour {
     public void UpdateSentenceUI(DialogueSentence sentence) {
         ResetUI();
         sentenceUI.SetActive(true);
-        sentenceName.text = sentence.character.characterName;
+        sentenceName.text = sentence.character.name;
         sentenceIcon.sprite = sentence.character.icon;
 
         StartWriting(sentence.text,sentenceText);
@@ -153,7 +155,7 @@ public class DialogueManager : MonoBehaviour {
 		activeWritingUI = null;
 	}
 
-    private void SelectOption(int optionIndex) {
+    private void SelectOption() {
         choiceUI.SetActive(false);
 
         if (activeChoice.options[optionIndex].linkedDialogue != null) {

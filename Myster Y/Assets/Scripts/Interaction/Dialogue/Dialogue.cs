@@ -4,7 +4,7 @@ using UnityEngine;
 
 //public enum elementTypes {Sentence,Choice};
 
-[CreateAssetMenu(menuName = "Dialogue/Dialogue")]
+[CreateAssetMenu(fileName = "scriptable_dialogue_", menuName = "Dialogue/Dialogue")]
 public class Dialogue : ScriptableObject {
     public string key;
 
@@ -19,13 +19,13 @@ public class Dialogue : ScriptableObject {
 		elementsOrder.Add(-1);
     }
 
-    public void AddChoice() {
-        choice.SetEnable(true);
-    }
-
     public void RemoveSentence(int index) {
         sentences.RemoveAt(index);
         elementsOrder.RemoveAt(index);
+    }
+
+    public void AddChoice() {
+        choice.SetEnable(true);
     }
 
     public void RemoveChoice() {
