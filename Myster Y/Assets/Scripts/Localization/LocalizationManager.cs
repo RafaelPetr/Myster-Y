@@ -36,7 +36,7 @@ public class LocalizationManager : MonoBehaviour {
         }
     }
 
-    public void LoadLocalizedText(string fileName) {
+    private void LoadLocalizedText(string fileName) {
         localizedText = new Dictionary<string, string[]>();
         string filePath = Path.Combine(Application.streamingAssetsPath,fileName);
 

@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour {
 
                     if (Input.GetAxisRaw("Horizontal") != 0f) {
                         openInventoryTrigger = true;
+                        InventoryManager.instance.Open((int)inventory);
                     }
 
                     if (Input.GetButtonDown("Cancel")) {
@@ -131,6 +132,7 @@ public class PlayerController : MonoBehaviour {
                 else {
                     if (Input.GetButtonDown("Cancel") && !openInventoryTrigger) {
                         closeInventoryTrigger = true;
+                        InventoryManager.instance.Close();
                     }
                 }
             }

@@ -13,6 +13,7 @@ public class Item : ScriptableObject {
     public Sprite analyzeImage;
 
     public void Analyze() {
-
+        Debug.Log(LocalizationManager.instance.GetLocalizedValue(key, 0));
+        Debug.Log(LocalizationManager.instance.GetLocalizedValue(key, 1));
     }
 }

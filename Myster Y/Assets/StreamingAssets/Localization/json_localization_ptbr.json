@@ -13,6 +13,13 @@
                         "Teste5",
                         "Teste6"
                     ]
+                },
+                {
+                    "key": "scriptable_dialogue_metro_test_2",
+                    "values": [
+                        "m4 gritando meu nome",
+                        "tem uma glock esperando por mim"
+                    ]
                 }
             ]
         },

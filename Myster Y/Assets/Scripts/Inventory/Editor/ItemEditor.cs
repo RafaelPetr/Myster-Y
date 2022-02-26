@@ -22,7 +22,7 @@ public class ItemEditor : Editor {
             key = EditorGUILayout.TextField("Key:",key);
             if (GUILayout.Button("Save Key")) {
                 item.key = key;
-                item.name = "";
+                item.m_name = "";
             }
         }
         else {
@@ -31,7 +31,7 @@ public class ItemEditor : Editor {
 
             GUILayout.BeginHorizontal();
                 GUILayout.Label("Name");
-                item.name = GUILayout.TextArea(item.name);
+                item.m_name = GUILayout.TextArea(item.m_name);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
@@ -133,7 +133,7 @@ public class ItemEditor : Editor {
     private LocalizationElement BuildLocalizationElement(Item item) {
         List<string> valueList = new List<string>();
 
-        valueList.Add(item.name);
+        valueList.Add(item.m_name);
         valueList.Add(item.description);
 
         return new LocalizationElement(item.key,valueList.ToArray());
