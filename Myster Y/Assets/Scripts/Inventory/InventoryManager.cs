@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class InventoryManager : MonoBehaviour {
     public static InventoryManager instance;
+
+    private int activePanel;
     
     [SerializeField]private Transform inventoryUI;
     private List<Transform> inventoryPanels = new List<Transform>();
@@ -27,6 +29,8 @@ public class InventoryManager : MonoBehaviour {
             index = 0;
         }
 
+        activePanel = index;
+
         inventoryPanels[index].gameObject.SetActive(true);
 
         slots = inventoryPanels[index].GetComponentsInChildren<ItemSlot>();
@@ -45,6 +49,10 @@ public class InventoryManager : MonoBehaviour {
                 currentSlot.Clear();
             }
         }
+    }
+
+    public void OpenLastPanelClosed() {
+        Open(activePanel);
     }
 
     public void Close() {

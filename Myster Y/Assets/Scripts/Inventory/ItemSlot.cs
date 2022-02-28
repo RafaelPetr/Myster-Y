@@ -11,12 +11,13 @@ public class ItemSlot : MonoBehaviour {
         button = GetComponent<Button>();
     }
 
-    private void Start() {
+    private void OnEnable() {
         button.onClick.AddListener(UseItem);
     }
 
     private void UseItem() {
         if (item != null) {
+            InventoryManager.instance.Close();
             item.Analyze();
         }
     }

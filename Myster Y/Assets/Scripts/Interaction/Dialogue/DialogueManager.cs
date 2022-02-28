@@ -11,12 +11,12 @@ public class DialogueManager : MonoBehaviour {
     private Queue<DialogueElement> elements = new Queue<DialogueElement>();
 
     private bool inDialogue;
-    private string activeText;
     private DialogueChoice activeChoice;
     private int optionIndex;
 
-    public GameObject dialogueBox;
-    private Animator dialogueBoxAnimator;
+    public GameObject textBox;
+    public GameObject dialogueTextBox;
+    private Animator textBoxAnimator;
 
     private EventSystem eventSystem;
 
@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour {
     private List<Button> choiceOptionsButtons = new List<Button>();
     private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
 
+    private string activeWritingText;
     private TextMeshProUGUI activeWritingUI;
 
     private void Awake() {
@@ -45,7 +46,7 @@ public class DialogueManager : MonoBehaviour {
 
         eventSystem = FindObjectOfType<EventSystem>();
 
-        dialogueBoxAnimator = dialogueBox.GetComponent<Animator>();
+        textBoxAnimator = textBox.GetComponent<Animator>();
     }
 
     public void SetOptionIndex(int index) {
@@ -53,7 +54,8 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void ReceiveInteract(Dialogue dialogue) {
-        if (activeText != null) {
+        if (activeWritingText != null) {
+		    activeWritingUI.text = activeWritingText;
             FinishWrite();
             return;
         }
@@ -73,10 +75,12 @@ public class DialogueManager : MonoBehaviour {
     private void ResetUI() {
         sentenceUI.SetActive(false);
         choiceUI.SetActive(false);
-        dialogueBoxAnimator.SetBool("Active",true);
+        textBoxAnimator.SetBool("Active",true);
     }
 
     public void StartDialogue(Dialogue dialogue) {
+        dialogueTextBox.SetActive(true);
+
         inDialogue = true;
         activeChoice = null;
 
@@ -105,7 +109,7 @@ public class DialogueManager : MonoBehaviour {
         sentenceName.text = sentence.character.name;
         sentenceIcon.sprite = sentence.character.icon;
 
-        StartWriting(sentence.text,sentenceText);
+        StartWriting(sentence.text, sentenceText);
     }
 
     public void UpdateChoiceUI(DialogueChoice choice) {
@@ -132,26 +136,24 @@ public class DialogueManager : MonoBehaviour {
     private void StartWriting(string text, TextMeshProUGUI writingUI) {
 		StopAllCoroutines();
 
-        activeText = text;
+        activeWritingText = text;
         activeWritingUI = writingUI;
 		activeWritingUI.text = "";
 		StartCoroutine(Write());
 	}
 
-	IEnumerator Write() {
-		foreach (char letter in activeText.ToCharArray()) {
+	private IEnumerator Write() {
+		foreach (char letter in activeWritingText.ToCharArray()) {
 			activeWritingUI.text += letter;
 			yield return new WaitForSeconds(0.02f);
 		}
-		activeText = null;
-		activeWritingUI = null;
+        FinishWrite();
 	}
 
-	public void FinishWrite() {
+	private void FinishWrite() {
 		StopAllCoroutines();
-		activeWritingUI.text = activeText;
 
-		activeText = null;
+		activeWritingText = null;
 		activeWritingUI = null;
 	}
 
@@ -168,8 +170,9 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void EndDialogue() {
+        dialogueTextBox.SetActive(false);
         inDialogue = false;
-        dialogueBoxAnimator.SetBool("Active",false);
+        textBoxAnimator.SetBool("Active",false);
         PlayerController.instance.SetInInteraction(false);
     }
 

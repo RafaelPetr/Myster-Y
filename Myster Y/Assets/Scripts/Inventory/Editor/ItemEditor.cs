@@ -47,7 +47,7 @@ public class ItemEditor : Editor {
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             GUILayout.Label("Analyze Image");
-            item.analyzeImage = (Sprite)EditorGUILayout.ObjectField("",item.analyzeImage,typeof(Sprite),true);
+            item.analysisImage = (Sprite)EditorGUILayout.ObjectField("",item.analysisImage,typeof(Sprite),true);
 
             
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
