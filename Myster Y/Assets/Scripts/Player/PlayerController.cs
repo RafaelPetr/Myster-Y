@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask collidable;
 
     public Transform movePointer;
-    public Transform interactPointer;
+    public InteractPointer interactPointer;
 
     private void Awake() {
         if (instance == null) {
@@ -39,12 +39,13 @@ public class PlayerController : MonoBehaviour {
 
     void Start() {
         movePointer.parent = null;
-        interactPointer.parent = null;
         animator = gameObject.AddComponent<PlayerAnimator>();
     }
 
     private void FixedUpdate() {
-        transform.position = Vector3.MoveTowards(transform.position, movePointer.position, Time.deltaTime * moveSpeed);
+        if (!BlockMovement()) {
+            transform.position = Vector3.MoveTowards(transform.position, movePointer.position, Time.deltaTime * moveSpeed);
+        }
     }
 
     void Update() {
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.position = new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePointer.position.y, 0f);
+                    interactPointer.Move(new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePointer.position.y, 0f));
                 }
 
                 else if (Input.GetAxisRaw("Vertical") != 0f) {
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.position = new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                    interactPointer.Move(new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f));
                 }
 
                 else {
@@ -141,7 +142,7 @@ public class PlayerController : MonoBehaviour {
                     directionX = 0;
                     directionY = -1;
                     
-                    interactPointer.transform.position = movePointer.transform.position;
+                    interactPointer.Move(movePointer.transform.position);
                     
                     enterInventoryTrigger = true;
                     inInventory = true;
@@ -172,6 +173,11 @@ public class PlayerController : MonoBehaviour {
 
         public void SetInInteraction(bool value) {
             inInteraction = value;
+
+            if (!value) {
+                interactPointer.SetFreezePosition(false);
+                interactPointer.Move(new Vector3(movePointer.position.x + directionX*0.32f, movePointer.position.y + directionY*0.32f, 0f));
+            }
         }
 
         public bool GetInTransition() {

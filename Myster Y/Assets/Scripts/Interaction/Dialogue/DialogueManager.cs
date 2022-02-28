@@ -8,6 +8,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour {
     public static DialogueManager instance;
 
+    private Dialogueable activeDialogueable;
+
     private Queue<DialogueElement> elements = new Queue<DialogueElement>();
 
     private bool inDialogue;
@@ -53,7 +55,7 @@ public class DialogueManager : MonoBehaviour {
         optionIndex = index;
     }
 
-    public void ReceiveInteract(Dialogue dialogue) {
+    public void ReceiveInteract(Dialogueable dialogueable) {
         if (activeWritingText != null) {
 		    activeWritingUI.text = activeWritingText;
             FinishWrite();
@@ -67,8 +69,8 @@ public class DialogueManager : MonoBehaviour {
             ExecuteNextElement();
         }       
         else {
-            StartDialogue(dialogue);
-            PlayerController.instance.SetInInteraction(true);
+            activeDialogueable = dialogueable;
+            StartDialogue(dialogueable.DefineDialogue());
         }
     }
 
@@ -173,7 +175,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueTextBox.SetActive(false);
         inDialogue = false;
         textBoxAnimator.SetBool("Active",false);
-        PlayerController.instance.SetInInteraction(false);
+        activeDialogueable.FinishInteraction();
     }
 
 }

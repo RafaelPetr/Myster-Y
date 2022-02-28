@@ -14,7 +14,8 @@ public abstract class Dialogueable : Interactable {
     }
 
     public override void Interact() {
-        DialogueManager.instance.ReceiveInteract(DefineDialogue());
+        base.Interact();
+        DialogueManager.instance.ReceiveInteract(this);
     }
 
     public abstract Dialogue DefineDialogue();
