@@ -173,11 +173,6 @@ public class PlayerController : MonoBehaviour {
 
         public void SetInInteraction(bool value) {
             inInteraction = value;
-
-            if (!value) {
-                interactPointer.SetFreezePosition(false);
-                interactPointer.Move(new Vector3(movePointer.position.x + directionX*0.32f, movePointer.position.y + directionY*0.32f, 0f));
-            }
         }
 
         public bool GetInTransition() {

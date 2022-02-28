@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour {
-    private bool interacting;
+    private bool inInteraction;
 
     public virtual void Awake() {
         gameObject.tag = "Interactable";
@@ -11,11 +11,15 @@ public abstract class Interactable : MonoBehaviour {
 
     public virtual void Interact() {
         PlayerController.instance.SetInInteraction(true);
-        interacting = true;
+        inInteraction = true;
     }
 
     public void FinishInteraction() {
-        interacting = false;
+        PlayerController.instance.interactPointer.FinishInteraction();
         PlayerController.instance.SetInInteraction(false);
+    }
+
+    public bool GetInInteraction() {
+        return inInteraction;
     }
 }
