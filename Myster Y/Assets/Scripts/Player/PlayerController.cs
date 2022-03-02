@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     private float moveSpeed = 1.5f;
 
     private float directionX;
-    private float directionY;
+    private float directionY = -1;
 
     private float inventory;
     private bool enterInventoryTrigger;
