@@ -7,7 +7,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class TimeManager : MonoBehaviour {
     public static TimeManager instance;
 
-    private float day = 0.5f;
+    private float day = 0.5f; //Testing during midday
     private float normalizedDay;
     private float hour;
     private float minute;
@@ -16,6 +16,7 @@ public class TimeManager : MonoBehaviour {
     private static float hoursPerDay = 24f;
     private static float minutesPerHour = 60f;
 
+    private float lastHour;
     private bool updateRoutines;
     private int minutesToUpdate;
     [System.NonSerialized]public UnityEvent UpdateRoutinesEvent;
@@ -46,8 +47,10 @@ public class TimeManager : MonoBehaviour {
     }
 
     private void UpdateRoutines() {
-        if (updateRoutines && minute == 0) { //Update routines every 1 hour
+        if (updateRoutines && lastHour != hour) { //Updates routines every change of hour
             UpdateRoutinesEvent.Invoke();
+
+            lastHour = hour;
             updateRoutines = false;
         }
         else {

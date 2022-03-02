@@ -42,6 +42,7 @@ public class PlayerAnimator : MonoBehaviour {
                 }
                 else {
                     if (controller.GetOpenInventoryTrigger()) {
+                        animator.ResetTrigger("Exit Inventory");
                         if (controller.GetEnterInventoryTrigger()) {
                             animationTime = 0f;
                             controller.SetEnterInventoryTrigger(false);
