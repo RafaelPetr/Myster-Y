@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         movePointer.parent = null;
         animator = gameObject.AddComponent<PlayerAnimator>();
+        gameObject.tag = "Player";
+
+        BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
+        collider.size = new Vector3(0.32f,0.32f,0);
     }
 
     private void FixedUpdate() {

@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour {
     private float hour;
     private float minute;
 
-    private static float realSecondsPerDay = 10f;
+    private static float realSecondsPerDay = 60f;
     private static float hoursPerDay = 24f;
     private static float minutesPerHour = 60f;
 

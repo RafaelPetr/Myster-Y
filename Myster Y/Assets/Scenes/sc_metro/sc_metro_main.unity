@@ -22910,7 +22910,7 @@ GameObject:
   - component: {fileID: 848914653}
   - component: {fileID: 848914655}
   - component: {fileID: 848914656}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Character_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23026,31 +23026,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ac2035bbe8bef47874ccd64f1335b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinations:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
-  - 11
-  - 12
-  - 13
-  - 14
-  - 15
-  - 16
-  - 17
-  - 18
-  - 19
-  - 20
-  - 21
-  - 22
-  - 23
+  gridDestinations:
+  - {x: 5, y: 0, z: 0}
+  - {x: 0, y: 3, z: 0}
+  - {x: 0, y: 3, z: 0}
+  - {x: 0, y: 3, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 2, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 2, y: 1, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 4, y: 4, z: 0}
+  - {x: 8, y: 1, z: 0}
+  - {x: 3, y: 3, z: 0}
+  - {x: 3, y: 3, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
 --- !u!114 &848914656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23063,8 +23063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186384f8da5be5b46a60998ef458c5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWorldGridPosition: {x: -14, y: 4, z: 0}
-  endWorldGridPosition: {x: -12, y: 4, z: 0}
 --- !u!1 &898639665
 GameObject:
   m_ObjectHideFlags: 0
@@ -33936,8 +33934,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1125996647}
   - component: {fileID: 1125996648}
-  - component: {fileID: 1125996649}
   - component: {fileID: 1125996650}
+  - component: {fileID: 1125996649}
   m_Layer: 0
   m_Name: Character_MysterY_Pointer_Interact
   m_TagString: Untagged
@@ -34008,7 +34006,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125996646}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -39314,6 +39312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517867241}
   - component: {fileID: 1517867242}
+  - component: {fileID: 1517867243}
   m_Layer: 0
   m_Name: Character_MysterY_Pointer_Move
   m_TagString: Untagged
@@ -39361,6 +39360,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!50 &1517867243
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517867240}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1551392035
 PrefabInstance:
   m_ObjectHideFlags: 0

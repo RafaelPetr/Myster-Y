@@ -6,14 +6,17 @@ public class Pathfinding { //Thx @UnityCodeMonkey :)
     private int straightCost = 10;
 
     private PathfindingGrid grid;
-    private List<PathNode> openList = new List<PathNode>();
-    private HashSet<PathNode> closedList = new HashSet<PathNode>();
+    private List<PathNode> openList;
+    private HashSet<PathNode> closedList;
 
     public Pathfinding() {
         grid = PathfindingGrid.instance;
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY) {
+        openList = new List<PathNode>();
+        closedList = new HashSet<PathNode>();
+        
         PathNode startNode = grid.GetNode(startX,startY);
         PathNode endNode = grid.GetNode(endX,endY);
 

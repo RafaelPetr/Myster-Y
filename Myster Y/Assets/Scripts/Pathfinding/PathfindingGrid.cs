@@ -37,16 +37,16 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
                     continue;
                 }
                 
-                Vector3 nodePosition = tilemap.GetCellCenterWorld(GetWorldCellPosition(new Vector3Int(x,y,0)));
+                Vector3 nodePosition = tilemap.GetCellCenterWorld(GetCellPositionGrid(new Vector3Int(x,y,0)));
                 nodes[x,y] = new PathNode(x,y,nodePosition);
             }
         }
     }
 
-    private Vector3Int GetWorldCellPosition(Vector3Int localCellPosition) {
-        int worldX = localCellPosition.x + bounds.position.x;
-        int worldY = localCellPosition.y + bounds.position.y;
-        int worldZ = localCellPosition.z - bounds.position.z;
+    private Vector3Int GetCellPositionGrid(Vector3Int tilesetCellPosition) {
+        int worldX = tilesetCellPosition.x + bounds.position.x;
+        int worldY = tilesetCellPosition.y + bounds.position.y;
+        int worldZ = tilesetCellPosition.z + bounds.position.z;
 
         return new Vector3Int(worldX, worldY, worldZ);
     }
@@ -63,12 +63,21 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
         return nodes[x,y];
     }
 
-    public Vector3Int GetLocalCellPosition(Vector3Int worldCellPosition) {
-        int localX = worldCellPosition.x - bounds.position.x;
-        int localY = worldCellPosition.y - bounds.position.y;
-        int localZ = worldCellPosition.z - bounds.position.z;
+    public Vector3Int GetCellPositionTileset(Vector3Int gridCellPosition) {
+        int localX = gridCellPosition.x - bounds.position.x;
+        int localY = gridCellPosition.y - bounds.position.y;
+        int localZ = gridCellPosition.z - bounds.position.z;
 
         return new Vector3Int(localX, localY, localZ);
+    }
+
+    public Vector3Int GetWorldPositionGrid(Vector3 worldPosition) {
+        Vector3 gridScale = tilemap.layoutGrid.transform.localScale;
+        
+        Vector3 resultPosition = worldPosition - new Vector3(gridScale.x/2,gridScale.y/2,gridScale.z/2);
+        resultPosition = Vector3.Scale(resultPosition,new Vector3(1/gridScale.x, 1/gridScale.y, 1/gridScale.z));
+
+        return Vector3Int.RoundToInt(resultPosition);
     }
 }
 
