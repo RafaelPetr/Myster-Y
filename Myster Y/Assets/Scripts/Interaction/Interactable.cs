@@ -10,11 +10,13 @@ public abstract class Interactable : MonoBehaviour {
     }
 
     public virtual void Interact() {
+        TimeManager.instance.SetPauseTime(true);
         PlayerController.instance.SetInInteraction(true);
         inInteraction = true;
     }
 
     public void FinishInteraction() {
+        TimeManager.instance.SetPauseTime(false);
         PlayerController.instance.interactPointer.FinishInteraction();
         PlayerController.instance.SetInInteraction(false);
     }

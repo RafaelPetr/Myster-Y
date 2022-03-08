@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Sortable : MonoBehaviour {
-    [SerializeField]private bool movement = false;
+    private bool movement;
+    private int priority;
     private Renderer render;
 
     private void Awake() {
@@ -20,8 +21,16 @@ public class Sortable : MonoBehaviour {
         }
     }
 
-    void Sort() {
+    private void Sort() {
         float minBound = render.bounds.min.y;
-        render.sortingOrder = (int)(minBound*(-100));
+        render.sortingOrder = (int)(minBound*(-100)) + priority;
+    }
+
+    public void SetMovement(bool value) {
+        movement = value;
+    }
+
+    public void SetPriority(int value) {
+        priority = value;
     }
 }

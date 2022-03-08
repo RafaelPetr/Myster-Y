@@ -43,7 +43,14 @@ public class PlayerController : MonoBehaviour {
         gameObject.tag = "Player";
 
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
-        collider.size = new Vector3(0.32f,0.32f,0);
+        collider.size = new Vector3(0.24f,0.24f,0);
+
+        Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
+        rigidbody.isKinematic = true;
+
+        Sortable sortable = gameObject.AddComponent<Sortable>();
+        sortable.SetMovement(true);
+        sortable.SetPriority(1);
     }
 
     private void FixedUpdate() {
@@ -158,16 +165,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private bool BlockMovement() {
-        if (inInteraction) {
-            return true;
-        }
-        else if (inTransition) {
-            return true;
-        }
-        else if (inInventory) {
-            return true;
-        }
-        return false;
+        return inInteraction || inTransition || inInventory;
     }
 
     #region Get and Set Variables Functions

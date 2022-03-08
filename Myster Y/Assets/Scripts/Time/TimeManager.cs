@@ -7,6 +7,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class TimeManager : MonoBehaviour {
     public static TimeManager instance;
 
+    private bool pauseTime;
     private float day = 0.5f; //Testing during midday
     private float normalizedDay;
     private float hour;
@@ -19,6 +20,9 @@ public class TimeManager : MonoBehaviour {
     private float lastHour;
     private bool updateRoutines;
     private int minutesToUpdate;
+
+    public delegate void PauseTimeEvent(bool value);
+    [System.NonSerialized]public PauseTimeEvent pauseTimeEvent;
     [System.NonSerialized]public UnityEvent UpdateRoutinesEvent;
 
     private void Awake() {
@@ -28,7 +32,6 @@ public class TimeManager : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
-
         UpdateRoutinesEvent = new UnityEvent();
     }
 
@@ -37,13 +40,15 @@ public class TimeManager : MonoBehaviour {
     }
 
     private void UpdateTime() {
-        day += Time.deltaTime / realSecondsPerDay;
-        normalizedDay = day % 1f;
+        if (!pauseTime) {
+            day += Time.deltaTime / realSecondsPerDay;
+            normalizedDay = day % 1f;
 
-        hour = Mathf.Floor(normalizedDay*hoursPerDay);
-        minute = Mathf.Floor(((normalizedDay*hoursPerDay)%1f)*minutesPerHour);
+            hour = Mathf.Floor(normalizedDay*hoursPerDay);
+            minute = Mathf.Floor(((normalizedDay*hoursPerDay)%1f)*minutesPerHour);
 
-        UpdateRoutines();
+            UpdateRoutines();
+        }
     }
 
     private void UpdateRoutines() {
@@ -56,6 +61,15 @@ public class TimeManager : MonoBehaviour {
         else {
             updateRoutines = true;
         }
+    }
+
+    public bool GetPauseTime() {
+        return pauseTime;
+    }
+
+    public void SetPauseTime(bool value) {
+        pauseTime = value;
+        pauseTimeEvent.Invoke(value);
     }
 
     public float GetDay() {
