@@ -169,6 +169,22 @@ public class PlayerController : MonoBehaviour {
     }
 
     #region Get and Set Variables Functions
+        public float GetDirectionX() {
+            return directionX;
+        }
+
+        public void SetDirectionX(float value) {
+            directionX = value;
+        }
+
+        public float GetDirectionY() {
+            return directionY;
+        }
+
+        public void SetDirectionY(float value) {
+            directionY = value;
+        }
+        
         public bool GetInInteraction() {
             return inInteraction;
         }
@@ -183,14 +199,6 @@ public class PlayerController : MonoBehaviour {
 
         public void SetInTransition(bool value) {
             inTransition = value;
-        }
-
-        public float GetDirectionX() {
-            return directionX;
-        }
-
-        public float GetDirectionY() {
-            return directionY;
         }
 
         public bool GetWalking() {

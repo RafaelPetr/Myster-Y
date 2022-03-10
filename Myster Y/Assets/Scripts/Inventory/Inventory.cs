@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
     public static Inventory instance;
-    private List<Item> items = new List<Item>();
+    private static List<Item> items = new List<Item>();
 
     private void Awake() {
         if (instance == null) {

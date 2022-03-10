@@ -13,7 +13,7 @@ public class CharacterAI : MonoBehaviour {
     private int collisionCounter;
     private bool cancelCollision;
 
-    private bool enablePathDebug = false;
+    private bool enablePathDebug = true;
     private int targetTile;
     private List<PathNode> path = new List<PathNode>();
     private Pathfinding pathfinding;

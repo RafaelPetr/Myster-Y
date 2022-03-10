@@ -5,8 +5,9 @@ using UnityEngine.Events;
 using System.IO;
 
 public class LocalizationManager : MonoBehaviour {
-
     public static LocalizationManager instance;
+    private bool isReady;
+
     private Dictionary<string,string[]> localizedText;
 
     [System.NonSerialized]public UnityEvent ChangeLocalization = new UnityEvent();
@@ -14,12 +15,7 @@ public class LocalizationManager : MonoBehaviour {
     private string missingTextString = "Localized text not found";
 
     private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-        else if (instance != this) {
-            Destroy(gameObject);
-        }
+        instance = this;
     }
 
     private void Start() {
@@ -54,6 +50,7 @@ public class LocalizationManager : MonoBehaviour {
             Debug.LogError("Cannot find file");
         }
         ChangeLocalization.Invoke();
+        isReady = true;
     }
 
     public string GetLocalizedValue (string key, int textIndex) {
@@ -64,5 +61,9 @@ public class LocalizationManager : MonoBehaviour {
         }
 
         return result;
+    }
+
+    public bool GetIsReady() {
+        return isReady;
     }
 }
