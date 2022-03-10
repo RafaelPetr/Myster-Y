@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 732377167}
   - component: {fileID: 732377166}
   - component: {fileID: 732377170}
+  - component: {fileID: 732377171}
   m_Layer: 0
   m_Name: Character_Character
   m_TagString: Untagged
@@ -415,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1291535514}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &732377170
 MonoBehaviour:
@@ -443,17 +444,30 @@ MonoBehaviour:
   - {x: 2, y: 3, z: 0}
   - {x: 2, y: 3, z: 0}
   - {x: 2, y: 3, z: 0}
-  - {x: 3, y: 3, z: 0}
-  - {x: 3, y: 3, z: 0}
-  - {x: 3, y: 3, z: 0}
-  - {x: 4, y: 2, z: 0}
-  - {x: 4, y: 2, z: 0}
-  - {x: 4, y: 2, z: 0}
+  - {x: 17, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
+  - {x: 17, y: 0, z: 0}
   - {x: 6, y: 2, z: 0}
   - {x: 6, y: 2, z: 0}
   - {x: 6, y: 1, z: 0}
   - {x: 6, y: 1, z: 0}
   - {x: 6, y: 1, z: 0}
+--- !u!114 &732377171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732377165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6b18e1b49c99a49b5b897d973d810e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 0100000002000000
 --- !u!1 &831518964
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +753,7 @@ GameObject:
   - component: {fileID: 1760031693}
   - component: {fileID: 1760031696}
   - component: {fileID: 1760031694}
+  - component: {fileID: 1760031697}
   - component: {fileID: 1760031695}
   m_Layer: 0
   m_Name: Object_LightPole_1
@@ -867,6 +882,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1760031697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760031691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6b18e1b49c99a49b5b897d973d810e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 02000000
 --- !u!1001 &1854898356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68547,7 +68575,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.76
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7110722971932729173, guid: 3f4abdcf169d3b540bf7bdf05d3e5b35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4abdcf169d3b540bf7bdf05d3e5b35, type: 3}
 --- !u!4 &1876629501 stripped
 Transform:

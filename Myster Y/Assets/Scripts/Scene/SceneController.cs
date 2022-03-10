@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static SceneController instance;
+    private static string sceneKey;
     private static string entranceKey;
 
     [SerializeField]private Animator crossfade;
@@ -31,12 +32,17 @@ public class SceneController : MonoBehaviour {
     }
 
     public void Load(Exit exit) {
+        sceneKey = exit.GetSceneKey();
         entranceKey = exit.GetEntranceKey();
-        StartCoroutine(LoadScene(exit.GetSceneKey()));
+        StartCoroutine(LoadScene(sceneKey));
     }
 
     public string GetEntranceKey() {
         return entranceKey;
+    }
+
+    public string GetSceneKey() {
+        return sceneKey;
     }
 
     public void SpawnPlayer(Entrance entrance) {

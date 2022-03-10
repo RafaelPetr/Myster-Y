@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class CharacterSchedule : MonoBehaviour {
     private CharacterAI aI;
-
+    private TimeManager timeManager;
     [SerializeField]private Vector3Int[] gridDestinations = new Vector3Int[24]; //Strings for testing
-    private int currentDestination = 11; //Testing during midday
 
     private void Start() {
-        TimeManager.instance.UpdateRoutinesEvent.AddListener(ChangeDestination);
+        timeManager = TimeManager.instance;
+        timeManager.UpdateRoutinesEvent.AddListener(ChangeDestination);
+        
         aI = GetComponent<CharacterAI>();
     }
 
     private void ChangeDestination() {
-        currentDestination++;
-        if (currentDestination >= 24) {
-            currentDestination = 0;
-        }
-
-        aI.UpdatePath(gridDestinations[currentDestination]);
+        aI.UpdatePath(gridDestinations[timeManager.GetNormalizedHour()]);
     }
 }

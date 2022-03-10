@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterAI : MonoBehaviour {
+    private SceneController sceneController;
+
     private new BoxCollider2D collider;
+
+    private bool inScene;
+    private string currentScene;
 
     private float moveSpeed = 1.5f;
     private bool walking;
@@ -24,10 +29,15 @@ public class CharacterAI : MonoBehaviour {
         collider.size = new Vector3(0.32f, 0.32f, 0);
         collider.isTrigger = true;
 
+        Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
+        rigidbody.isKinematic = true;
+
         gameObject.layer = LayerMask.NameToLayer("Collidable");
 
         Sortable sortable = gameObject.AddComponent<Sortable>();
         sortable.SetMovement(true);
+
+        sceneController = SceneController.instance;
     }
 
     private void Start() {
@@ -35,10 +45,15 @@ public class CharacterAI : MonoBehaviour {
         grid = pathfinding.GetGrid();
 
         TimeManager.instance.pauseTimeEvent += SetInPause;
+
+        if (currentScene == null) {
+            currentScene = SceneController.instance.GetSceneKey();
+            inScene = true;
+        }
     }
 
     private void Update() {
-        if (path != null && enablePathDebug) {
+        if (path != null && enablePathDebug && inScene) {
             for (int i = 0; i < path.Count -1; i++) {
                 Debug.DrawLine(path[i].GetWorldPosition(), path[i+1].GetWorldPosition(), Color.green);
             }
@@ -46,8 +61,13 @@ public class CharacterAI : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        ControlCollision();
-        ControlMovement();
+        if (inScene) {
+            ControlCollision();
+            ControlMovement();
+        }
+        else {
+            ControlOutOfScene();
+        }
     }
 
     private void ControlCollision() {
@@ -84,6 +104,23 @@ public class CharacterAI : MonoBehaviour {
         }
     }
 
+    private void ControlOutOfScene() {
+        Debug.Log("Controla pae");
+        if (currentScene == sceneController.GetSceneKey()) {
+            EnterScene();
+        }
+    }
+    
+    private void EnterScene() {
+        Behaviour[] components = GetComponents<Behaviour>();
+        foreach (Behaviour component in components) {
+            component.enabled = true;
+        }
+        GetComponent<SpriteRenderer>().enabled = true;
+
+        inScene = true;
+    }
+    
     private void SetInPause(bool value) {
         inPause = value;
     }
@@ -114,5 +151,19 @@ public class CharacterAI : MonoBehaviour {
 
         path = pathfinding.FindPath(startCell.x, startCell.y, endCell.x, endCell.y);
         walking = true;
+    }
+
+    public void ExitScene(string scene) {
+        Behaviour[] components = GetComponents<Behaviour>();
+        foreach (Behaviour component in components) {
+            component.enabled = false;
+        }
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        this.enabled = true;
+        GetComponent<CharacterSchedule>().enabled = true;
+
+        inScene = false;
+        currentScene = scene;
     }
 }

@@ -24,15 +24,23 @@ public class InteractPointer : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.CompareTag("Interactable")) {
-            interactable = collider.GetComponent<Interactable>();
+    private void OnTriggerEnter2D(Collider2D other) {
+        CustomTags tags = other.gameObject.GetComponent<CustomTags>();
+        
+        if (tags != null) {
+            if (tags.HasTag(Tag.Interactable)) {
+                interactable = other.GetComponent<Interactable>();
+            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider) {
-        if (collider.CompareTag("Interactable")) {
-            interactable = null;
+    private void OnTriggerExit2D(Collider2D other) {
+        CustomTags tags = other.gameObject.GetComponent<CustomTags>();
+        
+        if (tags != null) {
+            if (tags.HasTag(Tag.Interactable)) {
+                interactable = null;
+            }
         }
     }
 

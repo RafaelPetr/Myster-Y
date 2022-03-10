@@ -10,11 +10,21 @@ public class Exit : MonoBehaviour {
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
         collider.size = new Vector3(0.32f, 0.32f, 0);
         collider.isTrigger = true;
+
+        Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
+        rigidbody.isKinematic = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
-            SceneController.instance.Load(this);
+        CustomTags tags = other.gameObject.GetComponent<CustomTags>();
+
+        if (tags != null) {
+            if (tags.HasTag(Tag.Player)) {
+                SceneController.instance.Load(this);
+            }
+            else if (tags.HasTag(Tag.Character)) {
+                other.GetComponent<CharacterAI>().ExitScene(this.sceneKey);
+            }
         }
     }
 

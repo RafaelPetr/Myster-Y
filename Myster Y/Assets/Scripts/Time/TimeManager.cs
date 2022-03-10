@@ -6,11 +6,12 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class TimeManager : MonoBehaviour {
     public static TimeManager instance;
+    private static float day = 0.5f; //Testing during midday
 
     private bool pauseTime;
-    private float day = 0.5f; //Testing during midday
     private float normalizedDay;
     private float hour;
+    private int normalizedHour;
     private float minute;
 
     private static float realSecondsPerDay = 60f;
@@ -43,6 +44,7 @@ public class TimeManager : MonoBehaviour {
         if (!pauseTime) {
             day += Time.deltaTime / realSecondsPerDay;
             normalizedDay = day % 1f;
+            normalizedHour = (int)(hoursPerDay*normalizedDay - 1);
 
             hour = Mathf.Floor(normalizedDay*hoursPerDay);
             minute = Mathf.Floor(((normalizedDay*hoursPerDay)%1f)*minutesPerHour);
@@ -82,6 +84,10 @@ public class TimeManager : MonoBehaviour {
 
     public float GetHour() {
         return hour;
+    }
+
+    public int GetNormalizedHour() {
+        return normalizedHour;
     }
 
     public float GetMinute() {
