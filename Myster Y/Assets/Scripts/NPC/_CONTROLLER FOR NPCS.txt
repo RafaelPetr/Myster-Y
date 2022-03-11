@@ -1,0 +1,47 @@
+1st Approach -> Easier to develop but maybe expensive
+	-Move NPC according to grid
+	-When he needs to transition between scenes, disable everything except controller and schedule (to keep track of current destination)
+	-Continue moving the npc as if he was on the active scene, but moving towards the position he needs to be in his current (inactive) scene
+	-When the player enters the scene the NPC is in, enable other components
+
+2nd Approach -> Harder to develop but maybe less expensive
+	-Move NPC according to grid
+	-When he needs to transition between scenes, disable everything except controller and schedule (to keep track of current destination)
+	-Keep track of 'time elapsed' since he transitioned between scenes
+	-When the player enters the scene the NPC is in, calculate, based on time elapsed and the NPC's speed, where it should spawn
+
+
+Change "character" to NPC on codeCreate event that tells NPC, entrances and exits when the scene has changed
+
+Create NPCDESTINATION class:
+	Has string for scene to go
+	Has position of tile in that scene to go
+
+For NPCSCHEDULE: 
+	Change vector3 destinations for destination class
+	Throws to NPC class the destination
+
+Create scene objects class:
+	Parent to all entrances and exits
+	Dont destroy on load if not activated
+	Has list of all exits and entrances
+	Has functions to check exits distances, etc
+
+For exits:
+	When UNLOADED, block collider
+	Add values that represent the distance to each outdoor scene
+	Value for what grid will be used by the NPC
+	Activate exit to npc when his position matches (not on collision)
+	Create editor script to have all the scenes?
+
+For NPC:
+	String for current sceneWhen get destination, check if is in the scene
+	If true, just move to target tile
+	If false, check exits for current scene and target exit closer to destination scene
+
+For pathfinding:
+	If grid == null, get scene grid
+	Else, use grid provided by exit
+
+For grid:
+	Create function to convert the exit positions to tile position 

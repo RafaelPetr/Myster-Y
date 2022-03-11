@@ -9,17 +9,16 @@ public class Entrance : MonoBehaviour {
 
     private void Start() {
         sceneController = SceneController.instance;
-
-        if (name == sceneController.GetEntranceKey()) {
-            sceneController.SpawnPlayer(this);
-        }
     }
 
-    public float GetDirectionX() {
-        return playerDirectionX;
-    }
+    public void WarpPlayer() {
+        PlayerController controller = PlayerController.instance;
 
-    public float GetDirectionY() {
-        return playerDirectionY;
+        controller.SetDirectionX(playerDirectionX);
+        controller.SetDirectionY(playerDirectionY);
+
+        controller.transform.position = transform.position;
+        controller.movePointer.position = transform.position;
+        controller.interactPointer.transform.position = transform.position;
     }
 }

@@ -11,13 +11,10 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
     private PathNode[,] nodes;
 
     private void Awake() {
-        if (this != null) {
-            instance = this;
-        }
-
         tilemap = GetComponent<Tilemap>();
         GetBounds();
         CreatePathNodes();
+        instance = this;
     }
 
     private void GetBounds() {

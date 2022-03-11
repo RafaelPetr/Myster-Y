@@ -10,9 +10,6 @@ public class Inventory : MonoBehaviour {
         if (instance == null) {
             instance = this;
         }
-        else {
-            Destroy(this);
-        }
     }
 
     public Item GetItem(int index) {

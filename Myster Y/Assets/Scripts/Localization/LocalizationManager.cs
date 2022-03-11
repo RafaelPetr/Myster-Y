@@ -15,7 +15,12 @@ public class LocalizationManager : MonoBehaviour {
     private string missingTextString = "Localized text not found";
 
     private void Awake() {
-        instance = this;
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 
     private void Start() {

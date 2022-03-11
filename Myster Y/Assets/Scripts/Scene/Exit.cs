@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour {
     [SerializeField]private string sceneKey;
-    [SerializeField]private string entranceKey;
+    [SerializeField]private Entrance entrance;
 
     private void Awake() {
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
@@ -22,9 +22,6 @@ public class Exit : MonoBehaviour {
             if (tags.HasTag(Tag.Player)) {
                 SceneController.instance.Load(this);
             }
-            else if (tags.HasTag(Tag.Character)) {
-                other.GetComponent<CharacterAI>().ExitScene(this.sceneKey);
-            }
         }
     }
 
@@ -32,7 +29,7 @@ public class Exit : MonoBehaviour {
         return sceneKey;
     }
 
-    public string GetEntranceKey() {
-        return entranceKey;
+    public Entrance GetEntrance() {
+        return entrance;
     }
 }

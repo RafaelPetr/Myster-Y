@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Tag {
     Player,
-    Character,
+    NPC,
     Interactable,
 };
 

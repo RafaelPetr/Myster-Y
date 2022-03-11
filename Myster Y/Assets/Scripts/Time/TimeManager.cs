@@ -29,11 +29,11 @@ public class TimeManager : MonoBehaviour {
     private void Awake() {
         if (instance == null) {
             instance = this;
+            UpdateRoutinesEvent = new UnityEvent();
         }
         else {
             Destroy(gameObject);
         }
-        UpdateRoutinesEvent = new UnityEvent();
     }
 
     private void Update() {

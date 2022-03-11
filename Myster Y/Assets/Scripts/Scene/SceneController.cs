@@ -1,21 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static SceneController instance;
-    private static string sceneKey;
-    private static string entranceKey;
+    private static Entrance targetEntrance;
+    private string sceneKey;
 
     [SerializeField]private Animator crossfade;
     private float transitionTime = 1f;
 
+    public UnityEvent FinishLoad;
+
     private void Awake() {
-        instance = this;
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 
-    IEnumerator LoadScene(string scene) {
+    private void OnEnable() {
+        /*targetEntrance.WarpPlayer();
+        FinishLoad.Invoke();*/
+    }
+
+    IEnumerator LoadScene() {
         PlayerController.instance.SetInTransition(true);
         crossfade.SetTrigger("Start");
 
@@ -27,33 +40,18 @@ public class SceneController : MonoBehaviour {
                 yield return null;
             }
         }
-
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(sceneKey);
     }
 
     public void Load(Exit exit) {
+        Debug.Log(exit.GetSceneKey());
         sceneKey = exit.GetSceneKey();
-        entranceKey = exit.GetEntranceKey();
-        StartCoroutine(LoadScene(sceneKey));
-    }
-
-    public string GetEntranceKey() {
-        return entranceKey;
+        targetEntrance = exit.GetEntrance();
+        StartCoroutine(LoadScene());
     }
 
     public string GetSceneKey() {
         return sceneKey;
-    }
-
-    public void SpawnPlayer(Entrance entrance) {
-        PlayerController controller = PlayerController.instance;
-
-        controller.SetDirectionX(entrance.GetDirectionX());
-        controller.SetDirectionY(entrance.GetDirectionY());
-
-        controller.transform.position = entrance.transform.position;
-        controller.movePointer.position = entrance.transform.position;
-        controller.interactPointer.transform.position = entrance.transform.position;
     }
 
 }

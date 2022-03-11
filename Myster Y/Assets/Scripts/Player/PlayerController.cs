@@ -32,9 +32,6 @@ public class PlayerController : MonoBehaviour {
         if (instance == null) {
             instance = this;
         }
-        else {
-            Destroy(gameObject);
-        }
     }
 
     void Start() {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAI : MonoBehaviour {
+public class NPC : MonoBehaviour {
     private SceneController sceneController;
 
     private new BoxCollider2D collider;
@@ -61,13 +61,8 @@ public class CharacterAI : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (inScene) {
-            ControlCollision();
-            ControlMovement();
-        }
-        else {
-            ControlOutOfScene();
-        }
+        ControlCollision();
+        ControlMovement();
     }
 
     private void ControlCollision() {
@@ -103,14 +98,27 @@ public class CharacterAI : MonoBehaviour {
             }
         }
     }
-
-    private void ControlOutOfScene() {
-        Debug.Log("Controla pae");
-        if (currentScene == sceneController.GetSceneKey()) {
-            EnterScene();
-        }
-    }
     
+    private void SetInPause(bool value) {
+        inPause = value;
+    }
+
+    private bool BlockMovement() {
+        return inCollision || inPause;
+    }
+
+    public void UpdatePath(NPCDestination destination) {
+        targetTile = 0;
+
+        Vector3Int startGridCellPosition = grid.GetWorldPositionGrid(transform.position);
+        
+        Vector3Int startCell = grid.GetCellPositionTileset(startGridCellPosition);
+        Vector3Int endCell = grid.GetCellPositionTileset(destination.GetPosition());
+
+        path = pathfinding.FindPath(startCell.x, startCell.y, endCell.x, endCell.y);
+        walking = true;
+    }
+
     private void EnterScene() {
         Behaviour[] components = GetComponents<Behaviour>();
         foreach (Behaviour component in components) {
@@ -120,14 +128,22 @@ public class CharacterAI : MonoBehaviour {
 
         inScene = true;
     }
-    
-    private void SetInPause(bool value) {
-        inPause = value;
+
+    public void ExitScene(string scene) {
+        Behaviour[] components = GetComponents<Behaviour>();
+        foreach (Behaviour component in components) {
+            component.enabled = false;
+        }
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        this.enabled = true;
+        GetComponent<NPCSchedule>().enabled = true;
+
+        inScene = false;
+        currentScene = scene;
     }
 
-    private bool BlockMovement() {
-        return inCollision || inPause;
-    }
+    #region Collision
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
@@ -141,29 +157,5 @@ public class CharacterAI : MonoBehaviour {
         }
     }
 
-    public void UpdatePath(Vector3Int endGridCellPosition) {
-        targetTile = 0;
-
-        Vector3Int startGridCellPosition = grid.GetWorldPositionGrid(transform.position);
-        
-        Vector3Int startCell = grid.GetCellPositionTileset(startGridCellPosition);
-        Vector3Int endCell = grid.GetCellPositionTileset(endGridCellPosition);
-
-        path = pathfinding.FindPath(startCell.x, startCell.y, endCell.x, endCell.y);
-        walking = true;
-    }
-
-    public void ExitScene(string scene) {
-        Behaviour[] components = GetComponents<Behaviour>();
-        foreach (Behaviour component in components) {
-            component.enabled = false;
-        }
-        GetComponent<SpriteRenderer>().enabled = false;
-
-        this.enabled = true;
-        GetComponent<CharacterSchedule>().enabled = true;
-
-        inScene = false;
-        currentScene = scene;
-    }
+    #endregion
 }

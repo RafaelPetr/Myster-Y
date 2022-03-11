@@ -32,14 +32,17 @@ public class AnalysisManager : MonoBehaviour {
     private TextMeshProUGUI activeWritingUI;
 
     private void Awake() {
-        instance = this;
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 
     private void Start() {
         textBoxAnimator = textBox.GetComponent<Animator>();
         analysisHandAnimator = analysisHand.GetComponent<Animator>();
-        controller = PlayerController.instance;
-        playerSprite = PlayerController.instance.gameObject.GetComponent<SpriteRenderer>();
     }
 
     private void Update() {
@@ -79,6 +82,9 @@ public class AnalysisManager : MonoBehaviour {
     }
 
     public void StartAnalysis(Item item) {
+        controller = PlayerController.instance;
+        playerSprite = controller.gameObject.GetComponent<SpriteRenderer>();
+        
         playerSprite.enabled = false;
         controller.enabled = false;
 

@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSchedule : MonoBehaviour {
-    private CharacterAI aI;
+public class NPCSchedule : MonoBehaviour {
     private TimeManager timeManager;
-    [SerializeField]private Vector3Int[] gridDestinations = new Vector3Int[24]; //Strings for testing
+
+    private NPC npc;
+    [SerializeField]private NPCDestination[] destinantions = new NPCDestination[24];
 
     private void Start() {
         timeManager = TimeManager.instance;
         timeManager.UpdateRoutinesEvent.AddListener(ChangeDestination);
         
-        aI = GetComponent<CharacterAI>();
+        npc = GetComponent<NPC>();
     }
 
     private void ChangeDestination() {
-        aI.UpdatePath(gridDestinations[timeManager.GetNormalizedHour()]);
+        int index = timeManager.GetNormalizedHour();
+
+        npc.UpdatePath(destinantions[index]);
     }
 }
