@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
-    public static PathfindingGrid instance;
+    private Vector3 gridScale;
     private Tilemap tilemap;
 
     private BoundsInt bounds;
     private PathNode[,] nodes;
 
-    private void Awake() {
+    public PathfindingGrid Test() {
+        gridScale = new Vector3(0.32f,0.32f,1f);
         tilemap = GetComponent<Tilemap>();
         GetBounds();
         CreatePathNodes();
-        instance = this;
+
+        return this;
     }
 
     private void GetBounds() {
@@ -33,8 +35,8 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
                 if (tile == null) {
                     continue;
                 }
-                
-                Vector3 nodePosition = tilemap.GetCellCenterWorld(GetCellPositionGrid(new Vector3Int(x,y,0)));
+                Vector3 a = GetCellPositionGrid(new Vector3Int(x,y,0));
+                Vector3 nodePosition = new Vector3(a.x*0.32f+0.16f,a.y*0.32f+0.16f,a.z);
                 nodes[x,y] = new PathNode(x,y,nodePosition);
             }
         }
@@ -69,17 +71,9 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
     }
 
     public Vector3Int GetWorldPositionGrid(Vector3 worldPosition) {
-        Vector3 gridScale = tilemap.layoutGrid.transform.localScale;
-        
         Vector3 resultPosition = worldPosition - new Vector3(gridScale.x/2,gridScale.y/2,gridScale.z/2);
         resultPosition = Vector3.Scale(resultPosition,new Vector3(1/gridScale.x, 1/gridScale.y, 1/gridScale.z));
 
         return Vector3Int.RoundToInt(resultPosition);
     }
 }
-
-//Cool functions:
-//Debug.Log(tilemap.cellBounds);
-//Debug.Log(tilemap.HasTile(new Vector3Int(-12,4,0)));
-//Debug.Log(tilemap.layoutGrid.GetCellCenterWorld(new Vector3Int(-18,4,0)));
-//character.position = tilemap.layoutGrid.GetCellCenterWorld(new Vector3Int(-18,4,0));

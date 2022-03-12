@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Exit : MonoBehaviour {
     [SerializeField]private string sceneKey;
     [SerializeField]private Entrance entrance;
+
+    [SerializeField]private GameObject nextSceneGrid;
 
     private void Awake() {
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
@@ -13,6 +16,8 @@ public class Exit : MonoBehaviour {
 
         Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
         rigidbody.isKinematic = true;
+
+        //nextSceneGrid.GetComponent<PathfindingGrid>().Test();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

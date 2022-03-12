@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour {
     private static float hoursPerDay = 24f;
     private static float minutesPerHour = 60f;
 
-    private float lastHour;
+    private int lastHour;
     private bool updateRoutines;
     private int minutesToUpdate;
 
@@ -49,15 +49,16 @@ public class TimeManager : MonoBehaviour {
             hour = Mathf.Floor(normalizedDay*hoursPerDay);
             minute = Mathf.Floor(((normalizedDay*hoursPerDay)%1f)*minutesPerHour);
 
+
             UpdateRoutines();
         }
     }
 
     private void UpdateRoutines() {
-        if (updateRoutines && lastHour != hour) { //Updates routines every change of hour
+        if (updateRoutines && lastHour != normalizedHour) { //Updates routines every change of hour
             UpdateRoutinesEvent.Invoke();
 
-            lastHour = hour;
+            lastHour = normalizedHour;
             updateRoutines = false;
         }
         else {

@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour {
     private int targetTile;
     private List<PathNode> path = new List<PathNode>();
     private Pathfinding pathfinding;
-    private PathfindingGrid grid;
+    [SerializeField]private PathfindingGrid grid;
 
     private void Awake() {
         collider = gameObject.AddComponent<BoxCollider2D>();
@@ -41,8 +41,8 @@ public class NPC : MonoBehaviour {
     }
 
     private void Start() {
-        pathfinding = new Pathfinding();
-        grid = pathfinding.GetGrid();
+        grid = grid.Test();
+        pathfinding = new Pathfinding(grid);
 
         TimeManager.instance.pauseTimeEvent += SetInPause;
 
