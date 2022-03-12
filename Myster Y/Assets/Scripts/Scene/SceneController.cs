@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
     public static SceneController instance;
 
-    private string sceneKey;
+    private string sceneName;
     private Entrance targetEntrance;
 
     [SerializeField]private Animator crossfade;
     private float transitionTime = 1f;
 
-    public UnityEvent FinishLoadEvent;
+    public UnityEvent StartLoadEvent;
+    public UnityEvent EndLoadEvent;
 
     private void Awake() {
         if (instance == null) {
@@ -25,19 +26,20 @@ public class SceneController : MonoBehaviour {
     }
 
     private void Start() {
-        FinishLoadEvent = new UnityEvent();
+        StartLoadEvent = new UnityEvent();
+        EndLoadEvent = new UnityEvent();
 
-        sceneKey = SceneManager.GetActiveScene().name;
+        sceneName = SceneManager.GetActiveScene().name;
         SceneManager.activeSceneChanged += FinishLoad;
     }
 
     private void FinishLoad(Scene current, Scene next) {
-        sceneKey = next.name;
+        sceneName = next.name;
 
         targetEntrance.WarpPlayer();
         targetEntrance = null;
 
-        FinishLoadEvent.Invoke();
+        EndLoadEvent.Invoke();
     }
 
     private IEnumerator LoadScene(string scene) {
@@ -57,12 +59,13 @@ public class SceneController : MonoBehaviour {
     }
 
     public void Load(Exit exit) {
+        StartLoadEvent.Invoke();
         targetEntrance = exit.GetEntrance();
-        StartCoroutine(LoadScene(exit.GetSceneKey()));
+        StartCoroutine(LoadScene(exit.GetScene().GetSceneName()));
     }
 
-    public string GetSceneKey() {
-        return sceneKey;
+    public string GetSceneName() {
+        return sceneName;
     }
 
 }

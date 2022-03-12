@@ -96,7 +96,7 @@ public class AnalysisManager : MonoBehaviour {
         activeWritingText = LocalizationManager.instance.GetLocalizedValue(item.key, 1);
         activeWritingUI = analysisDescription;
         activeWritingUI.text = "";
-       
+    
         activationTrigger = true;
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InventoryManager : MonoBehaviour {
     public static InventoryManager instance;
+    private bool inTransition;
 
     private int activePanel;
     
@@ -25,33 +26,37 @@ public class InventoryManager : MonoBehaviour {
         for (int i = 0; i < inventoryUI.childCount; i++) {
             inventoryPanels.Add(inventoryUI.GetChild(i));
         }
+        SceneController.instance.StartLoadEvent.AddListener(StartTransition);
+        SceneController.instance.EndLoadEvent.AddListener(EndTransition);
     }
 
     public void Open(int index) {
-        Close();
+        if (!inTransition) {
+            Close();
 
-        if (index < 0) {
-            index = 0;
-        }
-
-        activePanel = index;
-
-        inventoryPanels[index].gameObject.SetActive(true);
-
-        slots = inventoryPanels[index].GetComponentsInChildren<ItemSlot>();
-        slots[0].button.Select();
-
-        int startIndex = index*6; //Start of the interval from the inventory selected by the panel
-        int endIndex = (index + 1)*6; //End of the interval from the inventory selected by the panel
-
-        for (int i = startIndex; i < endIndex; i++) {
-            ItemSlot currentSlot = slots[6 - (endIndex - i)];
-
-            if (i < Inventory.instance.GetAllItems().Count) {
-                currentSlot.AddItem(Inventory.instance.GetItem(i));
+            if (index < 0) {
+                index = 0;
             }
-            else {
-                currentSlot.Clear();
+
+            activePanel = index;
+
+            inventoryPanels[index].gameObject.SetActive(true);
+
+            slots = inventoryPanels[index].GetComponentsInChildren<ItemSlot>();
+            slots[0].button.Select();
+
+            int startIndex = index*6; //Start of the interval from the inventory selected by the panel
+            int endIndex = (index + 1)*6; //End of the interval from the inventory selected by the panel
+
+            for (int i = startIndex; i < endIndex; i++) {
+                ItemSlot currentSlot = slots[6 - (endIndex - i)];
+
+                if (i < Inventory.instance.GetAllItems().Count) {
+                    currentSlot.AddItem(Inventory.instance.GetItem(i));
+                }
+                else {
+                    currentSlot.Clear();
+                }
             }
         }
     }
@@ -65,6 +70,15 @@ public class InventoryManager : MonoBehaviour {
         foreach (Transform panel in inventoryPanels) {
             panel.gameObject.SetActive(false);
         }
+    }
+
+    private void StartTransition() {
+        Close();
+        inTransition = true;
+    }
+
+    private void EndTransition() {
+        inTransition = false;
     }
     
 }

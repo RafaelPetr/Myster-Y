@@ -10,8 +10,9 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
     private BoundsInt bounds;
     private PathNode[,] nodes;
 
-    public PathfindingGrid Test() {
+    public PathfindingGrid Generate() {
         gridScale = new Vector3(0.32f,0.32f,1f);
+
         tilemap = GetComponent<Tilemap>();
         GetBounds();
         CreatePathNodes();
@@ -35,19 +36,12 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
                 if (tile == null) {
                     continue;
                 }
-                Vector3 a = GetCellPositionGrid(new Vector3Int(x,y,0));
-                Vector3 nodePosition = new Vector3(a.x*0.32f+0.16f,a.y*0.32f+0.16f,a.z);
-                nodes[x,y] = new PathNode(x,y,nodePosition);
+
+                Vector3 cellPosition = GetCellPositionGrid(new Vector3Int(x, y, 0));
+                Vector3 nodePosition = new Vector3(cellPosition.x * 0.32f + 0.16f, cellPosition.y * 0.32f + 0.16f, cellPosition.z);
+                nodes[x,y] = new PathNode(x, y, nodePosition);
             }
         }
-    }
-
-    private Vector3Int GetCellPositionGrid(Vector3Int tilesetCellPosition) {
-        int worldX = tilesetCellPosition.x + bounds.position.x;
-        int worldY = tilesetCellPosition.y + bounds.position.y;
-        int worldZ = tilesetCellPosition.z + bounds.position.z;
-
-        return new Vector3Int(worldX, worldY, worldZ);
     }
 
     public int GetWidth() {
@@ -62,12 +56,20 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
         return nodes[x,y];
     }
 
-    public Vector3Int GetCellPositionTileset(Vector3Int gridCellPosition) {
-        int localX = gridCellPosition.x - bounds.position.x;
-        int localY = gridCellPosition.y - bounds.position.y;
-        int localZ = gridCellPosition.z - bounds.position.z;
+    private Vector3Int GetCellPositionGrid(Vector3Int tilesetCellPosition) {
+        int gridX = tilesetCellPosition.x + bounds.position.x;
+        int gridY = tilesetCellPosition.y + bounds.position.y;
+        int gridZ = tilesetCellPosition.z + bounds.position.z;
 
-        return new Vector3Int(localX, localY, localZ);
+        return new Vector3Int(gridX, gridY, gridZ);
+    }
+
+    public Vector3Int GetCellPositionTileset(Vector3Int gridCellPosition) {
+        int tilesetX = gridCellPosition.x - bounds.position.x;
+        int tilesetY = gridCellPosition.y - bounds.position.y;
+        int tilesetZ = gridCellPosition.z - bounds.position.z;
+
+        return new Vector3Int(tilesetX, tilesetY, tilesetZ);
     }
 
     public Vector3Int GetWorldPositionGrid(Vector3 worldPosition) {

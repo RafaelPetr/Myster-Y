@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Exit : MonoBehaviour {
-    [SerializeField]private string sceneKey;
+    [SerializeField]private CustomScene scene;
     [SerializeField]private Entrance entrance;
-
-    [SerializeField]private GameObject nextSceneGrid;
 
     private void Awake() {
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
@@ -30,8 +27,8 @@ public class Exit : MonoBehaviour {
         }
     }
 
-    public string GetSceneKey() {
-        return sceneKey;
+    public CustomScene GetScene() {
+        return scene;
     }
 
     public Entrance GetEntrance() {

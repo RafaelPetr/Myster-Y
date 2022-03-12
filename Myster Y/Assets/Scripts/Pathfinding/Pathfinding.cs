@@ -9,8 +9,8 @@ public class Pathfinding { //Thx @UnityCodeMonkey :)
     private List<PathNode> openList;
     private HashSet<PathNode> closedList;
 
-    public Pathfinding(PathfindingGrid testGrid) {
-        grid = testGrid;
+    public Pathfinding(PathfindingGrid grid) {
+        this.grid = grid;
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY) {

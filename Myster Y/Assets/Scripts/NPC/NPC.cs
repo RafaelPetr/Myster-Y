@@ -41,13 +41,13 @@ public class NPC : MonoBehaviour {
     }
 
     private void Start() {
-        grid = grid.Test();
+        grid = grid.Generate();
         pathfinding = new Pathfinding(grid);
 
         TimeManager.instance.pauseTimeEvent += SetInPause;
 
         if (currentScene == null) {
-            currentScene = SceneController.instance.GetSceneKey();
+            currentScene = SceneController.instance.GetSceneName();
             inScene = true;
         }
     }
@@ -146,14 +146,22 @@ public class NPC : MonoBehaviour {
     #region Collision
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
-            inCollision = true;
+        CustomTags tags = other.gameObject.GetComponent<CustomTags>();
+
+        if (tags != null) {
+            if (tags.HasTag(Tag.Player)) {
+                inCollision = true;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
-            inCollision = false;
+        CustomTags tags = other.gameObject.GetComponent<CustomTags>();
+
+        if (tags != null) {
+            if (tags.HasTag(Tag.Player)) {
+                inCollision = false;
+            }
         }
     }
 
