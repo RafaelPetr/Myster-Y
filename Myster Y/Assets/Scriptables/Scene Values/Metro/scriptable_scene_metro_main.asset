@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 296a246dc3306124eac5d343985f6433, type: 3}
-  m_Name: scriptable_scene_test
+  m_Name: scriptable_scene_metro_main
   m_EditorClassIdentifier: 
-  sceneName: sc_test_main
-  grid: {fileID: 0}
-  distances: 0000000000000000
+  name: sc_metro_main
+  grid: {fileID: 1889841096926234154, guid: 3b7d47eacf666e14e878d2fb6062d4ea, type: 3}
+  distancedScenes:
+  - sc_metro_main
+  - sc_test_main
+  distances: 0000000001000000

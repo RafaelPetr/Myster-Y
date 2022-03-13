@@ -35,7 +35,8 @@ For exits:
 	Create editor script to have all the scenes?
 
 For NPC:
-	String for current sceneWhen get destination, check if is in the scene
+	String for current scene
+	When get destination, check if is in the scene
 	If true, just move to target tile
 	If false, check exits for current scene and target exit closer to destination scene
 

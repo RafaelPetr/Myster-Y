@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296a246dc3306124eac5d343985f6433, type: 3}
+  m_Name: scriptable_scene_test_main
+  m_EditorClassIdentifier: 
+  name: sc_test_main
+  grid: {fileID: 8072082951437542937, guid: 48fe10027b3945544bc5aab83753ea8d, type: 3}
+  distancedScenes:
+  - sc_metro_main
+  - sc_test_main
+  distances: 0000000000000000

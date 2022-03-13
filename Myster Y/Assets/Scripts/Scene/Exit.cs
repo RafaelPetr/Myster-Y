@@ -3,18 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Exit : MonoBehaviour {
-    [SerializeField]private CustomScene scene;
+    private new BoxCollider2D collider;
+    private new Rigidbody2D rigidbody;
+
+    [SerializeField]private SceneValues currentSceneValues;
+    [SerializeField]private SceneValues nextSceneValues;
     [SerializeField]private Entrance entrance;
 
     private void Awake() {
-        BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
+        collider = gameObject.AddComponent<BoxCollider2D>();
         collider.size = new Vector3(0.32f, 0.32f, 0);
         collider.isTrigger = true;
 
-        Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
+        rigidbody = gameObject.AddComponent<Rigidbody2D>();
         rigidbody.isKinematic = true;
+    }
 
-        //nextSceneGrid.GetComponent<PathfindingGrid>().Test();
+    private void Start() {
+        OnEndLoad();
+        SceneController.instance.EndLoadEvent.AddListener(OnEndLoad);
+    }
+
+    private void OnEndLoad() {
+        if (currentSceneValues.GetName() == SceneController.instance.GetSceneName()) {
+            collider.enabled = true;
+        }
+        else {
+            collider.enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -27,11 +43,17 @@ public class Exit : MonoBehaviour {
         }
     }
 
-    public CustomScene GetScene() {
-        return scene;
+    public SceneValues GetCurrentSceneValues() {
+        return currentSceneValues;
+    }
+
+    public SceneValues GetNextSceneValues() {
+        return nextSceneValues;
     }
 
     public Entrance GetEntrance() {
         return entrance;
     }
+
+    //Function to extend exit horizontally and vertically?
 }

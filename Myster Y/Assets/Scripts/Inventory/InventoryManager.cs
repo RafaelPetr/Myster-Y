@@ -26,8 +26,8 @@ public class InventoryManager : MonoBehaviour {
         for (int i = 0; i < inventoryUI.childCount; i++) {
             inventoryPanels.Add(inventoryUI.GetChild(i));
         }
-        SceneController.instance.StartLoadEvent.AddListener(StartTransition);
-        SceneController.instance.EndLoadEvent.AddListener(EndTransition);
+        SceneController.instance.StartLoadEvent.AddListener(OnStartLoad);
+        SceneController.instance.EndLoadEvent.AddListener(OnEndLoad);
     }
 
     public void Open(int index) {
@@ -72,12 +72,12 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    private void StartTransition() {
+    private void OnStartLoad() {
         Close();
         inTransition = true;
     }
 
-    private void EndTransition() {
+    private void OnEndLoad() {
         inTransition = false;
     }
     

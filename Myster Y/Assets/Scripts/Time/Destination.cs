@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class NPCDestination{
-    [SerializeField]private string sceneKey;
+public class Destination {
+    [SerializeField]private SceneValues sceneValues;
     [SerializeField]private Vector3Int position;
 
-    public string GetScene() {
-        return sceneKey;
+    public SceneValues GetScene() {
+        return sceneValues;
     }
 
     public Vector3Int GetPosition() {

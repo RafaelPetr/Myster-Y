@@ -23,13 +23,13 @@ public class SceneController : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
-    }
-
-    private void Start() {
         StartLoadEvent = new UnityEvent();
         EndLoadEvent = new UnityEvent();
 
         sceneName = SceneManager.GetActiveScene().name;
+    }
+
+    private void Start() {
         SceneManager.activeSceneChanged += FinishLoad;
     }
 
@@ -61,11 +61,10 @@ public class SceneController : MonoBehaviour {
     public void Load(Exit exit) {
         StartLoadEvent.Invoke();
         targetEntrance = exit.GetEntrance();
-        StartCoroutine(LoadScene(exit.GetScene().GetSceneName()));
+        StartCoroutine(LoadScene(exit.GetNextSceneValues().GetName()));
     }
 
     public string GetSceneName() {
         return sceneName;
     }
-
 }
