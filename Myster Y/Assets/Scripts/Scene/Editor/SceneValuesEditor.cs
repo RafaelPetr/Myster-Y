@@ -19,7 +19,7 @@ public class SceneValuesEditor : Editor {
         if (string.IsNullOrEmpty(sceneValues.GetName())) {
             sceneName = EditorGUILayout.TextField("Scene Name:",sceneName);
             if (GUILayout.Button("Save Name")) {
-                sceneValues.SetSceneName(sceneName);
+                sceneValues.SetName(sceneName);
                 UpdateLists(sceneValues);
             }
         }
@@ -28,10 +28,12 @@ public class SceneValuesEditor : Editor {
             EditorGUILayout.LabelField("Grid: ");
             sceneValues.SetGrid((GameObject)EditorGUILayout.ObjectField(sceneValues.GetGrid(), typeof(GameObject), false));
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+            
+            List<SceneDistance> sceneDistances = sceneValues.GetDistances();
 
-            for (int i = 0; i < sceneValues.GetDistances().Count; i++) {
-                EditorGUILayout.LabelField("Scene Name: " + sceneValues.GetDistancedScene(i));
-                sceneValues.SetDistance(i, EditorGUILayout.IntField("Distance:",sceneValues.GetDistance(i)));
+            for (int i = 0; i < sceneDistances.Count; i++) {
+                EditorGUILayout.LabelField("Scene Name: " + sceneDistances[i].GetSceneName());
+                sceneDistances[i].SetDistance(EditorGUILayout.IntField("Distance:",sceneDistances[i].GetDistance()));
                 EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             }
 
@@ -50,6 +52,6 @@ public class SceneValuesEditor : Editor {
             string currentSceneName = Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
             allScenes.Add(currentSceneName);
         }
-        sceneValues.SetLists(allScenes);
+        sceneValues.UpdateSceneDistances(allScenes);
     }
 }

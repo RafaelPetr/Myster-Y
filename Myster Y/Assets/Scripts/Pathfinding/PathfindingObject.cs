@@ -86,12 +86,12 @@ public class PathfindingObject : MonoBehaviour {
         if (currentSceneValues == destination.GetScene()) {
             endCell = grid.GetCellPositionTileset(destination.GetPosition());
         }
-        else {
+        /*else {
             Exit exit = ExitGroup.instance.GetPathExit(this, destination.GetScene());
 
             Vector3Int endGridCellPosition = grid.GetWorldPositionGrid(exit.transform.position);
             endCell = grid.GetCellPositionTileset(endGridCellPosition);
-        }
+        }*/
         
         path = pathfinding.FindPath(startCell.x, startCell.y, endCell.x, endCell.y);
     }

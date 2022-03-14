@@ -7,15 +7,13 @@ using UnityEngine.Tilemaps;
 public class SceneValues : ScriptableObject {
     [SerializeField]new private string name;
     [SerializeField]private GameObject grid;
-
-    [SerializeField]private List<string> distancedScenes;
-    [SerializeField]private List<int> distances;
+    [SerializeField]private List<SceneDistance> sceneDistances = new List<SceneDistance>();
 
     public string GetName() {
         return name;
     }
 
-    public void SetSceneName(string value) {
+    public void SetName(string value) {
         name = value;
     }
 
@@ -27,34 +25,26 @@ public class SceneValues : ScriptableObject {
         grid = obj;
     }
 
-    public List<string> GetDistancedScenes() {
-        return distancedScenes;
+    public List<SceneDistance> GetDistances() {
+        return sceneDistances;
     }
 
-    public List<int> GetDistances() {
-        return distances;
-    }
-
-    public void SetLists(List<string> allScenes) {
-        distancedScenes = new List<string>();
-        distances = new List<int>();
-
-        for (int i = 0; i < allScenes.Count; i++) {
-            distancedScenes.Add(allScenes[i]);
-            distances.Add(0);
+    public void UpdateSceneDistances(List<string> allScenes) {
+        foreach (string sceneName in allScenes) {
+            SceneDistance foundSceneDistance = sceneDistances.Find(sceneDistance => sceneDistance.GetSceneName() == sceneName);
+            if (foundSceneDistance == null) {
+                sceneDistances.Add(new SceneDistance(sceneName, 0));
+            }
         }
 
-    }
+        for (int i = 0; i < sceneDistances.Count; i++) {
+            string foundScene = allScenes.Find(sceneName => sceneDistances[i].GetSceneName() == sceneName);
+            if (foundScene == null) {
+                sceneDistances.Remove(sceneDistances[i]);
+                i--;
+            }
+        }
 
-    public string GetDistancedScene(int index) {
-        return distancedScenes[index];
-    }
-
-    public int GetDistance(int index) {
-        return distances[index];
-    }
-
-    public void SetDistance(int index, int value) {
-        distances[index] = value;
+        sceneDistances.Sort((x, y) => string.Compare(x.GetSceneName(), y.GetSceneName()));
     }
 }

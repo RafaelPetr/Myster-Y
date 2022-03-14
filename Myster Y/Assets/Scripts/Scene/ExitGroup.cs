@@ -1,7 +1,7 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class ExitGroup : MonoBehaviour {
     public static ExitGroup instance;
@@ -22,10 +22,10 @@ public class ExitGroup : MonoBehaviour {
         }
     }
 
-    public Exit GetPathExit(PathfindingObject pathfindingObject, SceneValues nextScene) {
+    /*public Exit GetPathExit(PathfindingObject pathfindingObject, SceneValues nextScene) {
         List<Exit> exitsInScene = exits.FindAll(exit => exit.GetCurrentSceneValues() == pathfindingObject.GetCurrentSceneValues());
 
-        int nextSceneIndex = exitsInScene[0].GetCurrentSceneValues().GetDistancedScenes().IndexOf(nextScene.GetName());
+        int nextSceneIndex = exitsInScene[0].GetNextSceneValues().GetDistances().IndexOf(nextScene.GetName());
         List<int> distances = new List<int>();
 
         for (int i = 0; i < exitsInScene.Count; i++) {
@@ -53,5 +53,5 @@ public class ExitGroup : MonoBehaviour {
         }
         
         return optimalExit;
-    }
+    }*/
 }
