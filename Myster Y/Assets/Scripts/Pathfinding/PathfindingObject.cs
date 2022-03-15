@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PathfindingObject : MonoBehaviour {
     private bool inScene;
-    [SerializeField]private SceneValues currentSceneValues;
+    [SerializeField]private SceneData currentSceneData;
 
     [System.NonSerialized]public float moveSpeed = 1.5f;
     private bool moving;
@@ -12,21 +12,21 @@ public class PathfindingObject : MonoBehaviour {
 
     [SerializeField]private Schedule schedule;
 
-    [SerializeField]private PathfindingGrid grid;
     private Pathfinding pathfinding;
     private List<PathNode> path = new List<PathNode>();
-    private bool enablePathDebug = true;
-    private Exit targetExit;
+
     private int targetTile;
+    private Exit targetExit;
+
+    private bool enablePathDebug = true;
 
     private TimeManager timeManager;
     private SceneController sceneController;
 
     private void Start() {
         sceneController = SceneController.instance;
-        grid = grid.Generate();
         timeManager = TimeManager.instance;
-        pathfinding = new Pathfinding(grid);
+        SetPathfinding();
 
         timeManager.pauseTimeEvent += SetInPause;
         timeManager.UpdateRoutinesEvent.AddListener(ChangeDestination);
@@ -53,17 +53,26 @@ public class PathfindingObject : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, path[targetTile].GetWorldPosition(), Time.deltaTime * moveSpeed);
             }
             else {
-                if (targetTile + 1 < path.Count) {
-                    targetTile++;
-                    return;
-                }
-                moving = false;
-                if (targetExit != null) {
-                    TransitionToScene(targetExit.GetNextSceneValues());
-                    targetExit = null;
-                }
+                FinishMovement();
             }
         }
+    }
+
+    private void FinishMovement() {
+        if (targetTile + 1 < path.Count) {
+            targetTile++;
+            return;
+        }
+        moving = false;
+
+        if (targetExit != null) {
+            TransitionToScene(targetExit);
+        }
+    }
+
+    private void SetPathfinding() {
+        PathfindingGrid pathfindingGrid = currentSceneData.GetGrid().GetComponent<PathfindingGrid>().Generate();
+        pathfinding = new Pathfinding(pathfindingGrid);
     }
 
     public virtual bool BlockMovement() {
@@ -84,25 +93,38 @@ public class PathfindingObject : MonoBehaviour {
         moving = true;
         targetTile = 0;
 
-        Vector3Int startGridCellPosition = grid.GetWorldPositionGrid(transform.position);
+        PathfindingGrid pathfindingGrid = pathfinding.GetGrid();
 
-        Vector3Int startCell = grid.GetCellPositionTileset(startGridCellPosition);
+        Vector3Int startGridCellPosition = pathfindingGrid.GetWorldPositionGrid(transform.position);
+        Vector3Int startCell = pathfindingGrid.GetCellPositionTileset(startGridCellPosition);
 
         Vector3Int endCell = new Vector3Int();
-        if (currentSceneValues == destination.GetScene()) {
-            endCell = grid.GetCellPositionTileset(destination.GetPosition());
+        if (currentSceneData == destination.GetSceneData()) {
+            endCell = pathfindingGrid.GetCellPositionTileset(destination.GetPosition());
         }
         else {
-            targetExit = SceneObjects.instance.GetPathExit(this, destination.GetScene());
+            targetExit = SceneWarps.instance.GetOptimalExit(this, destination.GetSceneData());
 
-            Vector3Int endGridCellPosition = grid.GetWorldPositionGrid(targetExit.transform.position);
-            endCell = grid.GetCellPositionTileset(endGridCellPosition);
+            Vector3Int endGridCellPosition = pathfindingGrid.GetWorldPositionGrid(targetExit.transform.position);
+            endCell = pathfindingGrid.GetCellPositionTileset(endGridCellPosition);
         }
         path = pathfinding.FindPath(startCell.x, startCell.y, endCell.x, endCell.y);
     }
 
+    private void TransitionToScene(Exit exit) {
+        SceneData sceneData = exit.GetNextSceneData();
+        currentSceneData = sceneData;
+        transform.position = exit.GetEntrance().transform.position;
+
+        SetPathfinding();
+        ControlLoading();
+        ChangeDestination();
+
+        targetExit = null;
+    }
+
     private void ControlLoading() {
-        if (currentSceneValues.GetName() == sceneController.GetSceneName()) {
+        if (currentSceneData.GetSceneName() == sceneController.GetSceneName()) {
             Load();
         }
         else {
@@ -133,15 +155,7 @@ public class PathfindingObject : MonoBehaviour {
         this.enabled = true;
     }
 
-    private void TransitionToScene(SceneValues sceneValues) {
-        currentSceneValues = sceneValues;
-        grid = sceneValues.GetGrid().GetComponent<PathfindingGrid>().Generate();
-        pathfinding = new Pathfinding(grid);
-        ControlLoading();
-        ChangeDestination();
-    }
-
-    public SceneValues GetCurrentSceneValues() {
-        return currentSceneValues;
+    public SceneData GetCurrentSceneData() {
+        return currentSceneData;
     }
 }

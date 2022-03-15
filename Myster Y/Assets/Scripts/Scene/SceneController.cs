@@ -61,7 +61,7 @@ public class SceneController : MonoBehaviour {
     public void Load(Exit exit) {
         StartLoadEvent.Invoke();
         targetEntrance = exit.GetEntrance();
-        StartCoroutine(LoadScene(exit.GetNextSceneValues().GetName()));
+        StartCoroutine(LoadScene(exit.GetNextSceneData().GetSceneName()));
     }
 
     public string GetSceneName() {

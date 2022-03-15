@@ -10,3 +10,17 @@ public class Schedule : ScriptableObject {
         return destinantions[index];
     }
 }
+
+[System.Serializable]
+public class Destination {
+    [SerializeField]private SceneData sceneData;
+    [SerializeField]private Vector3Int position;
+
+    public SceneData GetSceneData() {
+        return sceneData;
+    }
+
+    public Vector3Int GetPosition() {
+        return position;
+    }
+}

@@ -6,8 +6,8 @@ public class Exit : MonoBehaviour {
     private new BoxCollider2D collider;
     private new Rigidbody2D rigidbody;
 
-    [SerializeField]private SceneValues currentSceneValues;
-    [SerializeField]private SceneValues nextSceneValues;
+    [SerializeField]private SceneData currentSceneData;
+    [SerializeField]private SceneData nextSceneData;
     [SerializeField]private Entrance entrance;
 
     private void Awake() {
@@ -25,7 +25,7 @@ public class Exit : MonoBehaviour {
     }
 
     private void OnEndLoad() {
-        if (currentSceneValues.GetName() == SceneController.instance.GetSceneName()) {
+        if (currentSceneData.GetSceneName() == SceneController.instance.GetSceneName()) {
             collider.enabled = true;
         }
         else {
@@ -43,12 +43,12 @@ public class Exit : MonoBehaviour {
         }
     }
 
-    public SceneValues GetCurrentSceneValues() {
-        return currentSceneValues;
+    public SceneData GetCurrentSceneData() {
+        return currentSceneData;
     }
 
-    public SceneValues GetNextSceneValues() {
-        return nextSceneValues;
+    public SceneData GetNextSceneData() {
+        return nextSceneData;
     }
 
     public Entrance GetEntrance() {

@@ -116,9 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186384f8da5be5b46a60998ef458c5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneValues: {fileID: 11400000, guid: e849ada4987d92549905a2e82b536581, type: 2}
+  currentSceneData: {fileID: 11400000, guid: 9162beb3d2495b54cb2714da0cc0d2a6, type: 2}
   schedule: {fileID: 11400000, guid: 5459c2aa1379c844e9166d937c9fd1cd, type: 2}
-  grid: {fileID: 6239980940769095874, guid: 3b7d47eacf666e14e878d2fb6062d4ea, type: 3}
 --- !u!114 &8434929428086061552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7796394747769357126}
   m_Layer: 0
-  m_Name: SceneObject_Entrances_Test
+  m_Name: Entrances_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7943650717090420021}
   m_Layer: 0
-  m_Name: SceneObject_Exits_Metro
+  m_Name: Exits_Metro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6604340956504933561}
   m_Layer: 0
-  m_Name: SceneObject_Exits_Test
+  m_Name: Exits_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,7 +418,7 @@ GameObject:
   - component: {fileID: 307995939596531895}
   - component: {fileID: 7543792371406279679}
   m_Layer: 0
-  m_Name: Scene Objects
+  m_Name: Scene Warps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +449,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5618152687788225445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c576623b4165c9446a96b18e1546a5d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 41cbb903e5ffb15498896f294bd1bc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneExits: {fileID: 9095788776598193934}
@@ -5291,7 +5290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8304877710054043955}
   m_Layer: 0
-  m_Name: SceneObject_Entrances_Metro
+  m_Name: Entrances_Metro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5322,7 +5321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272409775128925467}
   m_Layer: 0
-  m_Name: SceneObject_Entrances
+  m_Name: Entrances
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5354,7 +5353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8034726410153411165}
   m_Layer: 0
-  m_Name: SceneObject_Exits
+  m_Name: Exits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5485,13 +5484,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
+      propertyPath: nextSceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9162beb3d2495b54cb2714da0cc0d2a6, type: 2}
+    - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: nextSceneValues
       value: 
-      objectReference: {fileID: 11400000, guid: e849ada4987d92549905a2e82b536581, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
+      propertyPath: currentSceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: 32e7d460db94c3e4f84765e56f00a532, type: 2}
     - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: currentSceneValues
       value: 
-      objectReference: {fileID: 11400000, guid: 0464ee9a4a4538c4f90c6b2dad51f2ae, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6739903806461737340, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5579,13 +5586,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
+      propertyPath: nextSceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: 32e7d460db94c3e4f84765e56f00a532, type: 2}
+    - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: nextSceneValues
       value: 
-      objectReference: {fileID: 11400000, guid: 0464ee9a4a4538c4f90c6b2dad51f2ae, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
+      propertyPath: currentSceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9162beb3d2495b54cb2714da0cc0d2a6, type: 2}
     - target: {fileID: 6739903806461737339, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: currentSceneValues
       value: 
-      objectReference: {fileID: 11400000, guid: e849ada4987d92549905a2e82b536581, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6739903806461737340, guid: aa6a4d3785ccd674ebdaf02f9ed79c4c, type: 3}
       propertyPath: m_RootOrder
       value: 0

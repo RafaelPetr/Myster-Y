@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296a246dc3306124eac5d343985f6433, type: 3}
-  m_Name: scriptable_scene_metro_main
+  m_Script: {fileID: 11500000, guid: 8f9760540f5e32144bb8559b63e4129b, type: 3}
+  m_Name: scriptable_scenedata_test_main
   m_EditorClassIdentifier: 
-  name: sc_metro_main
-  grid: {fileID: 1889841096926234154, guid: 3b7d47eacf666e14e878d2fb6062d4ea, type: 3}
+  name: sc_test_main
+  grid: {fileID: 8072082951437542937, guid: 48fe10027b3945544bc5aab83753ea8d, type: 3}
   sceneDistances:
-  - sceneName: sc_metro_main
-    distance: 0
-  - sceneName: sc_test_main
+  - distancedScene: sc_metro_main
     distance: 1
+  - distancedScene: sc_test_main
+    distance: 0

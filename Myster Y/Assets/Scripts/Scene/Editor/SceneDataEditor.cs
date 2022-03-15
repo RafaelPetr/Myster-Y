@@ -5,55 +5,55 @@ using UnityEditor;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-[CustomEditor(typeof(SceneValues))]
-public class SceneValuesEditor : Editor {
+[CustomEditor(typeof(SceneData))]
+public class SceneDataEditor : Editor {
     private string sceneName;
 
     public override void OnInspectorGUI() {
-        SceneValues sceneValues = (SceneValues)target;
+        SceneData sceneData = (SceneData)target;
 
         if (string.IsNullOrEmpty(sceneName)) {
             sceneName = "sc_";
         }
 
-        if (string.IsNullOrEmpty(sceneValues.GetName())) {
+        if (string.IsNullOrEmpty(sceneData.GetSceneName())) {
             sceneName = EditorGUILayout.TextField("Scene Name:",sceneName);
             if (GUILayout.Button("Save Name")) {
-                sceneValues.SetName(sceneName);
-                UpdateLists(sceneValues);
+                sceneData.SetSceneName(sceneName);
+                UpdateLists(sceneData);
             }
         }
         else {
-            EditorGUILayout.LabelField("Scene Name: " + sceneValues.GetName());
+            EditorGUILayout.LabelField("Scene Name: " + sceneData.GetSceneName());
             EditorGUILayout.LabelField("Grid: ");
-            sceneValues.SetGrid((GameObject)EditorGUILayout.ObjectField(sceneValues.GetGrid(), typeof(GameObject), false));
+            sceneData.SetGrid((GameObject)EditorGUILayout.ObjectField(sceneData.GetGrid(), typeof(GameObject), false));
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             
-            List<SceneDistance> sceneDistances = sceneValues.GetDistances();
+            List<SceneDistance> sceneDistances = sceneData.GetDistances();
 
             for (int i = 0; i < sceneDistances.Count; i++) {
-                if (sceneDistances[i].GetSceneName() != sceneValues.GetName()) {
-                    EditorGUILayout.LabelField("Scene Name: " + sceneDistances[i].GetSceneName());
+                if (sceneDistances[i].GetDistancedSceneName() != sceneData.GetSceneName()) {
+                    EditorGUILayout.LabelField("Scene Name: " + sceneDistances[i].GetDistancedSceneName());
                     sceneDistances[i].SetSceneDistance(EditorGUILayout.IntField("Distance:",sceneDistances[i].GetSceneDistance()));
                     EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
                 }
             }
 
             if (GUILayout.Button("Update List")) {
-                UpdateLists(sceneValues);
+                UpdateLists(sceneData);
             }
         }
         
-        EditorUtility.SetDirty(sceneValues);
+        EditorUtility.SetDirty(sceneData);
     }
 
-    private void UpdateLists(SceneValues sceneValues) {
+    private void UpdateLists(SceneData sceneData) {
         List<string> allScenes = new List<string>();
 
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++) {
             string currentSceneName = Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
             allScenes.Add(currentSceneName);
         }
-        sceneValues.UpdateSceneDistances(allScenes);
+        sceneData.UpdateSceneDistances(allScenes);
     }
 }
