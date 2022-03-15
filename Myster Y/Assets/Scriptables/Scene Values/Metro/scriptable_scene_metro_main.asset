@@ -15,8 +15,6 @@ MonoBehaviour:
   name: sc_metro_main
   grid: {fileID: 1889841096926234154, guid: 3b7d47eacf666e14e878d2fb6062d4ea, type: 3}
   sceneDistances:
-  - sceneName: New Scene
-    distance: 0
   - sceneName: sc_metro_main
     distance: 0
   - sceneName: sc_test_main

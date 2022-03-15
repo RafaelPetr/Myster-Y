@@ -20,11 +20,11 @@ public class SceneDistance {
         sceneName = value;
     }
 
-    public int GetDistance() {
+    public int GetSceneDistance() {
         return distance;
     }
 
-    public void SetDistance(int value) {
+    public void SetSceneDistance(int value) {
         distance = value;
     }
 }

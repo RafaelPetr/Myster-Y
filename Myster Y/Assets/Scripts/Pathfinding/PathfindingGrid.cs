@@ -40,6 +40,7 @@ public class PathfindingGrid : MonoBehaviour { //Thx @UnityCodeMonkey :)
                 Vector3 cellPosition = GetCellPositionGrid(new Vector3Int(x, y, 0));
                 Vector3 nodePosition = new Vector3(cellPosition.x * 0.32f + 0.16f, cellPosition.y * 0.32f + 0.16f, cellPosition.z);
                 nodes[x,y] = new PathNode(x, y, nodePosition);
+                //Debug.Log(x + ", " + y);
             }
         }
     }

@@ -32,9 +32,11 @@ public class SceneValuesEditor : Editor {
             List<SceneDistance> sceneDistances = sceneValues.GetDistances();
 
             for (int i = 0; i < sceneDistances.Count; i++) {
-                EditorGUILayout.LabelField("Scene Name: " + sceneDistances[i].GetSceneName());
-                sceneDistances[i].SetDistance(EditorGUILayout.IntField("Distance:",sceneDistances[i].GetDistance()));
-                EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+                if (sceneDistances[i].GetSceneName() != sceneValues.GetName()) {
+                    EditorGUILayout.LabelField("Scene Name: " + sceneDistances[i].GetSceneName());
+                    sceneDistances[i].SetSceneDistance(EditorGUILayout.IntField("Distance:",sceneDistances[i].GetSceneDistance()));
+                    EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+                }
             }
 
             if (GUILayout.Button("Update List")) {

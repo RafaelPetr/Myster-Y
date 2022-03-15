@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitGroup : MonoBehaviour {
-    public static ExitGroup instance;
+public class SceneObjects : MonoBehaviour {
+    public static SceneObjects instance;
 
+    [SerializeField]private GameObject sceneExits;
     private List<Exit> exits = new List<Exit>();
 
     private void Awake() {
-        exits = new List<Exit>(GetComponentsInChildren<Exit>());
+        exits = new List<Exit>(sceneExits.GetComponentsInChildren<Exit>());
 
         if (instance == null) {
             instance = this;
@@ -22,15 +23,17 @@ public class ExitGroup : MonoBehaviour {
         }
     }
 
-    /*public Exit GetPathExit(PathfindingObject pathfindingObject, SceneValues nextScene) {
+    public Exit GetPathExit(PathfindingObject pathfindingObject, SceneValues nextScene) {
         List<Exit> exitsInScene = exits.FindAll(exit => exit.GetCurrentSceneValues() == pathfindingObject.GetCurrentSceneValues());
+        List<SceneDistance> genericSceneDistances = exitsInScene[0].GetNextSceneValues().GetDistances();
 
-        int nextSceneIndex = exitsInScene[0].GetNextSceneValues().GetDistances().IndexOf(nextScene.GetName());
+        SceneDistance nextSceneInDistances = genericSceneDistances.Find(scene => scene.GetSceneName() == nextScene.GetName());
+        int nextSceneIndex = genericSceneDistances.IndexOf(nextSceneInDistances);
+        
         List<int> distances = new List<int>();
-
         for (int i = 0; i < exitsInScene.Count; i++) {
             SceneValues nextSceneValues = exitsInScene[i].GetNextSceneValues();
-            distances.Add(nextSceneValues.GetDistance(nextSceneIndex));
+            distances.Add(nextSceneValues.GetDistances()[i].GetSceneDistance());
         }
 
         int minDistance = distances.AsQueryable().Min();
@@ -53,5 +56,5 @@ public class ExitGroup : MonoBehaviour {
         }
         
         return optimalExit;
-    }*/
+    }
 }
