@@ -6,6 +6,9 @@ public class PathfindingObject : MonoBehaviour {
     private bool inScene;
     [SerializeField]private SceneData currentSceneData;
 
+    private float directionX;
+    private float directionY = -1;
+
     [System.NonSerialized]public float moveSpeed = 1.5f;
     private bool moving;
     private bool inPause;
@@ -61,6 +64,9 @@ public class PathfindingObject : MonoBehaviour {
     private void FinishMovement() {
         if (targetTile + 1 < path.Count) {
             targetTile++;
+
+            directionX = Mathf.Round((path[targetTile].GetWorldPosition().x - transform.position.x)/0.32f);
+            directionY = Mathf.Round((path[targetTile].GetWorldPosition().y - transform.position.y)/0.32f);
             return;
         }
         moving = false;
@@ -161,4 +167,20 @@ public class PathfindingObject : MonoBehaviour {
     public SceneData GetCurrentSceneData() {
         return currentSceneData;
     }
+
+    #region Get Functions
+
+    public bool GetMoving() {
+        return moving;
+    }
+
+    public float GetDirectionX() {
+        return directionX;
+    }
+
+    public float GetDirectionY() {
+        return directionY;
+    }
+
+    #endregion
 }

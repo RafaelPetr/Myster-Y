@@ -10,6 +10,8 @@ public class NPC : PathfindingObject {
     private bool cancelCollision;
 
     private void Awake() {
+        gameObject.AddComponent<NPCAnimator>();
+
         collider = gameObject.AddComponent<BoxCollider2D>();
         collider.size = new Vector3(0.32f, 0.32f, 0);
         collider.isTrigger = true;
