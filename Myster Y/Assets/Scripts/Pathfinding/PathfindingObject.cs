@@ -84,9 +84,11 @@ public class PathfindingObject : MonoBehaviour {
     }
 
     private void ChangeDestination() {
-        int index = timeManager.GetNormalizedHour();
+        if (schedule != null) {
+            int index = timeManager.GetNormalizedHour();
 
-        UpdatePath(schedule.GetDestination(index));
+            UpdatePath(schedule.GetDestination(index));
+        }
     }
 
     private void UpdatePath(Destination destination) {
@@ -100,6 +102,7 @@ public class PathfindingObject : MonoBehaviour {
 
         Vector3Int endCell = new Vector3Int();
         if (currentSceneData == destination.GetSceneData()) {
+            targetExit = null;
             endCell = pathfindingGrid.GetCellPositionTileset(destination.GetPosition());
         }
         else {
