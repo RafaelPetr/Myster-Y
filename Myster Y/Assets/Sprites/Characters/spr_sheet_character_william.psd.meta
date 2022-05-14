@@ -1,67 +1,67 @@
 fileFormatVersion: 2
-guid: d94c5514266e15b4c9cc9815774bedbb
+guid: 5943007aa06229a45b523b2296e62a33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8640352557567425334
-    second: spr_sheet_character_steve_0
+      213: 2847482300766513859
+    second: spr_sheet_character_william_0
   - first:
-      213: 1664790649644859594
-    second: spr_sheet_character_steve_1
+      213: -2969681124555474563
+    second: spr_sheet_character_william_1
   - first:
-      213: 1393635723954253487
-    second: spr_sheet_character_steve_2
+      213: 5834723570950881350
+    second: spr_sheet_character_william_2
   - first:
-      213: -7736529545924045708
-    second: spr_sheet_character_steve_3
+      213: -4209378219770004720
+    second: spr_sheet_character_william_3
   - first:
-      213: 6351749190744001559
-    second: spr_sheet_character_steve_4
+      213: -5969887018427817393
+    second: spr_sheet_character_william_4
   - first:
-      213: 6223000400048666297
-    second: spr_sheet_character_steve_5
+      213: 811989596766705774
+    second: spr_sheet_character_william_5
   - first:
-      213: -8836706288310420512
-    second: spr_sheet_character_steve_6
+      213: 6696620237317029017
+    second: spr_sheet_character_william_6
   - first:
-      213: 8503936695256815905
-    second: spr_sheet_character_steve_7
+      213: -54026436623852731
+    second: spr_sheet_character_william_7
   - first:
-      213: 1878827028079587738
-    second: spr_sheet_character_steve_8
+      213: -94217223685772460
+    second: spr_sheet_character_william_8
   - first:
-      213: -7278009781029777360
-    second: spr_sheet_character_steve_9
+      213: 4323282727964613775
+    second: spr_sheet_character_william_9
   - first:
-      213: 981730854039723640
-    second: spr_sheet_character_steve_10
+      213: 4510652570339512866
+    second: spr_sheet_character_william_10
   - first:
-      213: 4239640885619745036
-    second: spr_sheet_character_steve_11
+      213: 8175119324973461899
+    second: spr_sheet_character_william_11
   - first:
-      213: -8069285823342950415
-    second: spr_sheet_character_steve_12
+      213: -5504103869627124421
+    second: spr_sheet_character_william_12
   - first:
-      213: -9000195009955413119
-    second: spr_sheet_character_steve_13
+      213: -1391528930510448286
+    second: spr_sheet_character_william_13
   - first:
-      213: -4150684172280909124
-    second: spr_sheet_character_steve_14
+      213: -6929576661989610272
+    second: spr_sheet_character_william_14
   - first:
-      213: -1823634161681653798
-    second: spr_sheet_character_steve_15
+      213: -3629348734446556776
+    second: spr_sheet_character_william_15
   - first:
-      213: -6744397646752462373
-    second: spr_sheet_character_steve_16
+      213: -6859664925498639979
+    second: spr_sheet_character_william_16
   - first:
-      213: -2587570869612975469
-    second: spr_sheet_character_steve_17
+      213: 3560040466487203976
+    second: spr_sheet_character_william_17
   - first:
-      213: -525420757914833515
-    second: spr_sheet_character_steve_18
+      213: 5221340417444070197
+    second: spr_sheet_character_william_18
   - first:
-      213: 3165518448359939192
-    second: spr_sheet_character_steve_19
+      213: 1704651098352765236
+    second: spr_sheet_character_william_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -187,7 +187,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_sheet_character_steve_0
+      name: spr_sheet_character_william_0
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63bb1ff5fd2b8e770800000000000000
-      internalID: 8640352557567425334
+      spriteID: 3ca6661e01a448720800000000000000
+      internalID: 2847482300766513859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_1
+      name: spr_sheet_character_william_1
       rect:
         serializedVersion: 2
         x: 0
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac0497186468a1710800000000000000
-      internalID: 1664790649644859594
+      spriteID: d7930b250c299c6d0800000000000000
+      internalID: -2969681124555474563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_2
+      name: spr_sheet_character_william_2
       rect:
         serializedVersion: 2
         x: 0
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fae6690ae40375310800000000000000
-      internalID: 1393635723954253487
+      spriteID: 64040219c2a19f050800000000000000
+      internalID: 5834723570950881350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_3
+      name: spr_sheet_character_william_3
       rect:
         serializedVersion: 2
         x: 0
@@ -264,14 +264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47412ec2e5352a490800000000000000
-      internalID: -7736529545924045708
+      spriteID: 01bb755bfc84595c0800000000000000
+      internalID: -4209378219770004720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_4
+      name: spr_sheet_character_william_4
       rect:
         serializedVersion: 2
         x: 0
@@ -285,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71ccba86c32f52850800000000000000
-      internalID: 6351749190744001559
+      spriteID: f42e465f263b62da0800000000000000
+      internalID: -5969887018427817393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_5
+      name: spr_sheet_character_william_5
       rect:
         serializedVersion: 2
         x: 64
@@ -306,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b6b30a94e98c5650800000000000000
-      internalID: 6223000400048666297
+      spriteID: e6897947c34c44b00800000000000000
+      internalID: 811989596766705774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_6
+      name: spr_sheet_character_william_6
       rect:
         serializedVersion: 2
         x: 128
@@ -327,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ebfbcc1376bd5580800000000000000
-      internalID: -8836706288310420512
+      spriteID: 99c39f820ac2fec50800000000000000
+      internalID: 6696620237317029017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_7
+      name: spr_sheet_character_william_7
       rect:
         serializedVersion: 2
         x: 192
@@ -348,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12911395e5d040670800000000000000
-      internalID: 8503936695256815905
+      spriteID: 54b1e8cfd3f004ff0800000000000000
+      internalID: -54026436623852731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_8
+      name: spr_sheet_character_william_8
       rect:
         serializedVersion: 2
         x: 0
@@ -369,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9136134a3fe21a10800000000000000
-      internalID: 1878827028079587738
+      spriteID: 45b6c7a2fe541bef0800000000000000
+      internalID: -94217223685772460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_9
+      name: spr_sheet_character_william_9
       rect:
         serializedVersion: 2
         x: 64
@@ -390,14 +390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030d6e92aa05ffa90800000000000000
-      internalID: -7278009781029777360
+      spriteID: f8c99ef3cb26ffb30800000000000000
+      internalID: 4323282727964613775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_10
+      name: spr_sheet_character_william_10
       rect:
         serializedVersion: 2
         x: 128
@@ -411,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87e1414a20fcf9d00800000000000000
-      internalID: 981730854039723640
+      spriteID: 2221a404d9e099e30800000000000000
+      internalID: 4510652570339512866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_11
+      name: spr_sheet_character_william_11
       rect:
         serializedVersion: 2
         x: 192
@@ -432,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0166924cea36da30800000000000000
-      internalID: 4239640885619745036
+      spriteID: b81797166bbd37170800000000000000
+      internalID: 8175119324973461899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_12
+      name: spr_sheet_character_william_12
       rect:
         serializedVersion: 2
         x: 0
@@ -453,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f74c8ceb43240090800000000000000
-      internalID: -8069285823342950415
+      spriteID: b35b50c41be7d93b0800000000000000
+      internalID: -5504103869627124421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_13
+      name: spr_sheet_character_william_13
       rect:
         serializedVersion: 2
         x: 64
@@ -474,14 +474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1834d52d252e81380800000000000000
-      internalID: -9000195009955413119
+      spriteID: 269de327fcb40bce0800000000000000
+      internalID: -1391528930510448286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_14
+      name: spr_sheet_character_william_14
       rect:
         serializedVersion: 2
         x: 128
@@ -495,14 +495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb23c509cbec566c0800000000000000
-      internalID: -4150684172280909124
+      spriteID: 0eca54a8db235df90800000000000000
+      internalID: -6929576661989610272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_15
+      name: spr_sheet_character_william_15
       rect:
         serializedVersion: 2
         x: 192
@@ -516,14 +516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adf92b8546621b6e0800000000000000
-      internalID: -1823634161681653798
+      spriteID: 899ac4d1e86f1adc0800000000000000
+      internalID: -3629348734446556776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_16
+      name: spr_sheet_character_william_16
       rect:
         serializedVersion: 2
         x: 0
@@ -537,14 +537,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd9c659d2161762a0800000000000000
-      internalID: -6744397646752462373
+      spriteID: 599727528139dc0a0800000000000000
+      internalID: -6859664925498639979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_17
+      name: spr_sheet_character_william_17
       rect:
         serializedVersion: 2
         x: 64
@@ -558,14 +558,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39ae19de00a171cd0800000000000000
-      internalID: -2587570869612975469
+      spriteID: 8885cfe31fdc76130800000000000000
+      internalID: 3560040466487203976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_18
+      name: spr_sheet_character_william_18
       rect:
         serializedVersion: 2
         x: 128
@@ -579,14 +579,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59daedeba9455b8f0800000000000000
-      internalID: -525420757914833515
+      spriteID: 533c421227de57840800000000000000
+      internalID: 5221340417444070197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_19
+      name: spr_sheet_character_william_19
       rect:
         serializedVersion: 2
         x: 192
@@ -600,8 +600,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c9074d14e2eeb20800000000000000
-      internalID: 3165518448359939192
+      spriteID: 439cb4f642328a710800000000000000
+      internalID: 1704651098352765236
       vertices: []
       indices: 
       edges: []

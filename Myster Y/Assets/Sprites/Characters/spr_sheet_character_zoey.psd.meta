@@ -1,67 +1,67 @@
 fileFormatVersion: 2
-guid: d94c5514266e15b4c9cc9815774bedbb
+guid: 69dac6ccbef78ab4eae19cfd6a54b208
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8640352557567425334
-    second: spr_sheet_character_steve_0
+      213: -4421006860886040803
+    second: spr_sheet_character_zoey_0
   - first:
-      213: 1664790649644859594
-    second: spr_sheet_character_steve_1
+      213: 6241570163462353348
+    second: spr_sheet_character_zoey_1
   - first:
-      213: 1393635723954253487
-    second: spr_sheet_character_steve_2
+      213: 1860819499908135560
+    second: spr_sheet_character_zoey_2
   - first:
-      213: -7736529545924045708
-    second: spr_sheet_character_steve_3
+      213: 4186277751581208605
+    second: spr_sheet_character_zoey_3
   - first:
-      213: 6351749190744001559
-    second: spr_sheet_character_steve_4
+      213: -8718120150261694509
+    second: spr_sheet_character_zoey_4
   - first:
-      213: 6223000400048666297
-    second: spr_sheet_character_steve_5
+      213: -8336063523650622506
+    second: spr_sheet_character_zoey_5
   - first:
-      213: -8836706288310420512
-    second: spr_sheet_character_steve_6
+      213: 4106877590543792923
+    second: spr_sheet_character_zoey_6
   - first:
-      213: 8503936695256815905
-    second: spr_sheet_character_steve_7
+      213: 5491948527727979093
+    second: spr_sheet_character_zoey_7
   - first:
-      213: 1878827028079587738
-    second: spr_sheet_character_steve_8
+      213: 7650452896403636974
+    second: spr_sheet_character_zoey_8
   - first:
-      213: -7278009781029777360
-    second: spr_sheet_character_steve_9
+      213: 465197193907899085
+    second: spr_sheet_character_zoey_9
   - first:
-      213: 981730854039723640
-    second: spr_sheet_character_steve_10
+      213: 9157675865140081133
+    second: spr_sheet_character_zoey_10
   - first:
-      213: 4239640885619745036
-    second: spr_sheet_character_steve_11
+      213: 430934007706650316
+    second: spr_sheet_character_zoey_11
   - first:
-      213: -8069285823342950415
-    second: spr_sheet_character_steve_12
+      213: -3691957439198937036
+    second: spr_sheet_character_zoey_12
   - first:
-      213: -9000195009955413119
-    second: spr_sheet_character_steve_13
+      213: 4029189716556764325
+    second: spr_sheet_character_zoey_13
   - first:
-      213: -4150684172280909124
-    second: spr_sheet_character_steve_14
+      213: 1247780458104023055
+    second: spr_sheet_character_zoey_14
   - first:
-      213: -1823634161681653798
-    second: spr_sheet_character_steve_15
+      213: -5092009830453051992
+    second: spr_sheet_character_zoey_15
   - first:
-      213: -6744397646752462373
-    second: spr_sheet_character_steve_16
+      213: -1056330599147016715
+    second: spr_sheet_character_zoey_16
   - first:
-      213: -2587570869612975469
-    second: spr_sheet_character_steve_17
+      213: 942443136039886675
+    second: spr_sheet_character_zoey_17
   - first:
-      213: -525420757914833515
-    second: spr_sheet_character_steve_18
+      213: 1976464285427174886
+    second: spr_sheet_character_zoey_18
   - first:
-      213: 3165518448359939192
-    second: spr_sheet_character_steve_19
+      213: 127544305000974318
+    second: spr_sheet_character_zoey_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -187,7 +187,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_sheet_character_steve_0
+      name: spr_sheet_character_zoey_0
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63bb1ff5fd2b8e770800000000000000
-      internalID: 8640352557567425334
+      spriteID: d1f925bfead65a2c0800000000000000
+      internalID: -4421006860886040803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_1
+      name: spr_sheet_character_zoey_1
       rect:
         serializedVersion: 2
         x: 0
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac0497186468a1710800000000000000
-      internalID: 1664790649644859594
+      spriteID: 4c1b9d19ef28e9650800000000000000
+      internalID: 6241570163462353348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_2
+      name: spr_sheet_character_zoey_2
       rect:
         serializedVersion: 2
         x: 0
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fae6690ae40375310800000000000000
-      internalID: 1393635723954253487
+      spriteID: 88af423e975f2d910800000000000000
+      internalID: 1860819499908135560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_3
+      name: spr_sheet_character_zoey_3
       rect:
         serializedVersion: 2
         x: 0
@@ -264,14 +264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47412ec2e5352a490800000000000000
-      internalID: -7736529545924045708
+      spriteID: d107e1a6f65a81a30800000000000000
+      internalID: 4186277751581208605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_4
+      name: spr_sheet_character_zoey_4
       rect:
         serializedVersion: 2
         x: 0
@@ -285,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71ccba86c32f52850800000000000000
-      internalID: 6351749190744001559
+      spriteID: 3dff976f9e3030780800000000000000
+      internalID: -8718120150261694509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_5
+      name: spr_sheet_character_zoey_5
       rect:
         serializedVersion: 2
         x: 64
@@ -306,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b6b30a94e98c5650800000000000000
-      internalID: 6223000400048666297
+      spriteID: 6dba6bf346a505c80800000000000000
+      internalID: -8336063523650622506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_6
+      name: spr_sheet_character_zoey_6
       rect:
         serializedVersion: 2
         x: 128
@@ -327,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ebfbcc1376bd5580800000000000000
-      internalID: -8836706288310420512
+      spriteID: b1bff50d86f8ef830800000000000000
+      internalID: 4106877590543792923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_7
+      name: spr_sheet_character_zoey_7
       rect:
         serializedVersion: 2
         x: 192
@@ -348,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12911395e5d040670800000000000000
-      internalID: 8503936695256815905
+      spriteID: 55aa4ff9612573c40800000000000000
+      internalID: 5491948527727979093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_8
+      name: spr_sheet_character_zoey_8
       rect:
         serializedVersion: 2
         x: 0
@@ -369,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9136134a3fe21a10800000000000000
-      internalID: 1878827028079587738
+      spriteID: ee24ffc106edb2a60800000000000000
+      internalID: 7650452896403636974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_9
+      name: spr_sheet_character_zoey_9
       rect:
         serializedVersion: 2
         x: 64
@@ -390,14 +390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030d6e92aa05ffa90800000000000000
-      internalID: -7278009781029777360
+      spriteID: dca83651266b47600800000000000000
+      internalID: 465197193907899085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_10
+      name: spr_sheet_character_zoey_10
       rect:
         serializedVersion: 2
         x: 128
@@ -411,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87e1414a20fcf9d00800000000000000
-      internalID: 981730854039723640
+      spriteID: de1b7dd0ea9961f70800000000000000
+      internalID: 9157675865140081133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_11
+      name: spr_sheet_character_zoey_11
       rect:
         serializedVersion: 2
         x: 192
@@ -432,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0166924cea36da30800000000000000
-      internalID: 4239640885619745036
+      spriteID: cc68df2623cfaf500800000000000000
+      internalID: 430934007706650316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_12
+      name: spr_sheet_character_zoey_12
       rect:
         serializedVersion: 2
         x: 0
@@ -453,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f74c8ceb43240090800000000000000
-      internalID: -8069285823342950415
+      spriteID: 430cfa6154883ccc0800000000000000
+      internalID: -3691957439198937036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_13
+      name: spr_sheet_character_zoey_13
       rect:
         serializedVersion: 2
         x: 64
@@ -474,14 +474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1834d52d252e81380800000000000000
-      internalID: -9000195009955413119
+      spriteID: 5a4d50c13be8ae730800000000000000
+      internalID: 4029189716556764325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_14
+      name: spr_sheet_character_zoey_14
       rect:
         serializedVersion: 2
         x: 128
@@ -495,14 +495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb23c509cbec566c0800000000000000
-      internalID: -4150684172280909124
+      spriteID: f08e6f237b1015110800000000000000
+      internalID: 1247780458104023055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_15
+      name: spr_sheet_character_zoey_15
       rect:
         serializedVersion: 2
         x: 192
@@ -516,14 +516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adf92b8546621b6e0800000000000000
-      internalID: -1823634161681653798
+      spriteID: 8ad7c0fa90c8559b0800000000000000
+      internalID: -5092009830453051992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_16
+      name: spr_sheet_character_zoey_16
       rect:
         serializedVersion: 2
         x: 0
@@ -537,14 +537,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd9c659d2161762a0800000000000000
-      internalID: -6744397646752462373
+      spriteID: 5fd6770bae82751f0800000000000000
+      internalID: -1056330599147016715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_17
+      name: spr_sheet_character_zoey_17
       rect:
         serializedVersion: 2
         x: 64
@@ -558,14 +558,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39ae19de00a171cd0800000000000000
-      internalID: -2587570869612975469
+      spriteID: 35f99a8f90b341d00800000000000000
+      internalID: 942443136039886675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_18
+      name: spr_sheet_character_zoey_18
       rect:
         serializedVersion: 2
         x: 128
@@ -579,14 +579,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59daedeba9455b8f0800000000000000
-      internalID: -525420757914833515
+      spriteID: 6ed022cbbcfcd6b10800000000000000
+      internalID: 1976464285427174886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_steve_19
+      name: spr_sheet_character_zoey_19
       rect:
         serializedVersion: 2
         x: 192
@@ -600,8 +600,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c9074d14e2eeb20800000000000000
-      internalID: 3165518448359939192
+      spriteID: ee705b0aed025c100800000000000000
+      internalID: 127544305000974318
       vertices: []
       indices: 
       edges: []
