@@ -1,0 +1,28 @@
+Bosque (Noroeste)
+	Praça
+	Labirinto
+		Casa queimada
+
+Praia (Sul)
+	Ponte que dá pra pescar lá no canto, na frente da casa na praia
+	Um barco aparece após uma das mortes
+
+Cais (Leste)
+	Farol
+	Barco do Rayleigh de vez em quando
+
+Montanhas (Norte)
+	Caverna estranha com altar
+	Torre de energia
+
+Entrada (Oeste)
+	Metro
+
+Cidade
+	Playground (Próximo à escola)
+	Esgoto
+	Cemitério
+	Quadra de Esportes (mini quadra de basquete e skate)
+	Alçapão de alguma casa
+	Caixa d'agua de alguma casa
+	Montanha com observatório
