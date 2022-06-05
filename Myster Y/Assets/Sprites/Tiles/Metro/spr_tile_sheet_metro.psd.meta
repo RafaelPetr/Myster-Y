@@ -1,0 +1,1386 @@
+fileFormatVersion: 2
+guid: dcf459b3390a1994791ba450748f126d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3819058880002317500
+    second: spr_sheet_tile_metro_0
+  - first:
+      213: 6653493308621197454
+    second: spr_sheet_tile_metro_1
+  - first:
+      213: 1859584503845049781
+    second: spr_sheet_tile_metro_2
+  - first:
+      213: 162767468785270658
+    second: spr_sheet_tile_metro_3
+  - first:
+      213: 7673355324989509952
+    second: spr_sheet_tile_metro_4
+  - first:
+      213: 6717688661198345939
+    second: spr_sheet_tile_metro_5
+  - first:
+      213: 8081768940521487614
+    second: spr_sheet_tile_metro_6
+  - first:
+      213: -1723275440926663509
+    second: spr_sheet_tile_metro_7
+  - first:
+      213: -8043133817560693534
+    second: spr_sheet_tile_metro_8
+  - first:
+      213: 4538140126291812396
+    second: spr_sheet_tile_metro_9
+  - first:
+      213: -6908641594242798719
+    second: spr_sheet_tile_metro_10
+  - first:
+      213: -799989275378325279
+    second: spr_sheet_tile_metro_11
+  - first:
+      213: -5456232985773190033
+    second: spr_sheet_tile_metro_12
+  - first:
+      213: 4993661406390350708
+    second: spr_sheet_tile_metro_13
+  - first:
+      213: 6329754149107826907
+    second: spr_sheet_tile_metro_14
+  - first:
+      213: -3561526937550013910
+    second: spr_sheet_tile_metro_15
+  - first:
+      213: 1122547921543648860
+    second: spr_sheet_tile_metro_16
+  - first:
+      213: -7395004754806422470
+    second: spr_sheet_tile_metro_17
+  - first:
+      213: -8151593216070147184
+    second: spr_sheet_tile_metro_18
+  - first:
+      213: 4398585131963632677
+    second: spr_sheet_tile_metro_19
+  - first:
+      213: -784814793430384685
+    second: spr_sheet_tile_metro_20
+  - first:
+      213: 8917843111986549305
+    second: spr_sheet_tile_metro_21
+  - first:
+      213: 5066347124733615884
+    second: spr_sheet_tile_metro_22
+  - first:
+      213: 1670634479468736311
+    second: spr_sheet_tile_metro_23
+  - first:
+      213: -6127460633169447809
+    second: spr_sheet_tile_metro_24
+  - first:
+      213: -7622376756889802697
+    second: spr_sheet_tile_metro_25
+  - first:
+      213: -8285031560437223992
+    second: spr_sheet_tile_metro_26
+  - first:
+      213: -9200944107970835064
+    second: spr_sheet_tile_metro_27
+  - first:
+      213: 5733987666066970276
+    second: spr_sheet_tile_metro_28
+  - first:
+      213: 4020667598487227621
+    second: spr_sheet_tile_metro_29
+  - first:
+      213: -8225415634646908032
+    second: spr_sheet_tile_metro_30
+  - first:
+      213: 1828639212197688725
+    second: spr_sheet_tile_metro_31
+  - first:
+      213: -3160027107693849476
+    second: spr_sheet_tile_metro_32
+  - first:
+      213: 4750282220857559960
+    second: spr_sheet_tile_metro_33
+  - first:
+      213: -261151412666619227
+    second: spr_sheet_tile_metro_34
+  - first:
+      213: -1925613171556989196
+    second: spr_sheet_tile_metro_35
+  - first:
+      213: -2027390864751936962
+    second: spr_sheet_tile_metro_36
+  - first:
+      213: -8450564927538941670
+    second: spr_sheet_tile_metro_37
+  - first:
+      213: -3781792953123474526
+    second: spr_sheet_tile_metro_38
+  - first:
+      213: 8792857583633374316
+    second: spr_sheet_tile_metro_39
+  - first:
+      213: 7263752290219429222
+    second: spr_sheet_tile_metro_40
+  - first:
+      213: 2981840074083451166
+    second: spr_sheet_tile_metro_41
+  - first:
+      213: 8302688236319931774
+    second: spr_sheet_tile_metro_42
+  - first:
+      213: -7520529525141521874
+    second: spr_sheet_tile_metro_43
+  - first:
+      213: 3411196981282518796
+    second: spr_sheet_tile_metro_44
+  - first:
+      213: -2279228858576717678
+    second: spr_sheet_tile_metro_45
+  - first:
+      213: 6938805910742574957
+    second: spr_tile_sheet_metro_0
+  - first:
+      213: -4022597053232714130
+    second: spr_tile_sheet_metro_1
+  - first:
+      213: 8022923140333866378
+    second: spr_tile_sheet_metro_2
+  - first:
+      213: 2167612181002814576
+    second: spr_tile_sheet_metro_3
+  - first:
+      213: 7956772792229531950
+    second: spr_tile_sheet_metro_4
+  - first:
+      213: -8705143501119760799
+    second: spr_tile_sheet_metro_5
+  - first:
+      213: 179363157778502400
+    second: spr_tile_sheet_metro_6
+  - first:
+      213: 2849288990135969396
+    second: spr_tile_sheet_metro_7
+  - first:
+      213: -5446594576036619986
+    second: spr_tile_sheet_metro_8
+  - first:
+      213: -1579838903180318061
+    second: spr_tile_sheet_metro_9
+  - first:
+      213: -1546977698432074373
+    second: spr_tile_sheet_metro_10
+  - first:
+      213: 8600485476815593123
+    second: spr_tile_sheet_metro_11
+  - first:
+      213: 331095292988781357
+    second: spr_tile_sheet_metro_12
+  - first:
+      213: -7885928732386773900
+    second: spr_tile_sheet_metro_13
+  - first:
+      213: 8890743495608759737
+    second: spr_tile_sheet_metro_14
+  - first:
+      213: 4731591403184630825
+    second: spr_tile_sheet_metro_15
+  - first:
+      213: 7391875712976172369
+    second: spr_tile_sheet_metro_16
+  - first:
+      213: 4140617878316287588
+    second: spr_tile_sheet_metro_17
+  - first:
+      213: -7872010018702432315
+    second: spr_tile_sheet_metro_18
+  - first:
+      213: -236774880329260388
+    second: spr_tile_sheet_metro_19
+  - first:
+      213: -2919359930408663073
+    second: spr_tile_sheet_metro_20
+  - first:
+      213: -6198007800994766387
+    second: spr_tile_sheet_metro_21
+  - first:
+      213: -6413335099870350139
+    second: spr_tile_sheet_metro_22
+  - first:
+      213: 5858148395631441350
+    second: spr_tile_sheet_metro_23
+  - first:
+      213: 6815475713282316280
+    second: spr_tile_sheet_metro_24
+  - first:
+      213: 984893370492469713
+    second: spr_tile_sheet_metro_25
+  - first:
+      213: 853432822720240543
+    second: spr_tile_sheet_metro_26
+  - first:
+      213: -6995177686112160884
+    second: spr_tile_sheet_metro_27
+  - first:
+      213: -2055305041595428014
+    second: spr_tile_sheet_metro_28
+  - first:
+      213: 420939420131968829
+    second: spr_tile_sheet_metro_29
+  - first:
+      213: -5583896442589562063
+    second: spr_tile_sheet_metro_30
+  - first:
+      213: 1867996587628657177
+    second: spr_tile_sheet_metro_31
+  - first:
+      213: -8050553063080474147
+    second: spr_tile_sheet_metro_32
+  - first:
+      213: 6942360480144754472
+    second: spr_tile_sheet_metro_33
+  - first:
+      213: -9137399576050520885
+    second: spr_tile_sheet_metro_34
+  - first:
+      213: 4026487735959200734
+    second: spr_tile_sheet_metro_35
+  - first:
+      213: -7917060256943856515
+    second: spr_tile_sheet_metro_36
+  - first:
+      213: 837941087482583291
+    second: spr_tile_sheet_metro_37
+  - first:
+      213: -1934073519562142794
+    second: spr_tile_sheet_metro_38
+  - first:
+      213: 8207554136146152603
+    second: spr_tile_sheet_metro_39
+  - first:
+      213: -7567974734235897973
+    second: spr_tile_sheet_metro_40
+  - first:
+      213: 3847077055505755899
+    second: spr_tile_sheet_metro_41
+  - first:
+      213: 1202012523444742277
+    second: spr_tile_sheet_metro_42
+  - first:
+      213: 4338130939640469585
+    second: spr_tile_sheet_metro_43
+  - first:
+      213: 8660879323757247730
+    second: spr_tile_sheet_metro_44
+  - first:
+      213: 7793896054335803622
+    second: spr_tile_sheet_metro_45
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67213366379b4060800000000000000
+      internalID: 6938805910742574957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ee78fea4ddc28c0800000000000000
+      internalID: -4022597053232714130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d8cdfb616275f60800000000000000
+      internalID: 8022923140333866378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0748b7b4bc7e41e10800000000000000
+      internalID: 2167612181002814576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21955f92b22c6e60800000000000000
+      internalID: 7956772792229531950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_5
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166d4f88b1e113780800000000000000
+      internalID: -8705143501119760799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0031e2977d93d7200800000000000000
+      internalID: 179363157778502400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4766c778d35ba8720800000000000000
+      internalID: 2849288990135969396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2994c3271fc964b0800000000000000
+      internalID: -5446594576036619986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_9
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a289d43e8431ae0800000000000000
+      internalID: -1579838903180318061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d3181caf7088ae0800000000000000
+      internalID: -1546977698432074373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aedf7d49ff0b5770800000000000000
+      internalID: 8600485476815593123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_12
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 576
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23766d2a69489400800000000000000
+      internalID: 331095292988781357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4743a0e699d8f8290800000000000000
+      internalID: -7885928732386773900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5ffd4aa14426b70800000000000000
+      internalID: 8890743495608759737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cac19ef4df9a140800000000000000
+      internalID: 4731591403184630825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15538cf0cc7359660800000000000000
+      internalID: 7391875712976172369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4668cabb50e667930800000000000000
+      internalID: 4140617878316287588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_18
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 544
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7ecee789001c290800000000000000
+      internalID: -7872010018702432315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c922d36308ec6bcf0800000000000000
+      internalID: -236774880329260388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd78b785c995c77d0800000000000000
+      internalID: -2919359930408663073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc16b925eb04cf9a0800000000000000
+      internalID: -6198007800994766387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_22
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4feaab4b14ff6a0800000000000000
+      internalID: -6413335099870350139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5f2239de25c4150800000000000000
+      internalID: 5858148395631441350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_24
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 480
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f79e712d0f659e50800000000000000
+      internalID: 6815475713282316280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d147d16d4b0bad00800000000000000
+      internalID: 984893370492469713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b16ed61a008db00800000000000000
+      internalID: 853432822720240543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83bb8ed4f22cee90800000000000000
+      internalID: -6995177686112160884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25392a244f61a73e0800000000000000
+      internalID: -2055305041595428014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_29
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37cce02c2a77d500800000000000000
+      internalID: 420939420131968829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bb1ec25c30282b0800000000000000
+      internalID: -5583896442589562063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a7f37dff47ce910800000000000000
+      internalID: 1867996587628657177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9c7ad84a0b64090800000000000000
+      internalID: -8050553063080474147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8270db11318385060800000000000000
+      internalID: 6942360480144754472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc24b26f7f613180800000000000000
+      internalID: -9137399576050520885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3a05a3345f0e730800000000000000
+      internalID: 4026487735959200734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_36
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74af7784a3f02290800000000000000
+      internalID: -7917060256943856515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf89a1ebaf6f0ab00800000000000000
+      internalID: 837941087482583291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb4201916ac825e0800000000000000
+      internalID: -1934073519562142794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c87c7500717e170800000000000000
+      internalID: 8207554136146152603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fecb8731729f690800000000000000
+      internalID: -7567974734235897973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfee9f40330936530800000000000000
+      internalID: 3847077055505755899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588ae7385086ea010800000000000000
+      internalID: 1202012523444742277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158d66eea13243c30800000000000000
+      internalID: 4338130939640469585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc731f8bdf913870800000000000000
+      internalID: 8660879323757247730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_tile_sheet_metro_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e01107ea2b792c60800000000000000
+      internalID: 7793896054335803622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

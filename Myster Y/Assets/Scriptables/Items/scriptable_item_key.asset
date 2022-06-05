@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8282a143afb4b4b4b9f78e6ba53a1bac, type: 3}
+  m_Name: scriptable_item_key
+  m_EditorClassIdentifier: 
+  key: scriptable_item_key
+  m_name: Chave Dourada
+  description: Essa chave tem um detalhe em dourado de uma parada bem maneira.
+  icon: {fileID: 21300000, guid: 601edeb2d5c45ad4a87d14727c2e0826, type: 3}
+  analysisImage: {fileID: 21300000, guid: 0a8393413e2addf419240e7ba69b068b, type: 3}
