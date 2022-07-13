@@ -4,64 +4,64 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2680674668695018156
-    second: spr_sheet_character_alexander_0
+    second: spr_sheet_character_alfred_0
   - first:
       213: 5321354271005150796
-    second: spr_sheet_character_alexander_1
+    second: spr_sheet_character_alfred_1
   - first:
       213: 4084868059478989631
-    second: spr_sheet_character_alexander_2
+    second: spr_sheet_character_alfred_2
   - first:
       213: -7987346536769062663
-    second: spr_sheet_character_alexander_3
+    second: spr_sheet_character_alfred_3
   - first:
       213: -6376049955519560315
-    second: spr_sheet_character_alexander_4
+    second: spr_sheet_character_alfred_4
   - first:
       213: 6230480219863960578
-    second: spr_sheet_character_alexander_5
+    second: spr_sheet_character_alfred_5
   - first:
       213: 6215457252046529081
-    second: spr_sheet_character_alexander_6
+    second: spr_sheet_character_alfred_6
   - first:
       213: -5089721061317515535
-    second: spr_sheet_character_alexander_7
+    second: spr_sheet_character_alfred_7
   - first:
       213: 3241854216508344770
-    second: spr_sheet_character_alexander_8
+    second: spr_sheet_character_alfred_8
   - first:
       213: 1978978947358351331
-    second: spr_sheet_character_alexander_9
+    second: spr_sheet_character_alfred_9
   - first:
       213: 2615240113772293219
-    second: spr_sheet_character_alexander_10
+    second: spr_sheet_character_alfred_10
   - first:
       213: 5865410584212373462
-    second: spr_sheet_character_alexander_11
+    second: spr_sheet_character_alfred_11
   - first:
       213: 8965751782742393651
-    second: spr_sheet_character_alexander_12
+    second: spr_sheet_character_alfred_12
   - first:
       213: 8708082428156794664
-    second: spr_sheet_character_alexander_13
+    second: spr_sheet_character_alfred_13
   - first:
       213: -8576425660192966556
-    second: spr_sheet_character_alexander_14
+    second: spr_sheet_character_alfred_14
   - first:
       213: -3853632996628789589
-    second: spr_sheet_character_alexander_15
+    second: spr_sheet_character_alfred_15
   - first:
       213: 6078796739014034660
-    second: spr_sheet_character_alexander_16
+    second: spr_sheet_character_alfred_16
   - first:
       213: 2269303660759705185
-    second: spr_sheet_character_alexander_17
+    second: spr_sheet_character_alfred_17
   - first:
       213: 9136650804088296308
-    second: spr_sheet_character_alexander_18
+    second: spr_sheet_character_alfred_18
   - first:
       213: -9205521839721740901
-    second: spr_sheet_character_alexander_19
+    second: spr_sheet_character_alfred_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -187,7 +187,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_0
+      name: spr_sheet_character_alfred_0
       rect:
         serializedVersion: 2
         x: 0
@@ -195,7 +195,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,7 +208,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_1
+      name: spr_sheet_character_alfred_1
       rect:
         serializedVersion: 2
         x: 0
@@ -216,7 +216,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_2
+      name: spr_sheet_character_alfred_2
       rect:
         serializedVersion: 2
         x: 0
@@ -237,7 +237,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,7 +250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_3
+      name: spr_sheet_character_alfred_3
       rect:
         serializedVersion: 2
         x: 0
@@ -258,7 +258,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,7 +271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_4
+      name: spr_sheet_character_alfred_4
       rect:
         serializedVersion: 2
         x: 0
@@ -279,7 +279,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,7 +292,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_5
+      name: spr_sheet_character_alfred_5
       rect:
         serializedVersion: 2
         x: 64
@@ -300,7 +300,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,7 +313,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_6
+      name: spr_sheet_character_alfred_6
       rect:
         serializedVersion: 2
         x: 128
@@ -321,7 +321,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,7 +334,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_7
+      name: spr_sheet_character_alfred_7
       rect:
         serializedVersion: 2
         x: 192
@@ -342,7 +342,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,7 +355,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_8
+      name: spr_sheet_character_alfred_8
       rect:
         serializedVersion: 2
         x: 0
@@ -363,7 +363,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -376,7 +376,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_9
+      name: spr_sheet_character_alfred_9
       rect:
         serializedVersion: 2
         x: 64
@@ -384,7 +384,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,7 +397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_10
+      name: spr_sheet_character_alfred_10
       rect:
         serializedVersion: 2
         x: 128
@@ -405,7 +405,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -418,7 +418,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_11
+      name: spr_sheet_character_alfred_11
       rect:
         serializedVersion: 2
         x: 192
@@ -426,7 +426,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -439,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_12
+      name: spr_sheet_character_alfred_12
       rect:
         serializedVersion: 2
         x: 0
@@ -447,7 +447,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -460,7 +460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_13
+      name: spr_sheet_character_alfred_13
       rect:
         serializedVersion: 2
         x: 64
@@ -468,7 +468,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -481,7 +481,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_14
+      name: spr_sheet_character_alfred_14
       rect:
         serializedVersion: 2
         x: 128
@@ -489,7 +489,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -502,7 +502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_15
+      name: spr_sheet_character_alfred_15
       rect:
         serializedVersion: 2
         x: 192
@@ -510,7 +510,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -523,7 +523,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_16
+      name: spr_sheet_character_alfred_16
       rect:
         serializedVersion: 2
         x: 0
@@ -531,7 +531,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -544,7 +544,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_17
+      name: spr_sheet_character_alfred_17
       rect:
         serializedVersion: 2
         x: 64
@@ -552,7 +552,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -565,7 +565,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_18
+      name: spr_sheet_character_alfred_18
       rect:
         serializedVersion: 2
         x: 128
@@ -573,7 +573,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -586,7 +586,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_sheet_character_alexander_19
+      name: spr_sheet_character_alfred_19
       rect:
         serializedVersion: 2
         x: 192
@@ -594,7 +594,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

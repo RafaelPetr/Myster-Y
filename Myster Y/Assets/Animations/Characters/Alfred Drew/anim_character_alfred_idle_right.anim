@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_character_alexander_walk_down
+  m_Name: anim_character_alfred_idle_right
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,18 +20,12 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -6376049955519560315, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - time: 0.2
-      value: {fileID: 6230480219863960578, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - time: 0.4
-      value: {fileID: 6215457252046529081, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - time: 0.6
-      value: {fileID: -5089721061317515535, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
+      value: {fileID: -2680674668695018156, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 5
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -46,16 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -6376049955519560315, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - {fileID: 6230480219863960578, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - {fileID: 6215457252046529081, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
-    - {fileID: -5089721061317515535, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
+    - {fileID: -2680674668695018156, guid: a8a24cd6f696d7c4db0f223de4678a83, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

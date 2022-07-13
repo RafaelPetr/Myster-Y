@@ -4089,7 +4089,7 @@ GameObject:
   - component: {fileID: 1023365850154886933}
   - component: {fileID: 7457532228672986283}
   m_Layer: 0
-  m_Name: NPC_Alexander
+  m_Name: NPC_Alfred
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
