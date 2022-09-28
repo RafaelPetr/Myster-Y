@@ -71,7 +71,7 @@ public class DialogueEditor : Editor {
     private void ChoiceTab(Dialogue dialogue) {
         if (dialogue.choice.GetEnable()) {
             GUILayout.BeginHorizontal();
-                GUILayout.Label("Conext:");
+                GUILayout.Label("Context:");
                 dialogue.choice.context = GUILayout.TextArea(dialogue.choice.context,GUILayout.Width(170));
             GUILayout.EndHorizontal();
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);

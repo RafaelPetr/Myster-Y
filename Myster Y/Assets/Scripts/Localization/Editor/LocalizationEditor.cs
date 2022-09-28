@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
-public class LocalizationEditor : EditorWindow
-{
+public class LocalizationEditor : EditorWindow {
     public LocalizationData localizationData;
     private string filePath;
 
