@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour {
         animator = gameObject.AddComponent<PlayerAnimator>();
 
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
-        collider.size = new Vector3(0.24f,0.24f,0);
+        collider.size = new Vector3(0.5f,0.5f,0);
+        collider.offset = new Vector3(0f,0.09f,0);
 
         Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
         rigidbody.isKinematic = true;
@@ -74,35 +75,35 @@ public class PlayerController : MonoBehaviour {
             if (Vector3.Distance(transform.position, movePointer.position) <= .05f) {
                 
                 if (Input.GetAxisRaw("Horizontal") != 0f) {
-                    Vector3 collisionPosition = movePointer.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.32f, 0f, 0f);
+                    Vector3 collisionPosition = movePointer.position + new Vector3(Input.GetAxisRaw("Horizontal") * 0.5f, 0f, 0f);
                     
                     directionX = Input.GetAxisRaw("Horizontal");
                     directionY = 0f;
 
                     if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                        movePointer.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.32f, 0f, 0f);
+                        movePointer.position += new Vector3(Input.GetAxisRaw("Horizontal")*0.5f, 0f, 0f);
                     }
                     else {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.Move(new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.32f, movePointer.position.y, 0f));
+                    interactPointer.Move(new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.5f, movePointer.position.y, 0f));
                 }
 
                 else if (Input.GetAxisRaw("Vertical") != 0f) {
-                    Vector3 collisionPosition = movePointer.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.32f, 0f);
+                    Vector3 collisionPosition = movePointer.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * 0.5f, 0f);
                     
                     directionY = Input.GetAxisRaw("Vertical");
                     directionX = 0f;
 
                     if (!Physics2D.OverlapCircle(collisionPosition, .1f, collidable)) {
-                        movePointer.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.32f, 0f);
+                        movePointer.position += new Vector3(0f, Input.GetAxisRaw("Vertical")*0.5f, 0f);
                     }
                     else {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.Move(new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.32f, 0f));
+                    interactPointer.Move(new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.5f, 0f));
                 }
 
                 else {
