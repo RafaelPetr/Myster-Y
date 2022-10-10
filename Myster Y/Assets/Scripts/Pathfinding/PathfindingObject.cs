@@ -23,16 +23,14 @@ public class PathfindingObject : MonoBehaviour {
 
     private bool enablePathDebug = true;
 
-    private TimeManager timeManager;
     private SceneController sceneController;
 
     private void Start() {
         sceneController = SceneController.instance;
-        timeManager = TimeManager.instance;
         SetPathfinding();
 
-        timeManager.pauseTimeEvent += SetInPause;
-        timeManager.UpdateRoutinesEvent.AddListener(ChangeDestination);
+        TimeManager.instance.PauseTimeEvent.AddListener(SetInPause);
+        TimeManager.instance.UpdateRoutinesEvent.AddListener(ChangeDestination);
         sceneController.EndLoadEvent.AddListener(ControlLoading);
 
         ControlLoading();
@@ -91,7 +89,7 @@ public class PathfindingObject : MonoBehaviour {
 
     private void ChangeDestination() {
         if (schedule != null) {
-            int index = timeManager.GetNormalizedHour();
+            int index = TimeManager.instance.GetNormalizedHour();
 
             UpdatePath(schedule.GetDestination(index));
         }

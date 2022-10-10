@@ -22,13 +22,13 @@ public class TimeManager : MonoBehaviour {
     private bool updateRoutines;
     private int minutesToUpdate;
 
-    public delegate void PauseTimeEvent(bool value);
-    [System.NonSerialized]public PauseTimeEvent pauseTimeEvent;
+    [System.NonSerialized]public UnityEvent<bool> PauseTimeEvent;
     [System.NonSerialized]public UnityEvent UpdateRoutinesEvent;
 
     private void Awake() {
         if (instance == null) {
             instance = this;
+            PauseTimeEvent = new UnityEvent<bool>();
             UpdateRoutinesEvent = new UnityEvent();
         }
         else {
@@ -72,7 +72,7 @@ public class TimeManager : MonoBehaviour {
 
     public void SetPauseTime(bool value) {
         pauseTime = value;
-        pauseTimeEvent.Invoke(value);
+        PauseTimeEvent.Invoke(value);
     }
 
     public float GetDay() {

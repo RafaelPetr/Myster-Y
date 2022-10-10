@@ -6,7 +6,8 @@ public abstract class Interactable : MonoBehaviour {
     private bool inInteraction;
 
     public virtual void Awake() {
-        gameObject.tag = "Interactable";
+        CustomTags tags = gameObject.AddComponent<CustomTags>();
+        tags.AddTag(Tag.Interactable);
     }
 
     public virtual void Interact() {

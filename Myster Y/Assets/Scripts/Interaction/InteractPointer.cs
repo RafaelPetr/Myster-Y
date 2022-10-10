@@ -18,8 +18,8 @@ public class InteractPointer : MonoBehaviour {
                 activeInteractable.Interact();
             }
             else if (interactable != null) {
-                interactable.Interact();
                 activeInteractable = interactable;
+                activeInteractable.Interact();
             }
         }
     }

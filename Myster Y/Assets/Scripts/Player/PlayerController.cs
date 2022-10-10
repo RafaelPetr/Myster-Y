@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.Move(new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.5f, movePointer.position.y, 0f));
+                    interactPointer.Move(new Vector3(movePointer.position.x + Input.GetAxisRaw("Horizontal")*0.5f, movePointer.position.y - 0.5f, 0f));
                 }
 
                 else if (Input.GetAxisRaw("Vertical") != 0f) {
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour {
                         running = false;
                         walking = false;
                     }
-                    interactPointer.Move(new Vector3(movePointer.position.x, movePointer.position.y + Input.GetAxisRaw("Vertical")*0.5f, 0f));
+                    interactPointer.Move(new Vector3(movePointer.position.x, movePointer.position.y - 0.5f + Input.GetAxisRaw("Vertical")*0.5f, 0f));
                 }
 
                 else {
