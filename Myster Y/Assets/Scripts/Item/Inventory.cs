@@ -2,25 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
-    public static Inventory instance;
+public static class Inventory {
     private static List<Item> items = new List<Item>();
 
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-    }
-
-    public Item GetItem(int index) {
+    public static Item GetItem(int index) {
         return items[index];
     }
 
-    public List<Item> GetAllItems() {
+    public static List<Item> GetAllItems() {
         return items;
     }
 
-    public void AddItem(Item item) {
+    public static void AddItem(Item item) {
         if (items.Count < 12) {
             items.Add(item);
         }
@@ -29,11 +22,11 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public bool FindItem(Item item) {
+    public static bool FindItem(Item item) {
         return items.Contains(item);
     }
 
-    public void RemoveItem(Item item) {
+    public static void RemoveItem(Item item) {
         items.Remove(item);
     }
 }

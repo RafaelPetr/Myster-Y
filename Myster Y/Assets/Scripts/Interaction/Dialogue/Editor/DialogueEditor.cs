@@ -85,6 +85,11 @@ public class DialogueEditor : Editor {
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
+                    GUILayout.Label("Function:");
+                    dialogue.choice.options[i].function = GUILayout.TextArea(dialogue.choice.options[i].function);
+                GUILayout.EndHorizontal();
+
+                GUILayout.BeginHorizontal();
                     GUILayout.Label("Dialogue:");
                     dialogue.choice.options[i].linkedDialogue = (Dialogue)EditorGUILayout.ObjectField("",dialogue.choice.options[i].linkedDialogue,typeof(Dialogue),true); 
                 GUILayout.EndHorizontal();
@@ -119,19 +124,21 @@ public class DialogueEditor : Editor {
 
         GUILayout.BeginHorizontal();
 
-            if (localizationData != null) {
+            //if (localizationData != null) {
                 if (GUILayout.Button("Save Data")) {
                     SaveData(dialogue);
                 }
                 if (GUILayout.Button("Remove Data")) {
                     RemoveData(dialogue);
                 }
-            }
+            //}
 
         GUILayout.EndHorizontal();
     }
 
     private void LoadData() {
+        filePath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
+
         if (string.IsNullOrEmpty(filePath)) {
             filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
         }
@@ -141,6 +148,8 @@ public class DialogueEditor : Editor {
     }
 
     private void SaveData(Dialogue dialogue) {
+        LoadData();
+
         LocalizationElement localizationElement = BuildLocalizationElement(dialogue);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
 
@@ -169,6 +178,8 @@ public class DialogueEditor : Editor {
     }
 
     private void RemoveData(Dialogue dialogue) {
+        LoadData();
+
         LocalizationElement localizationItem = BuildLocalizationElement(dialogue);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
         LocalizationElement fileItem = fileGroup.elements.Find(data => data.key == localizationItem.key);;

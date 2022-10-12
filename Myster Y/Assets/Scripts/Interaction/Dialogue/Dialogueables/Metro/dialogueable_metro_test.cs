@@ -6,8 +6,8 @@ public class dialogueable_metro_test : Dialogueable {
     public Item testItem;
 
     public override Dialogue DefineDialogue() {
-        if (!Inventory.instance.FindItem(testItem)) {
-            Inventory.instance.AddItem(testItem);
+        if (!Inventory.FindItem(testItem)) {
+            Inventory.AddItem(testItem);
             return dialogues[0];
         }
         else {

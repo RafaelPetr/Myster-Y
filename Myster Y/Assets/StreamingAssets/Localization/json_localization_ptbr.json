@@ -20,6 +20,68 @@
                         "m4 gritando meu nome",
                         "tem uma glock esperando por mim"
                     ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flower",
+                    "values": [
+                        "Há uma pequena flor em um vaso sobre a mesa.",
+                        "Pegar?",
+                        "Sim",
+                        "Não",
+                        ""
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_finished",
+                    "values": [
+                        "Não há mais nada a ser feito aqui."
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished",
+                    "values": [
+                        "Há um bilhete em uma das gavetas escrito com uma tinta de coloração rosada.",
+                        "Pegar?",
+                        "Sim",
+                        "Não",
+                        ""
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put",
+                    "values": [
+                        "Uma flor poderia servir de decoração para a cômoda.",
+                        "Colocar flor sobre a cômoda",
+                        "Retirar flor",
+                        ""
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put_side",
+                    "values": [
+                        "Em que lado devo colocar a flor?",
+                        "Esquerda",
+                        "Direita",
+                        ""
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put_or_remove",
+                    "values": [
+                        "Uma flor poderia servir de decoração para a cômoda.",
+                        "Colocar flor sobre a cômoda",
+                        "Retirar flor",
+                        "Sair"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_remove",
+                    "values": [
+                        "A cômoda está cheia.",
+                        "Retirar flores",
+                        "Sair",
+                        ""
+                    ]
                 }
             ]
         },
@@ -31,6 +93,13 @@
                     "values": [
                         "Chave Dourada",
                         "Essa chave tem um detalhe em dourado de uma parada bem maneira."
+                    ]
+                },
+                {
+                    "key": "scriptable_item_flower",
+                    "values": [
+                        "Flor",
+                        "É uma pequena flor em um vaso. No exterior do recipiente existe uma inscrição apagada que diz \"Respeite os mortos\"."
                     ]
                 }
             ]

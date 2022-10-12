@@ -51,8 +51,8 @@ public class InventoryManager : MonoBehaviour {
             for (int i = startIndex; i < endIndex; i++) {
                 ItemSlot currentSlot = slots[6 - (endIndex - i)];
 
-                if (i < Inventory.instance.GetAllItems().Count) {
-                    currentSlot.AddItem(Inventory.instance.GetItem(i));
+                if (i < Inventory.GetAllItems().Count) {
+                    currentSlot.AddItem(Inventory.GetItem(i));
                 }
                 else {
                     currentSlot.Clear();

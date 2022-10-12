@@ -59,14 +59,14 @@ public class ItemEditor : Editor {
 
             GUILayout.BeginHorizontal();
 
-                if (localizationData != null) {
+                //if (localizationData != null) {
                     if (GUILayout.Button("Save Data")) {
                         SaveData(item);
                     }
                     if (GUILayout.Button("Remove Data")) {
                         RemoveData(item);
                     }
-                }
+                //}
 
             GUILayout.EndHorizontal();
         }
@@ -75,6 +75,8 @@ public class ItemEditor : Editor {
     }
 
     private void LoadData() {
+        filePath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
+
         if (string.IsNullOrEmpty(filePath)) {
             filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
         }
@@ -84,6 +86,8 @@ public class ItemEditor : Editor {
     }
 
     private void SaveData(Item item) {
+        LoadData();
+
         LocalizationElement localizationElement = BuildLocalizationElement(item);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "items");
 
@@ -112,6 +116,8 @@ public class ItemEditor : Editor {
     }
 
     private void RemoveData(Item item) {
+        LoadData();
+
         LocalizationElement localizationElement = BuildLocalizationElement(item);
         LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "items");
         LocalizationElement fileElement = fileGroup.elements.Find(data => data.key == localizationElement.key);;

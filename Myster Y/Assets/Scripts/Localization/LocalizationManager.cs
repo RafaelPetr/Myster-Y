@@ -21,9 +21,7 @@ public class LocalizationManager : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
-    }
 
-    private void Start() {
         LoadLocalizedText("Localization/json_localization_ptbr.json");
     }
 
@@ -58,7 +56,7 @@ public class LocalizationManager : MonoBehaviour {
         isReady = true;
     }
 
-    public string GetLocalizedValue (string key, int textIndex) {
+    public string GetLocalizedValue(string key, int textIndex) {
         string result = missingTextString;
 
         if (localizedText.ContainsKey(key) && textIndex < localizedText[key].Length) {

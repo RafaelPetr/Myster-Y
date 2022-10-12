@@ -7,29 +7,27 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour {
     public static DialogueManager instance;
-
-    private Dialogueable activeDialogueable;
+    private EventSystem eventSystem;
 
     private Queue<DialogueElement> elements = new Queue<DialogueElement>();
 
+    private Dialogueable activeDialogueable;
     private bool inDialogue;
     private DialogueChoice activeChoice;
     private int optionIndex;
 
-    public GameObject textBox;
-    public GameObject dialogueTextBox;
+    [SerializeField]private GameObject textBox;
+    [SerializeField]private GameObject dialogueTextBox;
     private Animator textBoxAnimator;
 
-    private EventSystem eventSystem;
+    [SerializeField]private GameObject sentenceUI;
+    [SerializeField]private TextMeshProUGUI sentenceName;
+    [SerializeField]private TextMeshProUGUI sentenceText;
+    [SerializeField]private Image sentenceIcon;
 
-    public GameObject sentenceUI;
-    public TextMeshProUGUI sentenceName;
-    public TextMeshProUGUI sentenceText;
-    public Image sentenceIcon;
-
-    public GameObject choiceUI;
-    public TextMeshProUGUI choiceContext;
-    public GameObject choiceOptions;
+    [SerializeField]private GameObject choiceUI;
+    [SerializeField]private TextMeshProUGUI choiceContext;
+    [SerializeField]private GameObject choiceOptions;
     private List<Button> choiceOptionsButtons = new List<Button>();
     private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
 
@@ -166,6 +164,8 @@ public class DialogueManager : MonoBehaviour {
 
     private void SelectOption() {
         choiceUI.SetActive(false);
+
+        activeDialogueable.ExecuteFunction(activeChoice.options[optionIndex].function);
 
         if (activeChoice.options[optionIndex].linkedDialogue != null) {
             StartDialogue(activeChoice.options[optionIndex].linkedDialogue);

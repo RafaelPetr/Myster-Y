@@ -9,16 +9,9 @@ public class Chair : Interactable {
 
     [System.NonSerialized]public UnityEvent<Chair> OnTurnEvent = new UnityEvent<Chair>();
 
-    private void Start() {
+    public override void Start() {
+        base.Start();
         animator = GetComponent<Animator>();
-
-        BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
-        collider.size = new Vector3(.5f, .5f, 0);
-        collider.isTrigger = true;
-
-        Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
-        rigidbody.isKinematic = true;
-
         animator.SetFloat("Direction", direction);
     }
 
