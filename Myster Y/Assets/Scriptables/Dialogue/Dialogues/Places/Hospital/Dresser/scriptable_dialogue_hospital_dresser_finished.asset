@@ -23,15 +23,12 @@ MonoBehaviour:
     options:
     - text: 
       function: 
-      linkedDialogue: {fileID: 0}
       localizationGroupIndex: 0
     - text: 
       function: 
-      linkedDialogue: {fileID: 0}
       localizationGroupIndex: 0
     - text: 
       function: 
-      linkedDialogue: {fileID: 0}
       localizationGroupIndex: 0
     contextLocalizationGroupIndex: 0
   elementsOrder: 00000000

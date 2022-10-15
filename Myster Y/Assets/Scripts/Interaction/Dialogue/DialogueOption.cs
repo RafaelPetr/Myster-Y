@@ -6,7 +6,6 @@ using UnityEngine;
 public class DialogueOption {
     public string text;
     public string function;
-    public Dialogue linkedDialogue;
 
     public int localizationGroupIndex;
 

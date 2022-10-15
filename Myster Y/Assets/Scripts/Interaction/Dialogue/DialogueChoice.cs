@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialogueChoice : DialogueElement {
     [SerializeField]private bool enable;
     [TextArea(3,10)]public string context;
-    public DialogueOption[] options = new DialogueOption[3];
+    public List<DialogueOption> options = new List<DialogueOption>();
 
     public int contextLocalizationGroupIndex;
 

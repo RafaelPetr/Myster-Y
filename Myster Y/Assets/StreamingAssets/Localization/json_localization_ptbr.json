@@ -40,29 +40,7 @@
                 {
                     "key": "scriptable_dialogue_hospital_dresser_unfinished",
                     "values": [
-                        "Há um bilhete em uma das gavetas escrito com uma tinta de coloração rosada.",
-                        "Pegar?",
-                        "Sim",
-                        "Não",
-                        ""
-                    ]
-                },
-                {
-                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put",
-                    "values": [
-                        "Uma flor poderia servir de decoração para a cômoda.",
-                        "Colocar flor sobre a cômoda",
-                        "Retirar flor",
-                        ""
-                    ]
-                },
-                {
-                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put_side",
-                    "values": [
-                        "Em que lado devo colocar a flor?",
-                        "Esquerda",
-                        "Direita",
-                        ""
+                        "Preciso encontrar algo para decorar a cômoda."
                     ]
                 },
                 {
@@ -75,12 +53,21 @@
                     ]
                 },
                 {
-                    "key": "scriptable_dialogue_hospital_dresser_unfinished_remove",
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_letter",
                     "values": [
-                        "A cômoda está cheia.",
-                        "Retirar flores",
-                        "Sair",
-                        ""
+                        "Há um bilhete em uma das gavetas escrito com uma tinta de coloração rosada.",
+                        "Pegar?",
+                        "Sim",
+                        "Não"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_dresser_unfinished_put_or_remove_side",
+                    "values": [
+                        "Em que lado devo colocar a flor?",
+                        "Esquerda",
+                        "Direita",
+                        "Sair"
                     ]
                 }
             ]

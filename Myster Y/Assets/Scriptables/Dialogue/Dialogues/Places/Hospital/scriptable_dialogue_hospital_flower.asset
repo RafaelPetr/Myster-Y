@@ -23,15 +23,9 @@ MonoBehaviour:
     options:
     - text: Sim
       function: Accept
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 2
+      localizationGroupIndex: 0
     - text: "N\xE3o"
       function: 
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 3
-    - text: 
-      function: 
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 4
+      localizationGroupIndex: 0
     contextLocalizationGroupIndex: 1
   elementsOrder: 00000000

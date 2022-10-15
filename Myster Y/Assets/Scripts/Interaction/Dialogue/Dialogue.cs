@@ -32,6 +32,14 @@ public class Dialogue : ScriptableObject {
         choice.SetEnable(false);
     }
 
+    public void AddOption() {
+        choice.options.Add(new DialogueOption());
+    }
+
+    public void RemoveOption(int index) {
+        choice.options.RemoveAt(index);
+    }
+
     public void LocalizeElements() {
         foreach (DialogueSentence sentence in sentences) {
             sentence.LocalizeText(key);

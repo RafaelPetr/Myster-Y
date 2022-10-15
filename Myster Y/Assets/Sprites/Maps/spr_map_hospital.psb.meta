@@ -164,8 +164,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1231
-      y: 3837
+      x: 1292
+      y: 3838
       width: 8
       height: 4
     spriteID: 3b52f10a7cf3d20428d237b14b42a241
@@ -178,7 +178,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 825, y: 3504}
+    uvTransform: {x: 886, y: 3505}
   - name: Papers
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1586,7 +1586,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -205, y: 1530}
+    uvTransform: {x: -205, y: 1529}
   - name: Liquid
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1594,8 +1594,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1951
-      y: 604
+      x: 1292
+      y: 3851
       width: 5
       height: 6
     spriteID: 92ed4e351c4338a4698ce33499d1e418
@@ -1608,7 +1608,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1092, y: 153}
+    uvTransform: {x: 433, y: 3398}
   - name: Flask 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1630,7 +1630,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 386, y: 3306}
+    uvTransform: {x: 386, y: 3305}
   - name: Liquid_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1638,7 +1638,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1964
+      x: 1936
       y: 604
       width: 5
       height: 6
@@ -1652,7 +1652,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1118, y: 89}
+    uvTransform: {x: 1090, y: 87}
   - name: Flask 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1674,7 +1674,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 373, y: 3519}
+    uvTransform: {x: 373, y: 3518}
   - name: Liquid_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1682,8 +1682,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1292
-      y: 3819
+      x: 1949
+      y: 604
       width: 5
       height: 6
     spriteID: 82b3f38ee45e59244a9cd699b447be71
@@ -1696,7 +1696,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 446, y: 3320}
+    uvTransform: {x: 1103, y: 103}
   - name: Flask 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1718,7 +1718,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 388, y: 3535}
+    uvTransform: {x: 388, y: 3534}
   - name: Liquid_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1726,8 +1726,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1292
-      y: 3833
+      x: 1962
+      y: 604
       width: 5
       height: 6
     spriteID: 6b1b399f63ad4d144be2daf69341f347
@@ -1740,7 +1740,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 446, y: 3350}
+    uvTransform: {x: 1116, y: 119}
   - name: Flask 4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1748,8 +1748,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1247
-      y: 3851
+      x: 1292
+      y: 3802
       width: 7
       height: 9
     spriteID: f48533e244054e74ebda06e2f525ad99
@@ -1762,7 +1762,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 402, y: 3385}
+    uvTransform: {x: 447, y: 3335}
   - name: Liquid_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1770,8 +1770,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1292
-      y: 3847
+      x: 1987
+      y: 604
       width: 5
       height: 6
     spriteID: 811e1ad2454d3c84bb3062d085ca4ddc
@@ -1784,7 +1784,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 446, y: 3380}
+    uvTransform: {x: 1141, y: 135}
   - name: Flask 5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1792,8 +1792,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1262
-      y: 3851
+      x: 1292
+      y: 3820
       width: 7
       height: 9
     spriteID: e1dbc6ef2ef92914dacd43c652c43e4e
@@ -1806,7 +1806,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 417, y: 3401}
+    uvTransform: {x: 447, y: 3369}
   - name: Liquid_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1814,7 +1814,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1987
+      x: 2000
       y: 604
       width: 5
       height: 6
@@ -1828,7 +1828,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1141, y: 153}
+    uvTransform: {x: 1154, y: 151}
   - name: Flask 6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1836,8 +1836,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1277
-      y: 3851
+      x: 1146
+      y: 3779
       width: 7
       height: 9
     spriteID: 58a0c646a31d04048bad0e902995a843
@@ -1850,7 +1850,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 432, y: 3417}
+    uvTransform: {x: 301, y: 3344}
   - name: Liquid_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1858,7 +1858,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2000
+      x: 2013
       y: 604
       width: 5
       height: 6
@@ -1872,7 +1872,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1154, y: 169}
+    uvTransform: {x: 1167, y: 167}
   - name: Flask 7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1881,7 +1881,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1146
-      y: 3779
+      y: 3797
       width: 7
       height: 9
     spriteID: 8a8faad6644f0c34e9ece97927862fc0
@@ -1894,7 +1894,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 301, y: 3361}
+    uvTransform: {x: 301, y: 3378}
   - name: Liquid_7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1902,8 +1902,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 2013
-      y: 604
+      x: 2038
+      y: 547
       width: 5
       height: 6
     spriteID: e897cca77778ea4438f1cf17a0febefc
@@ -1916,7 +1916,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1167, y: 185}
+    uvTransform: {x: 1192, y: 126}
   - name: Flask 8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1925,7 +1925,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1146
-      y: 3796
+      y: 3815
       width: 7
       height: 9
     spriteID: 8e3fc9bfe5bf68b41a80470edb45db0f
@@ -1938,7 +1938,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 301, y: 3394}
+    uvTransform: {x: 301, y: 3412}
   - name: Liquid_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1947,7 +1947,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 2038
-      y: 547
+      y: 561
       width: 5
       height: 6
     spriteID: a3d6a9e69b3815a46bf8fa3e72af586b
@@ -1960,7 +1960,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1192, y: 144}
+    uvTransform: {x: 1192, y: 156}
   - name: Flask 9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1968,8 +1968,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1146
-      y: 3813
+      x: 1247
+      y: 3851
       width: 7
       height: 9
     spriteID: d93f56a78b16b5046aa43ab2206eba56
@@ -1982,7 +1982,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 301, y: 3427}
+    uvTransform: {x: 402, y: 3464}
   - name: Liquid_9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1991,7 +1991,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 2038
-      y: 561
+      y: 575
       width: 5
       height: 6
     spriteID: 28f018e6857925d4ea5c73a6a618d901
@@ -2004,7 +2004,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1192, y: 174}
+    uvTransform: {x: 1192, y: 186}
   - name: Flask 10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2012,8 +2012,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1292
-      y: 3802
+      x: 1262
+      y: 3851
       width: 7
       height: 9
     spriteID: 5cf898c84f05e9d45a1338f74bea9b20
@@ -2026,7 +2026,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 447, y: 3432}
+    uvTransform: {x: 417, y: 3480}
   - name: Liquid_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2035,7 +2035,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 2038
-      y: 575
+      y: 589
       width: 5
       height: 6
     spriteID: cd80c9e5c5fa32841856885384649275
@@ -2048,7 +2048,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1192, y: 204}
+    uvTransform: {x: 1192, y: 216}
   - name: Microscope 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3112,7 +3112,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1977
+      x: 1975
       y: 604
       width: 2
       height: 3
@@ -3126,7 +3126,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1467, y: -276}
+    uvTransform: {x: 1465, y: -276}
   - name: Pills
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3486,8 +3486,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1936
-      y: 604
+      x: 1277
+      y: 3851
       width: 7
       height: 6
     spriteID: cb773862f52b4c047bd0982136a2978a
@@ -3500,7 +3500,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 753, y: -453}
+    uvTransform: {x: 94, y: 2794}
   - name: Water
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4182,7 +4182,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1039, y: 2592}
+    uvTransform: {x: 1052, y: 2592}
   - name: Flower_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4204,7 +4204,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1052, y: 2619}
+    uvTransform: {x: 1039, y: 2619}
   - name: Flower_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4226,7 +4226,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 943, y: 2640}
+    uvTransform: {x: 956, y: 2640}
   - name: Flower_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4248,7 +4248,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 895, y: 2615}
+    uvTransform: {x: 882, y: 2615}
   - name: Flower_5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4270,7 +4270,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 786, y: 2636}
+    uvTransform: {x: 799, y: 2636}
   - name: Flower_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4292,7 +4292,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 799, y: 2665}
+    uvTransform: {x: 786, y: 2665}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -4415,7 +4415,7 @@ ScriptedImporter:
     parentIndex: 5
     spriteID: 3b52f10a7cf3d20428d237b14b42a241
     layerID: 38
-    mosaicPosition: {x: 1231, y: 3837}
+    mosaicPosition: {x: 1292, y: 3838}
   - name: Flower
     spriteName: Flower
     isGroup: 0
@@ -4850,87 +4850,94 @@ ScriptedImporter:
     spriteID: cf7b4c638506e9749b5c82aa4c67f0e5
     layerID: 354
     mosaicPosition: {x: 1204, y: 1761}
-  - name: Dresser 1
+  - name: Dressers
     spriteName: 
     isGroup: 1
     parentIndex: 52
+    spriteID: 00000000000000000000000000000000
+    layerID: 525
+    mosaicPosition: {x: 0, y: 0}
+  - name: Dresser 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: 69
     spriteID: 00000000000000000000000000000000
     layerID: 373
     mosaicPosition: {x: 0, y: 0}
   - name: Flower
     spriteName: Flower_1
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 70
     spriteID: 3feec9b297700be46b389ff5fbad95a7
     layerID: 520
     mosaicPosition: {x: 1292, y: 3726}
   - name: Flower
     spriteName: Flower_2
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 70
     spriteID: 766eb4e98dab3cb458e1739b57112821
     layerID: 516
     mosaicPosition: {x: 1292, y: 3753}
   - name: Dresser
     spriteName: Dresser
     isGroup: 0
-    parentIndex: 69
+    parentIndex: 70
     spriteID: 377cf8aab77e1204dabfa69dc0945e06
     layerID: 371
     mosaicPosition: {x: 1800, y: 361}
   - name: Dresser 2
     spriteName: 
     isGroup: 1
-    parentIndex: 52
+    parentIndex: 69
     spriteID: 00000000000000000000000000000000
     layerID: 363
     mosaicPosition: {x: 0, y: 0}
   - name: Flower
     spriteName: Flower_3
     isGroup: 0
-    parentIndex: 73
+    parentIndex: 74
     spriteID: 8b24fa36b006b794bb96c52a141c01f7
     layerID: 522
     mosaicPosition: {x: 1292, y: 3774}
   - name: Flower
     spriteName: Flower_4
     isGroup: 0
-    parentIndex: 73
+    parentIndex: 74
     spriteID: 99dba302aec6c9c40816c909f01f1048
     layerID: 521
     mosaicPosition: {x: 1231, y: 3749}
   - name: Dresser
     spriteName: Dresser_1
     isGroup: 0
-    parentIndex: 73
+    parentIndex: 74
     spriteID: 597b6b4cb1d6217468a3286835e465d1
     layerID: 362
     mosaicPosition: {x: 1858, y: 361}
   - name: Dresser 3
     spriteName: 
     isGroup: 1
-    parentIndex: 52
+    parentIndex: 69
     spriteID: 00000000000000000000000000000000
     layerID: 368
     mosaicPosition: {x: 0, y: 0}
   - name: Flower
     spriteName: Flower_5
     isGroup: 0
-    parentIndex: 77
+    parentIndex: 78
     spriteID: 24c44487c61cd9443b60f2376981db13
     layerID: 524
     mosaicPosition: {x: 1231, y: 3770}
   - name: Flower
     spriteName: Flower_6
     isGroup: 0
-    parentIndex: 77
+    parentIndex: 78
     spriteID: 34968a2e23327ef49b2c139bf6e99a27
     layerID: 523
     mosaicPosition: {x: 1231, y: 3799}
   - name: Dresser
     spriteName: Dresser_2
     isGroup: 0
-    parentIndex: 77
+    parentIndex: 78
     spriteID: 5f23a16b8d554824b89ea945c6d2ab7a
     layerID: 366
     mosaicPosition: {x: 1204, y: 3710}
@@ -4965,56 +4972,56 @@ ScriptedImporter:
   - name: Chair 1
     spriteName: Chair 1_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 82b26eeea0e9bfb49a68d4e03500c97c
     layerID: 376
     mosaicPosition: {x: 1190, y: 2147}
   - name: Chair 2
     spriteName: Chair 2_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: a7f688de7072555489fa6453b23d04fc
     layerID: 377
     mosaicPosition: {x: 1190, y: 2184}
   - name: Chair 3
     spriteName: Chair 3_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 4ac6a7ea66dba1549a7c1704ba70e17c
     layerID: 378
     mosaicPosition: {x: 1190, y: 2221}
   - name: Chair 4
     spriteName: Chair 4_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 93d868f735ddb7343b03abaef682fd59
     layerID: 379
     mosaicPosition: {x: 1190, y: 2258}
   - name: Chair 5
     spriteName: Chair 5_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 48de33d5160d314449b094034593f818
     layerID: 380
     mosaicPosition: {x: 1216, y: 1999}
   - name: Chair 6
     spriteName: Chair 6_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: ffd39819a08079d4bb77a037f27c1551
     layerID: 381
     mosaicPosition: {x: 1216, y: 2036}
   - name: Chair 7
     spriteName: Chair 7_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 00b29335d281bc44cbeab7956e938dd4
     layerID: 382
     mosaicPosition: {x: 1216, y: 2073}
   - name: Chair 8
     spriteName: Chair 8_1
     isGroup: 0
-    parentIndex: 84
+    parentIndex: 85
     spriteID: 582a55c8a42dd5a47ae6c088069e468e
     layerID: 383
     mosaicPosition: {x: 1216, y: 2110}
@@ -5028,28 +5035,28 @@ ScriptedImporter:
   - name: Wall 1
     spriteName: Wall 1_3
     isGroup: 0
-    parentIndex: 93
+    parentIndex: 94
     spriteID: b428c29c9cb35bb4d98619b7714a4f1d
     layerID: 454
     mosaicPosition: {x: 1312, y: 404}
   - name: Wall 2
     spriteName: Wall 2_2
     isGroup: 0
-    parentIndex: 93
+    parentIndex: 94
     spriteID: 60468198aef2f1d4cb8ce7dc775fa4fb
     layerID: 455
     mosaicPosition: {x: 628, y: 2470}
   - name: Wall 3
     spriteName: Wall 3_1
     isGroup: 0
-    parentIndex: 93
+    parentIndex: 94
     spriteID: 2072c93b5410d144b87e880b5c875211
     layerID: 456
     mosaicPosition: {x: 628, y: 1768}
   - name: Wall 4
     spriteName: Wall 4_1
     isGroup: 0
-    parentIndex: 93
+    parentIndex: 94
     spriteID: de68f2c60c0d49644bbd24668a184a6e
     layerID: 461
     mosaicPosition: {x: 668, y: 2327}
@@ -5070,364 +5077,364 @@ ScriptedImporter:
   - name: Table
     spriteName: 
     isGroup: 1
-    parentIndex: 99
+    parentIndex: 100
     spriteID: 00000000000000000000000000000000
     layerID: 126
     mosaicPosition: {x: 0, y: 0}
   - name: Extractor
     spriteName: Extractor
     isGroup: 0
-    parentIndex: 100
+    parentIndex: 101
     spriteID: ba7154c6671da2e4e8c4283affa25081
     layerID: 193
     mosaicPosition: {x: 1285, y: 3464}
   - name: Paper 1
     spriteName: Paper 1
     isGroup: 0
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 19041bbc878ee424bbd97176a7ddb4bf
     layerID: 195
     mosaicPosition: {x: 1292, y: 3632}
   - name: Paper 2
     spriteName: Paper 2
     isGroup: 0
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 53241a8e37017f645a0f06cefd17f4ea
     layerID: 194
     mosaicPosition: {x: 1197, y: 4017}
   - name: Book
     spriteName: Book
     isGroup: 0
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 20114cd8d11b8454ab049e39e0d879b6
     layerID: 192
     mosaicPosition: {x: 1287, y: 4080}
   - name: Flasks
     spriteName: 
     isGroup: 1
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 00000000000000000000000000000000
     layerID: 134
     mosaicPosition: {x: 0, y: 0}
   - name: Empty Flask
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 186
     mosaicPosition: {x: 0, y: 0}
   - name: Flask
     spriteName: Flask
     isGroup: 0
-    parentIndex: 106
+    parentIndex: 107
     spriteID: 1e72c2da54e199247b50a76929eddb22
     layerID: 138
     mosaicPosition: {x: 653, y: 1980}
   - name: Liquid
     spriteName: Liquid
     isGroup: 0
-    parentIndex: 106
+    parentIndex: 107
     spriteID: 92ed4e351c4338a4698ce33499d1e418
     layerID: 188
-    mosaicPosition: {x: 1951, y: 604}
+    mosaicPosition: {x: 1292, y: 3851}
   - name: Flask 1
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 156
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 1
     spriteName: Flask 1
     isGroup: 0
-    parentIndex: 109
+    parentIndex: 110
     spriteID: 19da9b1320094b44c9b40150b3417150
     layerID: 151
     mosaicPosition: {x: 1231, y: 3820}
   - name: Liquid
     spriteName: Liquid_1
     isGroup: 0
-    parentIndex: 109
+    parentIndex: 110
     spriteID: 28164381ed85c61448e9109eb4df7222
     layerID: 158
-    mosaicPosition: {x: 1964, y: 604}
+    mosaicPosition: {x: 1936, y: 604}
   - name: Flask 2
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 160
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 2
     spriteName: Flask 2
     isGroup: 0
-    parentIndex: 112
+    parentIndex: 113
     spriteID: cc12ed5bd910a0045921f90ab12bf90a
     layerID: 150
     mosaicPosition: {x: 1218, y: 4017}
   - name: Liquid
     spriteName: Liquid_2
     isGroup: 0
-    parentIndex: 112
+    parentIndex: 113
     spriteID: 82b3f38ee45e59244a9cd699b447be71
     layerID: 159
-    mosaicPosition: {x: 1292, y: 3819}
+    mosaicPosition: {x: 1949, y: 604}
   - name: Flask 3
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 163
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 3
     spriteName: Flask 3
     isGroup: 0
-    parentIndex: 115
+    parentIndex: 116
     spriteID: c2b519d8cef109e43bcd03f736826550
     layerID: 142
     mosaicPosition: {x: 1233, y: 4017}
   - name: Liquid
     spriteName: Liquid_3
     isGroup: 0
-    parentIndex: 115
+    parentIndex: 116
     spriteID: 6b1b399f63ad4d144be2daf69341f347
     layerID: 162
-    mosaicPosition: {x: 1292, y: 3833}
+    mosaicPosition: {x: 1962, y: 604}
   - name: Flask 4
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 166
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 4
     spriteName: Flask 4
     isGroup: 0
-    parentIndex: 118
+    parentIndex: 119
     spriteID: f48533e244054e74ebda06e2f525ad99
     layerID: 141
-    mosaicPosition: {x: 1247, y: 3851}
+    mosaicPosition: {x: 1292, y: 3802}
   - name: Liquid
     spriteName: Liquid_4
     isGroup: 0
-    parentIndex: 118
+    parentIndex: 119
     spriteID: 811e1ad2454d3c84bb3062d085ca4ddc
     layerID: 165
-    mosaicPosition: {x: 1292, y: 3847}
+    mosaicPosition: {x: 1987, y: 604}
   - name: Flask 5
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 169
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 5
     spriteName: Flask 5
     isGroup: 0
-    parentIndex: 121
+    parentIndex: 122
     spriteID: e1dbc6ef2ef92914dacd43c652c43e4e
     layerID: 139
-    mosaicPosition: {x: 1262, y: 3851}
+    mosaicPosition: {x: 1292, y: 3820}
   - name: Liquid
     spriteName: Liquid_5
     isGroup: 0
-    parentIndex: 121
+    parentIndex: 122
     spriteID: 17f636aa3c80d1e4e8acfe41259db556
     layerID: 168
-    mosaicPosition: {x: 1987, y: 604}
+    mosaicPosition: {x: 2000, y: 604}
   - name: Flask 6
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 172
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 6
     spriteName: Flask 6
     isGroup: 0
-    parentIndex: 124
+    parentIndex: 125
     spriteID: 58a0c646a31d04048bad0e902995a843
     layerID: 140
-    mosaicPosition: {x: 1277, y: 3851}
+    mosaicPosition: {x: 1146, y: 3779}
   - name: Liquid
     spriteName: Liquid_6
     isGroup: 0
-    parentIndex: 124
+    parentIndex: 125
     spriteID: 66dcee0cfd8f9ce44904ed4eb0818a85
     layerID: 171
-    mosaicPosition: {x: 2000, y: 604}
+    mosaicPosition: {x: 2013, y: 604}
   - name: Flask 7
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 175
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 7
     spriteName: Flask 7
     isGroup: 0
-    parentIndex: 127
+    parentIndex: 128
     spriteID: 8a8faad6644f0c34e9ece97927862fc0
     layerID: 144
-    mosaicPosition: {x: 1146, y: 3779}
+    mosaicPosition: {x: 1146, y: 3797}
   - name: Liquid
     spriteName: Liquid_7
     isGroup: 0
-    parentIndex: 127
+    parentIndex: 128
     spriteID: e897cca77778ea4438f1cf17a0febefc
     layerID: 174
-    mosaicPosition: {x: 2013, y: 604}
+    mosaicPosition: {x: 2038, y: 547}
   - name: Flask 8
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 177
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 8
     spriteName: Flask 8
     isGroup: 0
-    parentIndex: 130
+    parentIndex: 131
     spriteID: 8e3fc9bfe5bf68b41a80470edb45db0f
     layerID: 145
-    mosaicPosition: {x: 1146, y: 3796}
+    mosaicPosition: {x: 1146, y: 3815}
   - name: Liquid
     spriteName: Liquid_8
     isGroup: 0
-    parentIndex: 130
+    parentIndex: 131
     spriteID: a3d6a9e69b3815a46bf8fa3e72af586b
     layerID: 179
-    mosaicPosition: {x: 2038, y: 547}
+    mosaicPosition: {x: 2038, y: 561}
   - name: Flask 9
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 181
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 9
     spriteName: Flask 9
     isGroup: 0
-    parentIndex: 133
+    parentIndex: 134
     spriteID: d93f56a78b16b5046aa43ab2206eba56
     layerID: 154
-    mosaicPosition: {x: 1146, y: 3813}
+    mosaicPosition: {x: 1247, y: 3851}
   - name: Liquid
     spriteName: Liquid_9
     isGroup: 0
-    parentIndex: 133
+    parentIndex: 134
     spriteID: 28f018e6857925d4ea5c73a6a618d901
     layerID: 180
-    mosaicPosition: {x: 2038, y: 561}
+    mosaicPosition: {x: 2038, y: 575}
   - name: Flask 10
     spriteName: 
     isGroup: 1
-    parentIndex: 105
+    parentIndex: 106
     spriteID: 00000000000000000000000000000000
     layerID: 183
     mosaicPosition: {x: 0, y: 0}
   - name: Flask 10
     spriteName: Flask 10
     isGroup: 0
-    parentIndex: 136
+    parentIndex: 137
     spriteID: 5cf898c84f05e9d45a1338f74bea9b20
     layerID: 155
-    mosaicPosition: {x: 1292, y: 3802}
+    mosaicPosition: {x: 1262, y: 3851}
   - name: Liquid
     spriteName: Liquid_10
     isGroup: 0
-    parentIndex: 136
+    parentIndex: 137
     spriteID: cd80c9e5c5fa32841856885384649275
     layerID: 185
-    mosaicPosition: {x: 2038, y: 575}
+    mosaicPosition: {x: 2038, y: 589}
   - name: Microscopes
     spriteName: 
     isGroup: 1
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 00000000000000000000000000000000
     layerID: 129
     mosaicPosition: {x: 0, y: 0}
   - name: Microscope 1
     spriteName: Microscope 1
     isGroup: 0
-    parentIndex: 139
+    parentIndex: 140
     spriteID: f401e519cfdd51f49b1d055d21649bf3
     layerID: 132
     mosaicPosition: {x: 1137, y: 3839}
   - name: Microscope 2
     spriteName: Microscope 2
     isGroup: 0
-    parentIndex: 139
+    parentIndex: 140
     spriteID: 82ab750491eeec44a9719891fec6994f
     layerID: 136
     mosaicPosition: {x: 1292, y: 3606}
   - name: Microscope 3
     spriteName: Microscope 3
     isGroup: 0
-    parentIndex: 139
+    parentIndex: 140
     spriteID: a12a962db28dbe644af3186e511e6cc6
     layerID: 137
     mosaicPosition: {x: 1292, y: 3655}
   - name: Table
     spriteName: Table_2
     isGroup: 0
-    parentIndex: 100
+    parentIndex: 101
     spriteID: 19d1c945a8ef0ea42a424e0211f66b95
     layerID: 40
     mosaicPosition: {x: 268, y: 2200}
   - name: Door
     spriteName: 
     isGroup: 1
-    parentIndex: 99
+    parentIndex: 100
     spriteID: 00000000000000000000000000000000
     layerID: 118
     mosaicPosition: {x: 0, y: 0}
   - name: Door
     spriteName: Door_1
     isGroup: 0
-    parentIndex: 144
+    parentIndex: 145
     spriteID: 8fb26d36688cd984a966bb298a9025e1
     layerID: 117
     mosaicPosition: {x: 1068, y: 3784}
   - name: Shadow
     spriteName: Shadow_1
     isGroup: 0
-    parentIndex: 144
+    parentIndex: 145
     spriteID: 52ad5b93c7ced084f9c3865cf297d42c
     layerID: 444
     mosaicPosition: {x: 1068, y: 3848}
   - name: Border
     spriteName: Border_1
     isGroup: 0
-    parentIndex: 144
+    parentIndex: 145
     spriteID: 824725e118d842d4386eeb030487baf1
     layerID: 116
     mosaicPosition: {x: 1992, y: 404}
   - name: Wall 1
     spriteName: Wall 1_7
     isGroup: 0
-    parentIndex: 99
+    parentIndex: 100
     spriteID: c74f1b490a791294fa2859e2bff40d26
     layerID: 481
     mosaicPosition: {x: 268, y: 2398}
   - name: Wall 2
     spriteName: Wall 2_7
     isGroup: 0
-    parentIndex: 99
+    parentIndex: 100
     spriteID: 829f5fb557c7188499e555ff3d66eb33
     layerID: 482
     mosaicPosition: {x: 268, y: 1312}
   - name: Wall 3
     spriteName: Wall 3_4
     isGroup: 0
-    parentIndex: 99
+    parentIndex: 100
     spriteID: 2bed0a1c8e42d2b4692c39e852735d1a
     layerID: 480
     mosaicPosition: {x: 1962, y: 204}
   - name: Floor
     spriteName: Floor_6
     isGroup: 0
-    parentIndex: 99
+    parentIndex: 100
     spriteID: 0b922fd5e1c3d3246aa9cc9c4505bc2b
     layerID: 500
     mosaicPosition: {x: 668, y: 2981}
@@ -5441,273 +5448,273 @@ ScriptedImporter:
   - name: Shelf 1
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 257
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_1
     isGroup: 0
-    parentIndex: 153
+    parentIndex: 154
     spriteID: 0a8e4490c285a914cae2396ddd7455f9
     layerID: 256
     mosaicPosition: {x: 1936, y: 547}
   - name: Papers
     spriteName: Papers_1
     isGroup: 0
-    parentIndex: 153
+    parentIndex: 154
     spriteID: b44c3b49aa3218242bfff7b27815ce27
     layerID: 295
     mosaicPosition: {x: 1204, y: 1941}
   - name: Shelf
     spriteName: Shelf
     isGroup: 0
-    parentIndex: 153
+    parentIndex: 154
     spriteID: a846373920033b749bf79db2f808ac57
     layerID: 253
     mosaicPosition: {x: 1197, y: 3869}
   - name: Shelf 2
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 300
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_2
     isGroup: 0
-    parentIndex: 157
+    parentIndex: 158
     spriteID: 50eb4b2493bebb144a8747ab520d4ef4
     layerID: 299
     mosaicPosition: {x: 1987, y: 547}
   - name: Papers
     spriteName: Papers_2
     isGroup: 0
-    parentIndex: 157
+    parentIndex: 158
     spriteID: 45e2dad8c9e971c4eb69d988b6d89370
     layerID: 298
     mosaicPosition: {x: 1161, y: 3606}
   - name: Shelf
     spriteName: Shelf_1
     isGroup: 0
-    parentIndex: 157
+    parentIndex: 158
     spriteID: 4b273d6d834c34b4686d74526b96575f
     layerID: 297
     mosaicPosition: {x: 1800, y: 277}
   - name: Shelf 3
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 305
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_3
     isGroup: 0
-    parentIndex: 161
+    parentIndex: 162
     spriteID: d6cc64c987d875945b55cb4320850ca3
     layerID: 304
     mosaicPosition: {x: 1249, y: 1671}
   - name: Papers
     spriteName: Papers_3
     isGroup: 0
-    parentIndex: 161
+    parentIndex: 162
     spriteID: bbfe7f2e59ee3904797133d04dd44563
     layerID: 303
     mosaicPosition: {x: 1161, y: 3658}
   - name: Shelf
     spriteName: Shelf_2
     isGroup: 0
-    parentIndex: 161
+    parentIndex: 162
     spriteID: b4a1648333223104393d0ac42833840b
     layerID: 302
     mosaicPosition: {x: 1858, y: 277}
   - name: Shelf 4
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 310
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_4
     isGroup: 0
-    parentIndex: 165
+    parentIndex: 166
     spriteID: 17cd482213a8e3346a40d1cd50a494b2
     layerID: 309
     mosaicPosition: {x: 1249, y: 1728}
   - name: Papers
     spriteName: Papers_4
     isGroup: 0
-    parentIndex: 165
+    parentIndex: 166
     spriteID: 984df5103c839f845ab69f0e1b71aa91
     layerID: 308
     mosaicPosition: {x: 1161, y: 3710}
   - name: Shelf
     spriteName: Shelf_3
     isGroup: 0
-    parentIndex: 165
+    parentIndex: 166
     spriteID: e0d5d2b8d82ec4a4f9b650012d5f8257
     layerID: 307
     mosaicPosition: {x: 1124, y: 3309}
   - name: Shelf 5
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 330
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_5
     isGroup: 0
-    parentIndex: 169
+    parentIndex: 170
     spriteID: 016cd3a33fb542242b9cecbc81f98c0d
     layerID: 329
     mosaicPosition: {x: 1249, y: 1785}
   - name: Papers
     spriteName: Papers_5
     isGroup: 0
-    parentIndex: 169
+    parentIndex: 170
     spriteID: fda5fd9b2dcd447438182810e4b139c0
     layerID: 328
     mosaicPosition: {x: 1161, y: 3762}
   - name: Shelf
     spriteName: Shelf_4
     isGroup: 0
-    parentIndex: 169
+    parentIndex: 170
     spriteID: 76c2943a371ddae49ae82179dfedefb5
     layerID: 327
     mosaicPosition: {x: 1124, y: 3393}
   - name: Shelf 6
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 325
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_6
     isGroup: 0
-    parentIndex: 173
+    parentIndex: 174
     spriteID: 3593237712654414ea819bd60d869482
     layerID: 324
     mosaicPosition: {x: 1249, y: 1842}
   - name: Papers
     spriteName: Papers_6
     isGroup: 0
-    parentIndex: 173
+    parentIndex: 174
     spriteID: c1a34f6dc7301d44aa252a96a074cf4d
     layerID: 323
     mosaicPosition: {x: 1161, y: 3814}
   - name: Shelf
     spriteName: Shelf_5
     isGroup: 0
-    parentIndex: 173
+    parentIndex: 174
     spriteID: deac895024227b74ea81f21ed7dcb14e
     layerID: 322
     mosaicPosition: {x: 1124, y: 3477}
   - name: Shelf 7
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 320
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_7
     isGroup: 0
-    parentIndex: 177
+    parentIndex: 178
     spriteID: 2479c38ab8a1ffc46a6621f46a8e260a
     layerID: 319
     mosaicPosition: {x: 1249, y: 1899}
   - name: Papers
     spriteName: Papers_7
     isGroup: 0
-    parentIndex: 177
+    parentIndex: 178
     spriteID: 5c6b818aec67bf741a7df2bc0e5fb642
     layerID: 318
     mosaicPosition: {x: 1204, y: 3606}
   - name: Shelf
     spriteName: Shelf_6
     isGroup: 0
-    parentIndex: 177
+    parentIndex: 178
     spriteID: 003c6f6f8c9b1f54ab96b52912e5a64a
     layerID: 317
     mosaicPosition: {x: 1182, y: 3309}
   - name: Shelf 8
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 315
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_8
     isGroup: 0
-    parentIndex: 181
+    parentIndex: 182
     spriteID: 5f61245d925f8784e9620a714a0fa60e
     layerID: 314
     mosaicPosition: {x: 1068, y: 3606}
   - name: Papers
     spriteName: Papers_8
     isGroup: 0
-    parentIndex: 181
+    parentIndex: 182
     spriteID: 7fd580ffd4ad7e84db225c9fbe18a949
     layerID: 313
     mosaicPosition: {x: 1204, y: 3658}
   - name: Shelf
     spriteName: Shelf_7
     isGroup: 0
-    parentIndex: 181
+    parentIndex: 182
     spriteID: 6e02ec546d3f6df4cbc407a53c6ad219
     layerID: 312
     mosaicPosition: {x: 1182, y: 3393}
   - name: Writing
     spriteName: Writing
     isGroup: 0
-    parentIndex: 152
+    parentIndex: 153
     spriteID: ff5a1499c542fad4e8c340b41108d63f
     layerID: 258
     mosaicPosition: {x: 1249, y: 1956}
   - name: Door
     spriteName: 
     isGroup: 1
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 00000000000000000000000000000000
     layerID: 412
     mosaicPosition: {x: 0, y: 0}
   - name: Door
     spriteName: Door_2
     isGroup: 0
-    parentIndex: 186
+    parentIndex: 187
     spriteID: 6012d6c27a1ad164dac3fc834536e7eb
     layerID: 411
     mosaicPosition: {x: 1119, y: 3606}
   - name: Border
     spriteName: Border_2
     isGroup: 0
-    parentIndex: 186
+    parentIndex: 187
     spriteID: 0e48c0c4a2512f44a842765453fac957
     layerID: 410
     mosaicPosition: {x: 1197, y: 3953}
   - name: Wall 2
     spriteName: Wall 2_3
     isGroup: 0
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 38ca303a02ed1164ab91b08abcdf4737
     layerID: 462
     mosaicPosition: {x: 1312, y: 547}
   - name: Wall 1
     spriteName: Wall 1_4
     isGroup: 0
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 094e7ceb3200e4e44b50b9170ff6a1c6
     layerID: 464
     mosaicPosition: {x: 668, y: 1671}
   - name: Floor
     spriteName: Floor_1
     isGroup: 0
-    parentIndex: 152
+    parentIndex: 153
     spriteID: 66aec730693ea2445913cea9c58f9c77
     layerID: 125
     mosaicPosition: {x: 668, y: 3309}
@@ -5721,112 +5728,112 @@ ScriptedImporter:
   - name: Mannequin
     spriteName: Mannequin_4
     isGroup: 0
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 00daaf7d253c5c14095d08f84408c4ef
     layerID: 392
     mosaicPosition: {x: 1119, y: 3779}
   - name: Symbol
     spriteName: Symbol
     isGroup: 0
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 34ce3bc26c3c52d429f56c25ea64ed20
     layerID: 389
     mosaicPosition: {x: 1800, y: 475}
   - name: Blood
     spriteName: 
     isGroup: 1
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 00000000000000000000000000000000
     layerID: 396
     mosaicPosition: {x: 0, y: 0}
   - name: Blood 1
     spriteName: Blood 1
     isGroup: 0
-    parentIndex: 195
+    parentIndex: 196
     spriteID: 5cc41919100fd3848add32fc9cc5afb2
     layerID: 393
     mosaicPosition: {x: 1962, y: 372}
   - name: Blood 2
     spriteName: Blood 2
     isGroup: 0
-    parentIndex: 195
+    parentIndex: 196
     spriteID: bfcc34bdbfaf6094dab0f12f99732b71
     layerID: 394
     mosaicPosition: {x: 2024, y: 4}
   - name: Blood 3
     spriteName: Blood 3
     isGroup: 0
-    parentIndex: 195
+    parentIndex: 196
     spriteID: 9d84922ea2046d04785328eb35407936
     layerID: 395
     mosaicPosition: {x: 1287, y: 4036}
   - name: Blood 4
     spriteName: Blood 4
     isGroup: 0
-    parentIndex: 195
+    parentIndex: 196
     spriteID: fd22936a47e4cc5409bd4fe236278146
     layerID: 390
     mosaicPosition: {x: 2002, y: 372}
   - name: Bed
     spriteName: 
     isGroup: 1
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 00000000000000000000000000000000
     layerID: 388
     mosaicPosition: {x: 0, y: 0}
   - name: Blanket
     spriteName: Blanket_4
     isGroup: 0
-    parentIndex: 200
+    parentIndex: 201
     spriteID: 40fcad296b67928478d7b873d71ea13c
     layerID: 387
     mosaicPosition: {x: 1247, y: 3802}
   - name: Bed
     spriteName: Bed_4
     isGroup: 0
-    parentIndex: 200
+    parentIndex: 201
     spriteID: c76319bec3b66a446bfc42d98f471081
     layerID: 385
     mosaicPosition: {x: 1204, y: 1851}
   - name: Door
     spriteName: 
     isGroup: 1
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 00000000000000000000000000000000
     layerID: 423
     mosaicPosition: {x: 0, y: 0}
   - name: Door
     spriteName: Door_3
     isGroup: 0
-    parentIndex: 203
+    parentIndex: 204
     spriteID: e9b9bea05ebf9e34f9c878b8218bd62b
     layerID: 422
     mosaicPosition: {x: 1119, y: 3670}
   - name: Border
     spriteName: Border_3
     isGroup: 0
-    parentIndex: 203
+    parentIndex: 204
     spriteID: 5dd75581a7b838e4b988d6f03010b415
     layerID: 421
     mosaicPosition: {x: 1240, y: 3494}
   - name: Wall 1
     spriteName: Wall 1_6
     isGroup: 0
-    parentIndex: 192
+    parentIndex: 193
     spriteID: 86a315068b4b8894dbab73cf9bd21f97
     layerID: 479
     mosaicPosition: {x: 268, y: 2470}
   - name: Wall 2
     spriteName: Wall 2_6
     isGroup: 0
-    parentIndex: 192
+    parentIndex: 193
     spriteID: a73956f06bd123b4583287605b877c96
     layerID: 478
     mosaicPosition: {x: 668, y: 3573}
   - name: Floor
     spriteName: Floor_2
     isGroup: 0
-    parentIndex: 192
+    parentIndex: 193
     spriteID: b461706dfde8b3a4e87ca9c154344e2b
     layerID: 106
     mosaicPosition: {x: 268, y: 1768}
@@ -5840,119 +5847,119 @@ ScriptedImporter:
   - name: Bed
     spriteName: 
     isGroup: 1
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 00000000000000000000000000000000
     layerID: 217
     mosaicPosition: {x: 0, y: 0}
   - name: Bed
     spriteName: Bed_5
     isGroup: 0
-    parentIndex: 210
+    parentIndex: 211
     spriteID: 48a12bd27fe89784893c6e6049d8a8a1
     layerID: 216
     mosaicPosition: {x: 1255, y: 3869}
   - name: Shelf
     spriteName: 
     isGroup: 1
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 00000000000000000000000000000000
     layerID: 242
     mosaicPosition: {x: 0, y: 0}
   - name: Glass
     spriteName: Glass_9
     isGroup: 0
-    parentIndex: 212
+    parentIndex: 213
     spriteID: 96bc7c447481d1947bbd33a3cd1070d3
     layerID: 241
     mosaicPosition: {x: 1068, y: 3663}
   - name: Pill
     spriteName: Pill
     isGroup: 0
-    parentIndex: 212
+    parentIndex: 213
     spriteID: 07faaeb73d7b3cc4dbfd3f3fb3dcb539
     layerID: 245
-    mosaicPosition: {x: 1977, y: 604}
+    mosaicPosition: {x: 1975, y: 604}
   - name: Pills
     spriteName: Pills
     isGroup: 0
-    parentIndex: 212
+    parentIndex: 213
     spriteID: 98214a9fb38cc764e91477790f9a6687
     layerID: 244
     mosaicPosition: {x: 1240, y: 3558}
   - name: Shelf
     spriteName: Shelf_8
     isGroup: 0
-    parentIndex: 212
+    parentIndex: 213
     spriteID: fd9f0b26a81663944aeef25f44467b00
     layerID: 240
     mosaicPosition: {x: 1182, y: 3477}
   - name: Trashcan
     spriteName: Trashcan_1
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 350fc44cf99d9ff4bb2e569ca96f19fb
     layerID: 246
     mosaicPosition: {x: 1190, y: 2295}
   - name: Paper
     spriteName: Paper
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: fcfe6f92bebe6354bbc2e7c3f94ed610
     layerID: 238
     mosaicPosition: {x: 1292, y: 3681}
   - name: Chair 3
     spriteName: Chair 3_2
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: c57a738f99c9acb459a3e6f4297ed735
     layerID: 251
     mosaicPosition: {x: 1216, y: 2147}
   - name: Chair 2
     spriteName: Chair 2_2
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 52ad89d07a3684546b53e1d0fc81e737
     layerID: 236
     mosaicPosition: {x: 1216, y: 2184}
   - name: Table
     spriteName: Table_3
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 9f209a7d9a037314db13ce9ede27ea21
     layerID: 218
     mosaicPosition: {x: 1895, y: 475}
   - name: Chair 1
     spriteName: Chair 1_2
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 660f612f93d2bc548b790315228c62a9
     layerID: 237
     mosaicPosition: {x: 1216, y: 2221}
   - name: Wall 1
     spriteName: Wall 1_1
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 916b34a79edc7d24a9dc98632f0656c3
     layerID: 7
     mosaicPosition: {x: 1312, y: 619}
   - name: Wall 2
     spriteName: Wall 2_4
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: ea5a5fc1ea62d2a4e8daf470891958a5
     layerID: 469
     mosaicPosition: {x: 668, y: 1999}
   - name: Wall 3
     spriteName: Wall 3_2
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 97477bf61b59c20438694a5cd6ea8644
     layerID: 467
     mosaicPosition: {x: 2002, y: 204}
   - name: Floor
     spriteName: Floor_3
     isGroup: 0
-    parentIndex: 209
+    parentIndex: 210
     spriteID: 52981496b1ef18d46b7c5490191391f5
     layerID: 3
     mosaicPosition: {x: 1312, y: 204}
@@ -5966,126 +5973,126 @@ ScriptedImporter:
   - name: Bed
     spriteName: 
     isGroup: 1
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 00000000000000000000000000000000
     layerID: 201
     mosaicPosition: {x: 0, y: 0}
   - name: Bed
     spriteName: Bed_6
     isGroup: 0
-    parentIndex: 228
+    parentIndex: 229
     spriteID: 0aac039634906aa44932712914f14a0f
     layerID: 203
     mosaicPosition: {x: 1240, y: 3309}
   - name: Table
     spriteName: 
     isGroup: 1
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 00000000000000000000000000000000
     layerID: 198
     mosaicPosition: {x: 0, y: 0}
   - name: Scalpel
     spriteName: Scalpel
     isGroup: 0
-    parentIndex: 230
+    parentIndex: 231
     spriteID: 6199ff11a7c822c4387a545b85303660
     layerID: 205
     mosaicPosition: {x: 2025, y: 535}
   - name: Monitor
     spriteName: 
     isGroup: 1
-    parentIndex: 230
+    parentIndex: 231
     spriteID: 00000000000000000000000000000000
     layerID: 206
     mosaicPosition: {x: 0, y: 0}
   - name: Content
     spriteName: Content
     isGroup: 0
-    parentIndex: 232
+    parentIndex: 233
     spriteID: 35937bec04fd590419e55fca09e7ae6d
     layerID: 208
     mosaicPosition: {x: 2024, y: 188}
   - name: Monitor
     spriteName: Monitor
     isGroup: 0
-    parentIndex: 232
+    parentIndex: 233
     spriteID: 284ca384b887ce64580826ab0961fd64
     layerID: 204
     mosaicPosition: {x: 628, y: 2368}
   - name: Book
     spriteName: Book_1
     isGroup: 0
-    parentIndex: 230
+    parentIndex: 231
     spriteID: 64ed2f6ecb067bf4aa6f3bdb5c76377e
     layerID: 209
     mosaicPosition: {x: 628, y: 1980}
   - name: Table
     spriteName: Table_4
     isGroup: 0
-    parentIndex: 230
+    parentIndex: 231
     spriteID: 3bc738576828b09468dbbd4ac38dae6e
     layerID: 200
     mosaicPosition: {x: 1768, y: 547}
   - name: Sink
     spriteName: 
     isGroup: 1
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 00000000000000000000000000000000
     layerID: 211
     mosaicPosition: {x: 0, y: 0}
   - name: Faucet
     spriteName: Faucet
     isGroup: 0
-    parentIndex: 237
+    parentIndex: 238
     spriteID: cb773862f52b4c047bd0982136a2978a
     layerID: 214
-    mosaicPosition: {x: 1936, y: 604}
+    mosaicPosition: {x: 1277, y: 3851}
   - name: Water
     spriteName: Water
     isGroup: 0
-    parentIndex: 237
+    parentIndex: 238
     spriteID: 7d84d448721c69148be3b02c68886cb6
     layerID: 213
     mosaicPosition: {x: 1119, y: 3839}
   - name: Sink
     spriteName: Sink
     isGroup: 0
-    parentIndex: 237
+    parentIndex: 238
     spriteID: b74f11c274319284c9d5814599e2a2bc
     layerID: 210
     mosaicPosition: {x: 628, y: 2398}
   - name: Trashcan
     spriteName: Trashcan_2
     isGroup: 0
-    parentIndex: 227
+    parentIndex: 228
     spriteID: c544a97e66c78c347b6e245cfeed8334
     layerID: 249
     mosaicPosition: {x: 1216, y: 2295}
   - name: Wall 1
     spriteName: Wall 1_5
     isGroup: 0
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 56bfae0dd0bc9864a833d256175d96a1
     layerID: 473
     mosaicPosition: {x: 268, y: 2542}
   - name: Wall 2
     spriteName: Wall 2_5
     isGroup: 0
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 5da68709f604d324ea7b0df64bc48af7
     layerID: 474
     mosaicPosition: {x: 668, y: 2654}
   - name: Wall 3
     spriteName: Wall 3_3
     isGroup: 0
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 873389d83f941c54399220877de1abed
     layerID: 472
     mosaicPosition: {x: 1157, y: 3869}
   - name: Floor
     spriteName: Floor_7
     isGroup: 0
-    parentIndex: 227
+    parentIndex: 228
     spriteID: 01feb98374c2b014ebacda69119164db
     layerID: 502
     mosaicPosition: {x: 268, y: 2000}

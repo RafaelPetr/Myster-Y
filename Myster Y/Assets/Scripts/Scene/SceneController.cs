@@ -13,8 +13,8 @@ public class SceneController : MonoBehaviour {
     [SerializeField]private Animator crossfade;
     private float transitionTime = 1f;
 
-    public UnityEvent StartLoadEvent;
-    public UnityEvent EndLoadEvent;
+    [System.NonSerialized]public UnityEvent StartLoadEvent;
+    [System.NonSerialized]public UnityEvent EndLoadEvent;
 
     private void Awake() {
         if (instance == null) {

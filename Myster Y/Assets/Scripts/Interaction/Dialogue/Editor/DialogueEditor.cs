@@ -70,13 +70,18 @@ public class DialogueEditor : Editor {
 
     private void ChoiceTab(Dialogue dialogue) {
         if (dialogue.choice.GetEnable()) {
+            if (GUILayout.Button("Remove Choice")) {
+                dialogue.RemoveChoice();
+            }
+            EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+
             GUILayout.BeginHorizontal();
                 GUILayout.Label("Context:");
                 dialogue.choice.context = GUILayout.TextArea(dialogue.choice.context,GUILayout.Width(170));
             GUILayout.EndHorizontal();
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             
-            for (int i = 0; i < dialogue.choice.options.Length; i++) {
+            for (int i = 0; i < dialogue.choice.options.Count; i++) {
                 GUILayout.Label("Option " + (i+1).ToString());
 
                 GUILayout.BeginHorizontal();
@@ -89,18 +94,16 @@ public class DialogueEditor : Editor {
                     dialogue.choice.options[i].function = GUILayout.TextArea(dialogue.choice.options[i].function);
                 GUILayout.EndHorizontal();
 
-                GUILayout.BeginHorizontal();
-                    GUILayout.Label("Dialogue:");
-                    dialogue.choice.options[i].linkedDialogue = (Dialogue)EditorGUILayout.ObjectField("",dialogue.choice.options[i].linkedDialogue,typeof(Dialogue),true); 
-                GUILayout.EndHorizontal();
+                if (GUILayout.Button("Remove Option")) {
+                    dialogue.RemoveOption(i);
+                }
 
                 EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             }
 
-            if (GUILayout.Button("Remove Choice")) {
-                dialogue.RemoveChoice();
+            if (GUILayout.Button("Add Option")) {
+                dialogue.AddOption();
             }
-            
         }
         else {
             if (GUILayout.Button("Add Choice")) {

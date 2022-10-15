@@ -20,15 +20,12 @@ MonoBehaviour:
     options:
     - text: "Colocar flor sobre a c\xF4moda"
       function: Put
-      linkedDialogue: {fileID: 0}
       localizationGroupIndex: 1
-    - text: Retirar flor
+    - text: Retirar flores
       function: Remove
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 2
+      localizationGroupIndex: 0
     - text: Sair
       function: 
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 3
+      localizationGroupIndex: 0
     contextLocalizationGroupIndex: 0
   elementsOrder: 

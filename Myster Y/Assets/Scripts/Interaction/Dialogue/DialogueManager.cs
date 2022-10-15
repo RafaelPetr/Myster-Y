@@ -28,8 +28,8 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField]private GameObject choiceUI;
     [SerializeField]private TextMeshProUGUI choiceContext;
     [SerializeField]private GameObject choiceOptions;
-    private List<Button> choiceOptionsButtons = new List<Button>();
-    private List<TextMeshProUGUI> choiceOptionsTexts = new List<TextMeshProUGUI>();
+    [SerializeField]private GameObject optionPrefab;
+    private List<Button> choiceOptionButtons = new List<Button>();
 
     private string activeWritingText;
     private TextMeshProUGUI activeWritingUI;
@@ -45,8 +45,6 @@ public class DialogueManager : MonoBehaviour {
 
     private void Start() {
         choiceUI.SetActive(true);
-        choiceOptionsButtons = new List<Button>(choiceOptions.GetComponentsInChildren<Button>());
-        choiceOptionsTexts = new List<TextMeshProUGUI>(choiceOptions.GetComponentsInChildren<TextMeshProUGUI>());
         choiceUI.SetActive(false);
 
         eventSystem = FindObjectOfType<EventSystem>();
@@ -80,6 +78,12 @@ public class DialogueManager : MonoBehaviour {
     private void ResetUI() {
         sentenceUI.SetActive(false);
         choiceUI.SetActive(false);
+
+        foreach (Transform child in choiceOptions.transform) {
+            Destroy(child.gameObject);
+        }
+        choiceOptionButtons.Clear();
+
         textBoxAnimator.SetBool("Active",true);
     }
 
@@ -126,16 +130,36 @@ public class DialogueManager : MonoBehaviour {
 
         StartWriting(choice.context, choiceContext);
         
-        for (int i = 0; i < choiceOptionsButtons.Count; i++) {
+        for (int i = 0; i < choice.options.Count; i++) {
             if (choice.options[i].text != "") {
-                choiceOptionsTexts[i].text = choice.options[i].text;
-            }
-            else {
-                choiceOptionsButtons[i].gameObject.SetActive(false);
+                GameObject optionButton = Instantiate(optionPrefab);
+                optionButton.transform.SetParent(choiceOptions.transform);
+
+                optionButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.options[i].text;
+                optionButton.GetComponent<DialogueOptionButton>().index = i;
+                choiceOptionButtons.Add(optionButton.GetComponent<Button>());
+                int lastIndex = choiceOptionButtons.Count - 1;
+
+                if (lastIndex > 0) {
+                    Navigation lastNavigation = choiceOptionButtons[lastIndex].navigation;
+                    lastNavigation.mode = Navigation.Mode.Explicit;
+                    lastNavigation.selectOnUp = choiceOptionButtons[lastIndex-1];
+                    choiceOptionButtons[lastIndex].navigation = lastNavigation;
+
+                    Navigation previousNavigation = choiceOptionButtons[lastIndex-1].navigation;
+                    previousNavigation.mode = Navigation.Mode.Explicit;
+                    previousNavigation.selectOnDown = choiceOptionButtons[lastIndex];
+                    choiceOptionButtons[lastIndex-1].navigation = previousNavigation;
+                }
             }
         }
-        
-        choiceOptionsButtons[0].Select();
+
+        if (choiceOptionButtons.Count > 0) {
+            choiceOptionButtons[0].Select();
+        }
+        else {
+            ExecuteNextElement();
+        }
     }
 
     private void StartWriting(string text, TextMeshProUGUI writingUI) {
@@ -167,8 +191,8 @@ public class DialogueManager : MonoBehaviour {
 
         activeDialogueable.ExecuteFunction(activeChoice.options[optionIndex].function);
 
-        if (activeChoice.options[optionIndex].linkedDialogue != null) {
-            StartDialogue(activeChoice.options[optionIndex].linkedDialogue);
+        if (activeDialogueable.freezeDialogue > 0) {
+            activeDialogueable.freezeDialogue--;
             return;
         }
 
@@ -180,6 +204,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueTextBox.SetActive(false);
         inDialogue = false;
         textBoxAnimator.SetBool("Active",false);
+
         activeDialogueable.FinishInteraction();
     }
 

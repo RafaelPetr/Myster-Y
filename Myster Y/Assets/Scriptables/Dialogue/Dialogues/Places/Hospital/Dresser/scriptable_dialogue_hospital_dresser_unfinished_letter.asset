@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_hospital_dresser_unfinished
+  m_Name: scriptable_dialogue_hospital_dresser_unfinished_letter
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_hospital_dresser_unfinished
+  key: scriptable_dialogue_hospital_dresser_unfinished_letter
   sentences:
   - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: "Preciso encontrar algo para decorar a c\xF4moda."
+    text: "H\xE1 um bilhete em uma das gavetas escrito com uma tinta de colora\xE7\xE3o
+      rosada."
     localizationGroupIndex: 0
   choice:
-    enable: 0
-    context: 
+    enable: 1
+    context: Pegar?
     options:
-    - text: 
+    - text: Sim
+      function: Accept Letter
+      localizationGroupIndex: 2
+    - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    contextLocalizationGroupIndex: 0
+      localizationGroupIndex: 3
+    contextLocalizationGroupIndex: 1
   elementsOrder: 00000000

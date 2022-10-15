@@ -1,38 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class dialogueable_hospital_dresser : Dialogueable {
     [SerializeField]private Item flower;
     [SerializeField]private Item decorationLetter;
     private List<Item> flowers = new List<Item>();
     
-    [SerializeField]private GameObject rightFlower;
     [SerializeField]private GameObject leftFlower;
+    [SerializeField]private GameObject rightFlower;
 
-    public override void Awake() {
-        base.Awake();
+    [System.NonSerialized]public char[] values = new char[]{'0', '0'};
+    [System.NonSerialized]public UnityEvent OnPlaceEvent = new UnityEvent();
 
+    public override void ResetKey() {
+        base.ResetKey();
         key += "hospital_dresser_";
     }
 
     public override Dialogue DefineDialogue() {
-        //if (!DresserPuzzle.finished) {
-            if (!Inventory.FindItem(decorationLetter)) {
-                return dialogueDict[key + "unfinished"];
-            }
-            if (Inventory.FindItem(flower) && flowers.Count == 0) {
-                return dialogueDict[key + "unfinished_put"];
-            }
-            if (Inventory.FindItem(flower) && flowers.Count == 1) {
-                return dialogueDict[key + "unfinished_put_or_remove"];
-            }
-            if (flowers.Count == 2) {
-                return dialogueDict[key + "unfinished_remove"];
-            }
-        //}
+        ResetKey();
 
-        return dialogueDict[key + "finished"];
+        if (!FlowerPuzzle.instance.finished) {
+            key += "unfinished";
+
+            if (!Inventory.FindItem(decorationLetter)) {
+                key += "_letter";
+                SaveOptions();
+            }
+            else {
+                key += "_put_or_remove";
+                SaveOptions();
+
+                if (Inventory.FindItem(flower) && flowers.Count < 2) {
+                    if (flowers.Count == 0) {
+                        freezeDialogue = 1;
+                        RemoveOption(1);
+                    }
+                }
+                else {
+                    RemoveOption(0);
+                }
+            }
+        }
+        else {
+            key += "finished";
+        }
+
+        return dialogueDict[key];
     }
 
     public override void ExecuteFunction(string function) {
@@ -43,11 +59,24 @@ public class dialogueable_hospital_dresser : Dialogueable {
             flowers.Add(flower);
             Inventory.RemoveItem(flower);
 
-            if (!leftFlower.activeSelf) {
-                leftFlower.SetActive(true);
+            if (!leftFlower.activeSelf && !rightFlower.activeSelf) {
+                ResetOptions();
+
+                key += "_side";
+                SaveOptions();
+                DialogueManager.instance.StartDialogue(dialogueDict[key]);
             }
             else {
-                rightFlower.SetActive(true);
+                if (!leftFlower.activeSelf) {
+                    leftFlower.SetActive(true);
+                    values[0] = '1';
+                }
+                else {
+                    rightFlower.SetActive(true);
+                    values[1] = '1';
+                }
+
+                OnPlaceEvent.Invoke();
             }
         }
         else if (function.Equals("Remove")) {
@@ -58,18 +87,21 @@ public class dialogueable_hospital_dresser : Dialogueable {
             leftFlower.SetActive(false);
             rightFlower.SetActive(false);
 
+            values = new char[]{'0', '0'};
+
             flowers.Clear();
         }
         else if (function.Equals("Left") || function.Equals("Right")) {
-            flowers.Add(flower);
-            Inventory.RemoveItem(flower);
-
             if (function.Equals("Left")) {
                 leftFlower.SetActive(true);
+                values[0] = '1';
             }
             else {
                 rightFlower.SetActive(true);
+                values[1] = '1';
             }
+
+            OnPlaceEvent.Invoke();
         }
     }
 }
