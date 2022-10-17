@@ -115,8 +115,16 @@ public class DialogueManager : MonoBehaviour {
     public void UpdateSentenceUI(DialogueSentence sentence) {
         ResetUI();
         sentenceUI.SetActive(true);
-        sentenceName.text = sentence.character.name;
-        sentenceIcon.sprite = sentence.character.icon;
+        sentenceName.gameObject.SetActive(false);
+        sentenceIcon.gameObject.SetActive(false);
+
+        if (sentence.character != null) {
+            sentenceName.gameObject.SetActive(true);
+            sentenceIcon.gameObject.SetActive(true);
+            sentenceName.text = sentence.character.name;
+            sentenceIcon.sprite = sentence.character.icon;
+        }
+        
 
         StartWriting(sentence.text, sentenceText);
     }
@@ -191,8 +199,8 @@ public class DialogueManager : MonoBehaviour {
 
         activeDialogueable.ExecuteFunction(activeChoice.options[optionIndex].function);
 
-        if (activeDialogueable.freezeDialogue > 0) {
-            activeDialogueable.freezeDialogue--;
+        if (activeDialogueable.freezeDialogue) {
+            activeDialogueable.freezeDialogue = false;
             return;
         }
 

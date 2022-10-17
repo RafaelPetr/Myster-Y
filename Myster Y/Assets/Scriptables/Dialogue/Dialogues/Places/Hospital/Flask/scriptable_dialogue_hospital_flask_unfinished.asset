@@ -10,23 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_hospital_dresser_unfinished_letter
+  m_Name: scriptable_dialogue_hospital_flask_unfinished
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_hospital_dresser_unfinished_letter
+  key: scriptable_dialogue_hospital_flask_unfinished
   sentences:
   - character: {fileID: 0}
-    text: "Um bilhete escrito com uma tinta de colora\xE7\xE3o rosada est\xE1 em
-      uma das gavetas."
+    text: "V\xE1rios frascos com l\xEDquidos estranhos e um recipiente para misturas
+      est\xE3o sobre a mesa."
+    localizationGroupIndex: 0
+  - character: {fileID: 0}
+    text: "Os frascos possuem r\xF3tulos com n\xFAmeros escritos neles."
     localizationGroupIndex: 0
   choice:
     enable: 1
-    context: Pegar?
+    context: Fazer uma mistura?
     options:
     - text: Sim
-      function: Accept Letter
+      function: Mixture
       localizationGroupIndex: 2
     - text: "N\xE3o"
       function: 
       localizationGroupIndex: 3
     contextLocalizationGroupIndex: 1
-  elementsOrder: 00000000
+  elementsOrder: 0000000000000000

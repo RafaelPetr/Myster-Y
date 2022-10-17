@@ -48,10 +48,8 @@ public class DialogueEditor : Editor {
 
     private void SentencesTab(Dialogue dialogue) {
         for (int i = 0; i < dialogue.sentences.Count; i++) {
-            if (dialogue.sentences[i].character != null) {
-                GUILayout.Label("Text");
-                dialogue.sentences[i].text = GUILayout.TextArea(dialogue.sentences[i].text);
-            }
+            GUILayout.Label("Text");
+            dialogue.sentences[i].text = GUILayout.TextArea(dialogue.sentences[i].text);
             GUILayout.BeginHorizontal();
                 dialogue.sentences[i].character = (DialogueCharacter)EditorGUILayout.ObjectField("",dialogue.sentences[i].character,typeof(DialogueCharacter),true);
                 if (GUILayout.Button("Delete")) {

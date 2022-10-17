@@ -55,7 +55,7 @@
                 {
                     "key": "scriptable_dialogue_hospital_dresser_unfinished_letter",
                     "values": [
-                        "Há um bilhete em uma das gavetas escrito com uma tinta de coloração rosada.",
+                        "Um bilhete escrito com uma tinta de coloração rosada está em uma das gavetas.",
                         "Pegar?",
                         "Sim",
                         "Não"
@@ -64,10 +64,41 @@
                 {
                     "key": "scriptable_dialogue_hospital_dresser_unfinished_put_or_remove_side",
                     "values": [
-                        "Em que lado devo colocar a flor?",
+                        "Colocar a flor em qual lado?",
                         "Esquerda",
-                        "Direita",
-                        "Sair"
+                        "Direita"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flask_unfinished",
+                    "values": [
+                        "Vários frascos com líquidos estranhos e um recipiente para misturas estão sobre a mesa.",
+                        "Fazer mistura?",
+                        "Sim",
+                        "Não"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flask_finished",
+                    "values": [
+                        "Apenas o frasco com o rótulo \"2\" sobrou.",
+                        "Não há mais nada a ser feito aqui."
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flask_unfinished_mixture",
+                    "values": [
+                        "Adicionar frasco à mistura:",
+                        "0. Verde",
+                        "1. Vermelho",
+                        "2. Ciano",
+                        "3. Amarelo",
+                        "4. Rosa",
+                        "5. Laranja",
+                        "6. Roxo",
+                        "7. Azul",
+                        "8. Verde-lima",
+                        "9. Preto"
                     ]
                 }
             ]

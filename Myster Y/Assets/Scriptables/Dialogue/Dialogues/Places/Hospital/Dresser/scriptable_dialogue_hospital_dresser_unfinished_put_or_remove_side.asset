@@ -16,13 +16,13 @@ MonoBehaviour:
   sentences: []
   choice:
     enable: 1
-    context: Em que lado devo colocar a flor?
+    context: Colocar a flor em qual lado?
     options:
     - text: Esquerda
       function: Left
-      localizationGroupIndex: 0
+      localizationGroupIndex: 1
     - text: Direita
       function: Right
-      localizationGroupIndex: 0
+      localizationGroupIndex: 2
     contextLocalizationGroupIndex: 0
   elementsOrder: 

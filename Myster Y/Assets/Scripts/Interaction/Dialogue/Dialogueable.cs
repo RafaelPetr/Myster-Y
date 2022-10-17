@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Dialogueable : Interactable {
     [System.NonSerialized]public string key;
     [System.NonSerialized]public string initialKey;
-    [System.NonSerialized]public int freezeDialogue;
+    [System.NonSerialized]public bool freezeDialogue;
     
     public List<Dialogue> dialogues;
     public Dictionary<string, Dialogue> dialogueDict = new Dictionary<string, Dialogue>();
@@ -23,11 +23,6 @@ public abstract class Dialogueable : Interactable {
         ResetKey();
     }
 
-    public virtual void ResetKey() {
-        initialKey = "scriptable_dialogue_";
-        key = string.Copy(initialKey);
-    }
-
     public override void Start() {
         base.Start();
         foreach (Dialogue dialogue in dialogues) {
@@ -40,14 +35,29 @@ public abstract class Dialogueable : Interactable {
         DialogueManager.instance.ReceiveInteract(this);
     }
 
+    public override void FinishInteraction() {
+        base.FinishInteraction();
+
+        ResetOptions();
+    }
+
+    public virtual void ResetKey() {
+        initialKey = "scriptable_dialogue_";
+        key = string.Copy(initialKey);
+    }
+
     public virtual Dialogue DefineDialogue() {
         key = dialogues[0].key;
         return dialogues[0];
     }
 
+    public virtual void ExecuteFunction(string function) {}
+
     public void SaveOptions() {
-        foreach (DialogueOption option in dialogueDict[key].choice.options) {
-            backupTexts.Add(string.Copy(option.text));
+        if (dialogueDict[key].choice != null) {
+            foreach (DialogueOption option in dialogueDict[key].choice.options) {
+                backupTexts.Add(string.Copy(option.text));
+            }
         }
     }
 
@@ -64,11 +74,7 @@ public abstract class Dialogueable : Interactable {
         dialogueDict[key].choice.options[index].text = "";
     }
 
-    public override void FinishInteraction() {
-        base.FinishInteraction();
-
-        ResetOptions();
+    public void StartDialogue(Dialogue dialogue) {
+        DialogueManager.instance.StartDialogue(dialogue);
     }
-
-    public virtual void ExecuteFunction(string function) {}
 }

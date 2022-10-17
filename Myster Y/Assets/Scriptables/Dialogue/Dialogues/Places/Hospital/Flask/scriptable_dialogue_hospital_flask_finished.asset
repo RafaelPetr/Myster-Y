@@ -10,25 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_hospital_dresser_finished
+  m_Name: scriptable_dialogue_hospital_flask_finished
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_hospital_dresser_finished
+  key: scriptable_dialogue_hospital_flask_finished
   sentences:
   - character: {fileID: 0}
-    text: "N\xE3o h\xE1 mais nada a ser feito aqui."
+    text: "Apenas o frasco com o r\xF3tulo \"2\" sobrou."
     localizationGroupIndex: 0
+  - character: {fileID: 0}
+    text: "N\xE3o h\xE1 mais nada a ser feito aqui."
+    localizationGroupIndex: 1
   choice:
     enable: 0
     context: 
-    options:
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
+    options: []
     contextLocalizationGroupIndex: 0
-  elementsOrder: 00000000
+  elementsOrder: 0000000000000000

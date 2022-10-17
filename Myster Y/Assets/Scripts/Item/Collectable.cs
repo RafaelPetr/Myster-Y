@@ -9,8 +9,6 @@ public class Collectable : Dialogueable {
         if (function == "Accept") {
             if (item != null) {
                 Inventory.AddItem(item);
-                Inventory.AddItem(item);
-                Inventory.AddItem(item);
                 gameObject.SetActive(false);
             }
         }

@@ -27,7 +27,6 @@ public class dialogueable_hospital_dresser : Dialogueable {
 
             if (!Inventory.FindItem(decorationLetter)) {
                 key += "_letter";
-                SaveOptions();
             }
             else {
                 key += "_put_or_remove";
@@ -35,7 +34,6 @@ public class dialogueable_hospital_dresser : Dialogueable {
 
                 if (Inventory.FindItem(flower) && flowers.Count < 2) {
                     if (flowers.Count == 0) {
-                        freezeDialogue = 1;
                         RemoveOption(1);
                     }
                 }
@@ -56,6 +54,7 @@ public class dialogueable_hospital_dresser : Dialogueable {
             Inventory.AddItem(decorationLetter);
         }
         else if (function.Equals("Put")) {
+            freezeDialogue = true;
             flowers.Add(flower);
             Inventory.RemoveItem(flower);
 
@@ -63,8 +62,7 @@ public class dialogueable_hospital_dresser : Dialogueable {
                 ResetOptions();
 
                 key += "_side";
-                SaveOptions();
-                DialogueManager.instance.StartDialogue(dialogueDict[key]);
+                StartDialogue(dialogueDict[key]);
             }
             else {
                 if (!leftFlower.activeSelf) {
