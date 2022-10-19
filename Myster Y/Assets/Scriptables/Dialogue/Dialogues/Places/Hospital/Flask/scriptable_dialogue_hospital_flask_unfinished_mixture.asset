@@ -16,7 +16,7 @@ MonoBehaviour:
   sentences: []
   choice:
     enable: 1
-    context: "Adicionar frasco \xE0 mistura:"
+    context: "Adicionar l\xEDquido no frasco:"
     options:
     - text: 0. Verde
       function: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: scriptable_character_mystery
   m_EditorClassIdentifier: 
   name: Mr.Y
-  icon: {fileID: 4990072452828752886, guid: 1bf7f1c8a6ce2c547a45485d68da0203, type: 3}
+  icon: {fileID: 21300000, guid: a8fe9c8511d3eb64e9b6f5064cc6c64f, type: 3}

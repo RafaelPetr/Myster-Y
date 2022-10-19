@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_hospital_flask_unfinished
+  m_Name: scriptable_dialogue_hospital_flask_unfinished_pick_or_redo
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_hospital_flask_unfinished
+  key: scriptable_dialogue_hospital_flask_unfinished_pick_or_redo
   sentences:
   - character: {fileID: 0}
-    text: "V\xE1rios frascos com l\xEDquidos estranhos e um recipiente para misturas
-      est\xE3o sobre a mesa."
+    text: "H\xE1 uma mistura pronta na mesa."
     localizationGroupIndex: 0
-  - character: {fileID: 0}
-    text: "Os frascos possuem r\xF3tulos com n\xFAmeros escritos neles."
-    localizationGroupIndex: 1
   choice:
     enable: 1
-    context: Fazer uma mistura?
+    context: Pegar?
     options:
     - text: Sim
-      function: Mixture
-      localizationGroupIndex: 3
+      function: Pickup
+      localizationGroupIndex: 2
     - text: "N\xE3o"
       function: 
+      localizationGroupIndex: 3
+    - text: Refazer mistura
+      function: Redo
       localizationGroupIndex: 4
-    contextLocalizationGroupIndex: 2
-  elementsOrder: 0000000000000000
+    contextLocalizationGroupIndex: 1
+  elementsOrder: 00000000

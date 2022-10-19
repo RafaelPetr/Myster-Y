@@ -9,6 +9,15 @@ public static class Inventory {
         return items[index];
     }
 
+    public static Item GetItem(string key) {
+        foreach (Item item in items) {
+            if (item.key == key) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public static List<Item> GetAllItems() {
         return items;
     }
@@ -22,8 +31,17 @@ public static class Inventory {
         }
     }
 
-    public static bool FindItem(Item item) {
+    public static bool HasItem(Item item) {
         return items.Contains(item);
+    }
+
+    public static bool HasItem(string key) {
+        foreach (Item item in items) {
+            if (item.key == key) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void RemoveItem(Item item) {

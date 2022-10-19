@@ -72,8 +72,9 @@
                 {
                     "key": "scriptable_dialogue_hospital_flask_unfinished",
                     "values": [
-                        "Vários frascos com líquidos estranhos e um recipiente para misturas estão sobre a mesa.",
-                        "Fazer mistura?",
+                        "Vários frascos com líquidos estranhos e um recipiente para soluções estão sobre a mesa.",
+                        "Os frascos possuem rótulos com números escritos neles.",
+                        "Fazer uma solução?",
                         "Sim",
                         "Não"
                     ]
@@ -88,7 +89,7 @@
                 {
                     "key": "scriptable_dialogue_hospital_flask_unfinished_mixture",
                     "values": [
-                        "Adicionar frasco à mistura:",
+                        "Adicionar líquido no frasco:",
                         "0. Verde",
                         "1. Vermelho",
                         "2. Ciano",
@@ -99,6 +100,59 @@
                         "7. Azul",
                         "8. Verde-lima",
                         "9. Preto"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flask_unfinished_pick_or_redo",
+                    "values": [
+                        "Há uma solução pronta na mesa.",
+                        "Pegar?",
+                        "Sim",
+                        "Não",
+                        "Refazer solução"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_flask_unfinished_redo",
+                    "values": [
+                        "Refazer solução?",
+                        "Sim",
+                        "Não"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_microscope_unfinished_see",
+                    "values": [
+                        "Um microscópio com uma amostra de bactérias está sobre a mesa.",
+                        "Olhar amostra?",
+                        "Sim",
+                        "Não"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_microscope_finished",
+                    "values": [
+                        "A amostra de bactérias foi eliminada."
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_microscope_unfinished_use_failed",
+                    "values": [
+                        "A solução não surtiu efeito na amostra."
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_microscope_unfinished_use",
+                    "values": [
+                        "Utilizar solução na amostra?",
+                        "Sim",
+                        "Não"
+                    ]
+                },
+                {
+                    "key": "scriptable_dialogue_hospital_microscope_unfinished_cancel",
+                    "values": [
+                        "Não tenho como fazer nada com isso."
                     ]
                 }
             ]
@@ -118,6 +172,13 @@
                     "values": [
                         "Flor",
                         "É uma pequena flor em um vaso. No exterior do recipiente existe uma inscrição apagada que diz \"Respeite os mortos\"."
+                    ]
+                },
+                {
+                    "key": "scriptable_item_flask",
+                    "values": [
+                        "Frasco de solução",
+                        "É um frasco que contém a solução de vários líquidos estranhos. O rótulo diz \"propriedade do hospital de Blissport\"."
                     ]
                 }
             ]

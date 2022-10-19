@@ -6,13 +6,14 @@ using System.IO;
 
 [CustomEditor(typeof(Item))]
 public class ItemEditor : Editor {
+    public Item item;
     private string filePath;
     private string key;
 
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
-        Item item = (Item)target;
+        item = (Item)target;
 
         if (string.IsNullOrEmpty(key)) {
             key = item.name;
@@ -145,3 +146,6 @@ public class ItemEditor : Editor {
         return new LocalizationElement(item.key,valueList.ToArray());
     }
 }
+
+[CustomEditor(typeof(Flask))]
+public class FlaskEditor : ItemEditor {}

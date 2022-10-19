@@ -25,14 +25,14 @@ public class dialogueable_hospital_dresser : Dialogueable {
         if (!FlowerPuzzle.instance.finished) {
             key += "unfinished";
 
-            if (!Inventory.FindItem(decorationLetter)) {
+            if (!Inventory.HasItem(decorationLetter)) {
                 key += "_letter";
             }
             else {
                 key += "_put_or_remove";
                 SaveOptions();
 
-                if (Inventory.FindItem(flower) && flowers.Count < 2) {
+                if (Inventory.HasItem(flower) && flowers.Count < 2) {
                     if (flowers.Count == 0) {
                         RemoveOption(1);
                     }
