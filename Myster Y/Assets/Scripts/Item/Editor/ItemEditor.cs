@@ -54,7 +54,6 @@ public class ItemEditor : Editor {
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             if (GUILayout.Button("Load Data")) {
-                filePath = null;
                 LoadData();
             }
 

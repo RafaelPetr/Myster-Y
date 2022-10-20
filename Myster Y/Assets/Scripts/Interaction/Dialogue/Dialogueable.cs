@@ -17,7 +17,7 @@ public abstract class Dialogueable : Interactable {
         base.Awake();
 
         foreach (Dialogue dialogue in dialogues) {
-            dialogueDict[dialogue.key] = dialogue;
+            dialogueDict[dialogue.key] = Instantiate(dialogue);
         }
 
         ResetKey();
@@ -48,7 +48,7 @@ public abstract class Dialogueable : Interactable {
 
     public virtual Dialogue DefineDialogue() {
         key = dialogues[0].key;
-        return dialogues[0];
+        return Instantiate(dialogues[0]);
     }
 
     public virtual void ExecuteFunction(string function) {}

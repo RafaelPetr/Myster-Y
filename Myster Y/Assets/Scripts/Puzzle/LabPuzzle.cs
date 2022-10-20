@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class LabPuzzle : MonoBehaviour {
     public static LabPuzzle instance;
-    [System.NonSerialized]public bool finished;
+
+    [SerializeField]private List<SpriteRenderer> liquids = new List<SpriteRenderer>();
+
+    private int correctAnswers;
+    private bool finished;
+    private bool consume;
 
     private void Awake() {
         instance = this;
@@ -17,18 +22,39 @@ public class LabPuzzle : MonoBehaviour {
         if (flask != null) {
             string answer = "";
 
-            foreach (int liquid in flask.mixture) {
+            foreach (int liquid in flask.GetMixture()) {
                 answer += liquid.ToString();
             }
             Debug.Log(answer);
 
             if (answer.Equals(microscope.solution)) {
-                Debug.Log("Ganhamo");
                 microscope.finished = true;
+                consume = true;
+                correctAnswers++;
+
+                if (correctAnswers == 3) {
+                    finished = true;
+                }
             }
             else {
                 Debug.Log("Perdemo");
             }
         }
+    }
+
+    public bool GetFinished() {
+        return finished;
+    }
+
+    public bool GetConsume() {
+        return consume;
+    }
+
+    public void SetConsume(bool value) {
+        consume = value;
+    }
+
+    public void SetLiquid(int number, bool value) {
+        liquids[number].enabled = value;
     }
 }

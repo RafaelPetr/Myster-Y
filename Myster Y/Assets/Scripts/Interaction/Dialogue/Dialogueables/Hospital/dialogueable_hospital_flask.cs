@@ -6,14 +6,16 @@ public class dialogueable_hospital_flask : Dialogueable {
     private SpriteRenderer flaskSprite;
     [SerializeField]private SpriteRenderer liquidSprite;
 
+    private List<int> consumedLiquids = new List<int>();
+
     [SerializeField]private Flask flaskItem;
 
     public override void Start() {
         base.Start();
 
         flaskSprite = GetComponent<SpriteRenderer>();
-        if (!Inventory.HasItem(flaskItem)) {
-            flaskItem.mixture.Clear();
+        if (flaskItem.GetCounter() >= 3) {
+            flaskItem.ResetMixture();
         }
     }
 
@@ -29,10 +31,10 @@ public class dialogueable_hospital_flask : Dialogueable {
     public override Dialogue DefineDialogue() {
         ResetKey();
 
-        if (!LabPuzzle.instance.finished) {
+        if (!LabPuzzle.instance.GetFinished()) {
             key += "unfinished";
 
-            if (flaskItem.mixture.Count == 3) {
+            if (flaskItem.GetCounter() >= 3) {
                 if (!Inventory.HasItem(flaskItem)) {
                     key += "_pick_or_redo";
                 }
@@ -53,21 +55,29 @@ public class dialogueable_hospital_flask : Dialogueable {
 
             key += "_mixture";
             SaveOptions();
+
+            for (int i = 0; i < consumedLiquids.Count; i++) {
+                Debug.Log(consumedLiquids[i]);
+                RemoveOption(consumedLiquids[i]);
+            }
+
             StartDialogue(dialogueDict[key]);
         }
         else if (int.TryParse(function, out int number)) {
-            if (flaskItem.mixture.Count < 3) {
+            if (flaskItem.GetCounter() < 3) {
                 RemoveOption(number);
 
-                flaskItem.mixture.Add(number);
+                consumedLiquids.Add(number);
+                flaskItem.AddMixture(number);
+                LabPuzzle.instance.SetLiquid(number, false);
 
-                if (flaskItem.mixture.Count < 3) {
+                if (flaskItem.GetCounter() < 3) {
                     freezeDialogue = true;
                     StartDialogue(dialogueDict[key]);
                 }
                 else {
                     ResetOptions();
-                    liquidSprite.gameObject.SetActive(true);
+                    liquidSprite.enabled = true;
                 }
             }
         }
@@ -77,12 +87,21 @@ public class dialogueable_hospital_flask : Dialogueable {
             liquidSprite.enabled = false;
         }
         else if (function == "Redo") {
+            if (!LabPuzzle.instance.GetConsume()) {
+                for (int i = 0; i < flaskItem.GetCounter(); i++) {
+                    LabPuzzle.instance.SetLiquid(flaskItem.GetLiquid(i), true);
+                    consumedLiquids.Remove(flaskItem.GetLiquid(i));
+                }
+            }
+            
+            LabPuzzle.instance.SetConsume(false);
+
             Inventory.RemoveItem(flaskItem);
             flaskSprite.enabled = true;
-            liquidSprite.enabled = true;
+            liquidSprite.enabled = false;
 
             ResetKey();
-            flaskItem.mixture.Clear();
+            flaskItem.ResetMixture();
 
             key += "unfinished";
             ExecuteFunction("Mixture");

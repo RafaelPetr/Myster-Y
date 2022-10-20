@@ -48,12 +48,17 @@ public class dialogueable_hospital_microscope : Dialogueable {
             seeing = false;
             LabPuzzle.instance.Verify(this);
 
+            freezeDialogue = true;
+
             if (!finished) {
-                freezeDialogue = true;
-                
                 key += "_failed";
-                StartDialogue(dialogueDict[key]);
             }
+            else {
+                ResetKey();
+                key += "finished";
+            }
+
+            StartDialogue(dialogueDict[key]);
         }
     }
 }
