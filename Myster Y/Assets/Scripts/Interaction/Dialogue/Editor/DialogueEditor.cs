@@ -19,15 +19,17 @@ public class DialogueEditor : Editor {
             key = dialogue.name;
         }
 
-        if (string.IsNullOrEmpty(dialogue.key)) {
+        if (string.IsNullOrEmpty(dialogue.GetKey())) {
             key = EditorGUILayout.TextField("Key:",key);
+
             if (GUILayout.Button("Save Key")) {
-                dialogue.key = key;
+                dialogue.SetKey(key);
             }
         }
         else {
-            EditorGUILayout.LabelField("Key: " + dialogue.key);
+            EditorGUILayout.LabelField("Key: " + dialogue.GetKey());
             tabIndex = GUILayout.Toolbar(tabIndex, new string[]{"Sentences","Choice","Build"});
+
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             switch(tabIndex) {
@@ -47,11 +49,13 @@ public class DialogueEditor : Editor {
     } 
 
     private void SentencesTab(Dialogue dialogue) {
-        for (int i = 0; i < dialogue.sentences.Count; i++) {
+        for (int i = 0; i < dialogue.GetSentences().Count; i++) {
+            DialogueSentence sentence = dialogue.GetSentence(i);
+
             GUILayout.Label("Text");
-            dialogue.sentences[i].text = GUILayout.TextArea(dialogue.sentences[i].text);
+            sentence.SetText(GUILayout.TextArea(sentence.GetText()));
             GUILayout.BeginHorizontal();
-                dialogue.sentences[i].character = (DialogueCharacter)EditorGUILayout.ObjectField("",dialogue.sentences[i].character,typeof(DialogueCharacter),true);
+                sentence.SetCharacter((DialogueCharacter)EditorGUILayout.ObjectField("",sentence.GetCharacter(),typeof(DialogueCharacter),true));
                 if (GUILayout.Button("Delete")) {
                     dialogue.RemoveSentence(i);
                 }
@@ -59,7 +63,7 @@ public class DialogueEditor : Editor {
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
         }
 
-        GUILayout.Label("Sentences: " + dialogue.sentences.Count.ToString());
+        GUILayout.Label("Sentences: " + dialogue.GetSentences().Count.ToString());
 
         if (GUILayout.Button("Add Sentence")) {
             dialogue.AddSentence();
@@ -67,7 +71,9 @@ public class DialogueEditor : Editor {
     }
 
     private void ChoiceTab(Dialogue dialogue) {
-        if (dialogue.choice.GetEnable()) {
+        DialogueChoice choice = dialogue.GetChoice();
+
+        if (choice.GetEnable()) {
             if (GUILayout.Button("Remove Choice")) {
                 dialogue.RemoveChoice();
             }
@@ -75,21 +81,23 @@ public class DialogueEditor : Editor {
 
             GUILayout.BeginHorizontal();
                 GUILayout.Label("Context:");
-                dialogue.choice.context = GUILayout.TextArea(dialogue.choice.context,GUILayout.Width(170));
+                choice.SetContext(GUILayout.TextArea(choice.GetContext(),GUILayout.Width(170)));
             GUILayout.EndHorizontal();
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             
-            for (int i = 0; i < dialogue.choice.options.Count; i++) {
+            for (int i = 0; i < choice.GetOptions().Count; i++) {
+                DialogueOption option = choice.GetOption(i);
+
                 GUILayout.Label("Option " + (i+1).ToString());
 
                 GUILayout.BeginHorizontal();
                     GUILayout.Label("Text:");
-                    dialogue.choice.options[i].text = GUILayout.TextArea(dialogue.choice.options[i].text,GUILayout.Width(170));
+                    option.SetText(GUILayout.TextArea(option.GetText(),GUILayout.Width(170)));
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
                     GUILayout.Label("Function:");
-                    dialogue.choice.options[i].function = GUILayout.TextArea(dialogue.choice.options[i].function);
+                    option.SetFunction(GUILayout.TextArea(option.GetFunction()));
                 GUILayout.EndHorizontal();
 
                 if (GUILayout.Button("Remove Option")) {
@@ -111,9 +119,9 @@ public class DialogueEditor : Editor {
     }
 
     private void BuildTab(Dialogue dialogue) {
-        for (int i = 0; i < dialogue.elementsOrder.Count; i++) {
-            dialogue.elementsOrder[i] = 0; //While there is no other dialogue element for ordering
-            dialogue.elementsOrder[i] = EditorGUILayout.Popup(dialogue.elementsOrder[i], dialogue.elementTypes);
+        for (int i = 0; i < dialogue.GetOrder().Count; i++) {
+            dialogue.SetOrderElement(i, 0); //While there is no other dialogue element for ordering
+            dialogue.SetOrderElement(i, EditorGUILayout.Popup(dialogue.GetOrderElement(i), dialogue.GetTypes()));
         }
 
         EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
@@ -201,32 +209,38 @@ public class DialogueEditor : Editor {
 
     private LocalizationElement BuildLocalizationElement(Dialogue dialogue) {
         List<string> valueList = new List<string>();
-        Queue<DialogueSentence> sentenceQueue = new Queue<DialogueSentence>(dialogue.sentences);
+        Queue<DialogueSentence> sentenceQueue = new Queue<DialogueSentence>(dialogue.GetSentences());
 
-        int localizationGroupIndex = 0;
+        int locIndex = 0;
 
-        foreach (int element in dialogue.elementsOrder) {
-            switch (dialogue.elementTypes[element]) {
+        foreach (int element in dialogue.GetOrder()) {
+            switch (dialogue.GetType(element)) {
                 case "Sentence":
                     DialogueSentence sentence = sentenceQueue.Dequeue();
-                    sentence.localizationGroupIndex = localizationGroupIndex;
-                    valueList.Add(sentence.text);
+
+                    sentence.SetLocIndex(locIndex);
+                    valueList.Add(sentence.GetText());
                     break;
             }
-            localizationGroupIndex++;
+            locIndex++;
         }
 
-        if (dialogue.choice.GetEnable()) {
-            dialogue.choice.contextLocalizationGroupIndex = localizationGroupIndex;
-            valueList.Add(dialogue.choice.context);
-            localizationGroupIndex++;
+        DialogueChoice choice = dialogue.GetChoice();
 
-            foreach (DialogueOption option in dialogue.choice.options) {
-                option.localizationGroupIndex = localizationGroupIndex;
-                valueList.Add(option.text);
-                localizationGroupIndex++;
+        if (choice.GetEnable()) {
+            choice.SetLocIndex(locIndex);
+            valueList.Add(choice.GetContext());
+
+            locIndex++;
+
+            foreach (DialogueOption option in choice.GetOptions()) {
+                option.SetLocIndex(locIndex);
+                valueList.Add(option.GetText());
+
+                locIndex++;
             }
         }
-        return new LocalizationElement(dialogue.key,valueList.ToArray());
+
+        return new LocalizationElement(dialogue.GetKey(),valueList.ToArray());
     }
 }

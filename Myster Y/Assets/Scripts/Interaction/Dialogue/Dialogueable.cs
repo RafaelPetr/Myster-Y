@@ -17,7 +17,7 @@ public abstract class Dialogueable : Interactable {
         base.Awake();
 
         foreach (Dialogue dialogue in dialogues) {
-            dialogueDict[dialogue.key] = Instantiate(dialogue);
+            dialogueDict[dialogue.GetKey()] = Instantiate(dialogue);
         }
 
         ResetKey();
@@ -47,31 +47,36 @@ public abstract class Dialogueable : Interactable {
     }
 
     public virtual Dialogue DefineDialogue() {
-        key = dialogues[0].key;
+        key = dialogues[0].GetKey();
         return Instantiate(dialogues[0]);
     }
 
     public virtual void ExecuteFunction(string function) {}
 
     public void SaveOptions() {
-        if (dialogueDict[key].choice != null) {
-            foreach (DialogueOption option in dialogueDict[key].choice.options) {
-                backupTexts.Add(string.Copy(option.text));
+        DialogueChoice choice = dialogueDict[key].GetChoice();
+
+        if (choice != null) {
+            foreach (DialogueOption option in choice.GetOptions()) {
+                backupTexts.Add(string.Copy(option.GetText()));
             }
         }
     }
 
     public void ResetOptions() {
+        DialogueChoice choice = dialogueDict[key].GetChoice();
+
         if (backupTexts.Count > 0) {
             for (int i = 0; i < backupTexts.Count; i++) {
-                dialogueDict[key].choice.options[i].text = string.Copy(backupTexts[i]);
+                choice.GetOption(i).SetText(string.Copy(backupTexts[i]));
             }
             backupTexts.Clear();
         }
     }
 
     public void RemoveOption(int index) {
-        dialogueDict[key].choice.options[index].text = "";
+        DialogueOption option = dialogueDict[key].GetChoice().GetOption(index);
+        option.SetText("");
     }
 
     public void StartDialogue(Dialogue dialogue) {

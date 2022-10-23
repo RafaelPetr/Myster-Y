@@ -6,39 +6,13 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "scriptable_dialogue_", menuName = "Dialogue/Dialogue")]
 public class Dialogue : ScriptableObject {
-    public string key;
+    private string key;
 
-    public List<DialogueSentence> sentences = new List<DialogueSentence>();
-    public DialogueChoice choice;
+    private List<DialogueSentence> sentences = new List<DialogueSentence>();
+    private DialogueChoice choice;
 
-    public List<int> elementsOrder = new List<int>();
-    [System.NonSerialized]public string[] elementTypes = new string[]{"Sentence"};
-
-    public void AddSentence() {
-        sentences.Add(new DialogueSentence());
-		elementsOrder.Add(-1);
-    }
-
-    public void RemoveSentence(int index) {
-        sentences.RemoveAt(index);
-        elementsOrder.RemoveAt(index);
-    }
-
-    public void AddChoice() {
-        choice.SetEnable(true);
-    }
-
-    public void RemoveChoice() {
-        choice.SetEnable(false);
-    }
-
-    public void AddOption() {
-        choice.options.Add(new DialogueOption());
-    }
-
-    public void RemoveOption(int index) {
-        choice.options.RemoveAt(index);
-    }
+    private List<int> elementsOrder = new List<int>();
+    private string[] elementTypes = new string[]{"Sentence"};
 
     public void LocalizeElements() {
         foreach (DialogueSentence sentence in sentences) {
@@ -49,4 +23,86 @@ public class Dialogue : ScriptableObject {
             choice.LocalizeText(key);
         }
     }
+
+    #region Add
+
+        public void AddSentence() {
+            sentences.Add(new DialogueSentence());
+            elementsOrder.Add(-1);
+        }
+
+        public void AddChoice() {
+            choice.SetEnable(true);
+        }
+
+        public void AddOption() {
+            choice.AddOption();
+        }
+
+    #endregion
+
+    #region Remove
+
+        public void RemoveSentence(int index) {
+            sentences.RemoveAt(index);
+            elementsOrder.RemoveAt(index);
+        }
+
+        public void RemoveChoice() {
+            choice.SetEnable(false);
+        }
+
+        public void RemoveOption(int index) {
+            choice.RemoveOption(index);
+        }
+
+    #endregion
+
+    #region Getters
+
+        public string GetKey() {
+            return key;
+        }
+
+        public List<DialogueSentence> GetSentences() {
+            return sentences;
+        }
+
+        public DialogueSentence GetSentence(int index) {
+            return sentences[index];
+        }
+
+        public DialogueChoice GetChoice() {
+            return choice;
+        }
+
+        public List<int> GetOrder() {
+            return elementsOrder;
+        }
+
+        public int GetOrderElement(int index) {
+            return elementsOrder[index];
+        }
+
+        public string[] GetTypes() {
+            return elementTypes;
+        }
+
+        public string GetType(int index) {
+            return elementTypes[index];
+        }
+
+    #endregion
+
+    #region Setters
+
+        public void SetKey(string value) {
+            key = value;
+        }
+
+        public void SetOrderElement(int index, int value) {
+            elementsOrder[index] = value;
+        }
+
+    #endregion
 }

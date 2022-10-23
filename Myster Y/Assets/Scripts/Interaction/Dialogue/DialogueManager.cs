@@ -93,11 +93,11 @@ public class DialogueManager : MonoBehaviour {
         inDialogue = true;
         activeChoice = null;
 
-        foreach (DialogueSentence sentence in dialogue.sentences) {
+        foreach (DialogueSentence sentence in dialogue.GetSentences()) {
             elements.Enqueue(sentence);
         }
-        if (dialogue.choice.GetEnable()) {
-            elements.Enqueue(dialogue.choice);
+        if (dialogue.GetChoice().GetEnable()) {
+            elements.Enqueue(dialogue.GetChoice());
         }
 
         ExecuteNextElement();
@@ -118,15 +118,17 @@ public class DialogueManager : MonoBehaviour {
         sentenceName.gameObject.SetActive(false);
         sentenceIcon.gameObject.SetActive(false);
 
-        if (sentence.character != null) {
+        DialogueCharacter character = sentence.GetCharacter();
+
+        if (character != null) {
             sentenceName.gameObject.SetActive(true);
             sentenceIcon.gameObject.SetActive(true);
-            sentenceName.text = sentence.character.name;
-            sentenceIcon.sprite = sentence.character.icon;
+            
+            sentenceName.text = character.GetName();
+            sentenceIcon.sprite = character.GetIcon();
         }
-        
 
-        StartWriting(sentence.text, sentenceText);
+        StartWriting(sentence.GetText(), sentenceText);
     }
 
     public void UpdateChoiceUI(DialogueChoice choice) {
@@ -136,14 +138,17 @@ public class DialogueManager : MonoBehaviour {
 
  		eventSystem.SetSelectedGameObject(null);
 
-        StartWriting(choice.context, choiceContext);
+        StartWriting(choice.GetContext(), choiceContext);
         
-        for (int i = 0; i < choice.options.Count; i++) {
-            if (choice.options[i].text != "") {
+        for (int i = 0; i < choice.GetOptions().Count; i++) {
+            
+            DialogueOption option = choice.GetOption(i);
+
+            if (option.GetText() != "") {
                 GameObject optionButton = Instantiate(optionPrefab);
                 optionButton.transform.SetParent(choiceOptions.transform);
 
-                optionButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.options[i].text;
+                optionButton.GetComponentInChildren<TextMeshProUGUI>().text = option.GetText();
                 optionButton.GetComponent<DialogueOptionButton>().index = i;
                 choiceOptionButtons.Add(optionButton.GetComponent<Button>());
                 int lastIndex = choiceOptionButtons.Count - 1;
@@ -197,7 +202,9 @@ public class DialogueManager : MonoBehaviour {
     private void SelectOption() {
         choiceUI.SetActive(false);
 
-        activeDialogueable.ExecuteFunction(activeChoice.options[optionIndex].function);
+        DialogueOption option = activeChoice.GetOption(optionIndex);
+
+        activeDialogueable.ExecuteFunction(option.GetFunction());
 
         if (activeDialogueable.freezeDialogue) {
             activeDialogueable.freezeDialogue = false;
