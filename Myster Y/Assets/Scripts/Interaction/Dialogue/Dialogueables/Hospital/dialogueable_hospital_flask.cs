@@ -57,7 +57,6 @@ public class dialogueable_hospital_flask : Dialogueable {
             SaveOptions();
 
             for (int i = 0; i < consumedLiquids.Count; i++) {
-                Debug.Log(consumedLiquids[i]);
                 RemoveOption(consumedLiquids[i]);
             }
 

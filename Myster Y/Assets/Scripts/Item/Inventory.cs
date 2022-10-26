@@ -11,7 +11,7 @@ public static class Inventory {
 
     public static Item GetItem(string key) {
         foreach (Item item in items) {
-            if (item.key == key) {
+            if (item.GetKey() == key) {
                 return item;
             }
         }
@@ -37,7 +37,7 @@ public static class Inventory {
 
     public static bool HasItem(string key) {
         foreach (Item item in items) {
-            if (item.key == key) {
+            if (item.GetKey() == key) {
                 return true;
             }
         }

@@ -7,9 +7,11 @@ using System.IO;
 [CustomEditor(typeof(Dialogue))]
 public class DialogueEditor : Editor {
     private int tabIndex;
-    private string filePath;
     private string key;
 
+    private string filePath;
+
+    private DialogueDataGroup dialogueDataGroup;
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
@@ -50,7 +52,7 @@ public class DialogueEditor : Editor {
 
     private void SentencesTab(Dialogue dialogue) {
         for (int i = 0; i < dialogue.GetSentences().Count; i++) {
-            DialogueSentence sentence = dialogue.GetSentence(i);
+            DialogueSentence sentence = dialogue.GetSentences(i);
 
             GUILayout.Label("Text");
             sentence.SetText(GUILayout.TextArea(sentence.GetText()));
@@ -73,7 +75,7 @@ public class DialogueEditor : Editor {
     private void ChoiceTab(Dialogue dialogue) {
         DialogueChoice choice = dialogue.GetChoice();
 
-        if (choice.GetEnable()) {
+        if (choice != null) {
             if (GUILayout.Button("Remove Choice")) {
                 dialogue.RemoveChoice();
             }
@@ -86,7 +88,7 @@ public class DialogueEditor : Editor {
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
             
             for (int i = 0; i < choice.GetOptions().Count; i++) {
-                DialogueOption option = choice.GetOption(i);
+                DialogueOption option = choice.GetOptions(i);
 
                 GUILayout.Label("Option " + (i+1).ToString());
 
@@ -121,14 +123,14 @@ public class DialogueEditor : Editor {
     private void BuildTab(Dialogue dialogue) {
         for (int i = 0; i < dialogue.GetOrder().Count; i++) {
             dialogue.SetOrderElement(i, 0); //While there is no other dialogue element for ordering
-            dialogue.SetOrderElement(i, EditorGUILayout.Popup(dialogue.GetOrderElement(i), dialogue.GetTypes()));
+            dialogue.SetOrderElement(i, EditorGUILayout.Popup(dialogue.GetOrder(i), dialogue.GetTypes()));
         }
 
         EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             if (GUILayout.Button("Load Data")) {
                 filePath = null;
-                LoadData();
+                LoadData(dialogue);
             }
 
         GUILayout.BeginHorizontal();
@@ -146,30 +148,44 @@ public class DialogueEditor : Editor {
     }
 
     private void LoadData() {
-        filePath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
-
-        if (string.IsNullOrEmpty(filePath)) {
+        /*if (string.IsNullOrEmpty(filePath)) {
             filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
-        }
+        }*/
 
+        filePath = Application.streamingAssetsPath + "/Localization/json_localization_en.json";
         string dataAsJson = File.ReadAllText(filePath);
         localizationData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
+
+        string dataFilePath = Application.streamingAssetsPath + "/Dialogue/json_dialogueData.json";
+        string dialogueDataAsJson = File.ReadAllText(dataFilePath);
+        dialogueDataGroup = JsonUtility.FromJson<DialogueDataGroup>(dialogueDataAsJson);
+    }
+
+    private void LoadData(Dialogue dialogue) {
+        LoadData();
+
+        DialogueData dialogueData = dialogueDataGroup.GetDialogues().Find(data => data.GetKey() == dialogue.GetKey());
+
+        if (dialogueData != null) {
+            dialogue.LoadData(dialogueData);
+            
+        }
     }
 
     private void SaveData(Dialogue dialogue) {
         LoadData();
 
         LocalizationElement localizationElement = BuildLocalizationElement(dialogue);
-        LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
+        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "dialogues");
 
         if (fileGroup != null) {
-            LocalizationElement fileElement = fileGroup.elements.Find(data => data.key == localizationElement.key);
+            LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());
 
             if (fileElement != null) {
-                fileElement.values = localizationElement.values;
+                fileElement.SetValues(localizationElement.GetValues());
             }
             else {
-                fileGroup.elements.Add(localizationElement);
+                fileGroup.AddElement(localizationElement);
             }
         }
         else {
@@ -177,7 +193,7 @@ public class DialogueEditor : Editor {
             elementsList.Add(localizationElement);
             fileGroup = new LocalizationGroup("dialogues", elementsList);
 
-            localizationData.groups.Add(fileGroup);
+            localizationData.AddGroup(fileGroup);
         }
 
         string dataAsJson = JsonUtility.ToJson(localizationData,true);
@@ -190,14 +206,14 @@ public class DialogueEditor : Editor {
         LoadData();
 
         LocalizationElement localizationItem = BuildLocalizationElement(dialogue);
-        LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "dialogues");
-        LocalizationElement fileItem = fileGroup.elements.Find(data => data.key == localizationItem.key);;
+        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "dialogues");
+        LocalizationElement fileItem = fileGroup.GetElements().Find(data => data.GetKey() == localizationItem.GetKey());;
 
         if (fileItem != null) {
-            fileGroup.elements.Remove(fileItem);
+            fileGroup.RemoveElement(fileItem);
 
-            if (fileGroup.elements.Count == 0) {
-                localizationData.groups.Remove(fileGroup);
+            if (fileGroup.GetElements().Count == 0) {
+                localizationData.RemoveGroup(fileGroup);
             }
         }
 
@@ -227,7 +243,7 @@ public class DialogueEditor : Editor {
 
         DialogueChoice choice = dialogue.GetChoice();
 
-        if (choice.GetEnable()) {
+        if (choice != null) {
             choice.SetLocIndex(locIndex);
             valueList.Add(choice.GetContext());
 

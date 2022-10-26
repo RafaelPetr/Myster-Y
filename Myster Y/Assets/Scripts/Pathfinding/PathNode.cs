@@ -19,49 +19,55 @@ public class PathNode { //Thx @UnityCodeMonkey :)
         this.worldPosition = worldPosition;
     }
 
-    #region Get and Set functions
-    public int GetX() {
-        return x;
-    }
+    #region Getters
+    
+        public int GetX() {
+            return x;
+        }
 
-    public int GetY() {
-        return y;
-    }
+        public int GetY() {
+            return y;
+        }
 
-    public Vector3 GetWorldPosition() {
-        return worldPosition;
-    }
+        public Vector3 GetWorldPosition() {
+            return worldPosition;
+        }
 
-    public int GetGCost() {
-        return gCost;
-    }
+        public int GetGCost() {
+            return gCost;
+        }
 
-    public void SetGCost(int value) {
-        gCost = value;
-    }
+        public int GetHCost() {
+            return hCost;
+        }
 
-    public int GetHCost() {
-        return hCost;
-    }
+        public int GetFCost() {
+            return fCost;
+        }
 
-    public void SetHCost(int value) {
-        hCost = value;
-    }
+        public PathNode GetLastNode() {
+            return lastNode;
+        }
 
-    public int GetFCost() {
-        return fCost;
-    }
+    #endregion
 
-    public void SetFCost() {
-        fCost = gCost + hCost;
-    }
+    #region Setters
 
-    public PathNode GetLastNode() {
-        return lastNode;
-    }
+        public void SetGCost(int value) {
+            gCost = value;
+        }
 
-    public void SetLastNode(PathNode pathNode) {
-        lastNode = pathNode;
-    }
+        public void SetHCost(int value) {
+            hCost = value;
+        }
+
+        public void SetFCost() {
+            fCost = gCost + hCost;
+        }
+
+        public void SetLastNode(PathNode pathNode) {
+            lastNode = pathNode;
+        }
+
     #endregion
 }

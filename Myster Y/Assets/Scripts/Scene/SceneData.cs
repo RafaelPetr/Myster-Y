@@ -9,26 +9,6 @@ public class SceneData : ScriptableObject {
     [SerializeField]private GameObject grid;
     [SerializeField]private List<SceneDistance> sceneDistances = new List<SceneDistance>();
 
-    public string GetSceneName() {
-        return name;
-    }
-
-    public void SetSceneName(string value) {
-        name = value;
-    }
-
-    public GameObject GetGrid() {
-        return grid;
-    }
-
-    public void SetGrid(GameObject obj) {
-        grid = obj;
-    }
-
-    public List<SceneDistance> GetDistances() {
-        return sceneDistances;
-    }
-
     public void UpdateSceneDistances(List<string> allScenes) {
         foreach (string sceneName in allScenes) {
             SceneDistance foundSceneDistance = sceneDistances.Find(sceneDistance => sceneDistance.GetDistancedSceneName() == sceneName);
@@ -47,6 +27,34 @@ public class SceneData : ScriptableObject {
 
         sceneDistances.Sort((x, y) => string.Compare(x.GetDistancedSceneName(), y.GetDistancedSceneName()));
     }
+
+    #region Getters
+
+        public string GetSceneName() {
+            return name;
+        }
+
+        public GameObject GetGrid() {
+            return grid;
+        }
+
+        public List<SceneDistance> GetDistances() {
+            return sceneDistances;
+        }
+
+    #endregion
+
+    #region Setters
+
+        public void SetSceneName(string value) {
+            name = value;
+        }
+
+        public void SetGrid(GameObject obj) {
+            grid = obj;
+        }
+
+    #endregion
 }
 
 [System.Serializable]
@@ -59,19 +67,27 @@ public class SceneDistance {
         this.distance = distance;
     }
 
-    public string GetDistancedSceneName() {
-        return distancedScene;
-    }
+    #region Getters
 
-    public void SetDistancedSceneName(string value) {
-        distancedScene = value;
-    }
+        public string GetDistancedSceneName() {
+            return distancedScene;
+        }
 
-    public int GetSceneDistance() {
-        return distance;
-    }
+        public int GetSceneDistance() {
+            return distance;
+        }
 
-    public void SetSceneDistance(int value) {
-        distance = value;
-    }
+    #endregion
+
+    #region Setters
+
+        public void SetDistancedSceneName(string value) {
+            distancedScene = value;
+        }
+
+        public void SetSceneDistance(int value) {
+            distance = value;
+        }
+
+    #endregion
 }

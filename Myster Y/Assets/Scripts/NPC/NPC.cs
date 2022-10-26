@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : PathfindingObject {
-    
     private new BoxCollider2D collider;
     private bool inCollision;
     private int collisionCounter;

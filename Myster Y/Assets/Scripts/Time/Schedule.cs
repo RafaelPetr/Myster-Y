@@ -6,9 +6,13 @@ using UnityEngine;
 public class Schedule : ScriptableObject {
     [SerializeField]private Destination[] destinantions = new Destination[24];
 
-    public Destination GetDestination(int index) {
-        return destinantions[index];
-    }
+    #region Getters
+
+        public Destination GetDestination(int index) {
+            return destinantions[index];
+        }
+
+    #endregion
 }
 
 [System.Serializable]
@@ -16,11 +20,15 @@ public class Destination {
     [SerializeField]private SceneData sceneData;
     [SerializeField]private Vector3Int position;
 
-    public SceneData GetSceneData() {
-        return sceneData;
-    }
+    #region Getters
 
-    public Vector3Int GetPosition() {
-        return position;
-    }
+        public SceneData GetSceneData() {
+            return sceneData;
+        }
+
+        public Vector3Int GetPosition() {
+            return position;
+        }
+
+    #endregion
 }

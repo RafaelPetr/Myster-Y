@@ -46,11 +46,11 @@ public class SceneController : MonoBehaviour {
         PlayerController.instance.SetInTransition(true);
         crossfade.SetTrigger("Start");
 
-        if (LocalizationManager.instance.GetIsReady()) {
+        if (LocalizationManager.GetReady()) {
             yield return new WaitForSeconds(transitionTime);
         }
         else {
-            while (!LocalizationManager.instance.GetIsReady()) {
+            while (!LocalizationManager.GetReady()) {
                 yield return null;
             }
         }

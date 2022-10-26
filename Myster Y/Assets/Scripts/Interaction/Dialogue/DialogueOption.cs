@@ -7,12 +7,6 @@ public class DialogueOption {
     private string text;
     private string function;
 
-    private int locIndex;
-
-    public void LocalizeText(string key) {
-        text = LocalizationManager.instance.GetLocalizedValue(key,locIndex);
-    }
-
     #region Getters
 
         public string GetText() {
@@ -21,10 +15,6 @@ public class DialogueOption {
 
         public string GetFunction() {
             return function;
-        }
-
-        public int GetLocIndex() {
-            return locIndex;
         }
 
     #endregion
@@ -37,10 +27,6 @@ public class DialogueOption {
 
         public void SetFunction(string value) {
             function = value;
-        }
-
-        public void SetLocIndex(int value) {
-            locIndex = value;
         }
 
     #endregion

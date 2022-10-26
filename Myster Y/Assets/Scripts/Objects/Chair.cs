@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Chair : Interactable {
-    public int direction = 1;
+    private int direction = 1;
     private Animator animator;
 
     [System.NonSerialized]public UnityEvent<Chair> OnTurnEvent = new UnityEvent<Chair>();
@@ -28,4 +28,19 @@ public class Chair : Interactable {
         FinishInteraction();
     }
 
+    #region Getters
+
+        public int GetDirection() {
+            return direction;
+        }
+    
+    #endregion
+
+    #region Setters
+
+        public void SetDirection(int value) {
+            direction = value;
+        }
+
+    #endregion
 }

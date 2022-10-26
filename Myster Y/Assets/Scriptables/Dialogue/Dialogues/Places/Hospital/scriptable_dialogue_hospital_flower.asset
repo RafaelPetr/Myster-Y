@@ -12,20 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
   m_Name: scriptable_dialogue_hospital_flower
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_hospital_flower
-  sentences:
-  - character: {fileID: 0}
-    text: Tem uma pequena flor sobre a mesa.
-    localizationGroupIndex: 0
-  choice:
-    enable: 1
-    context: Pegar?
-    options:
-    - text: Sim
-      function: Accept
-      localizationGroupIndex: 0
-    - text: "N\xE3o"
-      function: 
-      localizationGroupIndex: 0
-    contextLocalizationGroupIndex: 1
-  elementsOrder: 00000000

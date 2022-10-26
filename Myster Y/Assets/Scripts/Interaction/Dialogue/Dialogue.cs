@@ -14,13 +14,47 @@ public class Dialogue : ScriptableObject {
     private List<int> elementsOrder = new List<int>();
     private string[] elementTypes = new string[]{"Sentence"};
 
-    public void LocalizeElements() {
-        foreach (DialogueSentence sentence in sentences) {
-            sentence.LocalizeText(key);
+    public void LoadData(DialogueData dialogue) {
+        sentences.Clear();
+        choice = null;
+
+        for (int i = 0; i < sentences.Count; i++) {
+            SentenceData sentenceData = dialogue.GetSentences(i);
+
+            //sentences[i].SetCharacter(sentenceData.GetCharacter()); Carregar arquivo de pasta resources
+            sentences[i].SetText(sentenceData.GetText());
         }
 
-        if (choice.GetEnable()) {
-            choice.LocalizeText(key);
+        ChoiceData choiceData = dialogue.GetChoice();
+        if (choiceData != null) {
+            choice.SetContext(choiceData.GetContext());
+
+            for (int i = 0; i < choiceData.GetOptions().Count; i++) {
+                OptionData optionData = choiceData.GetOptions(i);
+
+                
+            }
+        }
+    }
+
+    public void Localize() {
+        LocalizationDialogue dialogue = LocalizationManager.GetLocalizedDialogue(key);
+
+        for (int i = 0; i < sentences.Count; i++) {
+            LocalizationSentence localizedSentence = dialogue.GetSentences(i);
+            sentences[i].SetText(localizedSentence.GetText());
+        }
+
+        if (choice != null) {
+            LocalizationChoice localizedChoice = dialogue.GetChoice();
+            choice.SetContext(localizedChoice.GetContext());
+
+            for (int i = 0; i < choice.GetOptions().Count; i++) {
+                DialogueOption option = choice.GetOptions(i);
+                LocalizationOption localizedOption = localizedChoice.GetOptions(i);
+
+                option.SetText(localizedOption.GetText());
+            }
         }
     }
 
@@ -31,8 +65,16 @@ public class Dialogue : ScriptableObject {
             elementsOrder.Add(-1);
         }
 
+        public void AddSentence(string value) {
+            DialogueSentence sentence = new DialogueSentence();
+            sentence.SetText(value);
+
+            sentences.Add(sentence);
+            elementsOrder.Add(-1);
+        }
+
         public void AddChoice() {
-            choice.SetEnable(true);
+            choice = new DialogueChoice();
         }
 
         public void AddOption() {
@@ -43,13 +85,17 @@ public class Dialogue : ScriptableObject {
 
     #region Remove
 
+        public void Reset() {
+            sentences.Clear();
+        }
+
         public void RemoveSentence(int index) {
             sentences.RemoveAt(index);
             elementsOrder.RemoveAt(index);
         }
 
         public void RemoveChoice() {
-            choice.SetEnable(false);
+            choice = null;
         }
 
         public void RemoveOption(int index) {
@@ -68,7 +114,7 @@ public class Dialogue : ScriptableObject {
             return sentences;
         }
 
-        public DialogueSentence GetSentence(int index) {
+        public DialogueSentence GetSentences(int index) {
             return sentences[index];
         }
 
@@ -80,7 +126,7 @@ public class Dialogue : ScriptableObject {
             return elementsOrder;
         }
 
-        public int GetOrderElement(int index) {
+        public int GetOrder(int index) {
             return elementsOrder[index];
         }
 
@@ -88,7 +134,7 @@ public class Dialogue : ScriptableObject {
             return elementTypes;
         }
 
-        public string GetType(int index) {
+        public string GetTypes(int index) {
             return elementTypes[index];
         }
 

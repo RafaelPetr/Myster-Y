@@ -66,32 +66,41 @@ public class TimeManager : MonoBehaviour {
         }
     }
 
-    public bool GetPauseTime() {
-        return pauseTime;
-    }
+    #region Getters
 
-    public void SetPauseTime(bool value) {
-        pauseTime = value;
-        PauseTimeEvent.Invoke(value);
-    }
+        public bool GetPauseTime() {
+            return pauseTime;
+        }
 
-    public float GetDay() {
-        return day;
-    }
+        public float GetDay() {
+            return day;
+        }
 
-    public float GetNormalizedDay() {
-        return normalizedDay;
-    }
+        public float GetNormalizedDay() {
+            return normalizedDay;
+        }
 
-    public float GetHour() {
-        return hour;
-    }
+        public float GetHour() {
+            return hour;
+        }
 
-    public int GetNormalizedHour() {
-        return normalizedHour;
-    }
+        public int GetNormalizedHour() {
+            return normalizedHour;
+        }
 
-    public float GetMinute() {
-        return minute;
-    }
+        public float GetMinute() {
+            return minute;
+        }
+
+    #endregion
+
+    #region Setters
+
+        public void SetPauseTime(bool value) {
+            pauseTime = value;
+            PauseTimeEvent.Invoke(value);
+        }
+
+    #endregion
+
 }

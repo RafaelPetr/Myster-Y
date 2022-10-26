@@ -12,26 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
   m_Name: scriptable_dialogue_metro_test_1
   m_EditorClassIdentifier: 
-  key: scriptable_dialogue_metro_test_1
-  sentences:
-  - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: Teste1
-    localizationGroupIndex: 0
-  - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: Teste2
-    localizationGroupIndex: 1
-  choice:
-    enable: 1
-    context: Teste3
-    options:
-    - text: Teste4
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 3
-    - text: Teste5
-      linkedDialogue: {fileID: 0}
-      localizationGroupIndex: 4
-    - text: Teste6
-      linkedDialogue: {fileID: 11400000}
-      localizationGroupIndex: 5
-    contextLocalizationGroupIndex: 2
-  elementsOrder: 0000000000000000

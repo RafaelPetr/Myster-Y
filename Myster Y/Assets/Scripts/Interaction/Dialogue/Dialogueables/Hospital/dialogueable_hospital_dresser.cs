@@ -11,7 +11,7 @@ public class dialogueable_hospital_dresser : Dialogueable {
     [SerializeField]private GameObject leftFlower;
     [SerializeField]private GameObject rightFlower;
 
-    [System.NonSerialized]public char[] values = new char[]{'0', '0'};
+    private char[] values = new char[]{'0', '0'};
     [System.NonSerialized]public UnityEvent OnPlaceEvent = new UnityEvent();
 
     public override void ResetKey() {
@@ -102,4 +102,16 @@ public class dialogueable_hospital_dresser : Dialogueable {
             OnPlaceEvent.Invoke();
         }
     }
+
+    #region Getters
+
+        public char[] GetValues() {
+            return values;
+        }
+
+        public char GetValue(int index) {
+            return values[index];
+        }
+
+    #endregion
 }

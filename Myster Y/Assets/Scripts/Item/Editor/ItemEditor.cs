@@ -6,49 +6,49 @@ using System.IO;
 
 [CustomEditor(typeof(Item))]
 public class ItemEditor : Editor {
-    public Item item;
+    //private Item item;
     private string filePath;
     private string key;
 
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
-        item = (Item)target;
+        Item item = (Item)target;
 
         if (string.IsNullOrEmpty(key)) {
             key = item.name;
         }
 
-        if (string.IsNullOrEmpty(item.key)) {
-            key = EditorGUILayout.TextField("Key:",key);
+        if (string.IsNullOrEmpty(item.GetKey())) {
+            key = EditorGUILayout.TextField("Key:", key);
             if (GUILayout.Button("Save Key")) {
-                item.key = key;
-                item.m_name = "";
+                item.SetKey(key);
+                item.SetName("");
             }
         }
         else {
-            EditorGUILayout.LabelField("Key: " + item.key);
+            EditorGUILayout.LabelField("Key: " + item.GetKey());
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             GUILayout.BeginHorizontal();
                 GUILayout.Label("Name");
-                item.m_name = GUILayout.TextArea(item.m_name);
+                item.SetName(GUILayout.TextArea(item.GetName()));
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
                 GUILayout.Label("Description");
-                item.description = GUILayout.TextArea(item.description);
+                item.SetDescription(GUILayout.TextArea(item.GetDescription()));
             GUILayout.EndHorizontal();
             
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             GUILayout.Label("Icon");
-            item.icon = (Sprite)EditorGUILayout.ObjectField("",item.icon,typeof(Sprite),true);
+            item.SetIcon((Sprite)EditorGUILayout.ObjectField("",item.GetIcon(),typeof(Sprite),true));
 
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             GUILayout.Label("Analyze Image");
-            item.analysisImage = (Sprite)EditorGUILayout.ObjectField("",item.analysisImage,typeof(Sprite),true);
+            item.SetAnalysisImage((Sprite)EditorGUILayout.ObjectField("",item.GetAnalysisImage(),typeof(Sprite),true));
 
             
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
@@ -89,16 +89,16 @@ public class ItemEditor : Editor {
         LoadData();
 
         LocalizationElement localizationElement = BuildLocalizationElement(item);
-        LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "items");
+        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "items");
 
         if (fileGroup != null) {
-            LocalizationElement fileElement = fileGroup.elements.Find(data => data.key == localizationElement.key);
+            LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());
 
             if (fileElement != null) {
-                fileElement.values = localizationElement.values;
+                fileElement.SetValues(localizationElement.GetValues());
             }
             else {
-                fileGroup.elements.Add(localizationElement);
+                fileGroup.AddElement(localizationElement);
             }
         }
         else {
@@ -106,7 +106,7 @@ public class ItemEditor : Editor {
             valuesList.Add(localizationElement);
             fileGroup = new LocalizationGroup("items", valuesList);
 
-            localizationData.groups.Add(fileGroup);
+            localizationData.AddGroup(fileGroup);
         }
 
         string dataAsJson = JsonUtility.ToJson(localizationData,true);
@@ -119,14 +119,14 @@ public class ItemEditor : Editor {
         LoadData();
 
         LocalizationElement localizationElement = BuildLocalizationElement(item);
-        LocalizationGroup fileGroup = localizationData.groups.Find(group => group.key == "items");
-        LocalizationElement fileElement = fileGroup.elements.Find(data => data.key == localizationElement.key);;
+        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "items");
+        LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());;
 
         if (fileElement != null) {
-            fileGroup.elements.Remove(fileElement);
+            fileGroup.RemoveElement(fileElement);
 
-            if (fileGroup.elements.Count == 0) {
-                localizationData.groups.Remove(fileGroup);
+            if (fileGroup.GetElements().Count == 0) {
+                localizationData.RemoveGroup(fileGroup);
             }
         }
 
@@ -139,10 +139,10 @@ public class ItemEditor : Editor {
     private LocalizationElement BuildLocalizationElement(Item item) {
         List<string> valueList = new List<string>();
 
-        valueList.Add(item.m_name);
-        valueList.Add(item.description);
+        valueList.Add(item.GetName());
+        valueList.Add(item.GetDescription());
 
-        return new LocalizationElement(item.key,valueList.ToArray());
+        return new LocalizationElement(item.GetKey(),valueList.ToArray());
     }
 }
 

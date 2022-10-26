@@ -29,16 +29,12 @@ public class FlowerPuzzle : MonoBehaviour {
         answer = "";
 
         foreach (dialogueable_hospital_dresser dresser in dressers) {
-            answer += dresser.values[0];
-            answer += dresser.values[1];
+            answer += dresser.GetValue(0);
+            answer += dresser.GetValue(1);
         }
 
         if (answer.Equals(solution)) {
             finished = true;
-            Debug.Log("Ganhamo");
-        }
-        else {
-            Debug.Log("Perdemo");
         }
     }
 }

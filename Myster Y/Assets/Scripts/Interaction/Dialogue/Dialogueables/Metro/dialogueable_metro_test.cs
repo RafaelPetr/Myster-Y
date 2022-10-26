@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class dialogueable_metro_test : Dialogueable {
-    public Item testItem;
+    [SerializeField]private Item testItem;
 
     public override Dialogue DefineDialogue() {
         if (!Inventory.HasItem(testItem)) {

@@ -35,9 +35,9 @@ public class PlayerAnimator : MonoBehaviour {
         if (controller.GetInInventory()) {
             if (!controller.GetExitInventoryTrigger()) {
 
-                if (controller.GetInventory() != currentAnimationOpenInventory) { //If controller's inventory panel is different from current animation open inventory
+                if (controller.GetInventoryPanel() != currentAnimationOpenInventory) { //If controller's inventory panel is different from current animation open inventory
                     if (animationTime <= 0.01f) {
-                        currentAnimationOpenInventory = controller.GetInventory();
+                        currentAnimationOpenInventory = controller.GetInventoryPanel();
                     }
                 }
                 else {

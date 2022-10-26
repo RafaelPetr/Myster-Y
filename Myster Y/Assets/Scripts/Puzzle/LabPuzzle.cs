@@ -25,10 +25,10 @@ public class LabPuzzle : MonoBehaviour {
             foreach (int liquid in flask.GetMixture()) {
                 answer += liquid.ToString();
             }
-            Debug.Log(answer);
 
-            if (answer.Equals(microscope.solution)) {
-                microscope.finished = true;
+            if (answer.Equals(microscope.GetSolution())) {
+                microscope.SetFinished(true);
+
                 consume = true;
                 correctAnswers++;
 
@@ -36,25 +36,30 @@ public class LabPuzzle : MonoBehaviour {
                     finished = true;
                 }
             }
-            else {
-                Debug.Log("Perdemo");
-            }
         }
     }
 
-    public bool GetFinished() {
-        return finished;
-    }
+    #region Getters
 
-    public bool GetConsume() {
-        return consume;
-    }
+        public bool GetFinished() {
+            return finished;
+        }
 
-    public void SetConsume(bool value) {
-        consume = value;
-    }
+        public bool GetConsume() {
+            return consume;
+        }
 
-    public void SetLiquid(int number, bool value) {
-        liquids[number].enabled = value;
-    }
+    #endregion
+
+    #region Setters
+
+        public void SetConsume(bool value) {
+            consume = value;
+        }
+
+        public void SetLiquid(int number, bool value) {
+            liquids[number].enabled = value;
+        }
+
+    #endregion
 }

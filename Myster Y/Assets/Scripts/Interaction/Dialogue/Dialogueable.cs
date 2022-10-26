@@ -25,14 +25,29 @@ public abstract class Dialogueable : Interactable {
 
     public override void Start() {
         base.Start();
+        
         foreach (Dialogue dialogue in dialogues) {
-            LocalizationManager.instance.ChangeLocalization.AddListener(dialogue.LocalizeElements);
+            LocalizationManager.ChangeLocalization.AddListener(dialogue.Localize);
         }
+    }
+
+    public virtual void ResetKey() {
+        initialKey = "scriptable_dialogue_";
+        key = string.Copy(initialKey);
+    }
+
+    public void StartDialogue(Dialogue dialogue) {
+        DialogueManager.instance.StartDialogue(dialogue);
     }
 
     public override void Interact() {
         base.Interact();
-        DialogueManager.instance.ReceiveInteract(this);
+        DialogueManager.instance.Interact(this);
+    }
+
+    public virtual Dialogue DefineDialogue() {
+        key = dialogues[0].GetKey();
+        return Instantiate(dialogues[0]);
     }
 
     public override void FinishInteraction() {
@@ -41,45 +56,35 @@ public abstract class Dialogueable : Interactable {
         ResetOptions();
     }
 
-    public virtual void ResetKey() {
-        initialKey = "scriptable_dialogue_";
-        key = string.Copy(initialKey);
-    }
+    #region Option Functions
 
-    public virtual Dialogue DefineDialogue() {
-        key = dialogues[0].GetKey();
-        return Instantiate(dialogues[0]);
-    }
+        public virtual void ExecuteFunction(string function) {}
 
-    public virtual void ExecuteFunction(string function) {}
+        public void SaveOptions() {
+            DialogueChoice choice = dialogueDict[key].GetChoice();
 
-    public void SaveOptions() {
-        DialogueChoice choice = dialogueDict[key].GetChoice();
-
-        if (choice != null) {
-            foreach (DialogueOption option in choice.GetOptions()) {
-                backupTexts.Add(string.Copy(option.GetText()));
+            if (choice != null) {
+                foreach (DialogueOption option in choice.GetOptions()) {
+                    backupTexts.Add(string.Copy(option.GetText()));
+                }
             }
         }
-    }
 
-    public void ResetOptions() {
-        DialogueChoice choice = dialogueDict[key].GetChoice();
+        public void ResetOptions() {
+            DialogueChoice choice = dialogueDict[key].GetChoice();
 
-        if (backupTexts.Count > 0) {
-            for (int i = 0; i < backupTexts.Count; i++) {
-                choice.GetOption(i).SetText(string.Copy(backupTexts[i]));
+            if (backupTexts.Count > 0) {
+                for (int i = 0; i < backupTexts.Count; i++) {
+                    choice.GetOptions(i).SetText(string.Copy(backupTexts[i]));
+                }
+                backupTexts.Clear();
             }
-            backupTexts.Clear();
         }
-    }
 
-    public void RemoveOption(int index) {
-        DialogueOption option = dialogueDict[key].GetChoice().GetOption(index);
-        option.SetText("");
-    }
+        public void RemoveOption(int index) {
+            DialogueOption option = dialogueDict[key].GetChoice().GetOptions(index);
+            option.SetText("");
+        }
 
-    public void StartDialogue(Dialogue dialogue) {
-        DialogueManager.instance.StartDialogue(dialogue);
-    }
+    #endregion
 }

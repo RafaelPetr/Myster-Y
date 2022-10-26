@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour {
         optionIndex = index;
     }
 
-    public void ReceiveInteract(Dialogueable dialogueable) {
+    public void Interact(Dialogueable dialogueable) {
         if (activeWritingText != null) {
 		    activeWritingUI.text = activeWritingText;
             FinishWrite();
@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour {
         foreach (DialogueSentence sentence in dialogue.GetSentences()) {
             elements.Enqueue(sentence);
         }
-        if (dialogue.GetChoice().GetEnable()) {
+        if (dialogue.GetChoice() != null) {
             elements.Enqueue(dialogue.GetChoice());
         }
 
@@ -142,7 +142,7 @@ public class DialogueManager : MonoBehaviour {
         
         for (int i = 0; i < choice.GetOptions().Count; i++) {
             
-            DialogueOption option = choice.GetOption(i);
+            DialogueOption option = choice.GetOptions(i);
 
             if (option.GetText() != "") {
                 GameObject optionButton = Instantiate(optionPrefab);
@@ -202,7 +202,7 @@ public class DialogueManager : MonoBehaviour {
     private void SelectOption() {
         choiceUI.SetActive(false);
 
-        DialogueOption option = activeChoice.GetOption(optionIndex);
+        DialogueOption option = activeChoice.GetOptions(optionIndex);
 
         activeDialogueable.ExecuteFunction(option.GetFunction());
 

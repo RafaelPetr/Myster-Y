@@ -17,7 +17,7 @@ public class ChairPuzzle : MonoBehaviour {
         answerArray = new char[chairs.Count]; 
 
         for (int i = 0; i < chairs.Count; i++) {
-            answerArray[i] = chairs[i].direction.ToString()[0];
+            answerArray[i] = chairs[i].GetDirection().ToString()[0];
             chairs[i].OnTurnEvent.AddListener(Verify);
         }
     }
@@ -25,15 +25,12 @@ public class ChairPuzzle : MonoBehaviour {
     private void Verify(Chair chair) {
         int index = chairs.IndexOf(chair);
 
-        answerArray[index] = chair.direction.ToString()[0];
+        answerArray[index] = chair.GetDirection().ToString()[0];
 
         string answer = new string(answerArray);
 
         if (answer.Equals(solution)) {
-            Debug.Log("Ganhamo");
-        }
-        else {
-            Debug.Log("Perdemo");
+            //Player won
         }
     }
 }

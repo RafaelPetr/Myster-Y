@@ -90,10 +90,10 @@ public class AnalysisManager : MonoBehaviour {
 
         analysisHandAnimator.SetBool("Active",true);
 
-        analysisName.text = LocalizationManager.instance.GetLocalizedValue(item.key, 0);
-        analysisItem.sprite = item.analysisImage;
+        analysisName.text = LocalizationManager.instance.GetLocalizedValue(item.GetKey(), 0);
+        analysisItem.sprite = item.GetAnalysisImage();
 
-        activeWritingText = LocalizationManager.instance.GetLocalizedValue(item.key, 1);
+        activeWritingText = LocalizationManager.instance.GetLocalizedValue(item.GetKey(), 1);
         activeWritingUI = analysisDescription;
         activeWritingUI.text = "";
     

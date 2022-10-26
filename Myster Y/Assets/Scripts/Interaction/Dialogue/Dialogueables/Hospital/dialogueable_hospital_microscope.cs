@@ -5,8 +5,8 @@ using UnityEngine;
 public class dialogueable_hospital_microscope : Dialogueable {
     private bool seeing;
 
-    [System.NonSerialized]public bool finished;
-    public string solution;
+    private bool finished;
+    [SerializeField]private string solution;
 
     public override void ResetKey() {
         base.ResetKey();
@@ -61,4 +61,20 @@ public class dialogueable_hospital_microscope : Dialogueable {
             StartDialogue(dialogueDict[key]);
         }
     }
+
+    #region Getters
+
+        public string GetSolution() {
+            return solution;
+        }
+
+    #endregion
+
+    #region Setters
+
+        public void SetFinished(bool value) {
+            finished = value;
+        }
+
+    #endregion
 }

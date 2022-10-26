@@ -25,7 +25,7 @@ public class ItemSlot : MonoBehaviour {
     public void AddItem(Item newItem) {
         item = newItem;
 
-        icon.sprite = item.icon;
+        icon.sprite = item.GetIcon();
         icon.enabled = true;
     }
 

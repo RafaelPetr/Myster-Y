@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     private float directionX;
     private float directionY = -1;
 
-    private float inventory;
+    private float inventoryPanel;
     private bool enterInventoryTrigger;
     private bool openInventoryTrigger;
     private bool closeInventoryTrigger;
@@ -125,12 +125,12 @@ public class PlayerController : MonoBehaviour {
     private void ControlInventory() {
         if (!exitInventoryTrigger) {
             if (inInventory) {
-                if (inventory == 0) {
-                    inventory = Input.GetAxisRaw("Horizontal");
+                if (inventoryPanel == 0) {
+                    inventoryPanel = Input.GetAxisRaw("Horizontal");
 
                     if (Input.GetAxisRaw("Horizontal") != 0f) {
                         openInventoryTrigger = true;
-                        InventoryManager.instance.Open((int)inventory);
+                        InventoryManager.instance.Open((int)inventoryPanel);
                     }
 
                     if (Input.GetButtonDown("Cancel")) {
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour {
                 }
             }
             else {
-                if (Input.GetButtonDown("Inventory")) {
+                if (Input.GetButtonDown("inventoryPanel")) {
                     directionX = 0;
                     directionY = -1;
                     
@@ -165,37 +165,22 @@ public class PlayerController : MonoBehaviour {
         return inInteraction || inTransition || inInventory;
     }
 
-    #region Get and Set Variables Functions
+    #region Getters
+
         public float GetDirectionX() {
             return directionX;
         }
 
-        public void SetDirectionX(float value) {
-            directionX = value;
-        }
-
         public float GetDirectionY() {
             return directionY;
-        }
-
-        public void SetDirectionY(float value) {
-            directionY = value;
         }
         
         public bool GetInInteraction() {
             return inInteraction;
         }
 
-        public void SetInInteraction(bool value) {
-            inInteraction = value;
-        }
-
         public bool GetInTransition() {
             return inTransition;
-        }
-
-        public void SetInTransition(bool value) {
-            inTransition = value;
         }
 
         public bool GetWalking() {
@@ -206,56 +191,80 @@ public class PlayerController : MonoBehaviour {
             return running;
         }
 
-        #region Inventory Variables
+        #region Inventory
 
             public bool GetInInventory() {
                 return inInventory;
             }
 
-            public float GetInventory() {
-                return inventory;
-            }
-
-            public void SetInventory(float value) {
-                inventory = value;
+            public float GetInventoryPanel() {
+                return inventoryPanel;
             }
 
             public bool GetEnterInventoryTrigger() {
                 return enterInventoryTrigger;
             }
-            
-            public void SetEnterInventoryTrigger(bool value) {
-                enterInventoryTrigger = value;
-            }
 
             public bool GetOpenInventoryTrigger() {
                 return openInventoryTrigger;
             }
-            
-            public void SetOpenInventoryTrigger(bool value) {
-                openInventoryTrigger = value;
-            }
 
             public bool GetCloseInventoryTrigger() {
                 return closeInventoryTrigger;
-            }
-            
-            public void SetCloseInventoryTrigger(bool value) {
-                closeInventoryTrigger = value;
-                inventory = 0f;
             }
 
             public bool GetExitInventoryTrigger() {
                 return exitInventoryTrigger;
             }
 
+        #endregion
+
+    #endregion
+
+    #region Setters
+
+        public void SetDirectionX(float value) {
+            directionX = value;
+        }
+
+        public void SetDirectionY(float value) {
+            directionY = value;
+        }
+
+        public void SetInInteraction(bool value) {
+            inInteraction = value;
+        }
+
+        public void SetInTransition(bool value) {
+            inTransition = value;
+        }
+
+        #region Inventory
+
+            public void SetInventoryPanel(float value) {
+                inventoryPanel = value;
+            }
+
+            public void SetEnterInventoryTrigger(bool value) {
+                enterInventoryTrigger = value;
+            }
+
+            public void SetOpenInventoryTrigger(bool value) {
+                openInventoryTrigger = value;
+            }
+
+            public void SetCloseInventoryTrigger(bool value) {
+                closeInventoryTrigger = value;
+                inventoryPanel = 0f;
+            }
+
             public void SetExitInventoryTrigger(bool value) {
                 exitInventoryTrigger = value;
                 inInventory = false;
-                inventory = 0f;
+                inventoryPanel = 0f;
             }
 
         #endregion
-    #endregion
 
+    #endregion
 }
