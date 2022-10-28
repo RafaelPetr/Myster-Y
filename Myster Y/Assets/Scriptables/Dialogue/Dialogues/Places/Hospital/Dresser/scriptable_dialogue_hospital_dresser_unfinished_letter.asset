@@ -14,19 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_dresser_unfinished_letter
   sentences:
-  - character: {fileID: 0}
-    text: "Um bilhete escrito com uma tinta de colora\xE7\xE3o rosada est\xE1 em
+  - text: "Um bilhete escrito com uma tinta de colora\xE7\xE3o rosada est\xE1 em
       uma das gavetas."
-    localizationGroupIndex: 0
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 1
+    enabled: 1
     context: Pegar?
     options:
     - text: Sim
       function: Accept Letter
-      localizationGroupIndex: 2
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 3
-    contextLocalizationGroupIndex: 1
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

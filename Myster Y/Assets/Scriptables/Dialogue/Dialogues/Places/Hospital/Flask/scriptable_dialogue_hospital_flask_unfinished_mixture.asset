@@ -15,38 +15,29 @@ MonoBehaviour:
   key: scriptable_dialogue_hospital_flask_unfinished_mixture
   sentences: []
   choice:
-    enable: 1
+    enabled: 1
     context: "Adicionar l\xEDquido no frasco:"
     options:
     - text: 0. Verde
       function: 0
-      localizationGroupIndex: 1
     - text: 1. Vermelho
       function: 1
-      localizationGroupIndex: 2
     - text: 2. Ciano
       function: 2
-      localizationGroupIndex: 3
     - text: 3. Amarelo
       function: 3
-      localizationGroupIndex: 4
     - text: 4. Rosa
       function: 4
-      localizationGroupIndex: 5
     - text: 5. Laranja
       function: 5
-      localizationGroupIndex: 6
     - text: 6. Roxo
       function: 6
-      localizationGroupIndex: 7
     - text: 7. Azul
       function: 7
-      localizationGroupIndex: 8
     - text: 8. Verde-lima
       function: 8
-      localizationGroupIndex: 9
     - text: 9. Preto
       function: 9
-      localizationGroupIndex: 10
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 
+  order: 
+  types:
+  - Sentence

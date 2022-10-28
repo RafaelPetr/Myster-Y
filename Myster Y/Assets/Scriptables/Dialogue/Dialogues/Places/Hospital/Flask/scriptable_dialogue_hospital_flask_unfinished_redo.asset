@@ -15,14 +15,13 @@ MonoBehaviour:
   key: scriptable_dialogue_hospital_flask_unfinished_redo
   sentences: []
   choice:
-    enable: 1
-    context: Refazer mistura?
+    enabled: 1
+    context: "Refazer solu\xE7\xE3o?"
     options:
     - text: Sim
       function: Redo
-      localizationGroupIndex: 1
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 2
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 
+  order: 
+  types:
+  - Sentence

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_microscope_unfinished_use_failed
   sentences:
-  - character: {fileID: 0}
-    text: "A solu\xE7\xE3o n\xE3o surtiu efeito na amostra."
-    localizationGroupIndex: 0
+  - text: "A solu\xE7\xE3o n\xE3o surtiu efeito na amostra."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 0
+    enabled: 0
     context: 
     options: []
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

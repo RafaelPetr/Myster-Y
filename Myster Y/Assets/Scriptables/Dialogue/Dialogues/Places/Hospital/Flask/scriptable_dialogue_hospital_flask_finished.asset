@@ -14,15 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_flask_finished
   sentences:
-  - character: {fileID: 0}
-    text: "Apenas o frasco com o r\xF3tulo \"2\" sobrou."
-    localizationGroupIndex: 0
-  - character: {fileID: 0}
-    text: "N\xE3o h\xE1 mais nada a ser feito aqui."
-    localizationGroupIndex: 1
+  - text: "Apenas o frasco com o r\xF3tulo \"2\" sobrou."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
+  - text: "N\xE3o h\xE1 mais nada a ser feito aqui."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 0
+    enabled: 0
     context: 
     options: []
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 0000000000000000
+  order: 0000000000000000
+  types:
+  - Sentence

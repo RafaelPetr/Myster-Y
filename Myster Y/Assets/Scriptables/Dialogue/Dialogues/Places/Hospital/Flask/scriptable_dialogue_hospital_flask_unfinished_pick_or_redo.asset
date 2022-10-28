@@ -14,21 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_flask_unfinished_pick_or_redo
   sentences:
-  - character: {fileID: 0}
-    text: "H\xE1 uma mistura pronta na mesa."
-    localizationGroupIndex: 0
+  - text: "H\xE1 uma solu\xE7\xE3o pronta na mesa."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 1
+    enabled: 1
     context: Pegar?
     options:
     - text: Sim
       function: Pickup
-      localizationGroupIndex: 2
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 3
-    - text: Refazer mistura
+    - text: "Refazer solu\xE7\xE3o"
       function: Redo
-      localizationGroupIndex: 4
-    contextLocalizationGroupIndex: 1
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

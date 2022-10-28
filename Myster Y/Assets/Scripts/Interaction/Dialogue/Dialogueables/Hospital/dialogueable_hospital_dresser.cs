@@ -28,7 +28,7 @@ public class dialogueable_hospital_dresser : Dialogueable {
             if (!Inventory.HasItem(decorationLetter)) {
                 key += "_letter";
             }
-            else {
+            else if (Inventory.HasItem(flower) || flowers.Count > 0) {
                 key += "_put_or_remove";
                 SaveOptions();
 
@@ -54,11 +54,11 @@ public class dialogueable_hospital_dresser : Dialogueable {
             Inventory.AddItem(decorationLetter);
         }
         else if (function.Equals("Put")) {
-            freezeDialogue = true;
             flowers.Add(flower);
             Inventory.RemoveItem(flower);
 
             if (!leftFlower.activeSelf && !rightFlower.activeSelf) {
+                freezeDialogue = true;
                 ResetOptions();
 
                 key += "_side";

@@ -9,9 +9,6 @@ public class ItemSlot : MonoBehaviour {
 
     private void Awake() {
         button = GetComponent<Button>();
-    }
-
-    private void OnEnable() {
         button.onClick.AddListener(UseItem);
     }
 

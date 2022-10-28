@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: scriptable_item_decorationLetter
   m_EditorClassIdentifier: 
   key: scriptable_item_decorationLetter
-  m_name: 
-  description: 
+  name: Carta
+  description:
+  - "\xC9 uma carta escrita com caneta rosa."
   icon: {fileID: 0}
   analysisImage: {fileID: 0}

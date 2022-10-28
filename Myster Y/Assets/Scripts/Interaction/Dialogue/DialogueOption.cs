@@ -4,8 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueOption {
-    private string text;
-    private string function;
+    [SerializeField]private string text;
+    [SerializeField]private string function;
 
     #region Getters
 

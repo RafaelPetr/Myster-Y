@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192fb15d59e888a4885611a4eb42b503, type: 3}
-  m_Name: scriptable_dialogue_metro_test_2
+  m_Script: {fileID: 11500000, guid: 541c044393b07ad49bb794dcbd9eac50, type: 3}
+  m_Name: scriptable_character_mystery
   m_EditorClassIdentifier: 
+  name: Mr.Y
+  icon: {fileID: 21300000, guid: a8fe9c8511d3eb64e9b6f5064cc6c64f, type: 3}

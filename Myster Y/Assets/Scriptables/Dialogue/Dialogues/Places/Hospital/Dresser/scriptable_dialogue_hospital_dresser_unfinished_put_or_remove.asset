@@ -15,17 +15,15 @@ MonoBehaviour:
   key: scriptable_dialogue_hospital_dresser_unfinished_put_or_remove
   sentences: []
   choice:
-    enable: 1
+    enabled: 1
     context: "Uma flor poderia servir de decora\xE7\xE3o para a c\xF4moda."
     options:
     - text: "Colocar flor sobre a c\xF4moda"
       function: Put
-      localizationGroupIndex: 1
-    - text: Retirar flores
+    - text: Retirar flor
       function: Remove
-      localizationGroupIndex: 0
     - text: Sair
       function: 
-      localizationGroupIndex: 0
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 
+  order: 
+  types:
+  - Sentence

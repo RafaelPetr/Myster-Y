@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class LocalizationData {
-    private List<LocalizationDialogue> dialogues = new List<LocalizationDialogue>();
-    private List<LocalizationItem> items = new List<LocalizationItem>();
-    private List<LocalizationText> texts = new List<LocalizationText>();
+    [SerializeField]private List<LocalizationDialogue> dialogues = new List<LocalizationDialogue>();
+    [SerializeField]private List<LocalizationItem> items = new List<LocalizationItem>();
+    [SerializeField]private List<LocalizationText> texts = new List<LocalizationText>();
 
     #region Add
 

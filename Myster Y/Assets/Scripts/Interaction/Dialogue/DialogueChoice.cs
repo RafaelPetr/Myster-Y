@@ -4,8 +4,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueChoice : DialogueElement {
-    [TextArea(3,10)]private string context;
-    private List<DialogueOption> options = new List<DialogueOption>();
+    [SerializeField]private bool enabled;
+    [SerializeField][TextArea(3,10)]private string context;
+    [SerializeField]private List<DialogueOption> options = new List<DialogueOption>();
 
     public override void Execute() {
         DialogueManager.instance.UpdateChoiceUI(this);
@@ -29,6 +30,10 @@ public class DialogueChoice : DialogueElement {
 
     #region Getters
 
+        public bool GetEnabled() {
+            return enabled;
+        }
+
         public string GetContext() {
             return context;
         }
@@ -44,6 +49,10 @@ public class DialogueChoice : DialogueElement {
     #endregion
 
     #region Setters
+
+        public void SetEnabled(bool value) {
+            enabled = value;
+        }
 
         public void SetContext(string value) {
             context = value;

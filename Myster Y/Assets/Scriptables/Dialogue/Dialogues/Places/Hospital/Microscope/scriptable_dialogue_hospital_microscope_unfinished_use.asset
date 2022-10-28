@@ -15,14 +15,13 @@ MonoBehaviour:
   key: scriptable_dialogue_hospital_microscope_unfinished_use
   sentences: []
   choice:
-    enable: 1
+    enabled: 1
     context: "Utilizar solu\xE7\xE3o na amostra?"
     options:
     - text: Sim
       function: Use
-      localizationGroupIndex: 1
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 2
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 
+  order: 
+  types:
+  - Sentence

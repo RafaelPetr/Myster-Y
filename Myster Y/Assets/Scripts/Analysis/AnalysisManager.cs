@@ -29,7 +29,7 @@ public class AnalysisManager : MonoBehaviour {
     [SerializeField]private TextMeshProUGUI analysisDescription;
 
     private string activeWritingText;
-    private TextMeshProUGUI activeWritingUI;
+    private Queue<string> textQueue = new Queue<string>();
 
     private void Awake() {
         if (instance == null) {
@@ -75,7 +75,7 @@ public class AnalysisManager : MonoBehaviour {
                     FinishWrite();
                 }
                 else {
-                    EndAnalysis();
+                    ExecuteNextText();
                 }
             }
             else if (Input.GetButtonDown("Cancel")) {
@@ -90,12 +90,17 @@ public class AnalysisManager : MonoBehaviour {
 
         analysisHandAnimator.SetBool("Active",true);
 
-        analysisName.text = LocalizationManager.instance.GetLocalizedValue(item.GetKey(), 0);
+        LocalizationItem localizedItem = LocalizationManager.GetLocalizedItem(item.GetKey());
+
+        analysisName.text = localizedItem.GetName();
         analysisItem.sprite = item.GetAnalysisImage();
 
-        activeWritingText = LocalizationManager.instance.GetLocalizedValue(item.GetKey(), 1);
-        activeWritingUI = analysisDescription;
-        activeWritingUI.text = "";
+        activeWritingText = localizedItem.GetDescription(0);
+        analysisDescription.text = "";
+
+        for (int i = 1; i < localizedItem.GetDescription().Count; i++) {
+            textQueue.Enqueue(localizedItem.GetDescription(i));
+        }
     
         activationTrigger = true;
     }
@@ -112,7 +117,7 @@ public class AnalysisManager : MonoBehaviour {
 
     private IEnumerator Write() {
         foreach (char letter in activeWritingText.ToCharArray()) {
-			activeWritingUI.text += letter;
+			analysisDescription.text += letter;
 			yield return new WaitForSeconds(0.02f);
 		}
         FinishWrite();
@@ -120,13 +125,25 @@ public class AnalysisManager : MonoBehaviour {
 
     private void FinishWrite() {
         StopAllCoroutines();
-        activeWritingUI.text = activeWritingText;
+        analysisDescription.text = activeWritingText;
 
 		activeWritingText = null;
-		activeWritingUI = null;
+    }
+
+    private void ExecuteNextText() {
+        if (textQueue.Count == 0) {
+            EndAnalysis();
+			return;
+		}
+        analysisDescription.text = "";
+
+        activeWritingText = textQueue.Dequeue();
+        StartCoroutine(Write());
     }
 
     private void EndAnalysis() {
+        StopAllCoroutines();
+
         analysisTextBox.SetActive(false);
         textBoxAnimator.SetBool("Active",false);
         analysisHandAnimator.SetBool("Active",false);

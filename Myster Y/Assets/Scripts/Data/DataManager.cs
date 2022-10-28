@@ -15,16 +15,16 @@ public class DataManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        LocalizationManager.Load("Localization/json_localization_en.json");
+        LocalizationManager.Load(Path.Combine(Application.streamingAssetsPath, "/Localization/json_localization_ptbr.json"));
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.B)) {
-            LocalizationManager.Load("Localization/json_localization_ptbr.json");
+            LocalizationManager.Load(Path.Combine(Application.streamingAssetsPath, "/Localization/json_localization_ptbr.json"));
         }
 
         if (Input.GetKeyDown(KeyCode.E)) {
-            LocalizationManager.Load("Localization/json_localization_en.json");
+            LocalizationManager.Load(Path.Combine(Application.streamingAssetsPath, "/Localization/json_localization_en.json"));
         }
     }
 

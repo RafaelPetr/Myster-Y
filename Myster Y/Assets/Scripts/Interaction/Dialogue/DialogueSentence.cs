@@ -4,8 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueSentence : DialogueElement {
-    [TextArea(3,10)]private string text;
-    private DialogueCharacter character;
+    [SerializeField][TextArea(3,10)]private string text;
+    [SerializeField]private DialogueCharacter character;
 
     public override void Execute() {
         DialogueManager.instance.UpdateSentenceUI(this);

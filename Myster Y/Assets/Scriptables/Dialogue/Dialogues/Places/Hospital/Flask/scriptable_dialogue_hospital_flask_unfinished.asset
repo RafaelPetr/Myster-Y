@@ -14,22 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_flask_unfinished
   sentences:
-  - character: {fileID: 0}
-    text: "V\xE1rios frascos com l\xEDquidos estranhos e um recipiente para misturas
+  - text: "V\xE1rios frascos com l\xEDquidos estranhos e um recipiente para solu\xE7\xF5es
       est\xE3o sobre a mesa."
-    localizationGroupIndex: 0
-  - character: {fileID: 0}
-    text: "Os frascos possuem r\xF3tulos com n\xFAmeros escritos neles."
-    localizationGroupIndex: 1
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
+  - text: "Os frascos possuem r\xF3tulos com n\xFAmeros escritos neles."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 1
-    context: Fazer uma mistura?
+    enabled: 1
+    context: "Fazer uma solu\xE7\xE3o?"
     options:
     - text: Sim
       function: Mixture
-      localizationGroupIndex: 3
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 4
-    contextLocalizationGroupIndex: 2
-  elementsOrder: 0000000000000000
+  order: 0000000000000000
+  types:
+  - Sentence

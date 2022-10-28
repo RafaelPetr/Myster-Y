@@ -1,1 +1,320 @@
-{}
+{
+    "dialogues": [
+        {
+            "key": "scriptable_dialogue_hospital_dresser_unfinished",
+            "sentences": [
+                {
+                    "text": "Preciso encontrar algo para decorar a cômoda."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flask_finished",
+            "sentences": [
+                {
+                    "text": "Apenas o frasco com o rótulo \"2\" sobrou."
+                },
+                {
+                    "text": "Não há mais nada a ser feito aqui."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flask_unfinished",
+            "sentences": [
+                {
+                    "text": "Vários frascos com líquidos estranhos e um recipiente para soluções estão sobre a mesa."
+                },
+                {
+                    "text": "Os frascos possuem rótulos com números escritos neles."
+                }
+            ],
+            "choice": {
+                "context": "Fazer uma solução?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flask_unfinished_mixture",
+            "sentences": [],
+            "choice": {
+                "context": "Adicionar líquido no frasco:",
+                "options": [
+                    {
+                        "text": "0. Verde"
+                    },
+                    {
+                        "text": "1. Vermelho"
+                    },
+                    {
+                        "text": "2. Ciano"
+                    },
+                    {
+                        "text": "3. Amarelo"
+                    },
+                    {
+                        "text": "4. Rosa"
+                    },
+                    {
+                        "text": "5. Laranja"
+                    },
+                    {
+                        "text": "6. Roxo"
+                    },
+                    {
+                        "text": "7. Azul"
+                    },
+                    {
+                        "text": "8. Verde-lima"
+                    },
+                    {
+                        "text": "9. Preto"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flask_unfinished_pick_or_redo",
+            "sentences": [
+                {
+                    "text": "Há uma solução pronta na mesa."
+                }
+            ],
+            "choice": {
+                "context": "Pegar?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    },
+                    {
+                        "text": "Refazer solução"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flask_unfinished_redo",
+            "sentences": [],
+            "choice": {
+                "context": "Refazer solução?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_microscope_finished",
+            "sentences": [
+                {
+                    "text": "A amostra de bactérias foi eliminada."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_microscope_unfinished_cancel",
+            "sentences": [
+                {
+                    "text": "Não tenho como fazer nada com isso."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_microscope_unfinished_see",
+            "sentences": [
+                {
+                    "text": "Um microscópio com uma amostra de bactérias está sobre a mesa."
+                }
+            ],
+            "choice": {
+                "context": "Olhar amostra?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_microscope_unfinished_use",
+            "sentences": [],
+            "choice": {
+                "context": "Utilizar solução na amostra?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_microscope_unfinished_use_failed",
+            "sentences": [
+                {
+                    "text": "A solução não surtiu efeito na amostra."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_flower",
+            "sentences": [
+                {
+                    "text": "Há uma pequena flor em um vaso sobre a mesa."
+                }
+            ],
+            "choice": {
+                "context": "Pegar?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_dresser_finished",
+            "sentences": [
+                {
+                    "text": "Não há mais nada a ser feito aqui."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_dresser_unfinished",
+            "sentences": [
+                {
+                    "text": "Preciso encontrar algo para decorar a cômoda."
+                }
+            ],
+            "choice": {
+                "context": "",
+                "options": []
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_dresser_unfinished_letter",
+            "sentences": [
+                {
+                    "text": "Um bilhete escrito com uma tinta de coloração rosada está em uma das gavetas."
+                }
+            ],
+            "choice": {
+                "context": "Pegar?",
+                "options": [
+                    {
+                        "text": "Sim"
+                    },
+                    {
+                        "text": "Não"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_dresser_unfinished_put_or_remove",
+            "sentences": [],
+            "choice": {
+                "context": "Uma flor poderia servir de decoração para a cômoda.",
+                "options": [
+                    {
+                        "text": "Colocar flor sobre a cômoda"
+                    },
+                    {
+                        "text": "Retirar flor"
+                    },
+                    {
+                        "text": "Sair"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "scriptable_dialogue_hospital_dresser_unfinished_put_or_remove_side",
+            "sentences": [],
+            "choice": {
+                "context": "Colocar a flor em qual lado?",
+                "options": [
+                    {
+                        "text": "Esquerda"
+                    },
+                    {
+                        "text": "Direita"
+                    }
+                ]
+            }
+        }
+    ],
+    "items": [
+        {
+            "key": "scriptable_item_decorationLetter",
+            "name": "Carta",
+            "description": [
+                "É uma carta escrita com caneta rosa."
+            ]
+        },
+        {
+            "key": "scriptable_item_flask",
+            "name": "Frasco de Solução",
+            "description": [
+                "É um frasco que contém a solução de vários líquidos estranhos.",
+                "O rótulo diz \"propriedade do hospital de Blissport\"."
+            ]
+        },
+        {
+            "key": "scriptable_item_flower",
+            "name": "Flor",
+            "description": [
+                "É uma pequena flor em um vaso.",
+                "No exterior do recipiente existe uma inscrição apagada que diz \"Respeite os mortos\"."
+            ]
+        }
+    ],
+    "texts": []
+}

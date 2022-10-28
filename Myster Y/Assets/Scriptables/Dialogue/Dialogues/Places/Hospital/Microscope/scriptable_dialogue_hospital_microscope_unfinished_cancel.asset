@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_microscope_unfinished_cancel
   sentences:
-  - character: {fileID: 11400000, guid: 8d78db9009a86474b8c25c518ad4b26f, type: 2}
-    text: "N\xE3o tenho como fazer nada com isso."
-    localizationGroupIndex: 0
+  - text: "N\xE3o tenho como fazer nada com isso."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 0
+    enabled: 0
     context: 
     options: []
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

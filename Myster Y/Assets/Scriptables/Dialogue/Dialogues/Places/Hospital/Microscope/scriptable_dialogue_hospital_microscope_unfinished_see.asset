@@ -14,18 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_microscope_unfinished_see
   sentences:
-  - character: {fileID: 0}
-    text: "Um microsc\xF3pio com uma amostra de bact\xE9rias est\xE1 sobre a mesa."
-    localizationGroupIndex: 0
+  - text: "Um microsc\xF3pio com uma amostra de bact\xE9rias est\xE1 sobre a mesa."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 1
+    enabled: 1
     context: Olhar amostra?
     options:
     - text: Sim
       function: See
-      localizationGroupIndex: 2
     - text: "N\xE3o"
       function: 
-      localizationGroupIndex: 3
-    contextLocalizationGroupIndex: 1
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

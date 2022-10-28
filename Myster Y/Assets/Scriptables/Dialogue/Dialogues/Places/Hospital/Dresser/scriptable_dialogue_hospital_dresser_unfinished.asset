@@ -14,21 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_dresser_unfinished
   sentences:
-  - character: {fileID: 0}
-    text: "Preciso encontrar algo para decorar a c\xF4moda."
-    localizationGroupIndex: 0
+  - text: "Preciso encontrar algo para decorar a c\xF4moda."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 0
+    enabled: 0
     context: 
-    options:
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    - text: 
-      function: 
-      localizationGroupIndex: 0
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 00000000
+    options: []
+  order: 00000000
+  types:
+  - Sentence

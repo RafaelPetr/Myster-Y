@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour {
         foreach (DialogueSentence sentence in dialogue.GetSentences()) {
             elements.Enqueue(sentence);
         }
-        if (dialogue.GetChoice() != null) {
+        if (dialogue.GetChoice().GetEnabled()) {
             elements.Enqueue(dialogue.GetChoice());
         }
 

@@ -6,10 +6,12 @@ using System.IO;
 
 [CustomEditor(typeof(Item))]
 public class ItemEditor : Editor {
-    //private Item item;
-    private string filePath;
     private string key;
 
+    private string dataPath;
+    private string localizationPath;
+
+    private DataItemList dataItemList;
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
@@ -35,11 +37,25 @@ public class ItemEditor : Editor {
                 item.SetName(GUILayout.TextArea(item.GetName()));
             GUILayout.EndHorizontal();
 
-            GUILayout.BeginHorizontal();
-                GUILayout.Label("Description");
-                item.SetDescription(GUILayout.TextArea(item.GetDescription()));
-            GUILayout.EndHorizontal();
-            
+            EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+
+            if (GUILayout.Button("Add Description")) {
+                item.AddDescription(string.Empty);
+            }
+
+            for (int i = 0; i < item.GetDescription().Count; i++) {
+                EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+
+                GUILayout.BeginHorizontal();
+                    GUILayout.Label("Description " + (i+1));
+                    item.SetDescription(i, GUILayout.TextArea(item.GetDescription(i)));
+                GUILayout.EndHorizontal();
+
+                if (GUILayout.Button("Remove Description")) {
+                    item.RemoveDescription(i);
+                }
+            }
+
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             GUILayout.Label("Icon");
@@ -54,19 +70,17 @@ public class ItemEditor : Editor {
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             if (GUILayout.Button("Load Data")) {
-                LoadData();
+                LoadData(item);
             }
 
             GUILayout.BeginHorizontal();
 
-                //if (localizationData != null) {
-                    if (GUILayout.Button("Save Data")) {
-                        SaveData(item);
-                    }
-                    if (GUILayout.Button("Remove Data")) {
-                        RemoveData(item);
-                    }
-                //}
+                if (GUILayout.Button("Save Data")) {
+                    SaveData(item);
+                }
+                if (GUILayout.Button("Remove Data")) {
+                    RemoveData(item);
+                }
 
             GUILayout.EndHorizontal();
         }
@@ -75,42 +89,46 @@ public class ItemEditor : Editor {
     }
 
     private void LoadData() {
-        filePath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
+        string dataAsJson;
 
-        if (string.IsNullOrEmpty(filePath)) {
+        /*if (string.IsNullOrEmpty(filePath)) {
             filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
-        }
+        }*/
 
-        string dataAsJson = File.ReadAllText(filePath);
+        dataPath = Application.streamingAssetsPath + "/Item/json_itemData.json";
+        dataAsJson = File.ReadAllText(dataPath);
+        dataItemList = JsonUtility.FromJson<DataItemList>(dataAsJson);
+
+        localizationPath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
+        dataAsJson = File.ReadAllText(localizationPath);
         localizationData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
     }
 
-    private void SaveData(Item item) {
+    private void LoadData(Item item) {
         LoadData();
 
-        LocalizationElement localizationElement = BuildLocalizationElement(item);
-        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "items");
+        DataItem dataItem = dataItemList.GetItems().Find(data => data.GetKey() == item.GetKey());
 
-        if (fileGroup != null) {
-            LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());
-
-            if (fileElement != null) {
-                fileElement.SetValues(localizationElement.GetValues());
-            }
-            else {
-                fileGroup.AddElement(localizationElement);
-            }
+        if (dataItem != null) {
+            item.LoadData(dataItem);
         }
-        else {
-            List<LocalizationElement> valuesList = new List<LocalizationElement>();
-            valuesList.Add(localizationElement);
-            fileGroup = new LocalizationGroup("items", valuesList);
+    }
 
-            localizationData.AddGroup(fileGroup);
-        }
+    private void SaveData(Item item) {
+        string dataAsJson;
 
-        string dataAsJson = JsonUtility.ToJson(localizationData,true);
-        File.WriteAllText(filePath,dataAsJson);
+        LoadData();
+        RemoveData(item);
+
+        DataItem fileData = new DataItem(item);
+        dataItemList.AddItem(fileData);
+        dataAsJson = JsonUtility.ToJson(dataItemList,true);
+        File.WriteAllText(dataPath,dataAsJson);
+
+        LocalizationItem fileLocalization = new LocalizationItem(item);
+        localizationData.AddItem(fileLocalization);
+        dataAsJson = JsonUtility.ToJson(localizationData,true);
+        File.WriteAllText(localizationPath,dataAsJson);
 
         LoadData();
     }
@@ -118,31 +136,24 @@ public class ItemEditor : Editor {
     private void RemoveData(Item item) {
         LoadData();
 
-        LocalizationElement localizationElement = BuildLocalizationElement(item);
-        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "items");
-        LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());;
+        DataItem fileData = dataItemList.GetItems().Find(data => data.GetKey() == item.GetKey());
+        LocalizationItem fileLocalization = localizationData.GetItems().Find(data => data.GetKey() == item.GetKey());
 
-        if (fileElement != null) {
-            fileGroup.RemoveElement(fileElement);
-
-            if (fileGroup.GetElements().Count == 0) {
-                localizationData.RemoveGroup(fileGroup);
-            }
+        if (fileData != null) {
+            dataItemList.RemoveItem(fileData);
         }
 
-        string dataAsJson = JsonUtility.ToJson(localizationData,true);
-        File.WriteAllText(filePath,dataAsJson);
+        if (fileLocalization != null) {
+            localizationData.RemoveItem(fileLocalization);
+        }
+
+        string dataAsJson = JsonUtility.ToJson(dataItemList,true);
+        File.WriteAllText(dataPath,dataAsJson);
+
+        dataAsJson = JsonUtility.ToJson(localizationData,true);
+        File.WriteAllText(localizationPath,dataAsJson);
 
         LoadData();
-    }
-
-    private LocalizationElement BuildLocalizationElement(Item item) {
-        List<string> valueList = new List<string>();
-
-        valueList.Add(item.GetName());
-        valueList.Add(item.GetDescription());
-
-        return new LocalizationElement(item.GetKey(),valueList.ToArray());
     }
 }
 

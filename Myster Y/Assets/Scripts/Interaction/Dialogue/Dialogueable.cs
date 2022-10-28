@@ -17,7 +17,7 @@ public abstract class Dialogueable : Interactable {
         base.Awake();
 
         foreach (Dialogue dialogue in dialogues) {
-            dialogueDict[dialogue.GetKey()] = Instantiate(dialogue);
+            dialogueDict.Add(dialogue.GetKey(), Instantiate(dialogue));
         }
 
         ResetKey();
@@ -25,9 +25,14 @@ public abstract class Dialogueable : Interactable {
 
     public override void Start() {
         base.Start();
+
+        /*foreach (Dialogue dialogue in dialogues) {
+            dialogue.Localize();
+        }*/
         
-        foreach (Dialogue dialogue in dialogues) {
-            LocalizationManager.ChangeLocalization.AddListener(dialogue.Localize);
+        foreach (KeyValuePair<string, Dialogue> dialogue in dialogueDict) {
+            dialogue.Value.Localize();
+            LocalizationManager.ChangeLocalization.AddListener(dialogue.Value.Localize);
         }
     }
 
@@ -47,7 +52,7 @@ public abstract class Dialogueable : Interactable {
 
     public virtual Dialogue DefineDialogue() {
         key = dialogues[0].GetKey();
-        return Instantiate(dialogues[0]);
+        return dialogueDict[key];
     }
 
     public override void FinishInteraction() {
@@ -63,7 +68,7 @@ public abstract class Dialogueable : Interactable {
         public void SaveOptions() {
             DialogueChoice choice = dialogueDict[key].GetChoice();
 
-            if (choice != null) {
+            if (choice.GetEnabled()) {
                 foreach (DialogueOption option in choice.GetOptions()) {
                     backupTexts.Add(string.Copy(option.GetText()));
                 }

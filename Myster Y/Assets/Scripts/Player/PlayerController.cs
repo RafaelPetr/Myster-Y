@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour {
                 }
             }
             else {
-                if (Input.GetButtonDown("inventoryPanel")) {
+                if (Input.GetButtonDown("Inventory")) {
                     directionX = 0;
                     directionY = -1;
                     

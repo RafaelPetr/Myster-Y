@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: scriptable_item_flask
   m_EditorClassIdentifier: 
   key: scriptable_item_flask
-  m_name: Frasco de Mistura
-  description: "\xC9 um frasco que cont\xE9m a mistura de v\xE1rios l\xEDquidos estranhos.
-    O r\xF3tulo diz \"propriedade do hospital de Blissport\"."
+  name: "Frasco de Solu\xE7\xE3o"
+  description:
+  - "\xC9 um frasco que cont\xE9m a solu\xE7\xE3o de v\xE1rios l\xEDquidos estranhos."
+  - "O r\xF3tulo diz \"propriedade do hospital de Blissport\"."
   icon: {fileID: 0}
   analysisImage: {fileID: 0}
   mixture: 000000000100000002000000

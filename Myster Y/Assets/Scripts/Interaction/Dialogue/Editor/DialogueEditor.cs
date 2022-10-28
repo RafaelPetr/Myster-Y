@@ -9,9 +9,10 @@ public class DialogueEditor : Editor {
     private int tabIndex;
     private string key;
 
-    private string filePath;
+    private string dataPath;
+    private string localizationPath;
 
-    private DialogueDataGroup dialogueDataGroup;
+    private DataDialogueList dataDialogueList;
     private LocalizationData localizationData;
 
     public override void OnInspectorGUI() {
@@ -75,7 +76,7 @@ public class DialogueEditor : Editor {
     private void ChoiceTab(Dialogue dialogue) {
         DialogueChoice choice = dialogue.GetChoice();
 
-        if (choice != null) {
+        if (choice.GetEnabled()) {
             if (GUILayout.Button("Remove Choice")) {
                 dialogue.RemoveChoice();
             }
@@ -129,20 +130,17 @@ public class DialogueEditor : Editor {
         EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
 
             if (GUILayout.Button("Load Data")) {
-                filePath = null;
                 LoadData(dialogue);
             }
 
         GUILayout.BeginHorizontal();
 
-            //if (localizationData != null) {
-                if (GUILayout.Button("Save Data")) {
-                    SaveData(dialogue);
-                }
-                if (GUILayout.Button("Remove Data")) {
-                    RemoveData(dialogue);
-                }
-            //}
+            if (GUILayout.Button("Save Data")) {
+                SaveData(dialogue);
+            }
+            if (GUILayout.Button("Remove Data")) {
+                RemoveData(dialogue);
+            }
 
         GUILayout.EndHorizontal();
     }
@@ -152,52 +150,41 @@ public class DialogueEditor : Editor {
             filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
         }*/
 
-        filePath = Application.streamingAssetsPath + "/Localization/json_localization_en.json";
-        string dataAsJson = File.ReadAllText(filePath);
+        localizationPath = Application.streamingAssetsPath + "/Localization/json_localization_ptbr.json";
+        string dataAsJson = File.ReadAllText(localizationPath);
         localizationData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
-        string dataFilePath = Application.streamingAssetsPath + "/Dialogue/json_dialogueData.json";
-        string dialogueDataAsJson = File.ReadAllText(dataFilePath);
-        dialogueDataGroup = JsonUtility.FromJson<DialogueDataGroup>(dialogueDataAsJson);
+        dataPath = Application.streamingAssetsPath + "/Dialogue/json_dialogueData.json";
+        string dialogueDataAsJson = File.ReadAllText(dataPath);
+        dataDialogueList = JsonUtility.FromJson<DataDialogueList>(dialogueDataAsJson);
     }
 
     private void LoadData(Dialogue dialogue) {
         LoadData();
 
-        DialogueData dialogueData = dialogueDataGroup.GetDialogues().Find(data => data.GetKey() == dialogue.GetKey());
+        DataDialogue dataDialogue = dataDialogueList.GetDialogues().Find(data => data.GetKey() == dialogue.GetKey());
 
-        if (dialogueData != null) {
-            dialogue.LoadData(dialogueData);
-            
+        if (dataDialogue != null) {
+            dialogue.LoadData(dataDialogue);
         }
     }
 
     private void SaveData(Dialogue dialogue) {
+        string dataAsJson;
+        
         LoadData();
 
-        LocalizationElement localizationElement = BuildLocalizationElement(dialogue);
-        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "dialogues");
+        RemoveData(dialogue);
 
-        if (fileGroup != null) {
-            LocalizationElement fileElement = fileGroup.GetElements().Find(data => data.GetKey() == localizationElement.GetKey());
+        DataDialogue fileData = new DataDialogue(dialogue);
+        dataDialogueList.AddDialogue(fileData);
+        dataAsJson = JsonUtility.ToJson(dataDialogueList,true);
+        File.WriteAllText(dataPath,dataAsJson);
 
-            if (fileElement != null) {
-                fileElement.SetValues(localizationElement.GetValues());
-            }
-            else {
-                fileGroup.AddElement(localizationElement);
-            }
-        }
-        else {
-            List<LocalizationElement> elementsList = new List<LocalizationElement>();
-            elementsList.Add(localizationElement);
-            fileGroup = new LocalizationGroup("dialogues", elementsList);
-
-            localizationData.AddGroup(fileGroup);
-        }
-
-        string dataAsJson = JsonUtility.ToJson(localizationData,true);
-        File.WriteAllText(filePath,dataAsJson);
+        LocalizationDialogue fileLocalization = new LocalizationDialogue(dialogue);
+        localizationData.AddDialogue(fileLocalization);
+        dataAsJson = JsonUtility.ToJson(localizationData,true);
+        File.WriteAllText(localizationPath,dataAsJson);
 
         LoadData();
     }
@@ -205,58 +192,23 @@ public class DialogueEditor : Editor {
     private void RemoveData(Dialogue dialogue) {
         LoadData();
 
-        LocalizationElement localizationItem = BuildLocalizationElement(dialogue);
-        LocalizationGroup fileGroup = localizationData.GetGroups().Find(group => group.GetKey() == "dialogues");
-        LocalizationElement fileItem = fileGroup.GetElements().Find(data => data.GetKey() == localizationItem.GetKey());;
+        DataDialogue fileData = dataDialogueList.GetDialogues().Find(data => data.GetKey() == dialogue.GetKey());
+        LocalizationDialogue fileLocalization = localizationData.GetDialogues().Find(data => data.GetKey() == dialogue.GetKey());
 
-        if (fileItem != null) {
-            fileGroup.RemoveElement(fileItem);
-
-            if (fileGroup.GetElements().Count == 0) {
-                localizationData.RemoveGroup(fileGroup);
-            }
+        if (fileData != null) {
+            dataDialogueList.RemoveDialogue(fileData);
         }
 
-        string dataAsJson = JsonUtility.ToJson(localizationData,true);
-        File.WriteAllText(filePath,dataAsJson);
+        if (fileLocalization != null) {
+            localizationData.RemoveDialogue(fileLocalization);
+        }
+
+        string dataAsJson = JsonUtility.ToJson(dataDialogueList,true);
+        File.WriteAllText(dataPath,dataAsJson);
+
+        dataAsJson = JsonUtility.ToJson(localizationData,true);
+        File.WriteAllText(localizationPath,dataAsJson);
 
         LoadData();
-    }
-
-    private LocalizationElement BuildLocalizationElement(Dialogue dialogue) {
-        List<string> valueList = new List<string>();
-        Queue<DialogueSentence> sentenceQueue = new Queue<DialogueSentence>(dialogue.GetSentences());
-
-        int locIndex = 0;
-
-        foreach (int element in dialogue.GetOrder()) {
-            switch (dialogue.GetType(element)) {
-                case "Sentence":
-                    DialogueSentence sentence = sentenceQueue.Dequeue();
-
-                    sentence.SetLocIndex(locIndex);
-                    valueList.Add(sentence.GetText());
-                    break;
-            }
-            locIndex++;
-        }
-
-        DialogueChoice choice = dialogue.GetChoice();
-
-        if (choice != null) {
-            choice.SetLocIndex(locIndex);
-            valueList.Add(choice.GetContext());
-
-            locIndex++;
-
-            foreach (DialogueOption option in choice.GetOptions()) {
-                option.SetLocIndex(locIndex);
-                valueList.Add(option.GetText());
-
-                locIndex++;
-            }
-        }
-
-        return new LocalizationElement(dialogue.GetKey(),valueList.ToArray());
     }
 }

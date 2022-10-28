@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: scriptable_item_flower
   m_EditorClassIdentifier: 
   key: scriptable_item_flower
-  m_name: Flor
-  description: "\xC9 uma pequena flor em um vaso. No exterior do recipiente existe
-    uma inscri\xE7\xE3o apagada que diz \"Respeite os mortos\"."
-  icon: {fileID: 0}
-  analysisImage: {fileID: 0}
+  name: Flor
+  description:
+  - "\xC9 uma pequena flor em um vaso."
+  - "No exterior do recipiente existe uma inscri\xE7\xE3o apagada que diz \"Respeite
+    os mortos\"."
+  icon: {fileID: -2413806693520163455, guid: e5559c8e702b49541b0ef85c16c6e41c, type: 3}
+  analysisImage: {fileID: 7482667652216324306, guid: c044f87e6446bfd4f8a6861b807d4db6, type: 3}

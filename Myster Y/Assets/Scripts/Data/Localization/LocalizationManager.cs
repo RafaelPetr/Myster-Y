@@ -25,16 +25,26 @@ public static class LocalizationManager {
     }
 
     private static void LoadDictionaries(LocalizationData data) {
+        localizedDialogues.Clear();
+        localizedItems.Clear();
+        localizedTexts.Clear();
+
         foreach (LocalizationDialogue dialogue in data.GetDialogues()) {
-            localizedDialogues.Add(dialogue.GetKey(), dialogue);
+            if (!localizedDialogues.ContainsKey(dialogue.GetKey())) {
+                localizedDialogues.Add(dialogue.GetKey(), dialogue);
+            }
         }
 
         foreach (LocalizationItem item in data.GetItems()) {
-            localizedItems.Add(item.GetKey(), item);
+            if (!localizedItems.ContainsKey(item.GetKey())) {
+                localizedItems.Add(item.GetKey(), item);
+            }
         }
 
         foreach (LocalizationText text in data.GetTexts()) {
-            localizedTexts.Add(text.GetKey(), text);
+            if (!localizedTexts.ContainsKey(text.GetKey())) {
+                localizedTexts.Add(text.GetKey(), text);
+            }
         }
     }
 

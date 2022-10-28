@@ -15,14 +15,13 @@ MonoBehaviour:
   key: scriptable_dialogue_hospital_dresser_unfinished_put_or_remove_side
   sentences: []
   choice:
-    enable: 1
+    enabled: 1
     context: Colocar a flor em qual lado?
     options:
     - text: Esquerda
       function: Left
-      localizationGroupIndex: 1
     - text: Direita
       function: Right
-      localizationGroupIndex: 2
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 
+  order: 
+  types:
+  - Sentence

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: scriptable_dialogue_hospital_microscope_finished
   sentences:
-  - character: {fileID: 0}
-    text: "A amostra de bact\xE9rias foi eliminada."
-    localizationGroupIndex: 0
+  - text: "A amostra de bact\xE9rias foi eliminada."
+    character: {fileID: 11400000, guid: 3ab4adfd548643044b6b45dc0173b75c, type: 2}
   choice:
-    enable: 0
+    enabled: 0
     context: 
     options: []
-    contextLocalizationGroupIndex: 0
-  elementsOrder: 00000000
+  order: 00000000
+  types:
+  - Sentence

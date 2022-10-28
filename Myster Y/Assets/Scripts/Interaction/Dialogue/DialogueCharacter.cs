@@ -4,8 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "scriptable_character_", menuName = "Dialogue/Character")]
 public class DialogueCharacter : ScriptableObject {
-    new private string name;
-    private Sprite icon;
+    [SerializeField]new private string name;
+    [SerializeField]private Sprite icon;
 
     #region Getters
 

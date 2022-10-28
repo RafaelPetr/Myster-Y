@@ -4,17 +4,50 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "scriptable_item_", menuName = "Item/Item")]
 public class Item : ScriptableObject {
-    private string key;
+    [SerializeField]private string key;
 
-    private new string name;
-    private List<string> description;
+    [SerializeField]private new string name;
+    [SerializeField]private List<string> description = new List<string>();
 
-    private Sprite icon;
-    private Sprite analysisImage;
+    [SerializeField]private Sprite icon;
+    [SerializeField]private Sprite analysisImage;
+
+    public void LoadData(DataItem item) {
+        name = item.GetName();
+        description = item.GetDescription();
+
+        if (item.GetIcon() != string.Empty) {
+            icon = Resources.Load<Sprite>("Sprites/Items/Icons/" + item.GetIcon());
+        }
+
+        if (item.GetAnalysisImage() != string.Empty) {
+            analysisImage = Resources.Load<Sprite>("Sprites/Items/Analysis/" + item.GetAnalysisImage());
+        }
+    }
 
     public void Analyze() {
         AnalysisManager.instance.StartAnalysis(this);
     }
+
+    #region Add
+
+        public void AddDescription(string value) {
+            description.Add(value);
+        }
+
+    #endregion
+
+    #region Remove
+
+        public void RemoveDescription(string value) {
+            description.Remove(value);
+        }
+
+        public void RemoveDescription(int index) {
+            description.RemoveAt(index);
+        }
+
+    #endregion
 
     #region Getters
 
@@ -56,6 +89,10 @@ public class Item : ScriptableObject {
 
         public void SetDescription(List<string> value) {
             description = value;
+        }
+
+        public void SetDescription(int index, string value) {
+            description[index] = value;
         }
 
         public void SetIcon(Sprite value) {

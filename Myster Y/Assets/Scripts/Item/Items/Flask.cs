@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "scriptable_item_flask", menuName = "Item/Flask")]
 public class Flask : Item {
-    private List<int> mixture = new List<int>();
+    [SerializeField]private List<int> mixture = new List<int>();
 
     public void AddMixture(int mixtureNumber) {
         mixture.Add(mixtureNumber);
